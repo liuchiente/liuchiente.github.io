@@ -1,6 +1,6 @@
 baseURL = 'https://liuchiente.github.io/'
 locale = 'zh-tw'
-title = 'Liuchien Blog'
+title = 'Liuchien's Blog'
 theme = 'PaperMod'
 
 [params]
