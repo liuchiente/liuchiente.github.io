@@ -1,0 +1,7 @@
+baseURL = 'https://example.org/'
+locale = 'zh-tw'
+title = 'Liuchien Blog'
+theme = 'PaperMod'
+
+[params]
+env = "production"
