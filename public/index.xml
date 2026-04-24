@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Liuchien&#39;s Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://liuchien.inxpire.tw/</link>
     <description>Recent content on Liuchien&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 24 Apr 2026 16:22:40 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://liuchien.inxpire.tw/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>部落格搬家中</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
+      <link>https://liuchien.inxpire.tw/posts/my-first-post/</link>
       <pubDate>Fri, 24 Apr 2026 16:22:40 +0800</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <guid>https://liuchien.inxpire.tw/posts/my-first-post/</guid>
       <description>&lt;h1 id=&#34;搬家通知&#34;&gt;搬家通知&lt;/h1&gt;&#xA;&lt;p&gt;近期預計把原先放置在Blogger上的兩個Blog都搬移到Hugo上，雖然說靈活度更高，但相對要設定的東西也比較多，為了長遠未來，還是做吧？！只是不知道自己要做多久。&lt;/p&gt;&#xA;&lt;h6 id=&#34;胡言亂語&#34;&gt;胡言亂語&lt;/h6&gt;&#xA;&lt;p&gt;如果像這樣，站台由自己管理，但是又同步到雲端解決掉流量處理議題，算不算一種Web 3.0的轉換？我沒答案，只是想到&lt;a href=&#34;https://zh.wikipedia.org/zh-tw/%E5%90%B3%E6%98%87&#34;&gt;吳昇&lt;/a&gt;老師的Web 3.0，雖然已經是2004年的事情了，但總在IOT、Web 2.5興起之時，不免讓人夢裡尋他千百度，然若，這趨勢一但起來又趨於成熟，是不是又證明吳老師領先20年？！&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;image/my-first-post/1777019163854.png&#34; alt=&#34;1777019163854&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
