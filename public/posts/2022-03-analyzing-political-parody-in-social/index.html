@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="這篇文章收錄於ACL, 作者是Antonis Maronikolakis, Danae Sanchez Villegas, Nikolaos\u00a0Aletras\u00a0, 第一作者Antonis Maronikolakis於Center for Information and Language Processing, LMU Munich, Germany服務, 其餘第二作者, 服務於Computer Science Department, University of Sheffield, UK, 第三作者是Daniel\u00a0Preotiuc-Pietro, 服務於Bloomberg, 本文僅為個人閱讀後分享, 並加上個人看法, 若有侵權請告知。\n">
+<title>(閱讀心得)Analyzing Political Parody in Social Media</title>
+
+
+<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2022-03-analyzing-political-parody-in-social/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="(閱讀心得)Analyzing Political Parody in Social Media">
+<meta property='og:description' content="這篇文章收錄於ACL, 作者是Antonis Maronikolakis, Danae Sanchez Villegas, Nikolaos\u00a0Aletras\u00a0, 第一作者Antonis Maronikolakis於Center for Information and Language Processing, LMU Munich, Germany服務, 其餘第二作者, 服務於Computer Science Department, University of Sheffield, UK, 第三作者是Daniel\u00a0Preotiuc-Pietro, 服務於Bloomberg, 本文僅為個人閱讀後分享, 並加上個人看法, 若有侵權請告知。\n">
+<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2022-03-analyzing-political-parody-in-social/'>
+<meta property='og:site_name' content='Liuchien&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='自然語言研究趨勢和論文' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:published_time' content='2022-03-25T15:08:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-22T09:22:48&#43;00:00'/>
+<meta name="twitter:title" content="(閱讀心得)Analyzing Political Parody in Social Media">
+<meta name="twitter:description" content="這篇文章收錄於ACL, 作者是Antonis Maronikolakis, Danae Sanchez Villegas, Nikolaos\u00a0Aletras\u00a0, 第一作者Antonis Maronikolakis於Center for Information and Language Processing, LMU Munich, Germany服務, 其餘第二作者, 服務於Computer Science Department, University of Sheffield, UK, 第三作者是Daniel\u00a0Preotiuc-Pietro, 服務於Bloomberg, 本文僅為個人閱讀後分享, 並加上個人看法, 若有侵權請告知。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien&#39;s Blog</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2022-03-analyzing-political-parody-in-social/">(閱讀心得)Analyzing Political Parody in Social Media</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2022-03-25T15:08:00Z'>Friday, March 25, 2022</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 4 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>這篇文章收錄於<a class="link" href="https://2021.emnlp.org"  target="_blank" rel="noopener"
+    >ACL</a>, 作者是<strong>Antonis Maronikolakis, Danae Sanchez Villegas, Nikolaos Aletras</strong> , 第一作者<strong>Antonis Maronikolakis</strong>於<a class="link" href="https://www.cis.uni-muenchen.de/ueber%5c_uns/index.html"  target="_blank" rel="noopener"
+    >Center for Information and Language Processing, LMU Munich, Germany</a>服務, 其餘第二作者, 服務於<a class="link" href="https://www.sheffield.ac.uk/dcs"  target="_blank" rel="noopener"
+    >Computer Science Department, University of Sheffield, UK</a>, 第三作者是<strong>Daniel Preotiuc-Pietro,</strong> 服務於<a class="link" href="https://www.bloomberg.com/asia"  target="_blank" rel="noopener"
+    >Bloomberg</a>, 本文僅為個人閱讀後分享, 並加上個人看法, 若有侵權請告知。</p>
+<p>原論文詳見<a class="link" href="https://arxiv.org/abs/2004.13878"  target="_blank" rel="noopener"
+    >https://arxiv.org/abs/2004.13878</a>。</p>
+<p>本文發表的比較早, 詳細時間應該是2020年, 對比2021、2022提出的應用, 難免較顯微簡單, 而本文的啟發點, 應該來自於<a class="link" href="https://www.bloomberg.com/asia"  target="_blank" rel="noopener"
+    >Bloomberg</a>, 也就是大名鼎鼎的彭博社, 因為我早期對於判斷假新聞、假消息, 有濃厚的興趣, 故針對這類型文章做了些閱讀, 至於在這方面的應用有什麼優缺點, 則容我以下敘述。</p>
+<h2 id="introduction">Introduction
+</h2><p>Parody是一個歷史悠久的藝術活動, 人們透過裝扮、模仿知名人物的語氣、外表, 說一些不是知名人物會講的話, 表現在電視節目、卡通、漫畫等, 來嘲諷或是幽默一下, 現今, 很多電視節目上都還有類似的表演, 譬如台灣的全民大悶鍋; 相同的, 在Twitter也有類似的活動, 人們會創一些帳號, 並假裝是知名人物譬如川普、歐巴馬等, 時不時依照新聞或是現況發表些搏君一笑的twit, 本意就是為了幽默而已, 或許很難想像, 基本上這些發文都會屬於非正式、天馬行空的言論。</p>
+<p>相較於知名人物如川普、歐巴馬等人的發文, 若是正式帳號, 往往會採用比較正式的敘述和文筆, 來陳述理念或是對於現實的想法。</p>
+<p>當然在Twitter上, Parody帳號和正式帳號是會做一些區隔的, 譬如Parody帳號通常會用Parody結尾, 如<a class="link" href="https://twitter.com/ObamaParody%5c_"  target="_blank" rel="noopener"
+    >ObamaParody_</a>, 或是像<a class="link" href="https://twitter.com/nicedonaidtrump"  target="_blank" rel="noopener"
+    >nicedonaidtrump</a>, 會在帳號介紹時註明自己是Parody帳號, 否則就會被Twitter刪除。</p>
+<p>而本篇論文主要是做些牛刀小試, 希望能透過資料訓練, 用來判斷Parody帳號和正式帳號的發言, 如同前面提到, 兩者帳號發文文體通常有一定差距, 故特徵比較明顯, 是有機會分辨的。</p>
+<p>當然, Parody的本意只是為了搏君一笑, 希望不會有人出來賞巴掌。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">Parody和Real帳號的發言差別## Task &amp; Data</p>
+<p>在本文, 作者也是用了相當簡單明瞭的做法, 應用Twitter提供的資料集, 直接了當地坐了二分類, Parody和Real, 接著進行訓練、驗證和訓練, 基本上都是以80/10/10的方式來切。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">此外也做了幾種差異比較, 算是承上, 再往下延伸, 分別依照帳號性別、所在地區來做資料切分, 之所以會這樣做是因為Parody這事情是很多人都會想做的, 譬如俄國人會想坐美國總統的嘲諷, 美國人想做俄國人的。</p>
+<p>這裡的地區切分, 是以帳號主人的所在地做切分, 假定你今天申請的是美國總統的Parody帳號, 但你是台灣人, 則你的文章是歸類在台灣(RoW, 英美以外國家), 之所以會這樣切分, 是考量不同地區的人, 文法不盡相同。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">另外有趣的是, 也依照性別切分了資料集。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">## Predictive Models</p>
+<p>以下用了幾個模型, 來做訓練和驗證。</p>
+<ul>
+<li>Linear Baselines
+<ul>
+<li>LR-BOW</li>
+<li>LR-BOW+POS</li>
+</ul>
+</li>
+<li>BiLSTM-Att</li>
+<li>ULMFit</li>
+<li>BERT</li>
+<li>RoBERTa</li>
+<li>XLNet</li>
+</ul>
+<p>Results</p>
+<p>以下是訓練和測試結果, 可以發現RoBERTa 分數最高, 這是可以預期的, RoBERTa是BERT的改進版，通過改進訓練任務和資料生成方式、訓練更久、使用更大批次、使用更多資料等獲得了State of The Art的效果, 換句話說, 就是用更大量、更久的訓練, 讓模型學了更多詞彙。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">另外作者嘗試了用男性文章的資料集, 去驗證女性文章的資料集, 除了分數依然是RoBERTa最高外, 可以發現如此切換, 並沒有發現太多的差異, F-&gt;M, 指的是用女性文章訓練, 驗證男性文章, M-&gt;F則相反, 這裡也可以得到一個結論, 在網路上的文字表述, 男女其實沒有太大的差異, 故也反映在分數上。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">倒是當用地區別來訓練Model, 然後再進行驗證時, 明顯可以看出一些差異, 且確實表現在BERT、RoBERTa和 XLNet之上, 這也說明了英美地區、和其他地區發文的用字遣詞是有差異的。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">## Error Analysis</p>
+<p>本文提到的方法, 簡單粗暴, 並且稍微比較了一下幾個差異, 但也點出了單純用Model來區分Parody的缺陷, 以下為例, 歐巴馬的官方發文通常不甚正式, 而Model也因此沒法分辨出其文章和Parody文章的差別。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">另一個例子, 當Parody的發文文體比較正式, Model也無法分辨出和正式文章的差異。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">簡單來說, 想要透過單純Model來分別文體, 通常需要建立在兩分類具備一定特徵, 而且需要有一定差異, 才能獲得不錯的效果, 另一方面, 如果把Model加大、加強或許是可行的, 但卻是一條無止盡的路, 因為人會演化, 廢文也會越來越不容易察覺。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/">自然語言研究趨勢和論文</a>
+        
+            <a href="/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/">中興大學資工所</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Friday, November 22, 2024
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2022-03-ms2-dataset-for-multi-document/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">(閱讀心得)MSˆ2: A Dataset for Multi-Document Summarization of Medical Studies￼</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-02-nlp-2-text-summarization/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">自然語言處理 (NLP) -2 文本摘要Text Summarization</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-02-nlp-1/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">自然語言處理 (NLP) -1 簡述</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-python-perspective-transformation/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">用Python實作 Perspective Transformation 透視變換</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-pythonimage-enhancement/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Python實作Image Enhancement</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="你的GitHub帳號/你的Repo名稱"
+    data-repo-id="R_xxxxxxxx"
+    data-category="Announcements"
+    data-category-id="DIC_xxxxxxxx"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
+    </span>
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
+    </span>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在「後AI時代」，AI Agent 正逐步改變我們對人工智慧的想像。本文從 Generative AI 年會談起，介紹 MCP（Model Context Protocol）、CrewAI 與 LiteLLM 的整合實作，說明如何打造能協作、自主決策的多代理（Multi-Agent）AI 系統。從單一 LLM 到智能協作架構，這正是 AI 演化的新篇章。 前言 前陣子在觀賞2025 Generative AI 年會，聽到有位分享者提到「後AI時代」，為什麼說後AI時代呢，因為AI Agent的概念出現，加上MCP逐漸成熟，前兩年的超大LLM霸主時期不免出現一些小變化，在過去，我們人類先是提出了Auto Regressive，接著整理出大量的訓練語料，接著我們用Text-Generation解決了很多問答、總結的NLP難題，下一步則開始考慮多模態問題，接著需要更多更好的機制來解決Token轉換問題，還要有更多機器來支援算力消耗，屬實不容易，大部分LLM走在一條用單一模型解決所有問題的道路上，但這實在不容易，畢竟很多任務是這樣的，你讓他執行單一任務，他可以做到很精確，像是圖像辨識，CNN幾乎就有了碾壓性的效果，但是你要讓他兼顧幾個不同任務，這是個大課題。\n於是就有人想了，那如果我把幾個Model結合起來，會是什麼感覺呢？我先破個梗，如果處理得不好，大概就是以下這種狀況。\n這沒亂蓋吧？這張圖要多傳神就有多傳神，更何況他還說出了LLM的特色。\n好啦，回歸主題，接著介紹說幾個在本次實作會應用到概念。\n**AI Agent**是能自主理解任務、規劃步驟、執行行動並根據結果調整策略的概念，結合了大語言模型（LLM）、記憶、工具與回饋機制，能完成多步驟任務。例如自動撰寫報告、分析資料或審查程式碼，不再只是被動回答，而能主動行動。\n**MCP**是一種標準化協定，用來讓 AI Agent 與工具、資料、記憶庫之間交換上下文與任務資訊。它幫助 Agent 保留任務狀態、共享工具清單、追蹤進度，實現多代理協作，MCP 讓 AI 系統有「記憶」與「任務持續性」。\nCrewAI 是一個多代理（Multi-Agent）開發框架，讓開發者能定義多個 AI Agent 角色、任務與互動流程。它支援任務拆解、工具整合與自動協作，可讓不同專長的 Agent 協同完成目標。CrewAI 常用於自動化工作流與智能應用開發。\nLiteLLM 是一個開源介面，讓開發者能以統一方式呼叫多個語言模型（如 OpenAI、Google等）。它提供 OpenAI 風格 API、成本管理與模型切換功能，使系統能輕鬆整合不同 LLM，並與框架如 CrewAI 搭配使用。\n綜合以上，簡單解釋我們怎麼實現AI Agent：其實MCP本質上很像RPC，透過通訊協議我們可以在程式中任意呼叫不同的LLM，再搭配Crew AI，幫我們實現了簡單定義Agent，Agent應負責的任務，提供流程上的支援，最後完成一套AI Agen的工作流程。##\n">
+<title>後AI時代的多代理 AI Agent 實作：使用 CrewAI 與 LiteLLM 打造自動化專案程式架構分析</title>
+
+
+<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2025-11-ai-ai-agent-crewai-litellm/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="後AI時代的多代理 AI Agent 實作：使用 CrewAI 與 LiteLLM 打造自動化專案程式架構分析">
+<meta property='og:description' content="在「後AI時代」，AI Agent 正逐步改變我們對人工智慧的想像。本文從 Generative AI 年會談起，介紹 MCP（Model Context Protocol）、CrewAI 與 LiteLLM 的整合實作，說明如何打造能協作、自主決策的多代理（Multi-Agent）AI 系統。從單一 LLM 到智能協作架構，這正是 AI 演化的新篇章。 前言 前陣子在觀賞2025 Generative AI 年會，聽到有位分享者提到「後AI時代」，為什麼說後AI時代呢，因為AI Agent的概念出現，加上MCP逐漸成熟，前兩年的超大LLM霸主時期不免出現一些小變化，在過去，我們人類先是提出了Auto Regressive，接著整理出大量的訓練語料，接著我們用Text-Generation解決了很多問答、總結的NLP難題，下一步則開始考慮多模態問題，接著需要更多更好的機制來解決Token轉換問題，還要有更多機器來支援算力消耗，屬實不容易，大部分LLM走在一條用單一模型解決所有問題的道路上，但這實在不容易，畢竟很多任務是這樣的，你讓他執行單一任務，他可以做到很精確，像是圖像辨識，CNN幾乎就有了碾壓性的效果，但是你要讓他兼顧幾個不同任務，這是個大課題。\n於是就有人想了，那如果我把幾個Model結合起來，會是什麼感覺呢？我先破個梗，如果處理得不好，大概就是以下這種狀況。\n這沒亂蓋吧？這張圖要多傳神就有多傳神，更何況他還說出了LLM的特色。\n好啦，回歸主題，接著介紹說幾個在本次實作會應用到概念。\n**AI Agent**是能自主理解任務、規劃步驟、執行行動並根據結果調整策略的概念，結合了大語言模型（LLM）、記憶、工具與回饋機制，能完成多步驟任務。例如自動撰寫報告、分析資料或審查程式碼，不再只是被動回答，而能主動行動。\n**MCP**是一種標準化協定，用來讓 AI Agent 與工具、資料、記憶庫之間交換上下文與任務資訊。它幫助 Agent 保留任務狀態、共享工具清單、追蹤進度，實現多代理協作，MCP 讓 AI 系統有「記憶」與「任務持續性」。\nCrewAI 是一個多代理（Multi-Agent）開發框架，讓開發者能定義多個 AI Agent 角色、任務與互動流程。它支援任務拆解、工具整合與自動協作，可讓不同專長的 Agent 協同完成目標。CrewAI 常用於自動化工作流與智能應用開發。\nLiteLLM 是一個開源介面，讓開發者能以統一方式呼叫多個語言模型（如 OpenAI、Google等）。它提供 OpenAI 風格 API、成本管理與模型切換功能，使系統能輕鬆整合不同 LLM，並與框架如 CrewAI 搭配使用。\n綜合以上，簡單解釋我們怎麼實現AI Agent：其實MCP本質上很像RPC，透過通訊協議我們可以在程式中任意呼叫不同的LLM，再搭配Crew AI，幫我們實現了簡單定義Agent，Agent應負責的任務，提供流程上的支援，最後完成一套AI Agen的工作流程。##\n">
+<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2025-11-ai-ai-agent-crewai-litellm/'>
+<meta property='og:site_name' content='Liuchien&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='AI Agent' /><meta property='article:tag' content='後AI時代' /><meta property='article:tag' content='Generative AI' /><meta property='article:tag' content='MCP' /><meta property='article:tag' content='CrewAI' /><meta property='article:tag' content='LiteLLM' /><meta property='article:tag' content='Multi-Agent' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='AI Framework' /><meta property='article:tag' content='AI Architecture' /><meta property='article:tag' content='Python AI' /><meta property='article:tag' content='AI 自動化' /><meta property='article:tag' content='AI 協作' /><meta property='article:tag' content='AI' /><meta property='article:published_time' content='2025-11-01T13:40:00&#43;00:00'/><meta property='article:modified_time' content='2025-11-01T13:40:32&#43;00:00'/>
+<meta name="twitter:title" content="後AI時代的多代理 AI Agent 實作：使用 CrewAI 與 LiteLLM 打造自動化專案程式架構分析">
+<meta name="twitter:description" content="在「後AI時代」，AI Agent 正逐步改變我們對人工智慧的想像。本文從 Generative AI 年會談起，介紹 MCP（Model Context Protocol）、CrewAI 與 LiteLLM 的整合實作，說明如何打造能協作、自主決策的多代理（Multi-Agent）AI 系統。從單一 LLM 到智能協作架構，這正是 AI 演化的新篇章。 前言 前陣子在觀賞2025 Generative AI 年會，聽到有位分享者提到「後AI時代」，為什麼說後AI時代呢，因為AI Agent的概念出現，加上MCP逐漸成熟，前兩年的超大LLM霸主時期不免出現一些小變化，在過去，我們人類先是提出了Auto Regressive，接著整理出大量的訓練語料，接著我們用Text-Generation解決了很多問答、總結的NLP難題，下一步則開始考慮多模態問題，接著需要更多更好的機制來解決Token轉換問題，還要有更多機器來支援算力消耗，屬實不容易，大部分LLM走在一條用單一模型解決所有問題的道路上，但這實在不容易，畢竟很多任務是這樣的，你讓他執行單一任務，他可以做到很精確，像是圖像辨識，CNN幾乎就有了碾壓性的效果，但是你要讓他兼顧幾個不同任務，這是個大課題。\n於是就有人想了，那如果我把幾個Model結合起來，會是什麼感覺呢？我先破個梗，如果處理得不好，大概就是以下這種狀況。\n這沒亂蓋吧？這張圖要多傳神就有多傳神，更何況他還說出了LLM的特色。\n好啦，回歸主題，接著介紹說幾個在本次實作會應用到概念。\n**AI Agent**是能自主理解任務、規劃步驟、執行行動並根據結果調整策略的概念，結合了大語言模型（LLM）、記憶、工具與回饋機制，能完成多步驟任務。例如自動撰寫報告、分析資料或審查程式碼，不再只是被動回答，而能主動行動。\n**MCP**是一種標準化協定，用來讓 AI Agent 與工具、資料、記憶庫之間交換上下文與任務資訊。它幫助 Agent 保留任務狀態、共享工具清單、追蹤進度，實現多代理協作，MCP 讓 AI 系統有「記憶」與「任務持續性」。\nCrewAI 是一個多代理（Multi-Agent）開發框架，讓開發者能定義多個 AI Agent 角色、任務與互動流程。它支援任務拆解、工具整合與自動協作，可讓不同專長的 Agent 協同完成目標。CrewAI 常用於自動化工作流與智能應用開發。\nLiteLLM 是一個開源介面，讓開發者能以統一方式呼叫多個語言模型（如 OpenAI、Google等）。它提供 OpenAI 風格 API、成本管理與模型切換功能，使系統能輕鬆整合不同 LLM，並與框架如 CrewAI 搭配使用。\n綜合以上，簡單解釋我們怎麼實現AI Agent：其實MCP本質上很像RPC，透過通訊協議我們可以在程式中任意呼叫不同的LLM，再搭配Crew AI，幫我們實現了簡單定義Agent，Agent應負責的任務，提供流程上的支援，最後完成一套AI Agen的工作流程。##\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien&#39;s Blog</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2025-11-ai-ai-agent-crewai-litellm/">後AI時代的多代理 AI Agent 實作：使用 CrewAI 與 LiteLLM 打造自動化專案程式架構分析</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2025-11-01T13:40:00Z'>Saturday, November 1, 2025</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 11 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <h2 id="在後ai時代ai-agent-正逐步改變我們對人工智慧的想像本文從-generative-ai-年會談起介紹-mcpmodel-context-protocolcrewai-與-litellm-的整合實作說明如何打造能協作自主決策的多代理multi-agentai-系統從單一-llm-到智能協作架構這正是-ai-演化的新篇章">在「後AI時代」，AI Agent 正逐步改變我們對人工智慧的想像。本文從 Generative AI 年會談起，介紹 MCP（Model Context Protocol）、CrewAI 與 LiteLLM 的整合實作，說明如何打造能協作、自主決策的多代理（Multi-Agent）AI 系統。從單一 LLM 到智能協作架構，這正是 AI 演化的新篇章。
+</h2><h2 id="前言">前言
+</h2><p>前陣子在觀賞<a class="link" href="https://gaiconf.com"  target="_blank" rel="noopener"
+    >2025 Generative AI 年會</a>，聽到有位分享者提到「後AI時代」，為什麼說後AI時代呢，因為AI Agent的概念出現，加上MCP逐漸成熟，前兩年的超大LLM霸主時期不免出現一些小變化，在過去，我們人類先是提出了Auto Regressive，接著整理出大量的訓練語料，接著我們用Text-Generation解決了很多問答、總結的NLP難題，下一步則開始考慮多模態問題，接著需要更多更好的機制來解決Token轉換問題，還要有更多機器來支援算力消耗，屬實不容易，大部分LLM走在一條用單一模型解決所有問題的道路上，但這實在不容易，畢竟很多任務是這樣的，你讓他執行單一任務，他可以做到很精確，像是圖像辨識，CNN幾乎就有了碾壓性的效果，但是你要讓他兼顧幾個不同任務，這是個大課題。<br>
+於是就有人想了，那如果我把幾個Model結合起來，會是什麼感覺呢？我先破個梗，如果處理得不好，大概就是以下這種狀況。<br>
+<a class="link" href="https://truth.bahamut.com.tw/s01/202308/909b0d9a99f76e2a3a25e61ad71672f9.JPG"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+這沒亂蓋吧？這張圖要多傳神就有多傳神，更何況他還說出了LLM的特色。<br>
+<a class="link" href="https://resize-image.vocus.cc/resize?compression=6&amp;norotation=true&amp;url=https%3A%2F%2Fimages.vocus.cc%2Ff16ce6bb-a28e-47f7-ad1b-8e6fa9c03a68.png&amp;width=740&amp;sign=yfYTu5Fs623l-Gw2PUiUovOXdSol7cjg23Kks13eGV8"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+好啦，回歸主題，接著介紹說幾個在本次實作會應用到概念。<br>
+**<a class="link" href="https://zh.wikipedia.org/zh-tw/%e6%99%ba%e8%83%bd%e4%bb%a3%e7%90%86"  target="_blank" rel="noopener"
+    >AI Agent</a>**是能自主理解任務、規劃步驟、執行行動並根據結果調整策略的概念，結合了大語言模型（LLM）、記憶、工具與回饋機制，能完成多步驟任務。例如自動撰寫報告、分析資料或審查程式碼，不再只是被動回答，而能主動行動。<br>
+**<a class="link" href="https://zh.wikipedia.org/zh-tw/%e6%a8%a1%e5%9e%8b%e4%b8%8a%e4%b8%8b%e6%96%87%e5%8d%8f%e8%ae%ae"  target="_blank" rel="noopener"
+    >MCP</a>**是一種標準化協定，用來讓 AI Agent 與工具、資料、記憶庫之間交換上下文與任務資訊。它幫助 Agent 保留任務狀態、共享工具清單、追蹤進度，實現多代理協作，MCP 讓 AI 系統有「記憶」與「任務持續性」。<br>
+<strong><a class="link" href="https://www.crewai.com"  target="_blank" rel="noopener"
+    >CrewAI</a></strong> 是一個多代理（Multi-Agent）開發框架，讓開發者能定義多個 AI Agent 角色、任務與互動流程。它支援任務拆解、工具整合與自動協作，可讓不同專長的 Agent 協同完成目標。CrewAI 常用於自動化工作流與智能應用開發。<br>
+<strong><a class="link" href="https://www.litellm.ai"  target="_blank" rel="noopener"
+    >LiteLLM</a></strong> 是一個開源介面，讓開發者能以統一方式呼叫多個語言模型（如 OpenAI、Google等）。它提供 OpenAI 風格 API、成本管理與模型切換功能，使系統能輕鬆整合不同 LLM，並與框架如 CrewAI 搭配使用。<br>
+綜合以上，簡單解釋我們怎麼實現AI Agent：其實MCP本質上很像<a class="link" href="https://zh.wikipedia.org/zh-tw/%e9%81%a0%e7%a8%8b%e9%81%8e%e7%a8%8b%e8%aa%bf%e7%94%a8"  target="_blank" rel="noopener"
+    >RPC</a>，透過通訊協議我們可以在程式中任意呼叫不同的LLM，再搭配Crew AI，幫我們實現了簡單定義Agent，Agent應負責的任務，提供流程上的支援，最後完成一套AI Agen的工作流程。##</p>
+<h2 id="程式內容">程式內容
+</h2><h3 id="crew-ai-with-ai-angent-by-liuchien-gemini">Crew AI with AI Angent By LiuChien (Gemini)
+</h3><p>Crew AI是一套Python函式庫，讓你可以輕鬆實現AI Agent，如果想搭配更多樣化的LLM，也可以搭配LiteLM。</p>
+<p>這個筆記本的程式雖然不多，但卻簡單實現了將一個 Ionic Project從Git下載之後進行解析，並且依照專案架構和相依套件進行解析，判斷目前專案出有什麼重大問題。</p>
+<hr>
+<p>接下來我們採用了幾個步驟，為一個專案做健康檢查：</p>
+<p>下載專案 分析專案架構 設定Crew AI、LiteLM (這裡設定用Gemini模型) 設定Agent (包含結構專家、依賴判斷專家、重構建議) 設定任務 (分別進行結構、依賴判斷，並給出建議) 開始解析並產出結果</p>
+<hr>
+<p>參考資料</p>
+<ul>
+<li><a class="link" href="https://www.google.com/url?q=https%3A%2F%2Fwww.crewai.com"  target="_blank" rel="noopener"
+    >https://www.crewai.com</a></li>
+<li><a class="link" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.litellm.ai"  target="_blank" rel="noopener"
+    >https://docs.litellm.ai</a></li>
+<li><a class="link" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.litellm.ai%2Fdocs%2Fproviders"  target="_blank" rel="noopener"
+    >https://docs.litellm.ai/docs/providers</a></li>
+<li><a class="link" href="https://www.google.com/url?q=https%3A%2F%2Faistudio.google.com%2Fu%2F4%2Fapi-keys%3Fhl%3Dzh-tw"  target="_blank" rel="noopener"
+    >https://aistudio.google.com/u/4/api-keys?hl=zh-tw</a></li>
+</ul>
+<h3 id="ㄧ安裝crew-ai與其他工具">ㄧ、安裝Crew AI與其他工具
+</h3><ol>
+<li>Langchain</li>
+<li>CrewAI</li>
+<li>OpenAI</li>
+<li>LiteLM</li>
+</ol>
+<h3 id="二設定金鑰">二、設定金鑰
+</h3><ol>
+<li>HuggingFace金鑰 (給LiteLM使用)</li>
+<li>DeepSeek金鑰</li>
+</ol>
+<p>因為我們會用到LiteLM串接HuggingFace上的LLM模型，如果使用的不是HuggingFace上的模型就不需要設定。</p>
+<h3 id="三示範用的github專案">三、示範用的Github專案
+</h3><ol>
+<li>一個年久失修，Ionic V1版本為基礎的Hybrid APP專案</li>
+</ol>
+<h3 id="四掃描專案架構">四、掃描專案架構
+</h3><ol>
+<li>專案架構和目錄組成</li>
+<li>相依套件組成</li>
+</ol>
+<h3 id="五定義agent並指定llm模型">五、定義Agent並指定LLM模型
+</h3><p>依照以下目標，我們對每個Agent設定了角色、工作目標、背景知識，必要的話也可以切換不同LLM模型一起協作。</p>
+<ol>
+<li>結構分析</li>
+<li>依賴分析</li>
+<li>重構建議</li>
+</ol>
+<p>特別注意我們這裡用的是LiteLM，串接HuggingFace上的Text-Generation模型，所以這裡傳入的是指定型位置的字串。 想知道有哪些LLM可以用，可以參閱<a class="link" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.litellm.ai%2Fdocs%2Fproviders%25E3%2580%2582"  target="_blank" rel="noopener"
+    >https://docs.litellm.ai/docs/providers。</a></p>
+<h3 id="六定義各agent需要執行的任務">六、定義各Agent需要執行的任務
+</h3><p>前兩個任務分別是分析專案結構、套件相依問題，並且可以指定任務，第三個任務是重構建議，則可以直接請Agent用前兩個任務總結下去做建議，Crew AI會自動幫你處理上下文，想像一下你就是在一個聊天視窗，分別作以下三個任務的行為。</p>
+<h3 id="七列印出分析結果和建議內容">七、列印出分析結果和建議內容
+</h3><p>以下是分析結果和建議內容。</p>
+<p>根據您提供的依賴分析結果，專案目前處於一個極度不穩定、過時且充滿潛在風險的狀態。由於缺少實際的程式碼目錄結構文字輸出，我將專注於從<strong>技術棧層面</strong>提出重構建議與<strong>框架層次</strong>的模組優化方向。一旦底層技術棧穩定並現代化，上層的業務邏輯模組拆分與優化將能更順利地進行。</p>
+<p>以下是具體的重構建議與模組優化方向：</p>
+<h3 id="前言當前專案核心問題概括">前言：當前專案核心問題概括
+</h3><p>目前專案最嚴重的問題是多重、衝突且嚴重過時的框架及套件依賴。這不僅導致專案無法正常運作，也帶來了巨大的安全漏洞、兼容性問題和維護負擔。任何上層的業務模組優化，都必須先建立在一個穩固且現代化的技術基礎之上。</p>
+<h3 id="一核心技術棧重構與現代化-基石重建">一、核心技術棧重構與現代化 (基石重建)
+</h3><p>這是專案最優先且必須執行的重構任務。目標是將整個應用程式升級到一個統一、最新且受到官方支援的技術棧。</p>
+<ol>
+<li>
+<p><strong>Ionic Framework 統一與升級：</strong></p>
+<ul>
+<li><strong>問題根源：</strong> 同時存在 Ionic 2 (<code>ionic-native</code>), Ionic 4 (<code>@ionic/angular</code>), Ionic 7 (<code>@ionic/core</code>) 的衝突依賴，導致無法正常編譯與運行。</li>
+<li><strong>重構建議：</strong>
+<ul>
+<li><strong>策略：</strong> 進行一次徹底的 Ionic Framework 大版本升級。強烈建議直接升級到<strong>最新穩定版 Ionic (目前為 Ionic 7 或 Ionic 8 beta)</strong>。這將涉及重大變更，但長遠來看是避免未來技術債務的最佳途徑。</li>
+<li><strong>具體步驟：</strong>
+<ul>
+<li>完全移除所有舊的 Ionic 相關套件 (<code>@ionic/angular: ^4.11.13</code>, <code>@ionic/core: ^7.8.6</code>, <code>ionic-native: ^2.9.0</code>)。</li>
+<li>安裝最新的 <code>@ionic/angular</code> 和 <code>@ionic/cli</code> 版本。</li>
+<li>根據 Ionic 官方升級指南 (例如從 v4 升級到 v5, v5 到 v6, v6 到 v7) 逐步調整程式碼。這可能涉及 Angular 版本、Router 配置、生命週期鉤子、元件用法等變更。</li>
+<li><strong>模組優化方向：</strong> 升級至現代 Ionic/Angular 版本後，將能充分利用 Angular 的模組化能力（如 <code>NgModule</code>、Standalone Components/APIs），更好地組織應用程式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>建置系統現代化 (Gulp 移除或升級)：</strong></p>
+<ul>
+<li><strong>問題根源：</strong> Gulp 3 及其配套插件嚴重過時，可能與新版 Node.js 不兼容，且缺乏維護，存在安全風險。</li>
+<li><strong>重構建議：</strong>
+<ul>
+<li><strong>策略一 (推薦)：</strong> 徹底移除 Gulp，轉而使用 <strong>Angular CLI 內置的建置系統</strong>。對於 Ionic/Angular 專案，Angular CLI 提供了完整的開發、建置、測試工具鏈，性能更優且更易於維護。</li>
+<li><strong>策略二 (次選)：</strong> 如果專案有極其複雜且難以遷移的 Gulp 任務，則將 Gulp 升級到 <strong>Gulp 4</strong>，並將所有相關 Gulp 插件 (<code>gulp-concat</code>, <code>gulp-minify-css</code>, <code>gulp-rename</code> 等) 升級到最新穩定版，或替換為現代替代方案 (例如 <code>gulp-clean-css</code> 替代 <code>gulp-minify-css</code>)。</li>
+<li><strong>模組優化方向：</strong> 現代化的建置系統能更好地支持 Tree Shaking、Lazy Loading 等優化技術，減少打包大小，提高應用程式性能。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cordova 插件與 <code>ionic-native</code> 統一升級：</strong></p>
+<ul>
+<li><strong>問題根源：</strong> 大量 Cordova 插件版本過時，且 <code>ionic-native: ^2.9.0</code> 已廢棄，與現有或未來的 Ionic 版本不兼容，帶來安全隱患和運行時不穩定。</li>
+<li><strong>重構建議：</strong>
+<ul>
+<li><strong>策略：</strong> 將所有 Cordova 插件和 <code>ionic-native</code> 依賴升級到最新且兼容 AndroidX 的版本。</li>
+<li><strong>具體步驟：</strong>
+<ul>
+<li>移除 <code>ionic-native: ^2.9.0</code>。</li>
+<li>對於每個舊的 Cordova 插件 (<code>cordova-plugin-device: ^1.1.7</code>, <code>cordova-plugin-splashscreen: ^4.1.0</code>, <code>cordova-plugin-statusbar: 2.4.2</code> 等)，查找其最新穩定版，並替換為官方維護的 <code>@ionic-native/*</code> 範疇套件 (例如 <code>@ionic-native/device</code>) 和相應的 Cordova 插件版本。</li>
+<li>仔細檢查每個插件的 Breaking Changes，並調整程式碼以適應新版本 API。</li>
+<li><strong>模組優化方向：</strong> 統一使用 <code>@ionic-native/*</code> 套件，可以將裝置相關功能封裝在獨立的服務模組中，例如 <code>DeviceService</code>，提高可重用性和測試性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>AndroidX 兼容性解決方案：</strong></p>
+<ul>
+<li><strong>問題根源：</strong> 雖然有 <code>cordova-plugin-androidx</code> 和 <code>cordova-plugin-androidx-adapter</code>，但由於其他插件過於老舊，可能仍無法完全兼容。</li>
+<li><strong>重構建議：</strong> 在完成 Ionic Framework 和所有 Cordova 插件升級後，重新評估並調整 AndroidX 的兼容性。最新的 Cordova 和插件通常會內置 AndroidX 支援，使得這些輔助插件不再必要或需要更新到最新版本。</li>
+</ul>
+</li>
+</ol>
+<h3 id="二模組結構優化與最佳實踐-基於-angularionic-現代化架構">二、模組結構優化與最佳實踐 (基於 Angular/Ionic 現代化架構)
+</h3><p>在完成技術棧的底層重構後，可以開始實施現代化 Angular/Ionic 專案的模組化策略。</p>
+<ol>
+<li>
+<p><strong>清晰的職責分離 (Separation of Concerns)：</strong></p>
+<ul>
+<li><strong>優化方向：</strong> 將應用程式的各個層次明確劃分職責，例如：
+<ul>
+<li><strong><code>core</code> 模組：</strong> 放置應用程式級別的單例服務 (如認證、日誌、核心配置)、Guard、Interceptor 等。這些服務通常在應用程式啟動時載入一次。</li>
+<li><strong><code>shared</code> 模組：</strong> 放置在多個功能模組中被重用的元件 (Components)、指令 (Directives)、管道 (Pipes) 和輔助服務 (Utility Services)。</li>
+<li><strong><code>features</code> 模組：</strong> 根據業務功能劃分，每個功能模組包含其特有的頁面、元件、服務和路由。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Angular 特性模組化 (Feature Modules)：</strong></p>
+<ul>
+<li><strong>優化方向：</strong> 根據主要業務功能，將應用程式拆分為多個獨立的 Angular Feature Modules。</li>
+<li><strong>實踐：</strong>
+<ul>
+<li>例如：<code>AuthModule</code> (處理登入、註冊、忘記密碼), <code>DashboardModule</code>, <code>UserProfileModule</code>, <code>SettingsModule</code> 等。</li>
+<li>每個 Feature Module 應具備自己的路由配置，並可實現延遲載入 (Lazy Loading)，以優化應用程式的初始載入時間。</li>
+<li>此策略極大地降低了模組間的耦合度，提升了開發效率和可維護性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>共用元件與服務模組 (<code>SharedModule</code>)：</strong></p>
+<ul>
+<li><strong>優化方向：</strong> 建立一個 <code>SharedModule</code> 來匯出 (export) 那些在整個應用程式中都會被使用到的元件、指令、管道和常用 Angular Modules (如 <code>CommonModule</code>, <code>FormsModule</code>, <code>IonicModule</code>)。</li>
+<li><strong>實踐：</strong> 避免在 <code>SharedModule</code> 中提供 (provide) 服務，以防止單例服務被多個延遲載入模組重複實例化。服務應在 <code>CoreModule</code> 或特定的 Feature Module 中提供。</li>
+</ul>
+</li>
+<li>
+<p><strong>資料存取抽象模組 (<code>DataModule</code> 或 <code>APIModule</code>)：</strong></p>
+<ul>
+<li><strong>優化方向：</strong> 將所有與後端 API 互動、資料處理、資料庫存取 (如果應用程式有離線資料庫) 的邏輯集中在一個或幾個特定的模組中。</li>
+<li><strong>實踐：</strong>
+<ul>
+<li>定義統一的 API 服務，例如 <code>UserService</code>, <code>ProductService</code>，這些服務只負責與後端通信和資料轉換，而不包含業務邏輯。</li>
+<li>可以使用 <code>HttpClientModule</code>、<code>ngrx/store</code> (如果需要狀態管理) 或其他資料管理庫。</li>
+<li>這有助於將後端細節與前端業務邏輯解耦，提高資料層的可測試性和可替換性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>設定檔模組化 (<code>ConfigModule</code>)：</strong></p>
+<ul>
+<li><strong>優化方向：</strong> 集中管理應用程式的所有配置設定 (如 API 端點、環境變數、常數)。</li>
+<li><strong>實踐：</strong> 建立一個 <code>ConfigService</code> 或使用 Angular 的 <code>environment.ts</code> 檔案，確保配置參數在不同環境 (開發、測試、生產) 下能被正確管理和載入。</li>
+</ul>
+</li>
+</ol>
+<h3 id="三技術債務清理與風險管理">三、技術債務清理與風險管理
+</h3><ol>
+<li><strong>廢棄套件移除：</strong> 清理 <code>package.json</code>，移除所有已明確廢棄或不再使用的套件依賴，減輕專案負擔。</li>
+<li><strong>安全性漏洞修復：</strong> 透過升級所有套件到最新版本，修復已知的老舊套件帶來的安全性漏洞。定期使用 <code>npm audit</code> 或類似工具檢查依賴安全問題。</li>
+<li><strong>性能與維護性提升：</strong>
+<ul>
+<li>採用最新的 Angular/Ionic 功能 (如 Standalone Components, Signals 等)，簡化程式碼，提高執行效能。</li>
+<li>精簡打包體積，利用 Tree Shaking 和 Lazy Loading 優化應用程式啟動速度。</li>
+<li>確保所有程式碼都符合 Linting 規範 (如 TSLint 或 ESLint)，保持程式碼風格一致性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="四實施策略建議">四、實施策略建議
+</h3><p>由於涉及大規模的技術棧升級，建議採用以下策略：</p>
+<ol>
+<li><strong>階段性重構：</strong> 不要試圖一次性升級所有東西。可以先專注於 Ionic Framework 和 Angular 的核心升級，確保應用程式能重新運行，然後再逐步處理 Cordova 插件和 Gulp 移除。</li>
+<li><strong>建立全面的測試：</strong> 在開始大規模重構之前，盡可能多的建立現有功能的自動化測試（單元測試、整合測試），以確保在重構過程中不會引入新的錯誤，並能驗證升級後的應用程式行為符合預期。</li>
+<li><strong>版本控制與分支策略：</strong> 使用強大的版本控制系統 (如 Git)，並為重構工作建立一個專門的長期分支。頻繁提交並在小階段完成後合併回主分支。</li>
+<li><strong>團隊培訓：</strong> 如果團隊成員不熟悉新的 Ionic/Angular 版本和最佳實踐，需要提供相應的培訓。</li>
+</ol>
+<p>這個專案的重構是一個巨大的挑戰，但也是一次徹底清理技術債務、提升專案品質和未來可維護性的絕佳機會。</p>
+<h2 id="結論">結論
+</h2><p>我這次一共實作了 <strong>Gemini</strong> 和 <strong>DeepSeek</strong> 兩個版本。整體來說，實作成本並不高，只需要準備好呼叫模型所需的 <strong>API 金鑰</strong>。</p>
+<p>使用不同的 LLM 作為 Agent 是一件很有趣的事。雖然這次的範例中我都採用了相同的 LLM，但實際應用時，<strong>依照不同 LLM 的特性進行分工與配置</strong>，往往能獲得更佳的效益。文末我也附上了原始碼，大家可以自己試著玩玩看 —— 不過記得要先申請金鑰喔。</p>
+<p>以 <strong>MCP 的規劃</strong> 來看，它的目標並不只是讓 LLM 扮演 RPC 的角色而已。對 AI Agent 而言，最具突破性的能力是「<strong>互為 Agent、甚至能相互分享</strong>」。這樣的設計讓 AI Agent 的概念再次向前推進一大步。</p>
+<p>在不久的將來，AI 的成長速度可能會比我們想像中更快、更強，而我們正親眼見證這段歷史的展開。</p>
+<h3 id="原始碼">原始碼
+</h3><p><a class="link" href="https://github.com/liuchiente/code%5c_from%5c_colab%5c_and%5c_kaggle/blob/8a43714aeb4d9eb9eabdf5a7f951810e868e2e8f/Crew%5c_AI%5c_with%5c_AI%5c_Angent%5c_By%5c_LiuChien%5c_%28Gemini%29%5c_Public.ipynb"  target="_blank" rel="noopener"
+    >Crew_AI_with_AI_Angent_By_LiuChien_(Gemini)_Public.ipynb (Github.com)</a><a class="link" href="https://github.com/liuchiente/code%5c_from%5c_colab%5c_and%5c_kaggle/blob/1e65d4b85b2663769d573fd293a10440b0038876/Crew%5c_AI%5c_with%5c_AI%5c_Agent%5c_By%5c_LiuChien%5c_%28DeepSeek%29%5c_Public.ipynb"  target="_blank" rel="noopener"
+    >Crew_AI_with_AI_Agent_By_LiuChien_(DeepSeek)_Public.ipynb (Github.com)</a></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai-agent/">AI Agent</a>
+        
+            <a href="/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/">後AI時代</a>
+        
+            <a href="/tags/generative-ai/">Generative AI</a>
+        
+            <a href="/tags/mcp/">MCP</a>
+        
+            <a href="/tags/crewai/">CrewAI</a>
+        
+            <a href="/tags/litellm/">LiteLLM</a>
+        
+            <a href="/tags/multi-agent/">Multi-Agent</a>
+        
+            <a href="/tags/llm/">LLM</a>
+        
+            <a href="/tags/ai-framework/">AI Framework</a>
+        
+            <a href="/tags/ai-architecture/">AI Architecture</a>
+        
+            <a href="/tags/python-ai/">Python AI</a>
+        
+            <a href="/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/">AI 自動化</a>
+        
+            <a href="/tags/ai-%E5%8D%94%E4%BD%9C/">AI 協作</a>
+        
+            <a href="/tags/ai/">AI</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Saturday, November 1, 2025
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2025-01-prompt-fine-tune-va-training-ai-moi-la/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Prompt, Fine-tune và Training, ai mới là công trình lớn?</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="你的GitHub帳號/你的Repo名稱"
+    data-repo-id="R_xxxxxxxx"
+    data-category="Announcements"
+    data-category-id="DIC_xxxxxxxx"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
+    </span>
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
+    </span>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
+
+    </body>
+</html>

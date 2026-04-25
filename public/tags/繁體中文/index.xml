@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>繁體中文 on Liuchien&#39;s Blog</title>
+        <link>https://liuchien.inxpire.tw/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</link>
+        <description>Recent content in 繁體中文 on Liuchien&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Thu, 10 Jul 2025 08:41:52 +0000</lastBuildDate><atom:link href="https://liuchien.inxpire.tw/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>從AI看繁體中文的美麗與哀愁</title>
+            <link>https://liuchien.inxpire.tw/posts/2025-07-ai/</link>
+            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
+            <guid>https://liuchien.inxpire.tw/posts/2025-07-ai/</guid>
+            <description>&lt;p&gt;開始之前，先了解一下ChatGPT是如何做出來的， &lt;strong&gt;ChatGPT&lt;/strong&gt; 是基於 &lt;strong&gt;GPT（Generative Pretrained Transformer）&lt;/strong&gt; 架構所開發的語言模型。這個模型通過大量的資料訓練，來學習語言的結構和上下文，並在推理階段能夠生成連貫且自然的文本。&lt;/p&gt;&#xA;&lt;p&gt;因此在成就一個好的ChatBot模型，除了基礎的模型架構，像是經典的&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/zh-tw/Transformer%E6%A8%A1%E5%9E%8B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Transformer&lt;/a&gt;之外，再來就是大量的&lt;strong&gt;資料集（Dataset）&lt;/strong&gt; 了，資料集是一組結構化或非結構化的資料集合，用於訓練、測試或驗證各類機器學習和AI模型。&lt;/p&gt;&#xA;&lt;p&gt;資料集的品質、大小和多樣性，都會直接影響到模型的表現，因此在訓練模型過程中，怎麼去選擇和準備合適的資料集就顯得非常重要，在模型推理階段，越多樣化的資料權重，可以讓模型做出更精細的推理和判斷。&lt;/p&gt;&#xA;&lt;p&gt;當今人工智慧技術快速發展，語言模型（如 ChatGPT）在自然語言處理（NLP）領域中扮演重要角色。然而，這些模型的訓練品質高度依賴於語料的數量與多樣性。對繁體中文而言，語料的缺乏已成為一個嚴重問題，對 AI 訓練產生深遠影響。&lt;/p&gt;&#xA;&lt;p&gt;首先，與英文或簡體中文相比，繁體中文的網路資源與公開資料集相對稀少。許多語料庫偏重簡體中文，因為中國大陸擁有龐大的網路使用者與內容生產者，資料量自然遠超台灣、香港等地區。由於繁體中文使用者基數較小，導致語言模型在訓練時無法取得足夠的高品質繁體文本，無法深入學習繁體用語、文法結構、地區性用詞與文化脈絡。&lt;/p&gt;&#xA;&lt;p&gt;其次，語料缺乏會直接影響模型的準確性與表現。當語言模型無法接觸足夠的繁體資料，它在生成文字時容易出現語意不通、簡繁混用或用詞不地道的情況。例如，台灣常用的「機車」、「發票」、「健保」等詞彙，在模型訓練中若出現頻率不足，就難以理解其真實意涵與使用場景，造成回應不自然，甚至誤解使用者意圖。&lt;/p&gt;&#xA;&lt;p&gt;再者，這也衍生出公平性與語言平權的議題。語言模型若長期忽略某些語言或書寫系統，等於在技術層面上加深語言邊緣化，使得以繁體中文為母語的使用者無法享受與英文或簡體使用者同等水準的 AI 服務；因此，提升繁體中文語料的豐富性與多樣性，對於打造更公平、精準且具在地文化理解的 AI 系統至關重要。&lt;/p&gt;&#xA;&lt;p&gt;隨著生成式人工智慧（Generative AI，簡稱 Gen AI）的迅速發展，全球語言科技的應用也日益普及。然而，在這波技術革新的背後，卻也逐漸浮現出文化排擠的現象。由於生成式 AI 的訓練資料來源極度仰賴網路上龐大的語料，而中文語料中，簡體中文占據了絕大多數的份量，這使得 AI 模型在學習與生成中文內容時，往往更偏向簡體用語與中國大陸的語境。&lt;/p&gt;&#xA;&lt;p&gt;這種語言偏向造成了一種「磁吸效應」，即繁體中文在技術應用中被邊緣化，反而吸引使用者與開發者逐步靠攏簡體中文，無論是在字詞選擇、語法習慣，甚至在文化內容的呈現上，越來越多繁體使用者開始主動或被動地調整語言風格，以求系統能正確理解或回應，久而久之，便可能導致語言與文化的單一化，失去原有的多樣性與在地性。&lt;/p&gt;&#xA;&lt;p&gt;這樣的趨勢不僅體現在數位領域，也逐漸滲透到社會上的藝文活動。例如，一些在地創作者為了追求更廣泛的觸及率，可能選擇使用簡體中文發表作品；又或是國際合作場合中，繁體文化的特色被簡化或淡化，轉而以較為普遍的簡體語境作為表達方式，這不僅影響了文化的傳承，也讓許多原本獨特的本地語言特色逐漸被稀釋。&lt;/p&gt;&#xA;&lt;p&gt;為避免文化多樣性被技術潮流吞沒，我們應更加重視繁體中文的語料建構與 AI 訓練參與，讓科技不只是工具，更是文化傳承與多元共融的助力。&lt;/p&gt;&#xA;</description>
+        </item></channel>
+</rss>

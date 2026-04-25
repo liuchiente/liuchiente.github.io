@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="這是我在中興大學資工系修習影像處理 Digital Image Processing這門課程所做的課後作業，在這個作業中，我將會使用到數學形態學(Mathematical morphology)中的一些技巧，包含侵蝕(Erosion)、膨脹(Dilation)，來實現如標題所需要的邊界抽取(Boundary Extraction)及區域填充(Region Filling)。\n">
+<title>影像處理 | Boundary Extraction &amp;amp; Region Filling</title>
+
+
+<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2021-02-boundary-extraction-region-filling/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="影像處理 | Boundary Extraction &amp; Region Filling">
+<meta property='og:description' content="這是我在中興大學資工系修習影像處理 Digital Image Processing這門課程所做的課後作業，在這個作業中，我將會使用到數學形態學(Mathematical morphology)中的一些技巧，包含侵蝕(Erosion)、膨脹(Dilation)，來實現如標題所需要的邊界抽取(Boundary Extraction)及區域填充(Region Filling)。\n">
+<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2021-02-boundary-extraction-region-filling/'>
+<meta property='og:site_name' content='Liuchien&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='Dilation' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:tag' content='Boundary Extraction' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='Region Filling' /><meta property='article:tag' content='Erosion' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2021-02-04T18:57:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-22T02:41:33&#43;00:00'/>
+<meta name="twitter:title" content="影像處理 | Boundary Extraction &amp; Region Filling">
+<meta name="twitter:description" content="這是我在中興大學資工系修習影像處理 Digital Image Processing這門課程所做的課後作業，在這個作業中，我將會使用到數學形態學(Mathematical morphology)中的一些技巧，包含侵蝕(Erosion)、膨脹(Dilation)，來實現如標題所需要的邊界抽取(Boundary Extraction)及區域填充(Region Filling)。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien&#39;s Blog</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2021-02-boundary-extraction-region-filling/">影像處理 | Boundary Extraction &amp;amp; Region Filling</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2021-02-04T18:57:00Z'>Thursday, February 4, 2021</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 4 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>這是我在中興大學資工系修習影像處理 Digital Image Processing這門課程所做的課後作業，在這個作業中，我將會使用到數學形態學(<strong><a class="link" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E5%BD%A2%E6%80%81%E5%AD%A6"  target="_blank" rel="noopener"
+    >Mathematical morphology</a></strong>)中的一些技巧，包含侵蝕(<strong>Erosion</strong>)、膨脹(<strong>Dilation</strong>)，來實現如標題所需要的邊界抽取(<strong>Boundary Extraction</strong>)及區域填充(<strong>Region Filling</strong>)。</p>
+<p>本作業的原理是這樣，我們可以在二值化影像中利用形態學原理來改變影像內容，假想一下，所所謂的**<a class="link" href="https://zh.wikipedia.org/wiki/%e4%ba%8c%e5%80%bc%e5%8c%96"  target="_blank" rel="noopener"
+    >二值化影像</a>**，就是影像的像素簡單表現為0和1(嚴格來說應該是255)，就是全亮和全暗，以下我則描述為全黑和全白，這些像素將構成完整的圖片。</p>
+<p>想像一下，你拿著一隻立可白塗黑板，黑板上就只有白色線條和黑色版面。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghXUGccyaAzATN-E-P-K%5c_tk9g8iMRbNOs6bwXeu2UV56bkjMxBE0Bb41swM9VBS4jAzzZCyEkyYjo5Tjv1-DeZFNi1yf9ipGZvpWMWjwC8w%5c_0kmpM6ypkFSdyFcfiTZxJ0-fo%5c_rvArFp4Y3AOcmF9FbmVtE9951fWhV687eWhT91mBJrGM6JWtEzN1HNk/s220/Region%20Filling18.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+一張簡單的二值化影像，影像中只有全黑、全白兩種像素 <a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEho49UJ2SFvACyb38BxEiHNWkf6e2E7Qj4wBAb3-6LON%5c_XkflmARxwAPIOxbru2MRlOytc%5c_LoLaf-FLicuZxWiPE7nEHMM4QFBwFMx9k8oKCkY65Ql0bLDfFND0R0uz1HEVhPT3AweLdapZV1Yh8r9lgYbBhVXBJdTZOlB8PQ7LbSmVv0gEwQy4PG4Mt2k/s329/Region%20Filling8.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+二值化影像的像素分佈情況往下描述如何透過<strong>Erosion</strong>和<strong>Dilation</strong>來分別實現<strong>Boundary Extraction</strong>、<strong>Region Filling</strong>。</p>
+<p><strong>Boundary Extraction</strong></p>
+<p>只需用到<strong>Erosion</strong>，再搭配像素加減運算，謹記著幾個要點即可。</p>
+<p><strong>Erosion</strong>是將影像中白色區域做減肥，運算完的結果會比原圖的白色區域更小，讓該物體瘦一圈，這一圈的寬度是由捲積Kernel 的大小所決定的， Kernel沿著影像滑動並計算，如果Kernel中m * n 範圍內所有像素值都是1，那麼新的像素值就保持原來的值，否則新的像素值為0，Kernel掃過的所有像素都會被腐蝕或侵蝕掉，影像的白色區域會變少。</p>
+<p>在我們執行完<strong>Erosion</strong>後，可以發現1的部位被縮小了，就視覺上未必會發現亮的部位變小，因為他的變化著實很細微，有些原圖亮的像素是1，他在<strong>Erosion</strong>結果中是0，如果把他們相減，就可以得到找到亮部的相差，如此就會拿到亮部的輪廓。</p>
+<p>先把圖片<strong>Ａ</strong>做Erosion後，高亮的地方變瘦了，接著用原圖減去Erosion結果<strong>Ｂ</strong>，對比原圖，<strong>Ｂ</strong>(<strong>Erosion</strong>)亮的地方比較瘦，原圖減去Erosion結果<strong>Ａ-B</strong>，可以得到在Erosion結果中對比原圖沒有的亮部位，就可以得到邊緣了。</p>
+<p>看一下<strong>Boundary Extraction</strong>的處理步驟：特別提醒一點，這邊說的相減或其他運算，都是指向素值處理，可以想像成把圖片轉成向量後做計算。</p>
+<p> １.Boundary Extraction測試原圖<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjIquq7RWiSizvARYE3TNrq2NMnIhMUrYHCcG2TxKlHMPsZ0S5D142xDXR9qKrCW3iR3-Zt1jrlsSxfftWrC45J9CVvMEtWrvONaa3-lxkI-VhZPNmlf0LC2DRDnD9QdHz4yFNaM14kBo2PBCU9qSMCX5VoJdNCm1BCP9N%5c_Dpv6eMEaceG2CKRsBs7f-YE/s308/Region%20Filling9.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+ 2.Erosion結果，肉眼看不出，但亮部已經變小了。 <a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQxA5gf05oocz5wGJ2j%5c_d3B5OzVj8Q80LRq%5c_pTs1v6hpJS4dSESRURBwrlo4kh0k6pZo2wsjntqxdstVHzKLYmhm4z571BKa6443YNAEvIRlMm5myzq2GILwoGXV74caY9SkLgTo6w6ZwFhF8yEB6slK6sh-yNW-G0-KHm-p2kvP3TP6vviXn6rrDzfbA/s329/Region%20Filling8.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>3.相減之後可以得到邊緣<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhaQluwPhJEX9wr8O4ImcDeCoL2m3e2v48Jt9Z-DiA-hv83VsBv77RWHz2%5c_Jnh6p-WF23NSr9FWkMAuhCsbN6RbU%5c_dikTZXj%5c_29vm3JceK4Lm2qF3I0lhFjZzj65jPzqyfd9MJiR3NUHXHMLYInf-rNlOfDcjjNlpLtOv6IqGMvVZ0z4PNSBzw5Q4yfnbI/s350/Region%20Filling10.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><strong>Region Filling</strong></p>
+<p>這裡需要用到Dilation再搭配影像的其他運算。</p>
+<p>Dilation的概念就是將影像中白色區域增肥，運算完的結果圖比原圖的白色區域更大，這一圈的寬度是由捲積 Kernel 的大小所決定的，Kernel沿著影像滑動並計算，如果捲積 Kernel m * n 範圍內只要有一個像素值是1，那麼新的像素值就為1，否則新的像素值保持原來的像素值，這表示捲積 Kernel 掃過的所有像素都會被擴張或膨脹，整張影像的白色區域會變多。</p>
+<p>Region Filling區域填充，我先把原圖A用NOT取得相反(補數)的圖C，接著我先在原圖A要擴充的黑色部位加上白點，再來我將原圖A做Dilation後，亮度會變高得到圖B，但為了限縮白色不要超出邊緣無限增長，必須把B和C做AND運算，則得到一個結果Ａ。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">此時可以看到我撒上的白點以已經被放大，但是其他部位因為和補數C做過AND，所以會被限縮著，重複做50次後，可以發現我的點都被白色填滿了，是圖D。</p>
+<p>接著把填滿的圖D和原圖做OR運算，可以看到原圖中的其他部位被保留了，但是我指定的點變成白色了，就可以看到一個完整的填充效果。</p>
+<p>看一下<strong><strong>Region Filling</strong></strong>的處理步驟：特別提醒一點，這邊說的相減或其他運算，都是指向素值處理，可以想像成把圖片轉成向量後做計算。</p>
+<p> Region Filling測試原圖<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxZMWA%5c_48fgLdoS%5c_q8qupi0dfzZGY1LUryEovBDWRaKIpFT5YMH0MrRhUgzGuMsU9ZoFr-mZ97VqZJ8xhVYlFXydhLoVfuDeAdHydT1nVlUrau1CQFKCy6XEc%5c_mPoGaSFt2Br3m3e2Arkr5soqg2EiXd8EUvmedCHXzb7iBxY-jP-7gEs4hFeiPcMjTPE/s420/Region%20Filling11.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+NOT後得到補數圖<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdRTgrG8gnEOsVa-9VcWE4-StlKLrEUWGpAgy8744NrLEShQfOuYNLDyaCGy0jebLi0N%5c_rqus7RZlSsZqk6fL2SQ2fayRrHv2P-7JHfyJrv9-U7K5lISuV6f1fDygwpBkMLQM-ykifgQCI%5c_Zq3nn0ET0aWCS3Pv5ikSDvijUZoXG8b7h3JPNB02o0Kpo0/s410/Region%20Filling12.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a> 每次Dilate後白色膨脹，跟補數做AND，做完數次後得到以下。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrHZBEfsMTU1d6BIibvOXhIMLu729gOFW%5c_peZ6zIwyJXY0XrZ0JXubHQ-Iv%5c_V2H2rkzmSoX8tGHRYuhp5Rg-mOrqGLtChDbmLDqkv-zI71ozFEoa9FCgtlPr69BHibY-SPSYRCNb5t-YjdmWHNUDhZXYeg8pYnmm0U65aQ7v6BlnJ2ybnNudfXgiZTFq0/s343/Region%20Filling13.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a> 最後把原圖和Dialte後的圖做OR得到填充的圖。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrzZ4HpxITCx-x0DRLeJTgF57Mb5XjKiyjZ5IHpgZSNlJc1mqp53qY%5c_LCtOLAHw0J2DXyngI0CEYr7BrVXgJK1vCtY%5c_Iynt1HA%5c_Mr2w9zUF2o4EEkfuxp8JeAJgwTy9OPtXOewdz2-VtofxhJBW2mJrzdffU3I-DuhizGOnbwDEWXQwAp1um%5c_HTWk2dtk/s370/Region%20Filling14.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>預先撒上白點才能正確做到填充效果，其實也只是把白點放大再放大，然後再用原始圖去限縮他的邊界，避免失真。我曾嘗試用Erode後的圖取補數再去填充，但是會發現沒法控制邊緣一直變大，後來才改回原圖的補數去填充，就可以應付各種形狀的填充，跟小畫家的效果一樣，即便是用不規則的圖也可以被補數解決掉，還原出原本的形狀。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcrhIDvf9xxrdw31LMLnYI6wPmtB9kkvfvFAh1jRyQFedgcWz-%5c_y3Qak5KXCUb8fCKxgmNpLcf0BXW8TGHtoEnJ%5c_StX6dY9wyWeu8W%5c_mB7hgv2qaii2GBxa1MJEyamkiIpM6fvTorxWF7xuPO1yq8If3qP1mxY1vgMX0YneW3nqlMxV6JSb9SrWu3m%5c_ek/s220/Region%20Filling18.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGVnVLG%5c_TBkbeY2qwcqcBdQIS6bGGtMpeMlc9YZC3wnBo5o5pB4v5Vt6s5I5ba-pD6jrFxpFEHFRB6%5c_S2qubbbKsZPmJs9c8iWWUb0b6bpU2-9ACSeotmCTm1lPX%5c_Xgsm9KZFUiYWrTvaAVuJVVw3x3wSi31n0r3H41uFng0-dBCp5SrJyyzucKXemXI0/s214/Region%20Filling17.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIDm8KwD0KM1h8ijfV9pSoZtObd6-JuI3dQdVevz8%5c_9LjWdHdScwnRVSMdipWEupZeUc3CayGIdMbxGGAhubllwNQ1ibPs5-BSbItgAY1FB3%5c_lwkMceODNxcULKYBNQooImWUdZk%5c_ym%5c_USfkSTJdZJg8FiZVDlDsxQphqvfzSUpaTUclf9KXiSSVwvedg/s214/Region%20Filling16.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2XO5bUIsgJHn0o9bn8hfgyHYa6mma3GMRFNGaCxU1r%5c_wLcos5aYtxJDueCkrGvgTRf8sJ4fDg5wi13otcSf7Q032qOtpJbkXL7SNM2Rj-R9gTYf3SryzHxdLHoH9sWVaAmhrdEWK7QqHB34iptu4bgDncACIbdYu2rHC9DrmES3U32QYdsmluFVajbq0/s220/Region%20Filling15.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a></p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">如果你需要更進一步了解Source Code的話，<a class="link" href="https://github.com/liuchiente/DigitalImageProcessAtNCHU/blob/main/Boundray%5c_Extraction%5c_%26%5c_Region%5c_Filling.ipynb"  target="_blank" rel="noopener"
+    >可以參考我寫的Python版本 on Colab</a>，希望對你有幫助。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/">影像處理與深度學習</a>
+        
+            <a href="/tags/dilation/">Dilation</a>
+        
+            <a href="/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/">中興大學資工所</a>
+        
+            <a href="/tags/boundary-extraction/">Boundary Extraction</a>
+        
+            <a href="/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/">學習紀錄</a>
+        
+            <a href="/tags/region-filling/">Region Filling</a>
+        
+            <a href="/tags/erosion/">Erosion</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Wednesday, January 22, 2025
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="你的GitHub帳號/你的Repo名稱"
+    data-repo-id="R_xxxxxxxx"
+    data-category="Announcements"
+    data-category-id="DIC_xxxxxxxx"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
+    </span>
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
+    </span>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
+
+    </body>
+</html>

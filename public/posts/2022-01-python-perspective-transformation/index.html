@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 主要演算法 通常我們在自然背景拍攝一張照片時，或多或少都會有一些透視變形存在，而透視變形是由拍攝和觀看圖像的相對距離決定的，導致遠近特徵的相對比例有變化，產生了彎曲或變形，當然在本例子，我是刻意拍了一張比例歪斜的圖，想要驗證依照公式轉換會得到什麼效果。 依照解決方法，這樣的變形我們可以下列的聯立方程式來表示： \u200bx = ax’ + by’ + cx’y’ + d\n">
+<title>用Python實作 Perspective Transformation 透視變換</title>
+
+
+<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2022-01-python-perspective-transformation/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="用Python實作 Perspective Transformation 透視變換">
+<meta property='og:description' content=" 主要演算法 通常我們在自然背景拍攝一張照片時，或多或少都會有一些透視變形存在，而透視變形是由拍攝和觀看圖像的相對距離決定的，導致遠近特徵的相對比例有變化，產生了彎曲或變形，當然在本例子，我是刻意拍了一張比例歪斜的圖，想要驗證依照公式轉換會得到什麼效果。 依照解決方法，這樣的變形我們可以下列的聯立方程式來表示： \u200bx = ax’ + by’ + cx’y’ + d\n">
+<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2022-01-python-perspective-transformation/'>
+<meta property='og:site_name' content='Liuchien&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='Perspective Transformation' /><meta property='article:tag' content='OpenCV' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:tag' content='工作管理' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='Digital Image Process' /><meta property='article:tag' content='上課學習心得' /><meta property='article:tag' content='Python' /><meta property='article:published_time' content='2022-01-27T08:56:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-15T02:12:32&#43;00:00'/>
+<meta name="twitter:title" content="用Python實作 Perspective Transformation 透視變換">
+<meta name="twitter:description" content=" 主要演算法 通常我們在自然背景拍攝一張照片時，或多或少都會有一些透視變形存在，而透視變形是由拍攝和觀看圖像的相對距離決定的，導致遠近特徵的相對比例有變化，產生了彎曲或變形，當然在本例子，我是刻意拍了一張比例歪斜的圖，想要驗證依照公式轉換會得到什麼效果。 依照解決方法，這樣的變形我們可以下列的聯立方程式來表示： \u200bx = ax’ + by’ + cx’y’ + d\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien&#39;s Blog</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2022-01-python-perspective-transformation/">用Python實作 Perspective Transformation 透視變換</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2022-01-27T08:56:00Z'>Thursday, January 27, 2022</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 2 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <ul>
+<li>主要演算法
+<ol>
+<li>通常我們在自然背景拍攝一張照片時，或多或少都會有一些<a class="link" href="https://zh.wikipedia.org/zh-tw/%e9%80%8f%e8%a7%86%e5%8f%98%e5%bd%a2"  target="_blank" rel="noopener"
+    >透視變形</a>存在，而透視變形是由拍攝和觀看圖像的相對距離決定的，導致遠近特徵的相對比例有變化，產生了彎曲或變形，當然在本例子，我是刻意拍了一張比例歪斜的圖，想要驗證依照公式轉換會得到什麼效果。</li>
+<li>依照解決方法，這樣的變形我們可以下列的聯立方程式來表示：</li>
+</ol>
+</li>
+</ul>
+
+    <blockquote>
+        <p>​x = ax’ + by’ + cx’y’ + d</p>
+<p>y = ex’ + fy’  + gx’y’ + h</p>
+<p>​其中x、y為你原始影像的座標系，x’、y’為校正後的座標系，</p>
+<p>a、b、c、d、e、f、g、h為常數，表示變形關係。</p>
+
+    </blockquote>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZVtlp1SLZgwoOC1oxy2t2ODxKP0YgTJliqSwhwjLYYLiRRaSLblhs03LLqDW5fRWof5ttOIYFC6jY3dit5JSIbtqEZU3pKm75LJZ1U4atBN-g9ij%5c_Tgh4qhh4r81lWzH5pOR9e%5c_5qOru3qE4XITOQwfFCLvcOWhYIZHMuv8LVtdJk-5iBOIwaZDk0HbU/s866/Perspective%20Transformation1.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>* 程式片段</p>
+<ol>
+<li>定義<a class="link" href="https://zh.wikipedia.org/zh-tw/%e9%ab%98%e6%96%af%e6%b6%88%e5%8e%bb%e6%b3%95"  target="_blank" rel="noopener"
+    >高斯消去</a></li>
+</ol>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzaJ8bGki71JWxDx9mTp4dz2ihSSDz18wzeuWDgnReqPFZ%5c_JMBTrlw6WJcY9m-EezEg4qFHf2ROk49iyspzRvOBh1LZ%5c_AROCMaRySVf9vDhDabgRe70bZ9xcvFqKbkfti56reYkip4cRc4UGCMRF8fbeGDqZRNyvIUITLxc726yGeYCTn2F8SL%5c_hVlpC8/s660/Perspective%20Transformation2.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>2. 先定義4個點，找出矩陣</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrtZMpixros49cWHtDc1EtoaRLL6QKu2Ro1FLMRgtqGwzVqf1HCbiwUp1Ob2to0DjOAsusKDFi%5c_Li5nTzJtZGh3mlE2sRDJ14Cweby-%5c_I-eJcHdHkjj1177ga757jPjALbNGK5mVmNeNRfn7MeOeMiv2G1eY8Rqo2b7R7ooHdfa1k-vfzB0QmOpbPSrfw/s614/Perspective%20Transformation3.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>3. 照公式進行矩陣轉換，解出方程式，輸出結果就得到圖片了。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg52Gc59B0qxWomXBEEMx3hJRpfV3uFljRYEgHoYfZYIPptEx5rpT2t1Z6WuMgh2ek8GqORT7pKaKgnFGHLeTYePwkpfZUiEbhLYSm6yn0h4jmQdjj8KhO1wvlULkX2DMyqBX-s2NDuR6h%5c_eUfcx07dg6I41fc0iTCSRiQkCd22Mt4S%5c_pyeL72eMqQvZ1k/s675/Perspective%20Transformation4.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>4. 另外我也參考網路範例，仿造OpenCV寫了一個轉置方法，後續比較一下兩種做法的差異。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXtMLlj7lrugoh-P%5c_VyKkNtJyjmYkZrjB-1LioDzjGLogQwMXISpuu9ESDrliXmuQK8-Dn3xdB3OlxSwZ-T0sMpbDwGwxvo4drXH9eixAldFORT36BmobXW2eahBe7veHob5%5c_FPvoLH4YeImghdwK32WTHTujAe2ZhSuPngWQtZxEyzu2UzDrT4YqUQmI/s639/Perspective%20Transformation5.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioyFWHRNyUkp3cnzcwdBN-g%5c_DP2FoeQKo-pQbrLRSNEy2E5MGme2m1tVR4C2MY5O2KbzdnnmvMZdVssKnfRAwDMDuI-N9JKYNGNC8Hk05Sv65vFrFnW3pdyiT5doLHT4XD-1h%5c_kWACimm93L%5c_GIw3UDmOCCB3J21p06Lk9fqAfUuZlHSVGxyQc7Q85-i4/s650/Perspective%20Transformation12.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyMspqr93li1TwJYG0TEQokIMYRBDdHIxXQYDHHTbI4WOCQmc3v2EYspTRsX7b8uz56MPtIrLiKblXOze2h4Io2cGbLW2DDAaWCU2qeXHQ5NpW6YkCXc9o0Df8zuD0mhoWUR81GKOOm9%5c_k8MBLSp%5c_QUWfoyw7zW5OhtTiafyiOk6792uzbpzd0U6X0Frw/s643/Perspective%20Transformation6.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>* 測試資料與結果</p>
+<ol>
+<li>原圖是張刻意拍歪斜的照片，我標出四個白點，可以看到原始轉換區塊變形到接近菱形了。</li>
+</ol>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjj81oKPmaUnX8EG58BATZ8Bp-tiY0IvhVlyX9UWNdi9UtMqnmThF-oMi1ltSJ7Qd4oBpOrJ-%5c_WEvL7ANurye8X-NUlYbGZCOW4iQ2TqSAc9WZtS1kRvlFDMvvq6JiOzHnJmVKwyrd7WOHZ3ls%5c_Jd0xJMiWSkh9GZKR5D8RThCvUA19aiqc1TeFeE26hWg/s327/Perspective%20Transformation7.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>2. 轉換後得到的結果如下，或許是因為變形幅度高，沒達到完整的轉換。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhxCzf9Z-SLcmUK0AiUxTvsDPaQ59GwkhxPuOpBq0hIIQFXDItFwgpgNMJHjqRtIkedkWbKkZOE8TvjSisgdg11LonVsPCMuOf2dXhR3gERCxS6j0Da1PnRB4No9GAgx3m9SYOozuxd73Eby%5c_0J3RmaoyFA4qYT6gQqjmA%5c_q1f8EKYxIXVTqG7NUnvZZtY/s362/Perspective%20Transformation8.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>3. 參考網路實作<a class="link" href="https://blog.csdn.net/u010925447/article/details/77947398"  target="_blank" rel="noopener"
+    >Perspective Transformation</a>做出來的效果，因為先做3D後轉2D，校正效果很好，只是程式寫得不好，有失真。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijwBQZ6RFOIwe5ohPZCNrXNb%5c_DbPs6ozZyUP8HytRkJRkGJbTM9Xj%5c_xQTYq0MGgtoYOW4WZ5pmRWGOZk8atfalAEMsnxNVpTz4FbFmg%5c_7991io23mdZPbRjZEHR556AUs23S4lnCxtpP%5c_W%5c_7QEWereldmAgj-ZNc5C%5c_O3IEAYZa%5c_gVeMOXvbMisjHgKgY/s368/Perspective%20Transformation9.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a></p>
+<ol start="4">
+<li>使用Open CV做的效果</li>
+</ol>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqdo1dlWqXDQVClywfT%5c_Hm5J94B6hPvx5j3P2FTGrSg5Z4EqSY6ELphyphenhyphenbW9JSsiN-YLLv2imPNS9l1mtjUGFnghhyphenhyphenuxbcz6S9jBphlu0RG9OzCquZvE4GJVg4HFfRE%5c_R0FCv2GjiG0nkDNlRIKKamuXyHqJvxthbpsQhccHo31Pgy%5c_N6%5c_7Z09kuXCcXBs/s404/Perspective%20Transformation10.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a></p>
+<ul>
+<li>討論</li>
+</ul>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLggeYuBlrOe0v02KWF0CoXpZWqaEvtpxkfZOpzM9GuD3EJfv-Cm0O74GOwK0%5c_PyC5pdI7Mjzx7b8gMHbRndJUvwQ%5c_l3VqOQyQbCoGPDIXCxk7mMA6DMIknbHCHKZnZSUziPqqTy-hzUH%5c_9SXD4Ozk0-v5Y739TXR1uUXqx-F50nw0Cwg8iWskYhXxuLE/s510/Perspective%20Transformation11.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>1. 原本課堂講解的校正來源是一個平行四邊形，校正效果相當好，但在本次作用我使用一個不規則的多邊形來做轉換，雖然轉換結果不比原本的好，但還算可以得出資訊。
+2. 參考Perspective Transformation實做出來的程式做轉換，對於不規則多邊形轉換的效果很好，只是有失真，若用OpenCV轉出來的話就趨近完美了。
+3. 此類的校正可以應用在機器人自駕時的資訊辨認，或是在OCR應用上先把讀入的圖片做校正，在讀取資訊，可以減少判斷失誤。
+4. 在Deepfake影片偵測的研究中，許多論文的原理是把影像的Frame讀入後分析他是不是假造影像；如果在深度學習時，我先把人臉或是指定的擷取特徵做校正，可以把每個Frame的特徵變成一樣的構圖，就有機會分辨出他是不是造假的Frame：因為Frame造假是基於原本扭曲變形的畫面做變更，在校正後應該可以看出他和一般正常角度Frame的不同之處。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfebBygmq9cQaDMg%5c_JEnqCj6oKLePPQbJlfxb7ApBWMxafqQf-5gWuPTTxednWrlnleF3euTsSt2KztH%5c_ZKDA6ufJQ0Arhsyybr3bgSnXDW2lyKoiOYukjb3fsMrkQQVGGFFXZ18zDctfl5J2amnu52epitaR8z7OGAvl0Brpq3jdZfryuFbiJ9TL55xE/s558/Perspective%20Transformation13.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a></p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/">影像處理與深度學習</a>
+        
+            <a href="/tags/perspective-transformation/">Perspective Transformation</a>
+        
+            <a href="/tags/opencv/">OpenCV</a>
+        
+            <a href="/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/">中興大學資工所</a>
+        
+            <a href="/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/">工作管理</a>
+        
+            <a href="/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/">學習紀錄</a>
+        
+            <a href="/tags/digital-image-process/">Digital Image Process</a>
+        
+            <a href="/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/">上課學習心得</a>
+        
+            <a href="/tags/python/">Python</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Wednesday, January 15, 2025
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2022-01-pythonimage-enhancement/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Python實作Image Enhancement</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-pytorchcnn/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用Pytorch實作卷積網路(CNN)做多分類圖片識別</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-colab-notebooksyolov4-model/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在Colab Notebooks上定義並訓練Yolov4 Model (以水果辨識為例)</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2021-02-boundary-extraction-region-filling/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">影像處理 | Boundary Extraction &amp;amp; Region Filling</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-open-cvimagebounding-boxyolo-label/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用Open CV自動找出Image的bounding box並轉成Yolo Label</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="你的GitHub帳號/你的Repo名稱"
+    data-repo-id="R_xxxxxxxx"
+    data-category="Announcements"
+    data-category-id="DIC_xxxxxxxx"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
+    </span>
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
+    </span>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
+
+    </body>
+</html>

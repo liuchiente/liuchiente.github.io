@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="這篇文章是我在修習影像處理時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用Pytorch實作了卷積神經網絡(Convolutional Neural Network)簡稱CNN，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。\n">
+<title>使用Pytorch實作卷積網路(CNN)做多分類圖片識別</title>
+
+
+<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2022-01-pytorchcnn/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="使用Pytorch實作卷積網路(CNN)做多分類圖片識別">
+<meta property='og:description' content="這篇文章是我在修習影像處理時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用Pytorch實作了卷積神經網絡(Convolutional Neural Network)簡稱CNN，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。\n">
+<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2022-01-pytorchcnn/'>
+<meta property='og:site_name' content='Liuchien&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Pytorch' /><meta property='article:tag' content='Convolutional Neural Network' /><meta property='article:tag' content='CNN' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='Digital Image Process' /><meta property='article:tag' content='CrossEntropy' /><meta property='article:published_time' content='2022-01-26T14:54:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-20T07:05:44&#43;00:00'/>
+<meta name="twitter:title" content="使用Pytorch實作卷積網路(CNN)做多分類圖片識別">
+<meta name="twitter:description" content="這篇文章是我在修習影像處理時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用Pytorch實作了卷積神經網絡(Convolutional Neural Network)簡稱CNN，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien&#39;s Blog</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>歸檔</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜尋</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2022-01-pytorchcnn/">使用Pytorch實作卷積網路(CNN)做多分類圖片識別</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2022-01-26T14:54:00Z'>Wednesday, January 26, 2022</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 5 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>這篇文章是我在修習<a class="link" href="https://liuchien.ink.tw/%e5%ad%b8%e7%bf%92%e7%b4%80%e9%8c%84/%e5%bd%b1%e5%83%8f%e8%99%95%e7%90%86-%e4%bf%ae%e8%aa%b2%e5%bf%83%e5%be%97/"  target="_blank" rel="noopener"
+    >影像處理</a>時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用<a class="link" href="https://pytorch.org"  target="_blank" rel="noopener"
+    >Pytorch</a>實作了<a class="link" href="https://en.wikipedia.org/wiki/Convolutional%5c_neural%5c_network"  target="_blank" rel="noopener"
+    >卷積神經網絡(Convolutional Neural Network)簡稱CNN</a>，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。</p>
+<p>以下節錄我當時整理出來的作業內容，大略解釋了演算法的概念，訓練過程，和最後檢討，因為是作業，故有很多是比較學生角度來解釋整個事件。</p>
+<ul>
+<li>主要演算法
+<ol>
+<li>室內、室外乍看是二分類，可以用線性回歸(Linear regression)的方式來做，但是考量室內室外只是眾多場景一種，故我用多分類(Multi label classification)的方式開發程式，並用CrossEntropy計算Loss。</li>
+<li>會採用多分類(是因為我單純認為用二分法來識別兩個場景不是很好的方法，最後預測結果會落在0~1之間，若用0.49中位數來分辨0和1，感覺有點奇怪。</li>
+<li>本次使用Pytorch實做一個簡單的CNN網路架構，CNN最主要會由Convolutional和Maxpool兩種層所組成，激勵函數是Relu，然後最後要用線性層(Fully Connected)輸出預測結果。</li>
+<li>初次訓練只用了2層CNN搭配1層的線性層，但訓練的Loss率沒有想像好(低)，故再次修改用4層CNN搭配3層的線性層，一方面想看看線姓層的降維幅度是否也會改善Loss率。</li>
+<li>在訓練、驗證和測試資料夾中，我都定義了Indoor和Outdoor資料夾，同時也是以此當作標籤功能。</li>
+<li>最後輸出時，我們去觀察哪個Label的得分最高，就可以知道他是屬於哪個類型的，假定我規劃0是室內，1是室外，當我發現0的得分是0.9991，1的得分是0.1234，那則代表這張圖是室外。</li>
+<li>訓練過程中，一開始Model會去預測一個分數，但我們會依照正確的分類給他真正的分數，接著算出Loss後，經過backward去更新權重，Model就會知道屬於這張圖真正的分數應該是多少，因此一開始Loss極高是正常的，但會隨著訓練逐漸降低，但是Loss如果隨著訓練持續亂跳亂跳的，那有可能代表圖片的Label太雜亂，Model會精神錯亂，這時候你就必須回頭去檢視你的資料集正不正確。</li>
+</ol>
+</li>
+<li>程式片段
+<ol>
+<li>定義網路，4層CNN搭配3層的線性層</li>
+</ol>
+</li>
+</ul>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGMKQsZty9RvfsQQyeBYgeVzFKeAIcrIvjjOK21YndBH70NvtjP7gT4Tc89g3nAj-RHEMoAdhEhBMK2LXFHAv25tYfK7MlCLjT2bLk2gcgXY0aTKiKX8FfBe1kWTVZwWjUxOr4Xw-0NMxRdLLvXHzufAazwAe47zOMa4Ko74OXxkn-FHieBpAmqXOF680/s768/Indoor&amp;Outdoor1.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+ 本次我是使用多分類方式來做，故採用CrossEntropy的Loss計算。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyZmlgcIj4otoevAm800Eg6F2Fko9ine5tGcCkkkjtkZB%5c_14tOkRu7Ug2pV6wu2Fvi877C5yPxnX3CKHfWCYZXyv%5c_YYy6seUjvSSifS4Qf5S4H6M3-IeWKCqxqvaSJ0vmvNiBOv5LPurJYmbph1QMXqtgbZm7qHd8sE8fyPDlSdDnJIrbLo865ZS2tqeM/s543/Indoor&amp;Outdoor2.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+Crossentropy主要用在計算多分類的交叉熵。本次訓練15次，主要記得開啟訓練模式、梯度歸零和更新等，Model會預測這張圖是屬於哪個類型，一開始Model處於亂猜階段，隨著我們去算出他的Loss率，然後再backward和用step做權重更新後，Model就會學習到正確的分類。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdBjKrlRjm45Y-QY2mmHSMTdPNul4yNRKoAv4mHd2pMqDgp577Js65x6S6SX0jlmSbiltSIos0Xh1l5fjjt4fkQnDXAvjvxARX8wntRRwOKux1QiPZlnohvQZjcvC1YuQOdFJtzGCkpMLQQRQoIYd5QLMKHX9chfTk1diTrDnGF%5c_WCZhXBsp3xN9JZLU4/s504/Indoor&amp;Outdoor3.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+訓練時需把Loss率反向傳播，這樣才能讓整個網路知道辨識的錯誤率為何。驗證也是15次，記得開啟評估模式就好，因為在這裡我們想做的是驗證模型準確率，不需要再把驗證出來的結果反向傳播回模型了。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRPkPScB-gmdVXiTuX0iMtcjnuTGFXhbN6tDWiqLgJSAPX6QSawaEVPcyPFWr8xssARbUBrXBLvJd-OscNic7hv-4rlTnHVsZ4jvXFd98gZscXqElHj0sTVZgFa73y9B5aLC95oGTFAFjlkvGnc6RRMHe8p-wrvA8fRSQSnCcHqntMqevH7xapeguv56Y/s866/Indoor&amp;Outdoor4.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+注意開啟評估模式，藉此來了解你的Model能力。附上網路的形狀</p>
+<p> <a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXLmPB8m2CbEx552ozI8NI9rrIuNl0V97N3UncUMLaDFXInZJgZlC7fziEuploHLt-m6OETK-aSXO5mNcSqUpywtk7kaclVtZTRz8dxhISk1%5c_%5c_82c0y6d-M6ZARO7ZL1CS3LgFzNo4FlR3z2yZ60C8QepuEL%5c_vOJfLs%5c_g3vgAAQaWCzTnJF60%5c_qE5AJ6Y/s625/Indoor&amp;Outdoor5.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+本次作業規劃的網路形狀。* 測試資料與結果
+1. 訓練和驗證資料集主要來自<a class="link" href="https://diode-dataset.org/"  target="_blank" rel="noopener"
+    >https:</a><a class="link" href="https://diode-dataset.org"  target="_blank" rel="noopener"
+    >//diode-dataset.org/的Dataset</a>，先人工整理出Train和Valid的資料夾，並在其中切分出Indoor和Outdoor，作為輔助，此外我也定義了Indoor是標籤0，Outdoor是標籤1。
+2. 訓練15次，可參考下圖，藍色為訓練的Loss率，橘色是驗證的Loss率，訓練的Loss率原本逐漸下降，但到後期又急速攀升，初步判斷是訓練Label雜亂造成？但因為訓練次數不夠多，如果訓練100次仍這樣亂跳，那就有可能代表圖片的Label太亂，造成loss計算不清楚；而驗證的Loss率則在訓練完第1次後趨於平緩。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjba8GdlHB6QSwG9YFFGc5x4XYRlR1w8shUQcllIotY45ejnctMgeV2rDecEsMyRvBmQPBBJngEGhfsgJ%5c_IESgN5Ot6BzSU6ypFz7Oa2xQDKamZiM4xvArS1XcPrD0b1Z8keZPl-00vbI3vNhoGwMx6PnWZgsAbbpuJK1MaxlnZmO34tenuPL8d5UqDD-I/s789/Indoor&amp;Outdoor6.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+訓練和驗證時，Model的Loss率變化。1. 在網路輸出時主要會得到一個2元素的Tensor，在這裡我沒多做轉換，若是索引0的機率高，則代表這圖是Label 0 Indoor，1的話則是Outdoor。
+1. 訓練15次後進行測試，Loss率0.31左右，得到的成功率是90多%，感覺好像有點厲害，相較先前使用3層CNN搭配一層線性層，有不錯增長。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwrQbTga2g5GC6vNyEFwxnOnIgzYE0U3NKHZtumM-wTLnF1TyKh8gZkN8mpKIcKGQqG6Z-8Tj3ZoVs1GDPXH9eNixnNhXEuMZEyHtMvQ5fUQv98PMUT6DTrCnrSnBCRR0gRgBI-2Kh3oVRfUVNN25PKX00qprT71yO2-y5LILuAyw7UjI9%5c_brLdr7zc94/s866/Indoor&amp;Outdoor7.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+ 圖片實際預測結果，此10張都是我刻意挑選用來混淆Model的圖片。* 討論
+1. 本次的測試資料集我是用自己拍的10張圖，其中有些我刻意選擇比較怪異的構圖，譬如在樹叢中拍攝帳篷，或是在有雨棚的路邊攤拍攝，並當作是Indoor照，企圖影響網路的判斷。
+2. 承上，之所以會這樣做是因為我認為類神經網路在擷取特徵時，應該是以構圖和色調在抓室內和室外的差別，才故意找一些界定模糊的資料。
+3. 訓練的Loss率亂跳一方面或許和原始資料集也有關，譬如有放在桌上的帆船模型，照理說和室外的海上的船是蠻像的，不過若是加大訓練次數，有機會看到Loss率逐漸趨緩，因為Model將會逐漸分辨出室內和室外該有的色調，進而判斷出正確結果，而不再是被物體的形狀限制。</p>
+<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoazZrkiKTQ5BB-VbJYGsQdSrbSYZjR2v0jFIEx1lD%5c_CY-tRza1kfFuc4xlGg2sqAnugFV94Uha24Br9vS%5c_IJBc0wgX2N3aGEuJkibvcT8QVSUrtWVAgtylhYCfunQ7f9lxYYGCepNmC4KRR3PwWrK7BzfjCQENWaXP0eaHBMDClBxsiro0ytiEf-3n5A/s866/Indoor&amp;Outdoor8.png"  target="_blank" rel="noopener"
+    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
+若有機會，會想嘗試把RNN加入到網路中，藉此了解當面對複雜特徵且數量眾多的圖片，Model的學習能力是否有加分效果，當然可預想的是RNN效果未必會比較好。</p>
+<p>若是你對本篇文章的原始碼有興趣，<a class="link" href="https://github.com/liuchiente/Digital%5c_Image%5c_Process%5c_at%5c_NCHU/blob/main/InDoor%26OutDoorL.ipynb"  target="_blank" rel="noopener"
+    >可以參考我的Github連結</a>。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/pytorch/">Pytorch</a>
+        
+            <a href="/tags/convolutional-neural-network/">Convolutional Neural Network</a>
+        
+            <a href="/tags/cnn/">CNN</a>
+        
+            <a href="/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/">影像處理與深度學習</a>
+        
+            <a href="/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/">中興大學資工所</a>
+        
+            <a href="/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/">學習紀錄</a>
+        
+            <a href="/tags/digital-image-process/">Digital Image Process</a>
+        
+            <a href="/tags/crossentropy/">CrossEntropy</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Monday, January 20, 2025
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2022-01-colab-notebooksyolov4-model/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">在Colab Notebooks上定義並訓練Yolov4 Model (以水果辨識為例)</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2021-02-boundary-extraction-region-filling/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">影像處理 | Boundary Extraction &amp;amp; Region Filling</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-nft/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">你今天NFT了嗎？</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-open-cvimagebounding-boxyolo-label/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">利用Open CV自動找出Image的bounding box並轉成Yolo Label</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2022-01-colab-notebookskaggledataset/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">如何在Colab Notebooks上引用Kaggle資料集(Dataset)</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="你的GitHub帳號/你的Repo名稱"
+    data-repo-id="R_xxxxxxxx"
+    data-category="Announcements"
+    data-category-id="DIC_xxxxxxxx"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
+    </span>
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
+    </span>
+</div>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
+
+    </body>
+</html>
