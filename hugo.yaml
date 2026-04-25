@@ -66,13 +66,15 @@ params:
     enabled: true
     provider: giscus
     giscus:
-      repo: "你的GitHub帳號/你的Repo名稱" # 例如: liuchiente/liuchiente.github.io
-      repoId: "R_xxxxxxxx"              # 前往 giscus.app 取得
-      category: "Announcements"
-      categoryId: "DIC_xxxxxxxx"         # 前往 giscus.app 取得
+      repo: "liuchiente/liuchiente.github.io"
+      repoId: "R_kgDOSJqIIA"
+      category: "General"
+      categoryId: "DIC_kwDOSJqIIM4C7raM"
       mapping: "pathname"
+      strict: "0"
       reactionsEnabled: "1"
       emitMetadata: "0"
+      inputPosition: "bottom"
       theme: "preferred_color_scheme"
       lang: "zh-TW"
 
@@ -81,24 +83,18 @@ params:
 # ==========================================
 menu:
   main:
-    - identifier: archives
-      name: 歸檔
-      url: /archives/
-      weight: 1
-      params:
-        icon: archives
-    - identifier: search
-      name: 搜尋
-      url: /search/
-      weight: 2
-      params:
-        icon: search
-    - identifier: about
-      name: 關於我
-      url: /about/
+    - identifier: categories
+      name: 分類
+      url: /categories/
       weight: 3
       params:
-        icon: user
+        icon: archives # 改用 archives 或 list，確保編譯通過
+    - identifier: tags
+      name: 標籤
+      url: /tags/
+      weight: 4
+      params:
+        icon: tag      # tag 是確定有的
 
 # ==========================================
 # 第三方服務 (GA4)
@@ -106,3 +102,5 @@ menu:
 services:
   googleAnalytics:
     id: "G-BP61MGQ5GV"
+
+  
