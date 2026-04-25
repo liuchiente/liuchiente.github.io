@@ -7,9 +7,9 @@
 - id: footer.designedBy
   translation: "設計者"
 - id: article.readingTime
-  translation: "預計閱讀 %.1f 分鐘"
+  translation: "預計閱讀 {{ .Count }} 分鐘"
 - id: wordCount
-  translation: "字數：%.1f"
+  translation: "字數：{{ .Count }}"
 - id: notFound.title
   translation: "找不到頁面"
 - id: notFound.subtitle

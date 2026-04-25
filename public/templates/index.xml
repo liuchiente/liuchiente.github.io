@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Templates on Liuchien&#39;s Blog</title>
-        <link>http://localhost:1313/templates/</link>
+        <link>https://liuchien.inxpire.tw/templates/</link>
         <description>Recent content in Templates on Liuchien&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-tw</language><atom:link href="http://localhost:1313/templates/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-tw</language><atom:link href="https://liuchien.inxpire.tw/templates/index.xml" rel="self" type="application/rss+xml" /><item>
             <title></title>
-            <link>http://localhost:1313/templates/hugo-post/</link>
+            <link>https://liuchien.inxpire.tw/templates/hugo-post/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            <guid>http://localhost:1313/templates/hugo-post/</guid>
+            <guid>https://liuchien.inxpire.tw/templates/hugo-post/</guid>
             <description>&lt;p&gt;&amp;lt;%*&#xA;const title = await tp.system.prompt(&amp;ldquo;文章標題&amp;rdquo;);&#xA;const slug = title&#xA;.toLowerCase()&#xA;.replace(/[^\w\s-]/g, &amp;ldquo;&amp;rdquo;)&#xA;.replace(/\s+/g, &amp;ldquo;-&amp;rdquo;);&lt;/p&gt;&#xA;&lt;p&gt;const tags = await tp.system.prompt(&amp;ldquo;標籤（用逗號分隔）&amp;rdquo;, &amp;ldquo;筆記&amp;rdquo;);&#xA;const category = await tp.system.prompt(&amp;ldquo;分類&amp;rdquo;, &amp;ldquo;技術&amp;rdquo;);&#xA;const desc = await tp.system.prompt(&amp;ldquo;SEO 描述&amp;rdquo;);&lt;/p&gt;&#xA;&lt;h2 id=&#34;heading&#34;&gt;const now = tp.date.now(&amp;ldquo;YYYY-MM-DDTHH:mm:ssZ&amp;rdquo;);&#xA;%&amp;gt;&#xA;&lt;/h2&gt;&lt;h2 id=&#34;author-你的名字&#34;&gt;title: &amp;ldquo;&amp;lt;%= title %&amp;gt;&amp;rdquo;&#xA;date: &amp;lt;%= now %&amp;gt;&#xA;lastmod: &amp;lt;%= now %&amp;gt;&#xA;draft: false&#xA;slug: &amp;ldquo;&amp;lt;%= slug %&amp;gt;&amp;rdquo;&#xA;description: &amp;ldquo;&amp;lt;%= desc %&amp;gt;&amp;rdquo;&#xA;tags: [&amp;lt;%= tags.split(&amp;quot;,&amp;quot;).map(t =&amp;gt; &lt;code&gt;&amp;quot;${t.trim()}&amp;quot;&lt;/code&gt;).join(&amp;quot;, &amp;ldquo;) %&amp;gt;]&#xA;categories: [&amp;quot;&amp;lt;%= category %&amp;gt;&amp;rdquo;]&#xA;keywords: [&amp;lt;%= tags.split(&amp;quot;,&amp;quot;).map(t =&amp;gt; &lt;code&gt;&amp;quot;${t.trim()}&amp;quot;&lt;/code&gt;).join(&amp;quot;, &amp;ldquo;) %&amp;gt;]&#xA;author: &amp;ldquo;你的名字&amp;rdquo;&#xA;&lt;/h2&gt;&lt;h1 id=&#34;-title-&#34;&gt;&amp;lt;%= title %&amp;gt;&#xA;&lt;/h1&gt;&lt;p&gt;寫你的內容&amp;hellip;&lt;/p&gt;&#xA;</description>
         </item></channel>
 </rss>

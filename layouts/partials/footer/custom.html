@@ -1,10 +1,20 @@
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<section class="reading-count">
-    <span id="busuanzi_container_site_pv">
-        本站總訪問量 <span id="busuanzi_value_site_pv"></span> 次
+<section class="reading-count" style="color: var(--card-text-color-main); opacity: 0.6; font-size: 1.4rem; margin-top: 10px;">
+    <span id="busuanzi_container_site_pv" style="display: none;">
+        本站總訪問量 <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span> 次
     </span>
-    <span id="busuanzi_container_page_pv">
-        | 本文閱讀量 <span id="busuanzi_value_page_pv"></span> 次
+    <span id="busuanzi_container_page_pv" style="display: none;">
+        <span class="divider">|</span> 本文閱讀量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次
     </span>
 </section>
+
+<style>
+    /* 讓計數器在還沒載入數字前先隱藏，避免出現空格 */
+    #busuanzi_container_site_pv, #busuanzi_container_page_pv {
+        display: inline !important;
+    }
+    .reading-count .divider {
+        margin: 0 10px;
+    }
+</style>
