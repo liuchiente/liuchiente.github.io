@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n實際上我在這裡提到的指標, 會包含Accuracy、Precision、Recall 、 F1-score。\n">
 <title>機器學習常用衡量指標Precision, Recall, F1-score</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="機器學習常用衡量指標Precision, Recall, F1-score">
-<meta property='og:description' content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n">
+<meta property='og:description' content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n實際上我在這裡提到的指標, 會包含Accuracy、Precision、Recall 、 F1-score。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2021-12-precision-recall-f1-score/'>
 <meta property='og:site_name' content='Liuchien&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='F1-score' /><meta property='article:tag' content='Accuracy' /><meta property='article:tag' content='機器學習與自然語言處理' /><meta property='article:tag' content='Precision' /><meta property='article:tag' content='Recall' /><meta property='article:published_time' content='2021-12-30T11:35:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-22T09:22:51&#43;00:00'/>
 <meta name="twitter:title" content="機器學習常用衡量指標Precision, Recall, F1-score">
-<meta name="twitter:description" content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n">
+<meta name="twitter:description" content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n實際上我在這裡提到的指標, 會包含Accuracy、Precision、Recall 、 F1-score。\n">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
       <script>
         var doNotTrack = false;

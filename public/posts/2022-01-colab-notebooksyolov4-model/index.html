@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n當然我這樣講是有點浮誇，你必須注意一下你的電腦能不能如願把訓練跑完。\n">
 <title>在Colab Notebooks上定義並訓練Yolov4 Model (以水果辨識為例)</title>
 
 
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="在Colab Notebooks上定義並訓練Yolov4 Model (以水果辨識為例)">
-<meta property='og:description' content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n">
+<meta property='og:description' content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n當然我這樣講是有點浮誇，你必須注意一下你的電腦能不能如願把訓練跑完。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2022-01-colab-notebooksyolov4-model/'>
 <meta property='og:site_name' content='Liuchien&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='Evernote' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:tag' content='YoloV4' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='GPU' /><meta property='article:tag' content='liuchien' /><meta property='article:tag' content='Digital Image Process' /><meta property='article:published_time' content='2022-01-25T14:43:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-22T09:22:50&#43;00:00'/>
 <meta name="twitter:title" content="在Colab Notebooks上定義並訓練Yolov4 Model (以水果辨識為例)">
-<meta name="twitter:description" content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n">
+<meta name="twitter:description" content="Yolo (You only look once)可以說是最知名的即時辨識模型了，不僅效果好，速度也快，當初的論文可以參考這裡，現在一路也出到V4了，你可以在訓練資料上定義不同的圖片和標籤，以此訓練模型，就可以輕鬆達到辨識新目標的效果。\n當然我這樣講是有點浮誇，你必須注意一下你的電腦能不能如願把訓練跑完。\n">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
       <script>
         var doNotTrack = false;
