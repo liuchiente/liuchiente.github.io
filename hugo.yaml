@@ -476,7 +476,7 @@ pagination:
   path: page
 params:
   mainSections:
-    - post
+    - posts
   env: production
   googleanalytics: G-BP61MGQ5GV
   showpostmeta: true
