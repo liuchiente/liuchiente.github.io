@@ -1,35 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Liuchien&#39;s Blog</title>
-    <link>https://liuchien.inxpire.tw/</link>
-    <description>Recent content on Liuchien&#39;s Blog</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Fri, 24 Apr 2026 16:22:40 +0800</lastBuildDate>
-    <atom:link href="https://liuchien.inxpire.tw/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>部落格搬家中</title>
-      <link>https://liuchien.inxpire.tw/posts/my-first-post/</link>
-      <pubDate>Fri, 24 Apr 2026 16:22:40 +0800</pubDate>
-      <guid>https://liuchien.inxpire.tw/posts/my-first-post/</guid>
-      <description>&lt;h1 id=&#34;搬家通知&#34;&gt;搬家通知&lt;/h1&gt;
-&lt;p&gt;近期預計把原先放置在Blogger上的兩個Blog都搬移到Hugo上，雖然說靈活度更高，但相對要設定的東西也比較多，為了長遠未來，還是做吧？！只是不知道自己要做多久。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://liuchien.inxpire.tw/templates/hugo-post/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://liuchien.inxpire.tw/templates/hugo-post/</guid>
-      <description>&lt;p&gt;&amp;lt;%*
-const title = await tp.system.prompt(&amp;ldquo;文章標題&amp;rdquo;);
-const slug = title
-.toLowerCase()
-.replace(/[^\w\s-]/g, &amp;ldquo;&amp;rdquo;)
-.replace(/\s+/g, &amp;ldquo;-&amp;rdquo;);&lt;/p&gt;
-&lt;p&gt;const tags = await tp.system.prompt(&amp;ldquo;標籤（用逗號分隔）&amp;rdquo;, &amp;ldquo;筆記&amp;rdquo;);
-const category = await tp.system.prompt(&amp;ldquo;分類&amp;rdquo;, &amp;ldquo;技術&amp;rdquo;);
-const desc = await tp.system.prompt(&amp;ldquo;SEO 描述&amp;rdquo;);&lt;/p&gt;</description>
-    </item>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Liuchien&#39;s Blog</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on Liuchien&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate></lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /></channel>
 </rss>

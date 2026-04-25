@@ -1,4 +1,16 @@
+- id: toggleMenu
+  translation: "切換選單"
+- id: darkMode
+  translation: "深色模式"
+- id: footer.builtWith
+  translation: "自豪地採用"
+- id: footer.designedBy
+  translation: "設計者"
+- id: article.readingTime
+  translation: "預計閱讀 %.1f 分鐘"
 - id: wordCount
   translation: "字數：%.1f"
-- id: readingTime
-  translation: "預計閱讀：%.1f 分鐘"
+- id: notFound.title
+  translation: "找不到頁面"
+- id: notFound.subtitle
+  translation: "抱歉，您訪問的頁面不存在。"

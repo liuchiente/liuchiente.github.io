@@ -1,6 +1,6 @@
 archetypedir: archetypes
 assetdir: assets
-author: {}
+author: "Liuchien"
 baseurl: https://liuchien.inxpire.tw/
 build:
   buildstats: {}
@@ -18,7 +18,7 @@ contenttypes:
   text/pandoc: {}
   text/rst: {}
 datadir: data
-defaultcontentlanguage: en
+defaultcontentlanguage: zh-tw
 defaultcontentrole: guest
 defaultoutputformat: html
 deployment:
@@ -83,7 +83,7 @@ imaging:
     hint: photo
     method: 2
 languages:
-  en:
+  zh-tw:
     locale: zh-tw
 layoutdir: layouts
 locale: zh-tw
@@ -367,50 +367,6 @@ minify:
       - ''
       - x-bind
     xml: {}
-module:
-  hugoversion: {}
-  imports:
-  - path: PaperMod
-  mounts:
-  - sites:
-      complements: {}
-      matrix: {}
-    source: content
-    target: content
-  - sites:
-      complements: {}
-      matrix: {}
-    source: data
-    target: data
-  - sites:
-      complements: {}
-      matrix: {}
-    source: layouts
-    target: layouts
-  - sites:
-      complements: {}
-      matrix: {}
-    source: i18n
-    target: i18n
-  - sites:
-      complements: {}
-      matrix: {}
-    source: archetypes
-    target: archetypes
-  - sites:
-      complements: {}
-      matrix: {}
-    source: assets
-    target: assets
-  - sites:
-      complements: {}
-      matrix: {}
-    source: static
-    target: static
-  noproxy: none
-  private: '*.*'
-  proxy: direct
-  workspace: 'off'
 outputformats:
   '404':
     ishtml: true
@@ -604,8 +560,7 @@ summarylength: 70
 taxonomies:
   category: categories
   tag: tags
-theme:
-- PaperMod
+theme: "hugo-theme-stack"
 themesdir: themes
 timeout: 60s
 title: Liuchien's Blog
