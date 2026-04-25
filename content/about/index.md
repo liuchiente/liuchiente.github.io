@@ -1,7 +1,7 @@
 ---
 title: "關於我 | About Me"
 description: "數位架構師 (Digital Architect) / TPM / Inxpire Studio 創辦人"
-date: 2026-04-26
+date: 2026-04-25
 layout: "about" # 某些主題支援特定版式，Stack 可使用預設或自訂
 menu:
     main: 
