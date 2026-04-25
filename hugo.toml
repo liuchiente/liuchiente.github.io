@@ -1,7 +1,0 @@
-baseURL = "https://liuchien.inxpire.tw/"
-locale = "zh-tw"
-title = "Liuchien's Blog"
-theme = "PaperMod"
-
-[params]
-env = "production"

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Liuchien&#39;s Blog</title>
-    <link>https://liuchien.inxpire.tw/</link>
-    <description>Recent content on Liuchien&#39;s Blog</description>
+    <title>Templates on Liuchien&#39;s Blog</title>
+    <link>https://liuchien.inxpire.tw/templates/</link>
+    <description>Recent content in Templates on Liuchien&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 24 Apr 2026 16:22:40 +0800</lastBuildDate>
-    <atom:link href="https://liuchien.inxpire.tw/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>部落格搬家中</title>
-      <link>https://liuchien.inxpire.tw/posts/my-first-post/</link>
-      <pubDate>Fri, 24 Apr 2026 16:22:40 +0800</pubDate>
-      <guid>https://liuchien.inxpire.tw/posts/my-first-post/</guid>
-      <description>&lt;h1 id=&#34;搬家通知&#34;&gt;搬家通知&lt;/h1&gt;
-&lt;p&gt;近期預計把原先放置在Blogger上的兩個Blog都搬移到Hugo上，雖然說靈活度更高，但相對要設定的東西也比較多，為了長遠未來，還是做吧？！只是不知道自己要做多久。&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://liuchien.inxpire.tw/templates/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://liuchien.inxpire.tw/templates/hugo-post/</link>

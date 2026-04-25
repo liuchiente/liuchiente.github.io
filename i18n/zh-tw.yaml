@@ -1,0 +1,4 @@
+- id: wordCount
+  translation: "字數：%.1f"
+- id: readingTime
+  translation: "預計閱讀：%.1f 分鐘"

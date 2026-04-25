@@ -1,0 +1,639 @@
+archetypedir: archetypes
+assetdir: assets
+author: {}
+baseurl: https://liuchien.inxpire.tw/
+build:
+  buildstats: {}
+  cachebusters:
+  - source: '(postcss|tailwind)\.config\.js'
+    target: (css|styles|scss|sass)
+  useresourcecachewhen: fallback
+cachedir: /Users/liujiande/Library/Caches/hugo_cache
+caches:
+  assets:
+    dir: :resourceDir/_gen
+    maxage: -1
+  getresource:
+    dir: :cacheDir/:project
+    maxage: -1
+  images:
+    dir: :resourceDir/_gen
+    maxage: -1
+  misc:
+    dir: :cacheDir/:project
+    maxage: -1
+  modulegitinfo:
+    dir: :cacheDir/modules
+    maxage: 24h
+  modulequeries:
+    dir: :cacheDir/modules
+    maxage: 24h
+  modules:
+    dir: :cacheDir/modules
+    maxage: -1
+capitalizelisttitles: true
+contentdir: content
+contenttypes:
+  text/asciidoc: {}
+  text/html: {}
+  text/markdown: {}
+  text/org: {}
+  text/pandoc: {}
+  text/rst: {}
+datadir: data
+defaultcontentlanguage: en
+defaultcontentrole: guest
+defaultoutputformat: html
+deployment:
+  invalidatecdn: true
+  maxdeletes: 256
+  workers: 10
+environment: production
+frontmatter:
+  date:
+  - date
+  - publishdate
+  - pubdate
+  - published
+  - lastmod
+  - modified
+  expirydate:
+  - expirydate
+  - unpublishdate
+  lastmod:
+  - :git
+  - lastmod
+  - modified
+  - date
+  - publishdate
+  - pubdate
+  - published
+  publishdate:
+  - publishdate
+  - pubdate
+  - published
+  - date
+hascjklanguage: true
+httpcache:
+  cache:
+    for:
+      excludes:
+      - '**'
+  polls:
+  - disable: true
+    for:
+      includes:
+      - '**'
+    high: 0s
+    low: 0s
+  respectcachecontrolnostoreinrequest: true
+i18ndir: i18n
+imaging:
+  anchor: smart
+  bgcolor: ffffff
+  compression: lossy
+  exif:
+    excludefields: GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance
+  meta:
+    fields:
+    - '! *{GPS,Exif,Exposure[MPB],Contrast,Resolution,Sharp,JPEG,Metering,Sensing,Saturation,ColorSpace,Flash,WhiteBalance}*'
+    sources:
+    - exif
+    - iptc
+  quality: 75
+  resamplefilter: box
+  webp:
+    hint: photo
+    method: 2
+languages:
+  en:
+    locale: zh-tw
+layoutdir: layouts
+locale: zh-tw
+markup:
+  asciidocext:
+    attributes: {}
+    backend: html5
+    failurelevel: fatal
+    noheaderorfooter: true
+    safemode: unsafe
+  defaultmarkdownhandler: goldmark
+  goldmark:
+    extensions:
+      cjk:
+        eastasianlinebreaksstyle: simple
+      definitionlist: true
+      extras:
+        delete: {}
+        insert: {}
+        mark: {}
+        subscript: {}
+        superscript: {}
+      footnote:
+        backlinkhtml: '&#x21a9;&#xfe0e;'
+        enable: true
+      linkify: true
+      linkifyprotocol: https
+      passthrough:
+        delimiters: {}
+      strikethrough: true
+      table: true
+      tasklist: true
+      typographer:
+        apostrophe: '&rsquo;'
+        ellipsis: '&hellip;'
+        emdash: '&mdash;'
+        endash: '&ndash;'
+        leftanglequote: '&laquo;'
+        leftdoublequote: '&ldquo;'
+        leftsinglequote: '&lsquo;'
+        rightanglequote: '&raquo;'
+        rightdoublequote: '&rdquo;'
+        rightsinglequote: '&rsquo;'
+    parser:
+      attribute:
+        title: true
+      autoheadingid: true
+      autoidtype: github
+      wrapstandaloneimagewithinparagraph: true
+    renderer: {}
+    renderhooks:
+      image:
+        useembedded: auto
+      link:
+        useembedded: auto
+  highlight:
+    codefences: true
+    linenostart: 1
+    linenumbersintable: true
+    noclasses: true
+    style: monokai
+    tabwidth: 4
+    wrapperclass: highlight
+  tableofcontents:
+    endlevel: 3
+    startlevel: 2
+mediatypes:
+  application/json:
+    delimiter: .
+    suffixes:
+    - json
+  application/manifest+json:
+    delimiter: .
+    suffixes:
+    - webmanifest
+  application/octet-stream:
+    delimiter: .
+  application/pdf:
+    delimiter: .
+    suffixes:
+    - pdf
+  application/rss+xml:
+    delimiter: .
+    suffixes:
+    - xml
+    - rss
+  application/toml:
+    delimiter: .
+    suffixes:
+    - toml
+  application/wasm:
+    delimiter: .
+    suffixes:
+    - wasm
+  application/xml:
+    delimiter: .
+    suffixes:
+    - xml
+  application/yaml:
+    delimiter: .
+    suffixes:
+    - yaml
+    - yml
+  font/otf:
+    delimiter: .
+    suffixes:
+    - otf
+  font/ttf:
+    delimiter: .
+    suffixes:
+    - ttf
+  image/avif:
+    delimiter: .
+    suffixes:
+    - avif
+  image/bmp:
+    delimiter: .
+    suffixes:
+    - bmp
+  image/gif:
+    delimiter: .
+    suffixes:
+    - gif
+  image/heic:
+    delimiter: .
+    suffixes:
+    - heic
+  image/heif:
+    delimiter: .
+    suffixes:
+    - heif
+  image/jpeg:
+    delimiter: .
+    suffixes:
+    - jpg
+    - jpeg
+    - jpe
+    - jif
+    - jfif
+  image/png:
+    delimiter: .
+    suffixes:
+    - png
+  image/svg+xml:
+    delimiter: .
+    suffixes:
+    - svg
+  image/tiff:
+    delimiter: .
+    suffixes:
+    - tif
+    - tiff
+  image/webp:
+    delimiter: .
+    suffixes:
+    - webp
+  text/asciidoc:
+    delimiter: .
+    suffixes:
+    - adoc
+    - asciidoc
+    - ad
+  text/calendar:
+    delimiter: .
+    suffixes:
+    - ics
+  text/css:
+    delimiter: .
+    suffixes:
+    - css
+  text/csv:
+    delimiter: .
+    suffixes:
+    - csv
+  text/html:
+    delimiter: .
+    suffixes:
+    - html
+    - htm
+  text/javascript:
+    delimiter: .
+    suffixes:
+    - js
+    - jsm
+    - mjs
+  text/jsx:
+    delimiter: .
+    suffixes:
+    - jsx
+  text/markdown:
+    delimiter: .
+    suffixes:
+    - md
+    - mdown
+    - markdown
+  text/org:
+    delimiter: .
+    suffixes:
+    - org
+  text/pandoc:
+    delimiter: .
+    suffixes:
+    - pandoc
+    - pdc
+  text/plain:
+    delimiter: .
+    suffixes:
+    - txt
+  text/rst:
+    delimiter: .
+    suffixes:
+    - rst
+  text/tsx:
+    delimiter: .
+    suffixes:
+    - tsx
+  text/typescript:
+    delimiter: .
+    suffixes:
+    - ts
+  text/x-gotmpl:
+    delimiter: .
+    suffixes:
+    - gotmpl
+  text/x-sass:
+    delimiter: .
+    suffixes:
+    - sass
+  text/x-scss:
+    delimiter: .
+    suffixes:
+    - scss
+  video/3gpp:
+    delimiter: .
+    suffixes:
+    - 3gpp
+    - 3gp
+  video/mp4:
+    delimiter: .
+    suffixes:
+    - mp4
+  video/mpeg:
+    delimiter: .
+    suffixes:
+    - mpg
+    - mpeg
+  video/ogg:
+    delimiter: .
+    suffixes:
+    - ogv
+  video/webm:
+    delimiter: .
+    suffixes:
+    - webm
+  video/x-msvideo:
+    delimiter: .
+    suffixes:
+    - avi
+menus:
+  main:
+  - identifier: about
+    name: 關於我
+    url: /about/
+    weight: 10
+minify:
+  tdewolff:
+    css: {}
+    html:
+      keepdefaultattrvals: true
+      keepdocumenttags: true
+      keependtags: true
+      keepspecialcomments: true
+      templatedelims:
+      - ''
+      - ''
+    js:
+      version: 2022
+    json: {}
+    svg:
+      keepnamespaces:
+      - ''
+      - x-bind
+    xml: {}
+module:
+  hugoversion: {}
+  imports:
+  - path: PaperMod
+  mounts:
+  - sites:
+      complements: {}
+      matrix: {}
+    source: content
+    target: content
+  - sites:
+      complements: {}
+      matrix: {}
+    source: data
+    target: data
+  - sites:
+      complements: {}
+      matrix: {}
+    source: layouts
+    target: layouts
+  - sites:
+      complements: {}
+      matrix: {}
+    source: i18n
+    target: i18n
+  - sites:
+      complements: {}
+      matrix: {}
+    source: archetypes
+    target: archetypes
+  - sites:
+      complements: {}
+      matrix: {}
+    source: assets
+    target: assets
+  - sites:
+      complements: {}
+      matrix: {}
+    source: static
+    target: static
+  noproxy: none
+  private: '*.*'
+  proxy: direct
+  workspace: 'off'
+outputformats:
+  '404':
+    ishtml: true
+    mediatype: text/html
+    notalternative: true
+    permalinkable: true
+    ugly: true
+  alias:
+    ishtml: true
+    mediatype: text/html
+    ugly: true
+  amp:
+    basename: index
+    ishtml: true
+    mediatype: text/html
+    path: amp
+    permalinkable: true
+    rel: amphtml
+  calendar:
+    basename: index
+    isplaintext: true
+    mediatype: text/calendar
+    protocol: webcal://
+    rel: alternate
+  css:
+    basename: styles
+    isplaintext: true
+    mediatype: text/css
+    notalternative: true
+    rel: stylesheet
+  csv:
+    basename: index
+    isplaintext: true
+    mediatype: text/csv
+    rel: alternate
+  gotmpl:
+    isplaintext: true
+    mediatype: text/x-gotmpl
+    notalternative: true
+  html:
+    basename: index
+    ishtml: true
+    mediatype: text/html
+    permalinkable: true
+    rel: canonical
+    weight: 10
+  json:
+    basename: index
+    isplaintext: true
+    mediatype: application/json
+    rel: alternate
+  markdown:
+    basename: index
+    isplaintext: true
+    mediatype: text/markdown
+    rel: alternate
+  robots:
+    basename: robots
+    isplaintext: true
+    mediatype: text/plain
+    rel: alternate
+    root: true
+  rss:
+    basename: index
+    mediatype: application/rss+xml
+    nougly: true
+    rel: alternate
+  sitemap:
+    basename: sitemap
+    mediatype: application/xml
+    rel: sitemap
+    ugly: true
+  sitemapindex:
+    basename: sitemap
+    mediatype: application/xml
+    rel: sitemap
+    root: true
+    ugly: true
+  webappmanifest:
+    basename: manifest
+    isplaintext: true
+    mediatype: application/manifest+json
+    notalternative: true
+    rel: manifest
+outputs:
+  home:
+  - html
+  - rss
+  page:
+  - html
+  rss:
+  - rss
+  section:
+  - html
+  - rss
+  taxonomy:
+  - html
+  - rss
+  term:
+  - html
+  - rss
+page:
+  nextprevinsectionsortorder: desc
+  nextprevsortorder: desc
+pagination:
+  pagersize: 10
+  path: page
+params:
+  env: production
+  googleanalytics: G-BP61MGQ5GV
+  showpostmeta: true
+  showreadingtime: true
+  showtoc: true
+  showwordcount: true
+  sidebar:
+      emoji: 🌞
+      subtitle:  Digital Architect | TPM | AI
+      title: Liuchien's Blog
+      description: 專注於研發數位系統 與 AI 知識管理。
+  search:
+          enabled: true
+          placeholder: 想找點什麼？
+permalinks:
+  page: {}
+  section: {}
+  taxonomy: {}
+  term: {}
+pluralizelisttitles: true
+privacy:
+  disqus: {}
+  googleanalytics:
+    respectdonottrack: true
+  instagram: {}
+  vimeo: {}
+  x: {}
+  youtube: {}
+publishdir: public
+related:
+  indices:
+  - name: keywords
+    type: basic
+    weight: 100
+  - name: date
+    type: basic
+    weight: 10
+  - name: tags
+    type: basic
+    weight: 80
+  threshold: 80
+resourcedir: resources
+roles:
+  guest: {}
+security:
+  exec:
+    allow:
+    - ^(dart-)?sass(-embedded)?$
+    - ^go$
+    - ^git$
+    - ^npx$
+    - ^postcss$
+    - ^tailwindcss$
+    osenv:
+    - '(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE|PROGRAMDATA)$'
+  funcs:
+    getenv:
+    - ^HUGO_
+    - ^CI$
+  http:
+    methods:
+    - (?i)GET|POST
+    urls:
+    - .*
+segments: {}
+server:
+  redirects:
+  - from: /**
+    status: 404
+    to: /404.html
+services:
+  disqus: {}
+  googleanalytics: {}
+  rss:
+    limit: -1
+  x: {}
+sitemap:
+  filename: sitemap.xml
+  priority: -1
+staticdir:
+- static
+summarylength: 70
+taxonomies:
+  category: categories
+  tag: tags
+theme:
+- PaperMod
+themesdir: themes
+timeout: 60s
+title: Liuchien's Blog
+titlecasestyle: AP
+uglyurls: {}
+versions:
+  v1.0.0: {}
+workingdir: /Users/liujiande/Projects/blogger/liuchien

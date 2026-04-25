@@ -11,8 +11,12 @@
     <loc>https://liuchien.inxpire.tw/posts/my-first-post/</loc>
     <lastmod>2026-04-24T16:22:40+08:00</lastmod>
   </url><url>
+    <loc>https://liuchien.inxpire.tw/templates/hugo-post/</loc>
+  </url><url>
     <loc>https://liuchien.inxpire.tw/categories/</loc>
   </url><url>
     <loc>https://liuchien.inxpire.tw/tags/</loc>
+  </url><url>
+    <loc>https://liuchien.inxpire.tw/templates/</loc>
   </url>
 </urlset>
