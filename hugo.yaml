@@ -8,7 +8,7 @@ build:
   - source: '(postcss|tailwind)\.config\.js'
     target: (css|styles|scss|sass)
   useresourcecachewhen: fallback
-cachedir: /Users/liujiande/Library/Caches/hugo_cache
+cacheDir: ./resources/_gen/
 caches:
   assets:
     dir: :resourceDir/_gen
