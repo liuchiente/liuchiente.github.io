@@ -276,24 +276,27 @@ author: &ldquo;你的名字&rdquo;
 <script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<section class="reading-count" style="color: var(--card-text-color-main); opacity: 0.6; font-size: 1.4rem; margin-top: 10px;">
+<div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">
     <span id="busuanzi_container_site_pv" style="display: none;">
-        本站總訪問量 <span id="busuanzi_value_site_pv" style="font-weight: bold;"></span> 次
+        🚀 總訪問量：<span id="busuanzi_value_site_pv" style="font-weight: bold;">--</span> 次
     </span>
-    <span id="busuanzi_container_page_pv" style="display: none;">
-        <span class="divider">|</span> 本文閱讀量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次
+    <span id="busuanzi_container_page_pv" style="display: none; margin-left: 10px;">
+        🔥 本文閱讀：<span id="busuanzi_value_page_pv" style="font-weight: bold;">--</span> 次
     </span>
-</section>
+</div>
 
-<style>
-     
-    #busuanzi_container_site_pv, #busuanzi_container_page_pv {
-        display: inline !important;
-    }
-    .reading-count .divider {
-        margin: 0 10px;
-    }
-</style>
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkBusuanzi = setInterval(() => {
+            if (document.getElementById('busuanzi_value_site_pv')?.innerText !== '--') {
+                document.getElementById('busuanzi_container_site_pv').style.display = 'inline';
+                document.getElementById('busuanzi_container_page_pv').style.display = 'inline';
+                clearInterval(checkBusuanzi);
+            }
+        }, 500);
+    });
+</script>
 
     </body>
 </html>
