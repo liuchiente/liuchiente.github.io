@@ -8,29 +8,6 @@ build:
   - source: '(postcss|tailwind)\.config\.js'
     target: (css|styles|scss|sass)
   useresourcecachewhen: fallback
-cacheDir: ./resources/_gen/
-caches:
-  assets:
-    dir: :resourceDir/_gen
-    maxage: -1
-  getresource:
-    dir: :cacheDir/:project
-    maxage: -1
-  images:
-    dir: :resourceDir/_gen
-    maxage: -1
-  misc:
-    dir: :cacheDir/:project
-    maxage: -1
-  modulegitinfo:
-    dir: :cacheDir/modules
-    maxage: 24h
-  modulequeries:
-    dir: :cacheDir/modules
-    maxage: 24h
-  modules:
-    dir: :cacheDir/modules
-    maxage: -1
 capitalizelisttitles: true
 contentdir: content
 contenttypes:
@@ -636,4 +613,3 @@ titlecasestyle: AP
 uglyurls: {}
 versions:
   v1.0.0: {}
-workingdir: /Users/liujiande/Projects/blogger/liuchien
