@@ -475,6 +475,8 @@ pagination:
   pagersize: 10
   path: page
 params:
+  mainSections:
+    - post
   env: production
   googleanalytics: G-BP61MGQ5GV
   showpostmeta: true
