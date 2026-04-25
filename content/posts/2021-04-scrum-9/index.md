@@ -12,7 +12,11 @@ draft: false
 
 從我的[自我介紹](https://liuchien.ink.tw/%e9%97%9c%e6%96%bc/)中，或許很難想像我會和[敏捷管理](https://zh.wikipedia.org/zh-tw/%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91)、[Scrum開發](https://zh.wikipedia.org/wiki/Scrum)等聯想起來，最多最多可能就是參與研發時沾上一點邊；實際上，Agile的概念在台灣出現的算早，我也在2009年左右就接觸到此一概念，還記得第一次聽到時，我還打趣地跟同事說，要敏捷開發，~~那我是不是可以跳著寫?~~
 
-[![](/posts/2021-04-scrum-9/images/2021-04-scrum-9-7889007203170626722.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGp7pbkS4GXdvYQy\_0pwnkea-RAdhxNfMcPcHNY1XDnto18psKM4lem0LDhObaMeJyKhNA4cKdAHr\_ekCPK6M6MAuWbNCpWJa4MoFtSE1e6Q7TO\_znUUYmE-S7iiq1jo6C9euckMzKxgIqEots9-jU\_aQBbQkdp6SJVl\_xultdkFzq5qjcRXCZhC5PUdE/s1792/Designer.jpeg)![](https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/04/frankie01.jpg?w=525&ssl=1)版權屬原創作者所有，若有侵犯請告知並刪除。想必我會這麼說，一方面是因為年輕氣盛，一方面是因為對團隊運作沒有相當足夠的經驗和歷練，所以沒有很深刻的了解這能幫我們解決甚麼問題，在歷經研發系統、管理部門後，再加上一些應用經驗，才能更具體地描述Scrum可以解決甚麼問題，不能解決甚麼問題，故後面我會加入以往運用Scrum的經驗和心得，來述說我對此一方法的看法。
+
+
+![image](images/2021-04-scrum-9-7889007203170626722.jpeg)
+
+![](https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/04/frankie01.jpg?w=525&ssl=1)版權屬原創作者所有，若有侵犯請告知並刪除。想必我會這麼說，一方面是因為年輕氣盛，一方面是因為對團隊運作沒有相當足夠的經驗和歷練，所以沒有很深刻的了解這能幫我們解決甚麼問題，在歷經研發系統、管理部門後，再加上一些應用經驗，才能更具體地描述Scrum可以解決甚麼問題，不能解決甚麼問題，故後面我會加入以往運用Scrum的經驗和心得，來述說我對此一方法的看法。
 
 ## 迷思
 
@@ -61,7 +65,11 @@ draft: false
 
 也許管理者會沾沾自喜，覺得大家都參與討論，最後問題也得到解答，但需要注意的是，有些問題往往是1~2個成員之間的困擾，為什麼需要大家一起來陪聽呢 ？即便需要大家一起參與討論和找到解答，著實浪費大家的時間，而會議沒有完整主軸，變成一場各聊各的野餐會議。
 
-![](https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/04/frogs-1371297\_640.jpg?w=525&ssl=1)*[![](/posts/2021-04-scrum-9/images/2021-04-scrum-9-5373976989918153983.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2gg52zfTcu3UBE8DPWAR\_cLjm-tD9yx-7hWpYbsDZEGbT1zf\_U6uQAFaF1rhhV9gBdw88xJ2OMJd0YvusT3Y0Ca4SXp1vFkfQOt5tK5YSipsRTNk01OZEBj4D05NOvt\_GuAbGaVxulOmpsKLUAWDYH1NI8CPDrvzbeWWzNncZHr6bPtAlVlLphcghz1M/s1792/Designer%20(2).jpeg)**不良的會議控制，最後只會像是一場野餐。*說了那麼多迷思和常見的錯誤，其實筆者真正想表達的是關於敏捷的四大價值，或許各位在開始之前，可以細想這幾句話的意思，若牢記於心的話，那麼我們就可以開始冒險了 !
+![](https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/04/frogs-1371297\_640.jpg?w=525&ssl=1)*
+
+![image](images/2021-04-scrum-9-5373976989918153983.jpeg)
+
+.jpeg)**不良的會議控制，最後只會像是一場野餐。*說了那麼多迷思和常見的錯誤，其實筆者真正想表達的是關於敏捷的四大價值，或許各位在開始之前，可以細想這幾句話的意思，若牢記於心的話，那麼我們就可以開始冒險了 !
 
 
 > **「個人與互動」重於「流程與工具」**

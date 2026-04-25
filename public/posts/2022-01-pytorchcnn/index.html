@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="這篇文章是我在修習影像處理時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用Pytorch實作了卷積神經網絡(Convolutional Neural Network)簡稱CNN，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。\n">
 <title>使用Pytorch實作卷積網路(CNN)做多分類圖片識別</title>
 
 
-<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2022-01-pytorchcnn/">
+<link rel="canonical" href="http://localhost:1313/posts/2022-01-pytorchcnn/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="使用Pytorch實作卷積網路(CNN)做多分類圖片識別">
 <meta property='og:description' content="這篇文章是我在修習影像處理時做的作業之一，主要是想訓練一個Model來識別輸入的圖片是在室外環境，還是室內環境，為了完成這個目標，我使用Pytorch實作了卷積神經網絡(Convolutional Neural Network)簡稱CNN，搭配網路上的資料集進行訓練，最後將我隨意亂拍的照片輸入做辨識，發現效果還不錯。\n">
-<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2022-01-pytorchcnn/'>
+<meta property='og:url' content='http://localhost:1313/posts/2022-01-pytorchcnn/'>
 <meta property='og:site_name' content='Liuchien&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Pytorch' /><meta property='article:tag' content='Convolutional Neural Network' /><meta property='article:tag' content='CNN' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='中興大學資工所' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='Digital Image Process' /><meta property='article:tag' content='CrossEntropy' /><meta property='article:published_time' content='2022-01-26T14:54:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-20T07:05:44&#43;00:00'/>
 <meta name="twitter:title" content="使用Pytorch實作卷積網路(CNN)做多分類圖片識別">
@@ -263,38 +263,31 @@
 </ol>
 </li>
 </ul>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGMKQsZty9RvfsQQyeBYgeVzFKeAIcrIvjjOK21YndBH70NvtjP7gT4Tc89g3nAj-RHEMoAdhEhBMK2LXFHAv25tYfK7MlCLjT2bLk2gcgXY0aTKiKX8FfBe1kWTVZwWjUxOr4Xw-0NMxRdLLvXHzufAazwAe47zOMa4Ko74OXxkn-FHieBpAmqXOF680/s768/Indoor&amp;Outdoor1.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
- 本次我是使用多分類方式來做，故採用CrossEntropy的Loss計算。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyZmlgcIj4otoevAm800Eg6F2Fko9ine5tGcCkkkjtkZB%5c_14tOkRu7Ug2pV6wu2Fvi877C5yPxnX3CKHfWCYZXyv%5c_YYy6seUjvSSifS4Qf5S4H6M3-IeWKCqxqvaSJ0vmvNiBOv5LPurJYmbph1QMXqtgbZm7qHd8sE8fyPDlSdDnJIrbLo865ZS2tqeM/s543/Indoor&amp;Outdoor2.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-Crossentropy主要用在計算多分類的交叉熵。本次訓練15次，主要記得開啟訓練模式、梯度歸零和更新等，Model會預測這張圖是屬於哪個類型，一開始Model處於亂猜階段，隨著我們去算出他的Loss率，然後再backward和用step做權重更新後，Model就會學習到正確的分類。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdBjKrlRjm45Y-QY2mmHSMTdPNul4yNRKoAv4mHd2pMqDgp577Js65x6S6SX0jlmSbiltSIos0Xh1l5fjjt4fkQnDXAvjvxARX8wntRRwOKux1QiPZlnohvQZjcvC1YuQOdFJtzGCkpMLQQRQoIYd5QLMKHX9chfTk1diTrDnGF%5c_WCZhXBsp3xN9JZLU4/s504/Indoor&amp;Outdoor3.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-訓練時需把Loss率反向傳播，這樣才能讓整個網路知道辨識的錯誤率為何。驗證也是15次，記得開啟評估模式就好，因為在這裡我們想做的是驗證模型準確率，不需要再把驗證出來的結果反向傳播回模型了。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRPkPScB-gmdVXiTuX0iMtcjnuTGFXhbN6tDWiqLgJSAPX6QSawaEVPcyPFWr8xssARbUBrXBLvJd-OscNic7hv-4rlTnHVsZ4jvXFd98gZscXqElHj0sTVZgFa73y9B5aLC95oGTFAFjlkvGnc6RRMHe8p-wrvA8fRSQSnCcHqntMqevH7xapeguv56Y/s866/Indoor&amp;Outdoor4.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-注意開啟評估模式，藉此來了解你的Model能力。附上網路的形狀</p>
-<p> <a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXLmPB8m2CbEx552ozI8NI9rrIuNl0V97N3UncUMLaDFXInZJgZlC7fziEuploHLt-m6OETK-aSXO5mNcSqUpywtk7kaclVtZTRz8dxhISk1%5c_%5c_82c0y6d-M6ZARO7ZL1CS3LgFzNo4FlR3z2yZ60C8QepuEL%5c_vOJfLs%5c_g3vgAAQaWCzTnJF60%5c_qE5AJ6Y/s625/Indoor&amp;Outdoor5.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-本次作業規劃的網路形狀。* 測試資料與結果
+<p><img alt="image" class="gallery-image" data-flex-basis="240px" data-flex-grow="100" height="640" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-8371477970952890165.png" width="640"></p>
+<p> 本次我是使用多分類方式來做，故採用CrossEntropy的Loss計算。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="2172px" data-flex-grow="905" height="60" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-6674293473360211877.png" width="543"></p>
+<p>Crossentropy主要用在計算多分類的交叉熵。本次訓練15次，主要記得開啟訓練模式、梯度歸零和更新等，Model會預測這張圖是屬於哪個類型，一開始Model處於亂猜階段，隨著我們去算出他的Loss率，然後再backward和用step做權重更新後，Model就會學習到正確的分類。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="210px" data-flex-grow="87" height="504" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-7947078000039926583.png" width="441"></p>
+<p>訓練時需把Loss率反向傳播，這樣才能讓整個網路知道辨識的錯誤率為何。驗證也是15次，記得開啟評估模式就好，因為在這裡我們想做的是驗證模型準確率，不需要再把驗證出來的結果反向傳播回模型了。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="394px" data-flex-grow="164" height="389" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-7603765856766502550.png" width="640"></p>
+<p>注意開啟評估模式，藉此來了解你的Model能力。附上網路的形狀</p>
+<p> </p>
+<p><img alt="image" class="gallery-image" data-flex-basis="289px" data-flex-grow="120" height="518" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-3747374168472624458.png" width="625"></p>
+<p>本次作業規劃的網路形狀。* 測試資料與結果
 1. 訓練和驗證資料集主要來自<a class="link" href="https://diode-dataset.org/"  target="_blank" rel="noopener"
     >https:</a><a class="link" href="https://diode-dataset.org"  target="_blank" rel="noopener"
     >//diode-dataset.org/的Dataset</a>，先人工整理出Train和Valid的資料夾，並在其中切分出Indoor和Outdoor，作為輔助，此外我也定義了Indoor是標籤0，Outdoor是標籤1。
 2. 訓練15次，可參考下圖，藍色為訓練的Loss率，橘色是驗證的Loss率，訓練的Loss率原本逐漸下降，但到後期又急速攀升，初步判斷是訓練Label雜亂造成？但因為訓練次數不夠多，如果訓練100次仍這樣亂跳，那就有可能代表圖片的Label太亂，造成loss計算不清楚；而驗證的Loss率則在訓練完第1次後趨於平緩。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjba8GdlHB6QSwG9YFFGc5x4XYRlR1w8shUQcllIotY45ejnctMgeV2rDecEsMyRvBmQPBBJngEGhfsgJ%5c_IESgN5Ot6BzSU6ypFz7Oa2xQDKamZiM4xvArS1XcPrD0b1Z8keZPl-00vbI3vNhoGwMx6PnWZgsAbbpuJK1MaxlnZmO34tenuPL8d5UqDD-I/s789/Indoor&amp;Outdoor6.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-訓練和驗證時，Model的Loss率變化。1. 在網路輸出時主要會得到一個2元素的Tensor，在這裡我沒多做轉換，若是索引0的機率高，則代表這圖是Label 0 Indoor，1的話則是Outdoor。
+<p><img alt="image" class="gallery-image" data-flex-basis="365px" data-flex-grow="152" height="420" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-2333515513628461514.png" width="640"></p>
+<p>訓練和驗證時，Model的Loss率變化。1. 在網路輸出時主要會得到一個2元素的Tensor，在這裡我沒多做轉換，若是索引0的機率高，則代表這圖是Label 0 Indoor，1的話則是Outdoor。
 1. 訓練15次後進行測試，Loss率0.31左右，得到的成功率是90多%，感覺好像有點厲害，相較先前使用3層CNN搭配一層線性層，有不錯增長。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwrQbTga2g5GC6vNyEFwxnOnIgzYE0U3NKHZtumM-wTLnF1TyKh8gZkN8mpKIcKGQqG6Z-8Tj3ZoVs1GDPXH9eNixnNhXEuMZEyHtMvQ5fUQv98PMUT6DTrCnrSnBCRR0gRgBI-2Kh3oVRfUVNN25PKX00qprT71yO2-y5LILuAyw7UjI9%5c_brLdr7zc94/s866/Indoor&amp;Outdoor7.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
- 圖片實際預測結果，此10張都是我刻意挑選用來混淆Model的圖片。* 討論
+<p><img alt="image" class="gallery-image" data-flex-basis="562px" data-flex-grow="234" height="273" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-304985447011864607.png" width="640"></p>
+<p> 圖片實際預測結果，此10張都是我刻意挑選用來混淆Model的圖片。* 討論
 1. 本次的測試資料集我是用自己拍的10張圖，其中有些我刻意選擇比較怪異的構圖，譬如在樹叢中拍攝帳篷，或是在有雨棚的路邊攤拍攝，並當作是Indoor照，企圖影響網路的判斷。
 2. 承上，之所以會這樣做是因為我認為類神經網路在擷取特徵時，應該是以構圖和色調在抓室內和室外的差別，才故意找一些界定模糊的資料。
 3. 訓練的Loss率亂跳一方面或許和原始資料集也有關，譬如有放在桌上的帆船模型，照理說和室外的海上的船是蠻像的，不過若是加大訓練次數，有機會看到Loss率逐漸趨緩，因為Model將會逐漸分辨出室內和室外該有的色調，進而判斷出正確結果，而不再是被物體的形狀限制。</p>
-<p><a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoazZrkiKTQ5BB-VbJYGsQdSrbSYZjR2v0jFIEx1lD%5c_CY-tRza1kfFuc4xlGg2sqAnugFV94Uha24Br9vS%5c_IJBc0wgX2N3aGEuJkibvcT8QVSUrtWVAgtylhYCfunQ7f9lxYYGCepNmC4KRR3PwWrK7BzfjCQENWaXP0eaHBMDClBxsiro0ytiEf-3n5A/s866/Indoor&amp;Outdoor8.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-若有機會，會想嘗試把RNN加入到網路中，藉此了解當面對複雜特徵且數量眾多的圖片，Model的學習能力是否有加分效果，當然可預想的是RNN效果未必會比較好。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="492px" data-flex-grow="205" height="312" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-pytorchcnn/images/2022-01-pytorchcnn-8114850439970933763.png" width="640"></p>
+<p>若有機會，會想嘗試把RNN加入到網路中，藉此了解當面對複雜特徵且數量眾多的圖片，Model的學習能力是否有加分效果，當然可預想的是RNN效果未必會比較好。</p>
 <p>若是你對本篇文章的原始碼有興趣，<a class="link" href="https://github.com/liuchiente/Digital%5c_Image%5c_Process%5c_at%5c_NCHU/blob/main/InDoor%26OutDoorL.ipynb"  target="_blank" rel="noopener"
     >可以參考我的Github連結</a>。</p>
 
@@ -368,7 +361,7 @@ Crossentropy主要用在計算多分類的交叉熵。本次訓練15次，主要
         
 
         <div class="article-details">
-            <h2 class="article-title">影像處理 | Boundary Extraction &amp;amp; Region Filling</h2>
+            <h2 class="article-title">影像處理 | Boundary Extraction &amp; Region Filling</h2>
         </div>
     </a>
 </article>
@@ -513,7 +506,7 @@ Crossentropy主要用在計算多分類的交叉熵。本次訓練15次，主要
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">

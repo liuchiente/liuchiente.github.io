@@ -1,633 +1,633 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on Liuchien&#39;s Blog</title>
-        <link>https://liuchien.inxpire.tw/tags/</link>
+        <link>http://localhost:1313/tags/</link>
         <description>Recent content in Tags on Liuchien&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language>
-        <lastBuildDate>Mon, 09 Mar 2026 09:32:39 +0000</lastBuildDate><atom:link href="https://liuchien.inxpire.tw/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Mar 2026 09:32:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
             <title>AI Agent</title>
-            <link>https://liuchien.inxpire.tw/tags/ai-agent/</link>
+            <link>http://localhost:1313/tags/ai-agent/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai-agent/</guid>
+            <guid>http://localhost:1313/tags/ai-agent/</guid>
             <description></description>
         </item><item>
             <title>AI Architecture</title>
-            <link>https://liuchien.inxpire.tw/tags/ai-architecture/</link>
+            <link>http://localhost:1313/tags/ai-architecture/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai-architecture/</guid>
+            <guid>http://localhost:1313/tags/ai-architecture/</guid>
             <description></description>
         </item><item>
             <title>AI Framework</title>
-            <link>https://liuchien.inxpire.tw/tags/ai-framework/</link>
+            <link>http://localhost:1313/tags/ai-framework/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai-framework/</guid>
+            <guid>http://localhost:1313/tags/ai-framework/</guid>
             <description></description>
         </item><item>
             <title>AI 自動化</title>
-            <link>https://liuchien.inxpire.tw/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</link>
+            <link>http://localhost:1313/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</guid>
+            <guid>http://localhost:1313/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</guid>
             <description></description>
         </item><item>
             <title>AI 協作</title>
-            <link>https://liuchien.inxpire.tw/tags/ai-%E5%8D%94%E4%BD%9C/</link>
+            <link>http://localhost:1313/tags/ai-%E5%8D%94%E4%BD%9C/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai-%E5%8D%94%E4%BD%9C/</guid>
+            <guid>http://localhost:1313/tags/ai-%E5%8D%94%E4%BD%9C/</guid>
             <description></description>
         </item><item>
             <title>AI寫程式</title>
-            <link>https://liuchien.inxpire.tw/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</link>
+            <link>http://localhost:1313/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</guid>
+            <guid>http://localhost:1313/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</guid>
             <description></description>
         </item><item>
             <title>Vibe Coding</title>
-            <link>https://liuchien.inxpire.tw/tags/vibe-coding/</link>
+            <link>http://localhost:1313/tags/vibe-coding/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/vibe-coding/</guid>
+            <guid>http://localhost:1313/tags/vibe-coding/</guid>
             <description></description>
         </item><item>
             <title>後AI時代</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</link>
+            <link>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</link>
             <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</guid>
+            <guid>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</guid>
             <description></description>
         </item><item>
             <title>AI</title>
-            <link>https://liuchien.inxpire.tw/tags/ai/</link>
+            <link>http://localhost:1313/tags/ai/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/ai/</guid>
+            <guid>http://localhost:1313/tags/ai/</guid>
             <description></description>
         </item><item>
             <title>CrewAI</title>
-            <link>https://liuchien.inxpire.tw/tags/crewai/</link>
+            <link>http://localhost:1313/tags/crewai/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/crewai/</guid>
+            <guid>http://localhost:1313/tags/crewai/</guid>
             <description></description>
         </item><item>
             <title>Generative AI</title>
-            <link>https://liuchien.inxpire.tw/tags/generative-ai/</link>
+            <link>http://localhost:1313/tags/generative-ai/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/generative-ai/</guid>
+            <guid>http://localhost:1313/tags/generative-ai/</guid>
             <description></description>
         </item><item>
             <title>LiteLLM</title>
-            <link>https://liuchien.inxpire.tw/tags/litellm/</link>
+            <link>http://localhost:1313/tags/litellm/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/litellm/</guid>
+            <guid>http://localhost:1313/tags/litellm/</guid>
             <description></description>
         </item><item>
             <title>LLM</title>
-            <link>https://liuchien.inxpire.tw/tags/llm/</link>
+            <link>http://localhost:1313/tags/llm/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/llm/</guid>
+            <guid>http://localhost:1313/tags/llm/</guid>
             <description></description>
         </item><item>
             <title>MCP</title>
-            <link>https://liuchien.inxpire.tw/tags/mcp/</link>
+            <link>http://localhost:1313/tags/mcp/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/mcp/</guid>
+            <guid>http://localhost:1313/tags/mcp/</guid>
             <description></description>
         </item><item>
             <title>Multi-Agent</title>
-            <link>https://liuchien.inxpire.tw/tags/multi-agent/</link>
+            <link>http://localhost:1313/tags/multi-agent/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/multi-agent/</guid>
+            <guid>http://localhost:1313/tags/multi-agent/</guid>
             <description></description>
         </item><item>
             <title>Python AI</title>
-            <link>https://liuchien.inxpire.tw/tags/python-ai/</link>
+            <link>http://localhost:1313/tags/python-ai/</link>
             <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/python-ai/</guid>
+            <guid>http://localhost:1313/tags/python-ai/</guid>
             <description></description>
         </item><item>
             <title>人工智慧</title>
-            <link>https://liuchien.inxpire.tw/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</link>
+            <link>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</guid>
+            <guid>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</guid>
             <description></description>
         </item><item>
             <title>大語言模型</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</link>
+            <link>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</guid>
+            <guid>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</guid>
             <description></description>
         </item><item>
             <title>自然語言研究趨勢和論文</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</link>
+            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</guid>
+            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</guid>
             <description></description>
         </item><item>
             <title>自然語言處理</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
+            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
+            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
             <description></description>
         </item><item>
             <title>訓練語料</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</link>
+            <link>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</guid>
+            <guid>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</guid>
             <description></description>
         </item><item>
             <title>深度學習</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
+            <link>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
+            <guid>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
             <description></description>
         </item><item>
             <title>資料集</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%B3%87%E6%96%99%E9%9B%86/</link>
+            <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%B3%87%E6%96%99%E9%9B%86/</guid>
+            <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</guid>
             <description></description>
         </item><item>
             <title>繁體中文</title>
-            <link>https://liuchien.inxpire.tw/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</link>
+            <link>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
+            <guid>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
             <description></description>
         </item><item>
             <title>簡體中文</title>
-            <link>https://liuchien.inxpire.tw/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</link>
+            <link>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</link>
             <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
+            <guid>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
             <description></description>
         </item><item>
             <title>ChatGPT</title>
-            <link>https://liuchien.inxpire.tw/tags/chatgpt/</link>
+            <link>http://localhost:1313/tags/chatgpt/</link>
             <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/chatgpt/</guid>
+            <guid>http://localhost:1313/tags/chatgpt/</guid>
             <description></description>
         </item><item>
             <title>Gemini</title>
-            <link>https://liuchien.inxpire.tw/tags/gemini/</link>
+            <link>http://localhost:1313/tags/gemini/</link>
             <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/gemini/</guid>
+            <guid>http://localhost:1313/tags/gemini/</guid>
             <description></description>
         </item><item>
             <title>Grok</title>
-            <link>https://liuchien.inxpire.tw/tags/grok/</link>
+            <link>http://localhost:1313/tags/grok/</link>
             <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/grok/</guid>
+            <guid>http://localhost:1313/tags/grok/</guid>
             <description></description>
         </item><item>
             <title>Multimodal AI</title>
-            <link>https://liuchien.inxpire.tw/tags/multimodal-ai/</link>
+            <link>http://localhost:1313/tags/multimodal-ai/</link>
             <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/multimodal-ai/</guid>
+            <guid>http://localhost:1313/tags/multimodal-ai/</guid>
             <description></description>
         </item><item>
             <title>賭神</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%B3%AD%E7%A5%9E/</link>
+            <link>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</link>
             <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%B3%AD%E7%A5%9E/</guid>
+            <guid>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</guid>
             <description></description>
         </item><item>
             <title>Large Language Model</title>
-            <link>https://liuchien.inxpire.tw/tags/large-language-model/</link>
+            <link>http://localhost:1313/tags/large-language-model/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/large-language-model/</guid>
+            <guid>http://localhost:1313/tags/large-language-model/</guid>
             <description></description>
         </item><item>
             <title>Multi-Documents Summarization</title>
-            <link>https://liuchien.inxpire.tw/tags/multi-documents-summarization/</link>
+            <link>http://localhost:1313/tags/multi-documents-summarization/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/multi-documents-summarization/</guid>
+            <guid>http://localhost:1313/tags/multi-documents-summarization/</guid>
             <description></description>
         </item><item>
             <title>NotebookLM</title>
-            <link>https://liuchien.inxpire.tw/tags/notebooklm/</link>
+            <link>http://localhost:1313/tags/notebooklm/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/notebooklm/</guid>
+            <guid>http://localhost:1313/tags/notebooklm/</guid>
             <description></description>
         </item><item>
             <title>Summarization</title>
-            <link>https://liuchien.inxpire.tw/tags/summarization/</link>
+            <link>http://localhost:1313/tags/summarization/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/summarization/</guid>
+            <guid>http://localhost:1313/tags/summarization/</guid>
             <description></description>
         </item><item>
             <title>機器學習</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
+            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</guid>
+            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</guid>
             <description></description>
         </item><item>
             <title>機器學習與自然語言處理</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
+            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
             <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
+            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
             <description></description>
         </item><item>
             <title>Discord</title>
-            <link>https://liuchien.inxpire.tw/tags/discord/</link>
+            <link>http://localhost:1313/tags/discord/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/discord/</guid>
+            <guid>http://localhost:1313/tags/discord/</guid>
             <description></description>
         </item><item>
             <title>Google Chat</title>
-            <link>https://liuchien.inxpire.tw/tags/google-chat/</link>
+            <link>http://localhost:1313/tags/google-chat/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/google-chat/</guid>
+            <guid>http://localhost:1313/tags/google-chat/</guid>
             <description></description>
         </item><item>
             <title>Line</title>
-            <link>https://liuchien.inxpire.tw/tags/line/</link>
+            <link>http://localhost:1313/tags/line/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/line/</guid>
+            <guid>http://localhost:1313/tags/line/</guid>
             <description></description>
         </item><item>
             <title>Line Message</title>
-            <link>https://liuchien.inxpire.tw/tags/line-message/</link>
+            <link>http://localhost:1313/tags/line-message/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/line-message/</guid>
+            <guid>http://localhost:1313/tags/line-message/</guid>
             <description></description>
         </item><item>
             <title>Line Notify</title>
-            <link>https://liuchien.inxpire.tw/tags/line-notify/</link>
+            <link>http://localhost:1313/tags/line-notify/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/line-notify/</guid>
+            <guid>http://localhost:1313/tags/line-notify/</guid>
             <description></description>
         </item><item>
             <title>Telegram</title>
-            <link>https://liuchien.inxpire.tw/tags/telegram/</link>
+            <link>http://localhost:1313/tags/telegram/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/telegram/</guid>
+            <guid>http://localhost:1313/tags/telegram/</guid>
             <description></description>
         </item><item>
             <title>Wechat</title>
-            <link>https://liuchien.inxpire.tw/tags/wechat/</link>
+            <link>http://localhost:1313/tags/wechat/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/wechat/</guid>
+            <guid>http://localhost:1313/tags/wechat/</guid>
             <description></description>
         </item><item>
             <title>Zalo</title>
-            <link>https://liuchien.inxpire.tw/tags/zalo/</link>
+            <link>http://localhost:1313/tags/zalo/</link>
             <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/zalo/</guid>
+            <guid>http://localhost:1313/tags/zalo/</guid>
             <description></description>
         </item><item>
             <title>Fine-Tune</title>
-            <link>https://liuchien.inxpire.tw/tags/fine-tune/</link>
+            <link>http://localhost:1313/tags/fine-tune/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/fine-tune/</guid>
+            <guid>http://localhost:1313/tags/fine-tune/</guid>
             <description></description>
         </item><item>
             <title>Fine-Tuning</title>
-            <link>https://liuchien.inxpire.tw/tags/fine-tuning/</link>
+            <link>http://localhost:1313/tags/fine-tuning/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/fine-tuning/</guid>
+            <guid>http://localhost:1313/tags/fine-tuning/</guid>
             <description></description>
         </item><item>
             <title>Machine Learning</title>
-            <link>https://liuchien.inxpire.tw/tags/machine-learning/</link>
+            <link>http://localhost:1313/tags/machine-learning/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/machine-learning/</guid>
+            <guid>http://localhost:1313/tags/machine-learning/</guid>
             <description></description>
         </item><item>
             <title>Model</title>
-            <link>https://liuchien.inxpire.tw/tags/model/</link>
+            <link>http://localhost:1313/tags/model/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/model/</guid>
+            <guid>http://localhost:1313/tags/model/</guid>
             <description></description>
         </item><item>
             <title>Prompt</title>
-            <link>https://liuchien.inxpire.tw/tags/prompt/</link>
+            <link>http://localhost:1313/tags/prompt/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/prompt/</guid>
+            <guid>http://localhost:1313/tags/prompt/</guid>
             <description></description>
         </item><item>
             <title>Training</title>
-            <link>https://liuchien.inxpire.tw/tags/training/</link>
+            <link>http://localhost:1313/tags/training/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/training/</guid>
+            <guid>http://localhost:1313/tags/training/</guid>
             <description></description>
         </item><item>
             <title>Vietnam</title>
-            <link>https://liuchien.inxpire.tw/tags/vietnam/</link>
+            <link>http://localhost:1313/tags/vietnam/</link>
             <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/vietnam/</guid>
+            <guid>http://localhost:1313/tags/vietnam/</guid>
             <description></description>
         </item><item>
             <title>ChatBot</title>
-            <link>https://liuchien.inxpire.tw/tags/chatbot/</link>
+            <link>http://localhost:1313/tags/chatbot/</link>
             <pubDate>Fri, 10 Jan 2025 07:09:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/chatbot/</guid>
+            <guid>http://localhost:1313/tags/chatbot/</guid>
             <description></description>
         </item><item>
             <title>學習紀錄</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</link>
+            <link>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</link>
             <pubDate>Fri, 10 Jan 2025 07:09:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</guid>
+            <guid>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</guid>
             <description></description>
         </item><item>
             <title>NLP</title>
-            <link>https://liuchien.inxpire.tw/tags/nlp/</link>
+            <link>http://localhost:1313/tags/nlp/</link>
             <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/nlp/</guid>
+            <guid>http://localhost:1313/tags/nlp/</guid>
             <description></description>
         </item><item>
             <title>Pre-Trained</title>
-            <link>https://liuchien.inxpire.tw/tags/pre-trained/</link>
+            <link>http://localhost:1313/tags/pre-trained/</link>
             <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/pre-trained/</guid>
+            <guid>http://localhost:1313/tags/pre-trained/</guid>
             <description></description>
         </item><item>
             <title>Text Summarization</title>
-            <link>https://liuchien.inxpire.tw/tags/text-summarization/</link>
+            <link>http://localhost:1313/tags/text-summarization/</link>
             <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/text-summarization/</guid>
+            <guid>http://localhost:1313/tags/text-summarization/</guid>
             <description></description>
         </item><item>
             <title>工作管理</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</link>
+            <link>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</link>
             <pubDate>Thu, 05 Dec 2024 09:03:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</guid>
+            <guid>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</guid>
             <description></description>
         </item><item>
             <title>敏捷開發</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</link>
+            <link>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</link>
             <pubDate>Thu, 05 Dec 2024 09:03:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</guid>
+            <guid>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</guid>
             <description></description>
         </item><item>
             <title>中興大學資工所</title>
-            <link>https://liuchien.inxpire.tw/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</link>
+            <link>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</link>
             <pubDate>Fri, 25 Mar 2022 15:08:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</guid>
+            <guid>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</guid>
             <description></description>
         </item><item>
             <title>Document Summarization</title>
-            <link>https://liuchien.inxpire.tw/tags/document-summarization/</link>
+            <link>http://localhost:1313/tags/document-summarization/</link>
             <pubDate>Tue, 08 Feb 2022 13:39:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/document-summarization/</guid>
+            <guid>http://localhost:1313/tags/document-summarization/</guid>
             <description></description>
         </item><item>
             <title>Opinion Summarization</title>
-            <link>https://liuchien.inxpire.tw/tags/opinion-summarization/</link>
+            <link>http://localhost:1313/tags/opinion-summarization/</link>
             <pubDate>Tue, 08 Feb 2022 13:39:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/opinion-summarization/</guid>
+            <guid>http://localhost:1313/tags/opinion-summarization/</guid>
             <description></description>
         </item><item>
             <title>Digital Image Process</title>
-            <link>https://liuchien.inxpire.tw/tags/digital-image-process/</link>
+            <link>http://localhost:1313/tags/digital-image-process/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/digital-image-process/</guid>
+            <guid>http://localhost:1313/tags/digital-image-process/</guid>
             <description></description>
         </item><item>
             <title>OpenCV</title>
-            <link>https://liuchien.inxpire.tw/tags/opencv/</link>
+            <link>http://localhost:1313/tags/opencv/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/opencv/</guid>
+            <guid>http://localhost:1313/tags/opencv/</guid>
             <description></description>
         </item><item>
             <title>Perspective Transformation</title>
-            <link>https://liuchien.inxpire.tw/tags/perspective-transformation/</link>
+            <link>http://localhost:1313/tags/perspective-transformation/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/perspective-transformation/</guid>
+            <guid>http://localhost:1313/tags/perspective-transformation/</guid>
             <description></description>
         </item><item>
             <title>Python</title>
-            <link>https://liuchien.inxpire.tw/tags/python/</link>
+            <link>http://localhost:1313/tags/python/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/python/</guid>
+            <guid>http://localhost:1313/tags/python/</guid>
             <description></description>
         </item><item>
             <title>上課學習心得</title>
-            <link>https://liuchien.inxpire.tw/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</link>
+            <link>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</guid>
+            <guid>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</guid>
             <description></description>
         </item><item>
             <title>影像處理與深度學習</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
+            <link>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
             <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
+            <guid>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
             <description></description>
         </item><item>
             <title>Image Enhancement</title>
-            <link>https://liuchien.inxpire.tw/tags/image-enhancement/</link>
+            <link>http://localhost:1313/tags/image-enhancement/</link>
             <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/image-enhancement/</guid>
+            <guid>http://localhost:1313/tags/image-enhancement/</guid>
             <description></description>
         </item><item>
             <title>Laplacioan</title>
-            <link>https://liuchien.inxpire.tw/tags/laplacioan/</link>
+            <link>http://localhost:1313/tags/laplacioan/</link>
             <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/laplacioan/</guid>
+            <guid>http://localhost:1313/tags/laplacioan/</guid>
             <description></description>
         </item><item>
             <title>Sobel</title>
-            <link>https://liuchien.inxpire.tw/tags/sobel/</link>
+            <link>http://localhost:1313/tags/sobel/</link>
             <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/sobel/</guid>
+            <guid>http://localhost:1313/tags/sobel/</guid>
             <description></description>
         </item><item>
             <title>CNN</title>
-            <link>https://liuchien.inxpire.tw/tags/cnn/</link>
+            <link>http://localhost:1313/tags/cnn/</link>
             <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/cnn/</guid>
+            <guid>http://localhost:1313/tags/cnn/</guid>
             <description></description>
         </item><item>
             <title>Convolutional Neural Network</title>
-            <link>https://liuchien.inxpire.tw/tags/convolutional-neural-network/</link>
+            <link>http://localhost:1313/tags/convolutional-neural-network/</link>
             <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/convolutional-neural-network/</guid>
+            <guid>http://localhost:1313/tags/convolutional-neural-network/</guid>
             <description></description>
         </item><item>
             <title>CrossEntropy</title>
-            <link>https://liuchien.inxpire.tw/tags/crossentropy/</link>
+            <link>http://localhost:1313/tags/crossentropy/</link>
             <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/crossentropy/</guid>
+            <guid>http://localhost:1313/tags/crossentropy/</guid>
             <description></description>
         </item><item>
             <title>Pytorch</title>
-            <link>https://liuchien.inxpire.tw/tags/pytorch/</link>
+            <link>http://localhost:1313/tags/pytorch/</link>
             <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/pytorch/</guid>
+            <guid>http://localhost:1313/tags/pytorch/</guid>
             <description></description>
         </item><item>
             <title>Blockchain</title>
-            <link>https://liuchien.inxpire.tw/tags/blockchain/</link>
+            <link>http://localhost:1313/tags/blockchain/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/blockchain/</guid>
+            <guid>http://localhost:1313/tags/blockchain/</guid>
             <description></description>
         </item><item>
             <title>NFT</title>
-            <link>https://liuchien.inxpire.tw/tags/nft/</link>
+            <link>http://localhost:1313/tags/nft/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/nft/</guid>
+            <guid>http://localhost:1313/tags/nft/</guid>
             <description></description>
         </item><item>
             <title>Twitter</title>
-            <link>https://liuchien.inxpire.tw/tags/twitter/</link>
+            <link>http://localhost:1313/tags/twitter/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/twitter/</guid>
+            <guid>http://localhost:1313/tags/twitter/</guid>
             <description></description>
         </item><item>
             <title>比特幣</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</link>
+            <link>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</guid>
+            <guid>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</guid>
             <description></description>
         </item><item>
             <title>非同質化代幣</title>
-            <link>https://liuchien.inxpire.tw/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</link>
+            <link>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</guid>
+            <guid>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</guid>
             <description></description>
         </item><item>
             <title>區塊鏈</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>
+            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</guid>
+            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</guid>
             <description></description>
         </item><item>
             <title>區塊鏈與電子商務</title>
-            <link>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</link>
+            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</guid>
+            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</guid>
             <description></description>
         </item><item>
             <title>霹靂NFT</title>
-            <link>https://liuchien.inxpire.tw/tags/%E9%9C%B9%E9%9D%82nft/</link>
+            <link>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</link>
             <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E9%9C%B9%E9%9D%82nft/</guid>
+            <guid>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</guid>
             <description></description>
         </item><item>
             <title>Evernote</title>
-            <link>https://liuchien.inxpire.tw/tags/evernote/</link>
+            <link>http://localhost:1313/tags/evernote/</link>
             <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/evernote/</guid>
+            <guid>http://localhost:1313/tags/evernote/</guid>
             <description></description>
         </item><item>
             <title>GPU</title>
-            <link>https://liuchien.inxpire.tw/tags/gpu/</link>
+            <link>http://localhost:1313/tags/gpu/</link>
             <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/gpu/</guid>
+            <guid>http://localhost:1313/tags/gpu/</guid>
             <description></description>
         </item><item>
             <title>Liuchien</title>
-            <link>https://liuchien.inxpire.tw/tags/liuchien/</link>
+            <link>http://localhost:1313/tags/liuchien/</link>
             <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/liuchien/</guid>
+            <guid>http://localhost:1313/tags/liuchien/</guid>
             <description></description>
         </item><item>
             <title>YoloV4</title>
-            <link>https://liuchien.inxpire.tw/tags/yolov4/</link>
+            <link>http://localhost:1313/tags/yolov4/</link>
             <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/yolov4/</guid>
+            <guid>http://localhost:1313/tags/yolov4/</guid>
             <description></description>
         </item><item>
             <title>Auto Labeling</title>
-            <link>https://liuchien.inxpire.tw/tags/auto-labeling/</link>
+            <link>http://localhost:1313/tags/auto-labeling/</link>
             <pubDate>Tue, 11 Jan 2022 15:05:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/auto-labeling/</guid>
+            <guid>http://localhost:1313/tags/auto-labeling/</guid>
             <description></description>
         </item><item>
             <title>Yolo Label</title>
-            <link>https://liuchien.inxpire.tw/tags/yolo-label/</link>
+            <link>http://localhost:1313/tags/yolo-label/</link>
             <pubDate>Tue, 11 Jan 2022 15:05:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/yolo-label/</guid>
+            <guid>http://localhost:1313/tags/yolo-label/</guid>
             <description></description>
         </item><item>
             <title>Colab Notebooks</title>
-            <link>https://liuchien.inxpire.tw/tags/colab-notebooks/</link>
+            <link>http://localhost:1313/tags/colab-notebooks/</link>
             <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/colab-notebooks/</guid>
+            <guid>http://localhost:1313/tags/colab-notebooks/</guid>
             <description></description>
         </item><item>
             <title>Kaggle</title>
-            <link>https://liuchien.inxpire.tw/tags/kaggle/</link>
+            <link>http://localhost:1313/tags/kaggle/</link>
             <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/kaggle/</guid>
+            <guid>http://localhost:1313/tags/kaggle/</guid>
             <description></description>
         </item><item>
             <title>Kaggle Datasets</title>
-            <link>https://liuchien.inxpire.tw/tags/kaggle-datasets/</link>
+            <link>http://localhost:1313/tags/kaggle-datasets/</link>
             <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/kaggle-datasets/</guid>
+            <guid>http://localhost:1313/tags/kaggle-datasets/</guid>
             <description></description>
         </item><item>
             <title>Accuracy</title>
-            <link>https://liuchien.inxpire.tw/tags/accuracy/</link>
+            <link>http://localhost:1313/tags/accuracy/</link>
             <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/accuracy/</guid>
+            <guid>http://localhost:1313/tags/accuracy/</guid>
             <description></description>
         </item><item>
             <title>F1-Score</title>
-            <link>https://liuchien.inxpire.tw/tags/f1-score/</link>
+            <link>http://localhost:1313/tags/f1-score/</link>
             <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/f1-score/</guid>
+            <guid>http://localhost:1313/tags/f1-score/</guid>
             <description></description>
         </item><item>
             <title>Precision</title>
-            <link>https://liuchien.inxpire.tw/tags/precision/</link>
+            <link>http://localhost:1313/tags/precision/</link>
             <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/precision/</guid>
+            <guid>http://localhost:1313/tags/precision/</guid>
             <description></description>
         </item><item>
             <title>Recall</title>
-            <link>https://liuchien.inxpire.tw/tags/recall/</link>
+            <link>http://localhost:1313/tags/recall/</link>
             <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/recall/</guid>
+            <guid>http://localhost:1313/tags/recall/</guid>
             <description></description>
         </item><item>
             <title>次級貸款</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</link>
+            <link>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</link>
             <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</guid>
+            <guid>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</guid>
             <description></description>
         </item><item>
             <title>房價泡沫化</title>
-            <link>https://liuchien.inxpire.tw/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</link>
+            <link>http://localhost:1313/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</link>
             <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</guid>
+            <guid>http://localhost:1313/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</guid>
             <description></description>
         </item><item>
             <title>金融海嘯</title>
-            <link>https://liuchien.inxpire.tw/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</link>
+            <link>http://localhost:1313/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</link>
             <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</guid>
+            <guid>http://localhost:1313/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</guid>
             <description></description>
         </item><item>
             <title>貸款債券</title>
-            <link>https://liuchien.inxpire.tw/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</link>
+            <link>http://localhost:1313/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</link>
             <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</guid>
+            <guid>http://localhost:1313/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</guid>
             <description></description>
         </item><item>
             <title>網際網路泡沫</title>
-            <link>https://liuchien.inxpire.tw/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</link>
+            <link>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</link>
             <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</guid>
+            <guid>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</guid>
             <description></description>
         </item><item>
             <title>Boundary Extraction</title>
-            <link>https://liuchien.inxpire.tw/tags/boundary-extraction/</link>
+            <link>http://localhost:1313/tags/boundary-extraction/</link>
             <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/boundary-extraction/</guid>
+            <guid>http://localhost:1313/tags/boundary-extraction/</guid>
             <description></description>
         </item><item>
             <title>Dilation</title>
-            <link>https://liuchien.inxpire.tw/tags/dilation/</link>
+            <link>http://localhost:1313/tags/dilation/</link>
             <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/dilation/</guid>
+            <guid>http://localhost:1313/tags/dilation/</guid>
             <description></description>
         </item><item>
             <title>Erosion</title>
-            <link>https://liuchien.inxpire.tw/tags/erosion/</link>
+            <link>http://localhost:1313/tags/erosion/</link>
             <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/erosion/</guid>
+            <guid>http://localhost:1313/tags/erosion/</guid>
             <description></description>
         </item><item>
             <title>Region Filling</title>
-            <link>https://liuchien.inxpire.tw/tags/region-filling/</link>
+            <link>http://localhost:1313/tags/region-filling/</link>
             <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>https://liuchien.inxpire.tw/tags/region-filling/</guid>
+            <guid>http://localhost:1313/tags/region-filling/</guid>
             <description></description>
         </item></channel>
 </rss>

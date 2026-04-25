@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n接著你可以在Account畫面中，找到API的欄位，點選Create New API Token，下載一個API Token，檔名是kaggle.json，裡面會包含認證資訊。接著你需要在Colab上安裝Kaggle套件，以目前狀況，直接下pip安裝即可，不需要另外下載再安裝，著實很方便。再來在Colab引入檔案函式庫，並呼叫files.upload()，在畫面上會出現一個上傳檔案的畫面，你可以上傳我們剛剛抓下來的Kaggle.json認證檔案，請注意，你上傳的認證檔案，會放在你當前的工作目錄。接著我們在根目錄建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。\n">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n">
 <title>如何在Colab Notebooks上引用Kaggle資料集(Dataset)</title>
 
 
-<link rel="canonical" href="https://liuchien.inxpire.tw/posts/2022-01-colab-notebookskaggledataset/">
+<link rel="canonical" href="http://localhost:1313/posts/2022-01-colab-notebookskaggledataset/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
@@ -13,12 +13,12 @@
 
 
 <link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="如何在Colab Notebooks上引用Kaggle資料集(Dataset)">
-<meta property='og:description' content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n接著你可以在Account畫面中，找到API的欄位，點選Create New API Token，下載一個API Token，檔名是kaggle.json，裡面會包含認證資訊。接著你需要在Colab上安裝Kaggle套件，以目前狀況，直接下pip安裝即可，不需要另外下載再安裝，著實很方便。再來在Colab引入檔案函式庫，並呼叫files.upload()，在畫面上會出現一個上傳檔案的畫面，你可以上傳我們剛剛抓下來的Kaggle.json認證檔案，請注意，你上傳的認證檔案，會放在你當前的工作目錄。接著我們在根目錄建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。\n">
-<meta property='og:url' content='https://liuchien.inxpire.tw/posts/2022-01-colab-notebookskaggledataset/'>
+<meta property='og:description' content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n">
+<meta property='og:url' content='http://localhost:1313/posts/2022-01-colab-notebookskaggledataset/'>
 <meta property='og:site_name' content='Liuchien&#39;s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Colab Notebooks' /><meta property='article:tag' content='影像處理與深度學習' /><meta property='article:tag' content='Kaggle Datasets' /><meta property='article:tag' content='學習紀錄' /><meta property='article:tag' content='Kaggle' /><meta property='article:published_time' content='2022-01-11T14:19:00&#43;00:00'/><meta property='article:modified_time' content='2025-01-22T07:33:11&#43;00:00'/>
 <meta name="twitter:title" content="如何在Colab Notebooks上引用Kaggle資料集(Dataset)">
-<meta name="twitter:description" content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n接著你可以在Account畫面中，找到API的欄位，點選Create New API Token，下載一個API Token，檔名是kaggle.json，裡面會包含認證資訊。接著你需要在Colab上安裝Kaggle套件，以目前狀況，直接下pip安裝即可，不需要另外下載再安裝，著實很方便。再來在Colab引入檔案函式庫，並呼叫files.upload()，在畫面上會出現一個上傳檔案的畫面，你可以上傳我們剛剛抓下來的Kaggle.json認證檔案，請注意，你上傳的認證檔案，會放在你當前的工作目錄。接著我們在根目錄建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。\n">
+<meta name="twitter:description" content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n">
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
       <script>
         var doNotTrack = false;
@@ -241,19 +241,27 @@
     
     
     <p>Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。 而我<a class="link" href="https://liuchien.ink.tw/%e5%ad%b8%e7%bf%92%e7%b4%80%e9%8c%84/%e6%b7%b1%e5%ba%a6%e5%ad%b8%e7%bf%92%e8%88%87%e8%87%aa%e7%84%b6%e8%aa%9e%e8%a8%80%e8%99%95%e7%90%86/%e6%b7%ba%e8%ab%87%e4%ba%ba%e5%b7%a5%e6%99%ba%e6%85%a7%e5%92%8c%e5%ad%b8%e7%bf%92/"  target="_blank" rel="noopener"
-    >個人在Colab上開發程式時</a>，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxb7GWqGdeaWv58uCFUnNv8XoeUfcxO2S80ukfqle4CEBjG2MZU42oR%5c_ymA7-ubIXnERt7ZL7ibucCfdzpYQTlJbeYg8UFaFvXaaQs0dqYVKyJFEA43Gjnh5ZkVW7klS2AvXErkaxIt%5c_1pWfoOZ-G-yu7ySp0cNufZ1h8hl4tiuG0jMI7wU71YH%5c_4gEDg/s832/image.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a><br>
-接著你可以在Account畫面中，找到API的欄位，點選Create New API Token，下載一個API Token，檔名是kaggle.json，裡面會包含認證資訊。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIQ0m8k9yrmQIzsyJpnDC32wjT%5c_B4-Eu6g9nzg0fwNYCkQT4JadDlelZXMqZhcBtMRpWtn-NR6c41v7YeapL64iR5F4MqWwWlp4kLiOCfsnj3wDzCCqqGCMDYCr6PI19AKJbRe0HrzYgTO9WnLMa9zOKkof3YK5U8X4z-0epWbJXBD9wjy3QtTkV9ThUw/s832/image.1.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>接著你需要在Colab上安裝Kaggle套件，以目前狀況，直接下pip安裝即可，不需要另外下載再安裝，著實很方便。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-rywXvIof5smm%5c_zH5Ik7np8Ev%5c_rGQ53DvyWgMiTFxsNAgoJ04wdjo4EEO7RiZFxbtSthvV3y8eB0JxG6jmrzIJxI3YZ40py9-Nz9g-QNUBSHNvGX-qbOImosZmV44-UANNC%5c_-HCVND-vaAEN5VY568ximfFh-D61jWNLy0SH%5c_6taD5N4U2XTJCPt5kGI/s832/image.2.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>再來在Colab引入檔案函式庫，並呼叫files.upload()，在畫面上會出現一個上傳檔案的畫面，你可以上傳我們剛剛抓下來的Kaggle.json認證檔案，請注意，你上傳的認證檔案，會放在你當前的工作目錄。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU2W-MBZQNkLP8kD39ob3IubB8qpM8N4wp4fnWxOgHZfX4osJHZ%5c_8qPVQ88z2vXht0LBgvJkGe5oXsIaDlS257y9dng6opWdn2F%5c_tDipc5ipcFyOpXO0YBNQNP3hPBFPw3u%5c_VEv-9vGsvyX8pTb89HCkrac03wE1EDE%5c_slGcDDkgINbyWseBPrD0FR3s4/s832/image.3.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>接著我們在<strong>根目錄</strong>建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBDh2mkQFpRbM-qxAXoXXu3WjpMotODUIjSEjLGSO0pZlHtvdCpsy6vC11mz%5c_7s1jd3wXEEHWCn578%5c_o6y9W7YM2EdIqj%5c_1-OW0x7Ysa88CDDClXfTXJ6SdRmgd2EjcREzSX-wfCOdEiJYqhGtKS0nZpL0buaJjsGKlvAXgCIeVb79qYrrTwSsxiWnY9Q/s832/image.4.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。<img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></p>
+    >個人在Colab上開發程式時</a>，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="501px" data-flex-grow="209" height="306" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4249705221762178399.png" width="640"></p>
+<p>接著你可以在Account畫面中，找到API的欄位，點選Create New API Token，下載一個API Token，檔名是kaggle.json，裡面會包含認證資訊。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="489px" data-flex-grow="203" height="314" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-2148576573590671357.png" width="640"></p>
+<p>接著你需要在Colab上安裝Kaggle套件，以目前狀況，直接下pip安裝即可，不需要另外下載再安裝，著實很方便。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="4042px" data-flex-grow="1684" height="38" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4935545011604292047.png" width="640"></p>
+<p>再來在Colab引入檔案函式庫，並呼叫files.upload()，在畫面上會出現一個上傳檔案的畫面，你可以上傳我們剛剛抓下來的Kaggle.json認證檔案，請注意，你上傳的認證檔案，會放在你當前的工作目錄。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="1814px" data-flex-grow="755" height="84" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-5370737561314215504.png" width="635"></p>
+<p>接著我們在<strong>根目錄</strong>建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="3657px" data-flex-grow="1523" height="42" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-1626164389903094688.png" width="640"></p>
+<p>為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。<img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></p>
 <p>完成上述動作，若是你的認證檔案放置正確，權限也正確，就可以正確呼叫Kaggle套件，下載你需要的資料集了，譬如像我一樣，下載水果資料集，詳情可以參考此網址: <a class="link" href="https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification"  target="_blank" rel="noopener"
-    >https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification</a>。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwl8-IZK7fh0f-i-idHx6Dw63gEYvjDGl7VHFGfLGruHFueYQzX9cjqPn23FRYNVSsxFkY27mQur51Ub5gTkEiZSL70mLvXABtRxY8Ah2e16cVqE-L9hvmNAsndZBR7DyIOimQbOgnk6UVPptvlYlyQRXEzWGQmQvK2JFO9OVk3ZLU3hdXl6QbQSPmNiE/s832/image.6.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>下載回來之後直接解壓縮就可以開始用了，當然別忘了要先解壓縮。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizCkVaU5u7PYhMUVArhsOGI4EBcqJ0Iqxwol9kO3ThYAoqLStLbJsMHGjOEzWBB3QxDGgOo2YYQKXTv5SXv71%5c_lRy6E8qZQOwAebox-3ak31ALD2U1aVKenWmFLW2IqqkhKCj4JHkZxTfAoEDrqLNLeXgMejDC%5c_CekRXBUyaOv9fE7Kt%5c_j4YWE8xeD9Lw/s832/image.7.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>另外還有些不同的指令可以用，譬如你可以條列一下你可以看到多少資料集，或是找找看特定資料集。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMgX1RCQTcS0PRWXxILO4Bdd3hoWB%5c_N6-O1IpGwN3fUOMmFpTEcIhzTdHn40fv6xZrbN88pEKm4A2WH9Bf5db2AWtUtDXB70FvlKwTLzSGkP9pGPWpyiVxti4n9FpFymOBPayw2m0dD%5c_Z2zUcu1Y8BP%5c_V2eT4q3e43ajBbSBA5xwqWPr-387JEFnHwv4Q/s832/image.8.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>當然你也可以抓特定競賽的資料集，一切就看你的需求了。<a class="link" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2Dq9zTaqcs%5c_hNevlXaKDD86qy9H4iHLx0H7UDH37EiTgbRf6DcmzqS5dpkrb7WBwT4BEyiPN6YIUjTTt592uKd9uVrXfQe6BBBI2qkMmyYtz6yDY1plgym3ooza6twGA%5c_MANZi-cTlM48D%5c_zMiXVhwN7t4V9uvDvws7h%5c_lAVuMECpuCmTpJOgD2wH3V4/s832/image.9.png"  target="_blank" rel="noopener"
-    ><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></a>以上整理，希望對你有幫助，我記得2020年時，我還需要把認證json先貼到Colab，然後存入./kaggle底下才能完成認證，辦法果然是人想出來的，哈。January 11, 2022 at 10:14PM</p>
+    >https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification</a>。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="2226px" data-flex-grow="927" height="69" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4677374582661081784.png" width="640"></p>
+<p>下載回來之後直接解壓縮就可以開始用了，當然別忘了要先解壓縮。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="3442px" data-flex-grow="1434" height="58" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4948659170262884417.png" srcset="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4948659170262884417_hu_9c3090fe7e974f77.png 800w, /posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4948659170262884417.png 832w" width="832"></p>
+<p>另外還有些不同的指令可以用，譬如你可以條列一下你可以看到多少資料集，或是找找看特定資料集。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="2170px" data-flex-grow="904" height="70" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-8270713860871782777.png" width="633"></p>
+<p>當然你也可以抓特定競賽的資料集，一切就看你的需求了。</p>
+<p><img alt="image" class="gallery-image" data-flex-basis="4388px" data-flex-grow="1828" height="35" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-7996790754547006542.png" width="640"></p>
+<p>以上整理，希望對你有幫助，我記得2020年時，我還需要把認證json先貼到Colab，然後存入./kaggle底下才能完成認證，辦法果然是人想出來的，哈。January 11, 2022 at 10:14PM</p>
 
 </section>
 
@@ -308,7 +316,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">影像處理 | Boundary Extraction &amp;amp; Region Filling</h2>
+            <h2 class="article-title">影像處理 | Boundary Extraction &amp; Region Filling</h2>
         </div>
     </a>
 </article>
@@ -464,7 +472,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <div class="busuanzi-footer" style="font-size: 0.9em; color: var(--body-text-color); opacity: 0.7; margin-top: 15px; text-align: center;">

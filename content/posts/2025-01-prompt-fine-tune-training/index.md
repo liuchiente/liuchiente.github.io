@@ -10,7 +10,11 @@ draft: false
 
  
 
-[![](/posts/2025-01-prompt-fine-tune-training/images/2025-01-prompt-fine-tune-training-1850371188022968336.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjW7Lgg2Z18QkQsL1p3VRH9wPf\_dX6o0i2PFg5cEFo4SFMBZy-UfdbEt8aPRrWAy1X3V0DkgwBV8rTspiTI353HKpWntXsPhoHpPU8XdusiY8CvTLXoH6cj8-VP6U0STJSBcrZHKNbYha5qutUqq1\_ienEFoDi8T8rW\_Q0H2cf-y3Vu5TbRD5DX8nZCgec/s640/pexels-sofia-mishchenko-1332206-30100797.jpg)  
+
+
+![image](images/2025-01-prompt-fine-tune-training-1850371188022968336.jpg)
+
+  
 在機器學習，尤其是自然語言處理（NLP）的世界中，「Prompt」、「Fine-tune」和「Training」是經常出現的三個概念。雖然它們都涉及到模型的學習和調整，但每一個的目的、方法和使用情境都有明顯的不同。我們來仔細了解一下它們之間的區別。  
   
 首先，Prompt 是指你給機器學習模型輸入的一個提示或問題。這個提示並不會改變模型本身，而是依賴模型已經學過的知識來生成回答或執行某個任務。你可以把它想像成一個引導詞，模型根據這個提示來給你回應。比如，對於一個語言模型來說，給它一句話「寫一篇關於太空探索的文章」，它就會根據這個提示生成相關的內容。這種方式不需要對模型進行任何訓練或微調，只是利用它已經學過的知識來做預測或生成。  
@@ -79,7 +83,11 @@ draft: false
 
 最後，我們常說透過 **Prompt** 來讓大語言模型（LLM）達成我們想要的結果。其實，這並不是簡單地給模型一個問題，而是通過一系列精心設計的提示，包括上下文的參考，讓模型能夠進行推理和生成最合適的回答。這些提示幫助模型理解我們的需求，並根據先前學過的知識來推導出我們期望的結果。
 
-[![](/posts/2025-01-prompt-fine-tune-training/images/2025-01-prompt-fine-tune-training-2271184105945236143.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiM7RR0xu3Dg1etDUdYh\_ZWibn2aXkiYrmHxwB-hec0zG2SzpJeJb2cQy\_06V4G-hq6WLSCshur7EW8WblhIB8AU9KZ9132Xb-jQs6DephtXz9YmgIuG31TEeaogUcK3rIZjZXOFD\_pdalschMTpz-L-IEh62D1fZr9gi5HaC\_u7xqSvoVvffgY88cpPDg/s960/pexels-zen-chung-5745215.jpg)  
+
+
+![image](images/2025-01-prompt-fine-tune-training-2271184105945236143.jpg)
+
+  
   
   
 

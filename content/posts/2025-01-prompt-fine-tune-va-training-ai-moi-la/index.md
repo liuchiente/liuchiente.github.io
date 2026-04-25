@@ -94,5 +94,9 @@ Còn khái niệm **Fine-tune** được thực hiện dựa trên các mô hìn
 
 Cuối cùng, khi sử dụng **Prompt**, không chỉ đơn giản là đưa một câu hỏi cho mô hình mà là thiết kế một chuỗi các lời nhắc cẩn thận, bao gồm cả bối cảnh để mô hình có thể suy luận và đưa ra câu trả lời hợp lý nhất. Những lời nhắc này giúp mô hình hiểu được yêu cầu của chúng ta và sử dụng kiến thức đã học trước đó để đưa ra kết quả mong muốn.'
 
-[![](/posts/2025-01-prompt-fine-tune-va-training-ai-moi-la/images/2025-01-prompt-fine-tune-va-training-ai-moi-la-3310691496401846354.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCKIOZEuMH3rIcgvohKjnKy-x1JHn3mLYhV58sIS1N7vJwGbNFOmNZ5vrtVFlWnR4dDwdvfLaKyMfBiGp3gMw3tW\_oUOQhf69lQXFc42yAkZVhd19zGlJoPomODinVJFEgrCLFNWwnsZ-G1UpTZO9sl4iWrOGonN3fOIqssE6Xq1a-rfEojs617NxfzD0/s1792/Designer.jpeg)  
+
+
+![image](images/2025-01-prompt-fine-tune-va-training-ai-moi-la-3310691496401846354.jpeg)
+
+  
  

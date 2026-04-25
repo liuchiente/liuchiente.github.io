@@ -15,7 +15,11 @@ draft: false
 3. 多文件摘要Multi-Documents Summarization，主要是讓機器讀入多份文件，這樣講好像是廢話？但是在多文件摘要時，會先進行分類和歸納，同一類型文章會被歸納成一個叢集(Cluster)，而透過機器對於這些文章的理解，進而取出這批文章想要表達的重點，或是找出文章內相異、相同論點等，譬如說，今天有一批研究茶葉種植的文章好了，在多文章摘要時，我們可以看出這一批文章裡面存在著哪些觀點，例如某些文章主張高緯度有著茶葉生長，而某些文章可能主張高緯度對茶葉生長無幫助等。
 4. 觀點摘要 Opinion Summarization，我如果硬要把觀點萃取看成一種摘要，可能有點牽強，但也並無不可，觀點摘要的需求主要來自於社群網路興起後的產物，譬如在Youtube、網路新聞甚至電商平台上等，通常可以看到許多評論Comments，而這些評論大多可以反映群眾對於Youtube或是電商商品本身的看法，通過觀點摘要，我們可以看出一段影片，一則新聞或是一個商品引起的群眾力量，只是不同於前面幾個摘要是化簡為繁，觀點摘要通常是化繁為簡，因為評論通常字數不多，且更口語化，也隱含著更多不同的看法跟理念，當然也有更多時候只是路人起鬨而已；不過在現今的觀點摘要做法，通常是用爬蟲＋統計，量化各種看法後，多加整理而成，是否能抽象化成一種概念，以目前來說都是用人工輔助解決居多，如果要讓機器自動產生一個抽象化的理念，就不是那麼容易了。
 
-[![](/posts/2022-02-nlp-2-text-summarization/images/2022-02-nlp-2-text-summarization-7353107742299112562.webp)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj-WluXbYw2p-2bKIfdvlNRmfVIBpqYT6HvoKN0oNMJCn8LH-g3zhR7CRj1H\_Htt5uqpWeP9QHSEE9zY-rS-efe4UH7kdZX-mRfmTX0V6a8gcnOVV4U0FuiI3pyUq8FppIEMdC9ddL\_TOBYzlunVdepxJyj2Q6AjHK7fpg1IWPii0R\_qwya6I-MiY7H\_uU/s1125/pexels-photo-1910225.webp)  
+
+
+![image](images/2022-02-nlp-2-text-summarization-7353107742299112562.webp)
+
+  
 要多抽象有多抽象？ Photo by Bruno Thethe on [Pexels.com](https://www.pexels.com/photo/modern-art-1910225/)前面講完文章摘要後，我們大可以掌握到這門學科就是把一堆文字轉換成簡短、有效的文字敘述，而目前常見研究論文中，在實現摘要這件事情上，我們主要有兩大步驟要實現；
 
 1. **文章理解**，如何把輸入的文章、文檔轉化成可用資訊片段。
@@ -24,7 +28,11 @@ draft: false
 
 說到這裡，我們不難發現，這幾個步驟似乎和[ChatBot](https://liuchien.ink.tw/%e5%ad%b8%e7%bf%92%e7%b4%80%e9%8c%84/%e6%b7%b1%e5%ba%a6%e5%ad%b8%e7%bf%92%e8%88%87%e8%87%aa%e7%84%b6%e8%aa%9e%e8%a8%80%e8%99%95%e7%90%86/%e8%87%aa%e7%84%b6%e8%aa%9e%e8%a8%80%e8%99%95%e7%90%86-nlp-%e4%b8%ad%e7%9a%84%e6%96%87%e6%9c%ac%e6%91%98%e8%a6%81text-summarization/)差不多? 沒錯，事實也是如此，在我們常見的系統或功能設計中，也不外乎輸入(文章理解)、處理(文字處理)、輸出(文章生成)三個步驟，只是在這裡，我們所面臨的輸入輸出功能，不管是邏輯規劃，功能設計，都比先前我之前遇到的功能設計還要複雜得多，相對要付出的知識成本也比較多就是了。
 
-[![](/posts/2022-02-nlp-2-text-summarization/images/2022-02-nlp-2-text-summarization-2521000583385900949.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgc5E-3NciE1CNuH6qCVSKw98Swf7wNuFZIPKTjnzDsyLFC0-B8tBvpqF61dxzPJwiAxetq1AdCw2jFc15sGw\_H1VMZob9wk2KylKRnZ3OiJ2vfEEKuhjAmVIJk7opKeFRHcB8MUorT-tJNcGBZAXJSPpp5hAxlWUi9P\_6-XiMX1ZpziSIuojJUsCv5z7g/s1279/pexels-picjumbo-com-55570-196645.jpg)  
+
+
+![image](images/2022-02-nlp-2-text-summarization-2521000583385900949.jpg)
+
+  
  其實, 一切都是需要設計而已。Photo by picjumbo.com on [Pexels.com](https://www.pexels.com/photo/white-printer-paper-196645/)##### **文章理解**，如何把輸入的文章、文檔轉化成可用資訊片段。
 
 回頭來到一開始的輸入階段，首先我們要把文章輸入到系統中，好讓機器可以理解文章內容，在這裡，現今常見的手法，多是透過一些手法讓機器可以理解文章內容，常見的方法有兩種，萃取式(Extractive)和抽象式(Abstractive)。

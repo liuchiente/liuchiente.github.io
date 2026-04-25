@@ -18,13 +18,21 @@ draft: false
 
 再回到速度慢這件事情，在開始之前我想說一個歪理，不知道各位重新去審視一個軟體專案從開始到結束的整個過程，像不像是場比賽？我講的不是那種相互較勁、你死我活的鬥爭，而是一場少了一個人都不行的球賽，找個類型來比擬，如果以筆者最喜愛也最熟悉的，那就是非棒球賽莫屬了。
 
-[![](/posts/2021-04-scrum/images/2021-04-scrum-2801432531088652094.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhq2rpNKVrn2jTB0AsXPE1G1-ms8BEbvmbeKLhy-Ng1cRiP-SRpTiarszFvOFjh73JBYML1chHiIC5StIpec-T75Gxbt4Yr3iUxKosPli8GQLz04Zqabgjb\_-DwpEGu4uNSXwBQ9vJ-8MA58syWhWxJaYdT1IQG6KzNhvsj\_NF4DNpMGfBiTkISdeDGFrM/s640/pexels-timo-volz-837240-1757433.jpg)*軟體專案就像一場棒球比賽* Photo by Pixabay on [Pexels.com](https://pixabay.com/photos/athletes-ballpark-baseball-1835893/) 簡單說一下棒球比賽，比賽中有兩個球隊，各有9個球員可以上場，教練團則分別有總教練、首席教練、打擊教練等等等，從投手丟出第一球給對方打擊開始，彼此球員注重的就只有兩件事情，一是想辦法讓自己的球員站上壘包，最後跑回本壘；一是盡量守住壘包，不要讓對方球員跑回本壘；最後，計算兩個隊伍各得了幾分，分數高的獲勝。
+
+
+![image](images/2021-04-scrum-2801432531088652094.jpg)
+
+*軟體專案就像一場棒球比賽* Photo by Pixabay on [Pexels.com](https://pixabay.com/photos/athletes-ballpark-baseball-1835893/) 簡單說一下棒球比賽，比賽中有兩個球隊，各有9個球員可以上場，教練團則分別有總教練、首席教練、打擊教練等等等，從投手丟出第一球給對方打擊開始，彼此球員注重的就只有兩件事情，一是想辦法讓自己的球員站上壘包，最後跑回本壘；一是盡量守住壘包，不要讓對方球員跑回本壘；最後，計算兩個隊伍各得了幾分，分數高的獲勝。
 
 撇開軟體專案的最後的付費流程，我們專注在整個案子的進行，從專案經理啟動會議的第一步開始，就好似在球賽丟出第一球，接下來我們要專注地在兩件事情，一是得分、一是避免失分，更好的情況是要得分得的對方心服口服。
 
 當然，我更想告訴你的是，提個發問，如果速度快就等於時間短，那一場時間短的球賽，就篤定是場好球賽嗎？我相信你會有些模擬兩可的答案，若從這個角度回來思考研發速度，那或許你的心中就會有答案了。
 
-[![](/posts/2021-04-scrum/images/2021-04-scrum-5652888215739083743.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLTqbxSFiUzjLCp0pgqtNkDlDqjbB-EyuRmu7RPLwop1ImCo99TGGP21dBOFGP20Uey5r-Vkq5r8PGqd2E7En03DBkYgD8cVNlPw7OdWRTMH80ln6Jyn42haih1h-h-JRuR7pEmg6b46RmBD6ZubsKRU1RKqz9gVbXLI6KJwFNF6RNTkdSW4AhgAvEn6k/s640/pexels-pixabay-159741.jpg)開發就像棒球賽一樣, 專注做好份內工作, 比快速更重要。Photo by Pixabay on [Pexels.com](https://www.pexels.com/photo/two-man-playing-baseball-during-daytime-159741/)### 一語畢之, 一個好的開發專案, 就像一場精彩的球賽, 速度未必是最重要的！
+
+
+![image](images/2021-04-scrum-5652888215739083743.jpg)
+
+開發就像棒球賽一樣, 專注做好份內工作, 比快速更重要。Photo by Pixabay on [Pexels.com](https://www.pexels.com/photo/two-man-playing-baseball-during-daytime-159741/)### 一語畢之, 一個好的開發專案, 就像一場精彩的球賽, 速度未必是最重要的！
 
 當然你還是可以說, 有些球賽還是要講究速度, 畢竟早點打完可以早點休息之類的, 但這不是本篇文章的重點, 我相信喜歡看球賽的人並不在乎時間的長短在對, 但是構成一場好球賽的必要條件是什麼？想當然, 要有天時地利人和, 首先球員實力不能相差太大, 再來大家要鬥志高昂, 接著就要對比戰術高下, 團隊默契, 剩下就看棒球之神眷顧誰了！
 
@@ -36,7 +44,11 @@ draft: false
 
 所以, 如果你有一個夠敏捷的團隊, 你可以想見的, 是成員之間有默契, 且知道彼此要做什麼, 任務一派下來, 就能各自去執行, 不需要花時間去做多餘溝通, 我這裡會強調多餘溝通, 是因為溝通還是必要的, 但不需要反反覆覆去確認一些沒有意義的垃圾問題, 無形中也浪費大家的時間。
 
-[![](/posts/2021-04-scrum/images/2021-04-scrum-4530388110096702380.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeNJiV-Eu0lnUgq18jwPuxPGmm8isUarpeu1zf6u9BPkBgiQXNlj4V2LFmxuIkt-5HjQw8f9rJqGb0kDSnkzjL3FG9PzeExqk\_Gfjf0qu1MZV1eOowN1KsWrDn4CzazIjx5XPmGAZtMdqOxjY4YNSgBPmHX5wxK8sAjP3Ls64AoBfF1a68hejze\_inI\_A/s640/pexels-pixabay-163302.jpg)確保球員可以把球打好！Photo by Pixabay on [Pexels.com](https://www.pexels.com/photo/athlete-authority-ball-ballpark-260998/)所以你需要一個好的棒球教練, 又或者該說, 在敏捷開發中, 你需要一個好的Product Owner, 請注意, 我講的不是Scrum Master, 因為 SM (Scrum Master)專注處理球賽以外的事情, 確保球賽可以正常運作, 但是比賽該怎麼打下去, 則應該是PO (Product Owner) 的責任。
+
+
+![image](images/2021-04-scrum-4530388110096702380.jpg)
+
+確保球員可以把球打好！Photo by Pixabay on [Pexels.com](https://www.pexels.com/photo/athlete-authority-ball-ballpark-260998/)所以你需要一個好的棒球教練, 又或者該說, 在敏捷開發中, 你需要一個好的Product Owner, 請注意, 我講的不是Scrum Master, 因為 SM (Scrum Master)專注處理球賽以外的事情, 確保球賽可以正常運作, 但是比賽該怎麼打下去, 則應該是PO (Product Owner) 的責任。
 
 那在有一個好教練的情況下, 你可以培訓出一個精良的隊伍, 訓練有素、默契十足, 面對問題時可以從容應對, 回到球賽來看, 如果戰況順利, 把對手碾壓過去, 自然打完一場比賽的時間就快了, 但是如果戰況膠著, 雙方你來我往, 速度就難講了, 但可以保證的是, 我們至少可以發揮十足十的實力來面對問題, 對吧？
 

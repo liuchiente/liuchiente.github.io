@@ -12,7 +12,11 @@ draft: false
 
 開始之前，我們不妨先了解一下**知識庫**是什麼？ **知識庫**（Knowledge Base）是一個集中管理和儲存各種資訊、知識、解決方案或專業知識的系統或資料庫，最終目的是為了幫助人們或是快速找到所需的資訊，解決問題，甚至獲得相關的專業知識。
 
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-2517061773757238611.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioMMzLzF-BDbo6eZfBioaOK9\_FWBmEaWwpGrNLza\_z8RgXFpxkh0aPVJvMTfXF5Ype6b-l5DNdWBn-PZKLeZ0haZi5lzoQLHsXJUJdINy9q1fE\_CIwtJxs-Bi2JY2VA60SY-bxTwOeI6bT10duMZwvDD2IINmYjwGLmKD9S6p4LmiSS6QvpgpaOCf1kgk/s640/pexels-rdne-8369827.jpg)
+
+
+![image](images/2025-03-notebooklm-2517061773757238611.jpg)
+
+
 
 在日常應用中，知識庫可以應用在很多領域裡：
 
@@ -43,8 +47,16 @@ draft: false
 
 
   
- [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-8100046968017851099.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijqx18q8QumUxdy\_2j8g1WgXtSTRUVgJMWNyt0E\_qH6f0xOIVOdyUJ9DRlc2J0XxiEXDT1pVSlpMTfc8hhGpVUIW1S6xkwkg1R\_WEoIBRmlQxIzEFhZPXcmglzidXv1tWWjl41yePiLG2FzHHK42OsNe4ZNsIqH2rDYeg-ZLGmhrYw8YWquNSvBvG6Ha4/s770/1741319444469.jpg)  
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-5844670462887590994.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdjrVaWYd9rEzCnrhQNTEczpxHhs0O7meFJLhqV2C-PPKI4iejJEeDgdN0V1iRETIU-Jiq6pXrDUusLIE4FvCdyK0R1YaQRB5\_BrG89dtKDMvPI2IuMbX1XnXcOHip7QB7sgh3msAHZO9vwnv4PDs96D6375FX3d\_1RqWzsCVo-c1ZSERr8GaQp28SL24/s769/1741319490613.jpg) 從上面的範例可以看到，即便答案不存在參考清單中，模型仍會試圖依照自己已有的資訊嘗試回答，如果以建立知識庫來說，這就會成為一個謬誤，但也有解決方法，只是開放領域知識的相互影響就是如此，如果要應用在金融保險、醫學藥理上，可能就會造成誤解。 
+ 
+
+![image](images/2025-03-notebooklm-8100046968017851099.jpg)
+
+  
+
+
+![image](images/2025-03-notebooklm-5844670462887590994.jpg)
+
+ 從上面的範例可以看到，即便答案不存在參考清單中，模型仍會試圖依照自己已有的資訊嘗試回答，如果以建立知識庫來說，這就會成為一個謬誤，但也有解決方法，只是開放領域知識的相互影響就是如此，如果要應用在金融保險、醫學藥理上，可能就會造成誤解。 
 
 我們希望AI可以全能，有趣的是，有些時候看來我們必須做些取捨。
 
@@ -78,7 +90,11 @@ draft: false
 
 #### 上傳參考資料
 
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-4689606028803765773.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgHGeQ\_cqTuhC7837UxJrdploJrFy6KwcdXcSeGEpO9Pnkf3EO41-ymPqFF\_60u1V5tcoFkW5FqHiDnF2orkG\_wYYGDAuVlArqmcUB4fJSbBP14OXKwI9v1qH4Vwp\_Y0pUEc34sKbD7Tjp3lEwLZwjL84ZTDss-V-FGHg4sYvHPRT600BhCM1WbwBhjtkY/s2024/1741596332609.jpg) 我們可以選擇我們需要的知識來源，包括文字檔案、PDF、Markdown和MP3。這些資料有一個關鍵優勢，那就是它們都是開放格式，並且與模型最初的訓練來源密切相關。此外，我們還可以指定來自Google雲端硬碟上的Google文件，甚至是易讀的網頁，如Wikipedia，當然也少不了Google自家的YouTube。
+
+
+![image](images/2025-03-notebooklm-4689606028803765773.jpg)
+
+ 我們可以選擇我們需要的知識來源，包括文字檔案、PDF、Markdown和MP3。這些資料有一個關鍵優勢，那就是它們都是開放格式，並且與模型最初的訓練來源密切相關。此外，我們還可以指定來自Google雲端硬碟上的Google文件，甚至是易讀的網頁，如Wikipedia，當然也少不了Google自家的YouTube。
 
 #### 產生初步結論
 
@@ -93,25 +109,69 @@ draft: false
 
 在頁面右上角，您可以選擇生成一段語音摘要，這段語音是由兩個主持人進行討論，並對這些資料進行分析。可以將這個功能視為自動生成一個類似Podcast的語音內容。這項技術的實現非常複雜，背後涉及到AI的多項高級技術：首先，AI需要理解並解析您的資料（自然語言理解，NLU），接著根據這些資料生成對話（自然語言生成，NLG），並且可以進行連貫的對話交流。
 
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-1112112205590731343.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-aoDXATuyDWStYEP1URKoNDNBuV5jiPg6b3k5sbtwoTD3mLsojIbrHLgcd3qqRVMHDJokuIJFcC7i6WH7-3X3Ty8XP1X1\_HgYBVM-q3hDH9lLDGlwegM4rGbnW4l4kkL54LX4hhps1l8D7V-wP59ORMdDpPz6Lb0MCCKJiwJHz8rJzsvDs4jjLIyD3pY/s1446/1741684607377.jpg)另外你可以在記事頁面，選擇針對這些資料產生研讀指南、產生簡報。
 
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-9157073990683776497.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdAcpNClvjUQVdE6T8XWMHAu88WWlRmoGuHMbRP7i0ir2Y4MczJF\_uarrHmB\_aHATaZzj8dYLiZWUhb6SXEO713vfu7qKhW60RrN3RTeTfe\_olNsGlureURjn1TXdVBa3tKhYHQMLxRR2Z7vh2ziBIKvXpiQcbUxSORKb9RGQGkDU00wb30eCFXLgv9EY/s1436/1741684575307.jpg) 除了研讀指南、產生簡報，更有趣的是它可以針對資料內容去做年份排序，比如說你有三份資料，各自記載不同年份的相關內容，而模型可以把這些文字讀取進來後，產生一份像是大事紀的內容。
 
-[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-3202503244242954931.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOjQCV\_-pW3cOn3n47yzew7d0OcF2pAOUD5oTO9wplqpmtM1Fhyphenhyphenj\_Hk9uWNIUXOVhSGdJg6Q\_vDnrOEWdzEEjs4gFOqmezHZkQEadcmIGSIzRYj8Z1PvFhX7G5X1MNOhEyV8i6n6dXaws4y43dlBdIBqFM-DnfcashUxVDjJVejpl8iLfa0zq0nOF6HR4/s1440/1741684638518.jpg)## 再多玩點什麼
+![image](images/2025-03-notebooklm-1112112205590731343.jpg)
+
+另外你可以在記事頁面，選擇針對這些資料產生研讀指南、產生簡報。
+
+
+
+![image](images/2025-03-notebooklm-9157073990683776497.jpg)
+
+ 除了研讀指南、產生簡報，更有趣的是它可以針對資料內容去做年份排序，比如說你有三份資料，各自記載不同年份的相關內容，而模型可以把這些文字讀取進來後，產生一份像是大事紀的內容。
+
+
+
+![image](images/2025-03-notebooklm-3202503244242954931.jpg)
+
+## 再多玩點什麼
 
 #### 知識彙整和提問
 
-我嘗試把PMP（Project Management Professional）課程的相關資料上傳到NotebookLM中，可以看到他先是簡單地幫我完成了一個總結。[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-1676382985522338524.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYYpmtNWDd1Z7kJ95WXCNg8EIBBa80GTHlc0PiAESUqm4NMSLq3HkybDyvmfVWmpeOfP9ZA5j0-6nWwvj5Mbynhp-UZlTDsVWWVuohoiT6aX6Z4MayTRukVsBey98QpyRd73MIPGTNSZ59bocNfSf6OB0gR0Evtc0C0n\_CZ3VPLOLq8HSQQgOxuUq-3xQ/s1436/1741941953303.jpg)接著我們可以像是使用ChatBOT一樣，不停地不停地對他發問，而他會很有耐心地回答每個問題，在他的回應中，你會發現系統刻意標記了數字出來，代表這個答案是基於哪份參考資料，表示這些內容都是有所依據，可以得到驗證。## [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-7225623878720524477.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjla7RckvEutLwtw\_wIZU7Z7tYO1i8Cxzea6rDq4CM4x\_\_6dnWBN1ynfa\_gi7aDw0EILqpI\_DHMqrjlilDpc6RqtVI\_CGmV-0qDI1PqmRN9MxqccNJwPFSA7N9LsrAD45WBRGO1pyTx-wG65NecqNP8eOC7hBooy59Ob37o2k567dMlj7T-TZtiQXLA0Wc/s1439/1741942196097.jpg)
+我嘗試把PMP（Project Management Professional）課程的相關資料上傳到NotebookLM中，可以看到他先是簡單地幫我完成了一個總結。
 
-當然你也可以使用不一樣的Prompt來得到想要的結果，這部份就像一般的LLM一樣，像是我下的指令，請他依照我的資料產生5個選擇題，而且還標記了正確答案出來，效果非常好，也許以後老師們不用再絞盡腦汁出考題了？## [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-545211114091046778.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3Bxn2UXXWg7pp8Q9FSPHb9N2o1KeWRggnLd0pgqHR6YulMPG6gKvog-RZi\_OC-19NJIdqu-tNucRmAbbh6MrXTR-kvznGelB5feNeh0eXhODPeLuttWKY5mU\_gjsZliVlVtYqBF7hlitKcAgEt-5eDybinDB9DmZ-OtzNZWoJn2QDQQI94J2JngufP9A/s1441/1741942123905.jpg)
+![image](images/2025-03-notebooklm-1676382985522338524.jpg)
 
-我們可以使用比較迂迴的問法，進一步了解模型對資料的理解程度。例如，透過設計假想情境來測試模型的應對能力，要求它在特定範圍內提供解決方案。 這樣的提問不僅能幫助我們測試模型的準確性，也能了解它如何解釋和應用資料中的知識。特別有趣的是，模型在處理這類情境題時，能夠提供清晰的解決方案，並且給出相關的說明，進一步加強了它的分析能力。更重要的是，這些補充說明往往不會偏離主題，保持高一致性，這對於需要精確解答的情境來說非常關鍵。 透過這樣的方式，我們不僅能夠驗證模型對資料的理解程度，還能深入探討它如何在具體情境中提供實用的解決策略。這種靈活運用模型的能力，使得我們能夠更全面地分析和利用資料，並獲得具體且有價值的答案。## [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-1361449116535859033.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC5FwKLDF3YuARUg71812SINpFTWnxdaPFexKINKMR-SQgs1nUu25K6GGf2mk8T4uigKUcXcTBH7ChO3SeeBdhIjtiK\_IyvqwFqn6SCYZOEhqKYOIyBBN0NFUbWU5AuJ0WEXilcfM-CSxReJmUgZA8DkPOyvXMO\_JZiSWelHHSccLRuLwza6zZagOp9mk/s1442/1741942068748.jpg)[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-8150793124311863853.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidUgT7uh4S\_kzXtqQ5TGueLU4bG9kxc15f2XPTrPPlKL\_IdlcFZPgCmsiZD5u9shUk0897cIGknNkqsKuxnfFOchYpDZkZSxTgi-4l4AXqZZNsphEe43qf8Cw\_VWyQErE4cf3o\_w-yNod77F0ji-Eol7tu\_D1C3OezooogkRlwgt2XGIyXUHvhZG7fIcM/s1444/1741942913779.jpg)
+接著我們可以像是使用ChatBOT一樣，不停地不停地對他發問，而他會很有耐心地回答每個問題，在他的回應中，你會發現系統刻意標記了數字出來，代表這個答案是基於哪份參考資料，表示這些內容都是有所依據，可以得到驗證。## 
 
-當然，如果你亂提問，或是問的問題已經超出範圍，模型還是可以辨別的。[![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-160603344941981579.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7MdkIO3QkVw-OYSIuxxYhE8hCxwz7bpUd5Ssgp1YNjulM04d-yx4QcMrJV3UIUe8wwhj\_FlelUCnzL9hmByYDF-lTtrzgmA\_x70p9NaGoWKqHBGA6kaKwtDF8lw3pGcTrAvvr75UbUJNWdAozhBUNSPeYxgu3YKNW9-yTaCiDLybhcCluUH6ePkk18sY/s1435/1741942949419.jpg)#### 統計和分析
+![image](images/2025-03-notebooklm-7225623878720524477.jpg)
 
-接著，我上傳了一份許多保險從業人員都很熟悉的資料：商業道德和金融市場常識題庫。這些題庫匯集了歷年來有關這兩個測驗的考題。我想了解這些題庫是否有什麼特徵，或者需要特別掌握的重點。過去，我們的做法是將每個考題讀取進來，然後進行統計和分析，以便獲取一些有用的訊息。但在使用NotebookLM之後，我可以選擇透過Prompt來完成這些工作。於是，我向它提問：「請幫我分析這些考試題庫的出題趨勢是什麼？」#### [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-874824762238742925.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1t4S\_1ZQvcAg2MhPe4ltnGZCfSFrABDnUHwn4dAtmgZ9Lmh0MtOKkiRH-Mwf5v-ysg6VUi5W4-z2\_PMNeOQS130dx6ovQW73TG0txPThewAw5YtrasR-r1JXYTKTsg0hPeKd\_oUw5SHIq4rWleCSNsaOp-SHzjG\_u-ByoOHZPQjUhyphenhyphenQ-MS9Z23pNFeTM/s1446/1741944914773.jpg)
 
-我們可以看到模型為我們提供了清晰的分析，列出了主要要點，並做了相關的說明。當然，我們也可以換個方式提問，例如問「哪些類型的題目最常出現？」。這樣一方面是透過不同表達方式，但隱含相似需求的Prompt，來進一步對比模型的回答，從而了解其回答的可靠性。這也正是將知識庫鎖定於相同來源的好處，因為這樣我們可以更容易驗證模型的答案是否正確。#### [![](/posts/2025-03-notebooklm/images/2025-03-notebooklm-1297266397180569623.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxeepG-zM\_BeMXTjppviI2ZN5ssgIOm8EzL2jbhaNGf-653F9plbca3VbsOaGulTL5xTCthgMAGsjJsgikXCBtcncMjukx\_Psp7-cSEcQCA4aFV086sRYNfvbM\_jsm4bQGckBEyq\_5yIZJjjnKf-\_rkpz5nP8vHHbEuosrgwGNiJoeaSzvbDJAolFfEOM/s1440/1741944836494.jpg)
+
+當然你也可以使用不一樣的Prompt來得到想要的結果，這部份就像一般的LLM一樣，像是我下的指令，請他依照我的資料產生5個選擇題，而且還標記了正確答案出來，效果非常好，也許以後老師們不用再絞盡腦汁出考題了？## 
+
+![image](images/2025-03-notebooklm-545211114091046778.jpg)
+
+
+
+我們可以使用比較迂迴的問法，進一步了解模型對資料的理解程度。例如，透過設計假想情境來測試模型的應對能力，要求它在特定範圍內提供解決方案。 這樣的提問不僅能幫助我們測試模型的準確性，也能了解它如何解釋和應用資料中的知識。特別有趣的是，模型在處理這類情境題時，能夠提供清晰的解決方案，並且給出相關的說明，進一步加強了它的分析能力。更重要的是，這些補充說明往往不會偏離主題，保持高一致性，這對於需要精確解答的情境來說非常關鍵。 透過這樣的方式，我們不僅能夠驗證模型對資料的理解程度，還能深入探討它如何在具體情境中提供實用的解決策略。這種靈活運用模型的能力，使得我們能夠更全面地分析和利用資料，並獲得具體且有價值的答案。## 
+
+![image](images/2025-03-notebooklm-1361449116535859033.jpg)
+
+
+
+![image](images/2025-03-notebooklm-8150793124311863853.jpg)
+
+
+
+當然，如果你亂提問，或是問的問題已經超出範圍，模型還是可以辨別的。
+
+![image](images/2025-03-notebooklm-160603344941981579.jpg)
+
+#### 統計和分析
+
+接著，我上傳了一份許多保險從業人員都很熟悉的資料：商業道德和金融市場常識題庫。這些題庫匯集了歷年來有關這兩個測驗的考題。我想了解這些題庫是否有什麼特徵，或者需要特別掌握的重點。過去，我們的做法是將每個考題讀取進來，然後進行統計和分析，以便獲取一些有用的訊息。但在使用NotebookLM之後，我可以選擇透過Prompt來完成這些工作。於是，我向它提問：「請幫我分析這些考試題庫的出題趨勢是什麼？」#### 
+
+![image](images/2025-03-notebooklm-874824762238742925.jpg)
+
+
+
+我們可以看到模型為我們提供了清晰的分析，列出了主要要點，並做了相關的說明。當然，我們也可以換個方式提問，例如問「哪些類型的題目最常出現？」。這樣一方面是透過不同表達方式，但隱含相似需求的Prompt，來進一步對比模型的回答，從而了解其回答的可靠性。這也正是將知識庫鎖定於相同來源的好處，因為這樣我們可以更容易驗證模型的答案是否正確。#### 
+
+![image](images/2025-03-notebooklm-1297266397180569623.jpg)
+
+
 
 ## 誰比較好？
 

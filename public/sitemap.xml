@@ -2,436 +2,436 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://liuchien.inxpire.tw/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-04-24T16:22:40+08:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-04-24T16:22:40+08:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/my-first-post/</loc>
+    <loc>http://localhost:1313/posts/my-first-post/</loc>
     <lastmod>2026-04-24T16:22:40+08:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai-agent/</loc>
+    <loc>http://localhost:1313/tags/ai-agent/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai-architecture/</loc>
+    <loc>http://localhost:1313/tags/ai-architecture/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai-framework/</loc>
+    <loc>http://localhost:1313/tags/ai-framework/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</loc>
+    <loc>http://localhost:1313/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai-%E5%8D%94%E4%BD%9C/</loc>
+    <loc>http://localhost:1313/tags/ai-%E5%8D%94%E4%BD%9C/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</loc>
+    <loc>http://localhost:1313/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2026-03-ai-vibe-coding/</loc>
+    <loc>http://localhost:1313/posts/2026-03-ai-vibe-coding/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/vibe-coding/</loc>
+    <loc>http://localhost:1313/tags/vibe-coding/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</loc>
+    <loc>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</loc>
     <lastmod>2026-03-09T09:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/ai/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/crewai/</loc>
+    <loc>http://localhost:1313/tags/crewai/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/generative-ai/</loc>
+    <loc>http://localhost:1313/tags/generative-ai/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/litellm/</loc>
+    <loc>http://localhost:1313/tags/litellm/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/llm/</loc>
+    <loc>http://localhost:1313/tags/llm/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/mcp/</loc>
+    <loc>http://localhost:1313/tags/mcp/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/multi-agent/</loc>
+    <loc>http://localhost:1313/tags/multi-agent/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/python-ai/</loc>
+    <loc>http://localhost:1313/tags/python-ai/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-11-ai-ai-agent-crewai-litellm/</loc>
+    <loc>http://localhost:1313/posts/2025-11-ai-ai-agent-crewai-litellm/</loc>
     <lastmod>2025-11-01T13:40:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</loc>
+    <loc>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</loc>
+    <loc>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</loc>
+    <loc>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</loc>
+    <loc>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-07-ai/</loc>
+    <loc>http://localhost:1313/posts/2025-07-ai/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%B3%87%E6%96%99%E9%9B%86/</loc>
+    <loc>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</loc>
+    <loc>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</loc>
+    <loc>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</loc>
     <lastmod>2025-07-10T08:41:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/chatgpt/</loc>
+    <loc>http://localhost:1313/tags/chatgpt/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/gemini/</loc>
+    <loc>http://localhost:1313/tags/gemini/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/grok/</loc>
+    <loc>http://localhost:1313/tags/grok/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/multimodal-ai/</loc>
+    <loc>http://localhost:1313/tags/multimodal-ai/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-06-blog-post/</loc>
+    <loc>http://localhost:1313/posts/2025-06-blog-post/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%B3%AD%E7%A5%9E/</loc>
+    <loc>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</loc>
     <lastmod>2025-06-12T02:38:28+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/large-language-model/</loc>
+    <loc>http://localhost:1313/tags/large-language-model/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/multi-documents-summarization/</loc>
+    <loc>http://localhost:1313/tags/multi-documents-summarization/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/notebooklm/</loc>
+    <loc>http://localhost:1313/tags/notebooklm/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/summarization/</loc>
+    <loc>http://localhost:1313/tags/summarization/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-03-notebooklm/</loc>
+    <loc>http://localhost:1313/posts/2025-03-notebooklm/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</loc>
+    <loc>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</loc>
     <lastmod>2025-03-17T06:48:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/discord/</loc>
+    <loc>http://localhost:1313/tags/discord/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/google-chat/</loc>
+    <loc>http://localhost:1313/tags/google-chat/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/line/</loc>
+    <loc>http://localhost:1313/tags/line/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/line-message/</loc>
+    <loc>http://localhost:1313/tags/line-message/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/line-notify/</loc>
+    <loc>http://localhost:1313/tags/line-notify/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-01-line-notify/</loc>
+    <loc>http://localhost:1313/posts/2025-01-line-notify/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/telegram/</loc>
+    <loc>http://localhost:1313/tags/telegram/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/wechat/</loc>
+    <loc>http://localhost:1313/tags/wechat/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/zalo/</loc>
+    <loc>http://localhost:1313/tags/zalo/</loc>
     <lastmod>2025-02-08T02:07:24+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/fine-tune/</loc>
+    <loc>http://localhost:1313/tags/fine-tune/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/fine-tuning/</loc>
+    <loc>http://localhost:1313/tags/fine-tuning/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/machine-learning/</loc>
+    <loc>http://localhost:1313/tags/machine-learning/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/model/</loc>
+    <loc>http://localhost:1313/tags/model/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/prompt/</loc>
+    <loc>http://localhost:1313/tags/prompt/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-01-prompt-fine-tune-va-training-ai-moi-la/</loc>
+    <loc>http://localhost:1313/posts/2025-01-prompt-fine-tune-va-training-ai-moi-la/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/training/</loc>
+    <loc>http://localhost:1313/tags/training/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/vietnam/</loc>
+    <loc>http://localhost:1313/tags/vietnam/</loc>
     <lastmod>2025-01-21T02:49:25+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/chatbot/</loc>
+    <loc>http://localhost:1313/tags/chatbot/</loc>
     <lastmod>2025-01-14T06:15:57+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-01-llmprompt/</loc>
+    <loc>http://localhost:1313/posts/2025-01-llmprompt/</loc>
     <lastmod>2025-01-14T06:15:57+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</loc>
+    <loc>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/nlp/</loc>
+    <loc>http://localhost:1313/tags/nlp/</loc>
     <lastmod>2025-01-07T02:21:22+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/pre-trained/</loc>
+    <loc>http://localhost:1313/tags/pre-trained/</loc>
     <lastmod>2025-01-07T02:21:22+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2025-01-prompt-fine-tune-training/</loc>
+    <loc>http://localhost:1313/posts/2025-01-prompt-fine-tune-training/</loc>
     <lastmod>2025-01-07T02:21:22+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/text-summarization/</loc>
+    <loc>http://localhost:1313/tags/text-summarization/</loc>
     <lastmod>2025-01-07T02:21:22+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2024-12-chatgpt/</loc>
+    <loc>http://localhost:1313/posts/2024-12-chatgpt/</loc>
     <lastmod>2025-01-10T07:09:56+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</loc>
+    <loc>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2025-01-15T02:12:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</loc>
+    <loc>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</loc>
     <lastmod>2024-12-06T08:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-04-scrum/</loc>
+    <loc>http://localhost:1313/posts/2021-04-scrum/</loc>
     <lastmod>2024-12-05T09:03:09+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-04-scrum-9/</loc>
+    <loc>http://localhost:1313/posts/2021-04-scrum-9/</loc>
     <lastmod>2024-12-06T08:32:39+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-03-analyzing-political-parody-in-social/</loc>
+    <loc>http://localhost:1313/posts/2022-03-analyzing-political-parody-in-social/</loc>
     <lastmod>2024-11-22T09:22:48+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</loc>
+    <loc>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-03-ms2-dataset-for-multi-document/</loc>
+    <loc>http://localhost:1313/posts/2022-03-ms2-dataset-for-multi-document/</loc>
     <lastmod>2024-11-22T09:22:49+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/document-summarization/</loc>
+    <loc>http://localhost:1313/tags/document-summarization/</loc>
     <lastmod>2024-12-06T09:22:19+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/opinion-summarization/</loc>
+    <loc>http://localhost:1313/tags/opinion-summarization/</loc>
     <lastmod>2024-12-06T09:22:19+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-02-nlp-2-text-summarization/</loc>
+    <loc>http://localhost:1313/posts/2022-02-nlp-2-text-summarization/</loc>
     <lastmod>2024-12-06T09:22:19+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-02-nlp-1/</loc>
+    <loc>http://localhost:1313/posts/2022-02-nlp-1/</loc>
     <lastmod>2024-12-06T09:10:07+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/digital-image-process/</loc>
+    <loc>http://localhost:1313/tags/digital-image-process/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/opencv/</loc>
+    <loc>http://localhost:1313/tags/opencv/</loc>
     <lastmod>2025-01-22T03:06:15+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/perspective-transformation/</loc>
+    <loc>http://localhost:1313/tags/perspective-transformation/</loc>
     <lastmod>2025-01-15T02:12:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</loc>
+    <loc>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2025-01-15T02:12:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-python-perspective-transformation/</loc>
+    <loc>http://localhost:1313/posts/2022-01-python-perspective-transformation/</loc>
     <lastmod>2025-01-15T02:12:32+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/image-enhancement/</loc>
+    <loc>http://localhost:1313/tags/image-enhancement/</loc>
     <lastmod>2025-01-20T03:36:58+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/laplacioan/</loc>
+    <loc>http://localhost:1313/tags/laplacioan/</loc>
     <lastmod>2025-01-20T03:36:58+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/sobel/</loc>
+    <loc>http://localhost:1313/tags/sobel/</loc>
     <lastmod>2025-01-20T03:36:58+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-pythonimage-enhancement/</loc>
+    <loc>http://localhost:1313/posts/2022-01-pythonimage-enhancement/</loc>
     <lastmod>2025-01-20T03:36:58+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/cnn/</loc>
+    <loc>http://localhost:1313/tags/cnn/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/convolutional-neural-network/</loc>
+    <loc>http://localhost:1313/tags/convolutional-neural-network/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/crossentropy/</loc>
+    <loc>http://localhost:1313/tags/crossentropy/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/pytorch/</loc>
+    <loc>http://localhost:1313/tags/pytorch/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-pytorchcnn/</loc>
+    <loc>http://localhost:1313/posts/2022-01-pytorchcnn/</loc>
     <lastmod>2025-01-20T07:05:44+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/blockchain/</loc>
+    <loc>http://localhost:1313/tags/blockchain/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/nft/</loc>
+    <loc>http://localhost:1313/tags/nft/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/twitter/</loc>
+    <loc>http://localhost:1313/tags/twitter/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</loc>
+    <loc>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-nft/</loc>
+    <loc>http://localhost:1313/posts/2022-01-nft/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</loc>
+    <loc>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</loc>
+    <loc>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</loc>
+    <loc>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</loc>
     <lastmod>2025-01-14T06:46:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E9%9C%B9%E9%9D%82nft/</loc>
+    <loc>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</loc>
     <lastmod>2024-12-12T11:50:02+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/evernote/</loc>
+    <loc>http://localhost:1313/tags/evernote/</loc>
     <lastmod>2024-11-22T09:22:50+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/gpu/</loc>
+    <loc>http://localhost:1313/tags/gpu/</loc>
     <lastmod>2024-11-22T09:22:50+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/liuchien/</loc>
+    <loc>http://localhost:1313/tags/liuchien/</loc>
     <lastmod>2024-11-22T09:22:50+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/yolov4/</loc>
+    <loc>http://localhost:1313/tags/yolov4/</loc>
     <lastmod>2025-01-22T03:06:15+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-colab-notebooksyolov4-model/</loc>
+    <loc>http://localhost:1313/posts/2022-01-colab-notebooksyolov4-model/</loc>
     <lastmod>2024-11-22T09:22:50+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/auto-labeling/</loc>
+    <loc>http://localhost:1313/tags/auto-labeling/</loc>
     <lastmod>2025-01-22T03:06:15+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/yolo-label/</loc>
+    <loc>http://localhost:1313/tags/yolo-label/</loc>
     <lastmod>2025-01-22T03:06:15+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-open-cvimagebounding-boxyolo-label/</loc>
+    <loc>http://localhost:1313/posts/2022-01-open-cvimagebounding-boxyolo-label/</loc>
     <lastmod>2025-01-22T03:06:15+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/colab-notebooks/</loc>
+    <loc>http://localhost:1313/tags/colab-notebooks/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/kaggle/</loc>
+    <loc>http://localhost:1313/tags/kaggle/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/kaggle-datasets/</loc>
+    <loc>http://localhost:1313/tags/kaggle-datasets/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2022-01-colab-notebookskaggledataset/</loc>
+    <loc>http://localhost:1313/posts/2022-01-colab-notebookskaggledataset/</loc>
     <lastmod>2025-01-22T07:33:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/accuracy/</loc>
+    <loc>http://localhost:1313/tags/accuracy/</loc>
     <lastmod>2024-11-22T09:22:51+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/f1-score/</loc>
+    <loc>http://localhost:1313/tags/f1-score/</loc>
     <lastmod>2024-11-22T09:22:51+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/precision/</loc>
+    <loc>http://localhost:1313/tags/precision/</loc>
     <lastmod>2024-11-22T09:22:51+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/recall/</loc>
+    <loc>http://localhost:1313/tags/recall/</loc>
     <lastmod>2024-11-22T09:22:51+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-12-precision-recall-f1-score/</loc>
+    <loc>http://localhost:1313/posts/2021-12-precision-recall-f1-score/</loc>
     <lastmod>2024-11-22T09:22:51+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-10-blog-post/</loc>
+    <loc>http://localhost:1313/posts/2021-10-blog-post/</loc>
     <lastmod>2025-01-14T06:46:11+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-09-20072008/</loc>
+    <loc>http://localhost:1313/posts/2021-09-20072008/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</loc>
+    <loc>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</loc>
+    <loc>http://localhost:1313/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</loc>
+    <loc>http://localhost:1313/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</loc>
+    <loc>http://localhost:1313/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</loc>
+    <loc>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</loc>
     <lastmod>2025-01-14T06:38:37+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-08-blog-post/</loc>
+    <loc>http://localhost:1313/posts/2021-08-blog-post/</loc>
     <lastmod>2025-01-14T06:30:55+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post/</loc>
     <lastmod>2024-11-22T09:22:52+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post-28/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-28/</loc>
     <lastmod>2024-11-22T09:22:53+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post-27/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-27/</loc>
     <lastmod>2024-11-22T09:22:53+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post-22/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-22/</loc>
     <lastmod>2024-11-22T09:22:53+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post-13/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-13/</loc>
     <lastmod>2024-11-22T09:22:53+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-07-blog-post-12/</loc>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-12/</loc>
     <lastmod>2024-11-22T09:22:54+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/boundary-extraction/</loc>
+    <loc>http://localhost:1313/tags/boundary-extraction/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/dilation/</loc>
+    <loc>http://localhost:1313/tags/dilation/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/erosion/</loc>
+    <loc>http://localhost:1313/tags/erosion/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/tags/region-filling/</loc>
+    <loc>http://localhost:1313/tags/region-filling/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/posts/2021-02-boundary-extraction-region-filling/</loc>
+    <loc>http://localhost:1313/posts/2021-02-boundary-extraction-region-filling/</loc>
     <lastmod>2025-01-22T02:41:33+00:00</lastmod>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/templates/hugo-post/</loc>
+    <loc>http://localhost:1313/templates/hugo-post/</loc>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://liuchien.inxpire.tw/templates/</loc>
+    <loc>http://localhost:1313/templates/</loc>
   </url>
 </urlset>

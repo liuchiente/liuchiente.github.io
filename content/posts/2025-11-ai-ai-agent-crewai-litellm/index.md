@@ -14,9 +14,17 @@ draft: false
 
 前陣子在觀賞[2025 Generative AI 年會](https://gaiconf.com)，聽到有位分享者提到「後AI時代」，為什麼說後AI時代呢，因為AI Agent的概念出現，加上MCP逐漸成熟，前兩年的超大LLM霸主時期不免出現一些小變化，在過去，我們人類先是提出了Auto Regressive，接著整理出大量的訓練語料，接著我們用Text-Generation解決了很多問答、總結的NLP難題，下一步則開始考慮多模態問題，接著需要更多更好的機制來解決Token轉換問題，還要有更多機器來支援算力消耗，屬實不容易，大部分LLM走在一條用單一模型解決所有問題的道路上，但這實在不容易，畢竟很多任務是這樣的，你讓他執行單一任務，他可以做到很精確，像是圖像辨識，CNN幾乎就有了碾壓性的效果，但是你要讓他兼顧幾個不同任務，這是個大課題。  
 於是就有人想了，那如果我把幾個Model結合起來，會是什麼感覺呢？我先破個梗，如果處理得不好，大概就是以下這種狀況。  
-[![](/posts/2025-11-ai-ai-agent-crewai-litellm/images/2025-11-ai-ai-agent-crewai-litellm-708145892580018748.jpg)](https://truth.bahamut.com.tw/s01/202308/909b0d9a99f76e2a3a25e61ad71672f9.JPG)  
+
+
+![image](images/2025-11-ai-ai-agent-crewai-litellm-708145892580018748.jpg)
+
+  
 這沒亂蓋吧？這張圖要多傳神就有多傳神，更何況他還說出了LLM的特色。  
-[![](/posts/2025-11-ai-ai-agent-crewai-litellm/images/2025-11-ai-ai-agent-crewai-litellm-8586702796028722730.jpg)](https://resize-image.vocus.cc/resize?compression=6&norotation=true&url=https%3A%2F%2Fimages.vocus.cc%2Ff16ce6bb-a28e-47f7-ad1b-8e6fa9c03a68.png&width=740&sign=yfYTu5Fs623l-Gw2PUiUovOXdSol7cjg23Kks13eGV8)  
+
+
+![image](images/2025-11-ai-ai-agent-crewai-litellm-8586702796028722730.jpg)
+
+  
 好啦，回歸主題，接著介紹說幾個在本次實作會應用到概念。  
 **[AI Agent](https://zh.wikipedia.org/zh-tw/智能代理)**是能自主理解任務、規劃步驟、執行行動並根據結果調整策略的概念，結合了大語言模型（LLM）、記憶、工具與回饋機制，能完成多步驟任務。例如自動撰寫報告、分析資料或審查程式碼，不再只是被動回答，而能主動行動。  
 **[MCP](https://zh.wikipedia.org/zh-tw/模型上下文协议)**是一種標準化協定，用來讓 AI Agent 與工具、資料、記憶庫之間交換上下文與任務資訊。它幫助 Agent 保留任務狀態、共享工具清單、追蹤進度，實現多代理協作，MCP 讓 AI 系統有「記憶」與「任務持續性」。  

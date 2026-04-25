@@ -12,7 +12,11 @@ draft: false
   
 那當LINE Notify結束服務後，原本這些用戶該何去何從呢？官方也推薦了使用Line Message API作為替代方案，詳見從 LINE Notify 轉移到 LINE Messaging API 發送更多樣訊息與輕鬆查找用戶 ID、群組 ID，文中也提到了一些基本串接；的確，LINE Messaging API依靠著每月有200則免費訊息的優惠，可以滿足許多極輕量用戶的需求，但這個方案，卻還是存在很多先天限制的，因為各個國家也有不同的市場使用狀況，即便LINE Notify用戶遍及東亞，卻還是需依不同狀況做出不同方案選擇。
 
-[![](/posts/2025-01-line-notify/images/2025-01-line-notify-7451626228677959209.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXxJ\_qWcaBqExGPJQzGXDSSMB\_esy\_YE-tMVZhc\_lf7fMogbpsFui4zCLSj8PbJgt1Y-AsnAuX7Kz839OM3MMrgXYYT9WNtp0bVOTX2VQZA57AsND97D0J8DnbxpA-sjVhSOTkBts2suuq4W861m1NYSJtb2a4Caqj3w8VHWt7K063NK8i5f57L5bS\_rs/s640/pexels-fauxels-3182824.jpg)  
+
+
+![image](images/2025-01-line-notify-7451626228677959209.jpg)
+
+  
   
 以下我們針對在東亞普及的訊息服務，挑選了幾個常見的產品做介紹；  
   

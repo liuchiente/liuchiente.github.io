@@ -14,7 +14,11 @@ draft: false
 
 而我希望可以**讓流程自動轉送到更正確的地方, 甚至於, 加速每個節點的處理速度**, 於是乎, 我會開始記錄每個節點處理不同工作的效率和時間, 接著我會把這些紀錄做萃取和計算, 以此了解每個節點對這工作的重視度, **預測負責人的心理, 得出一套行為模式**, 在引擎接到工作後, 以此行為模式來判斷該如何加快節點的處理速度, 避免無意義的閒置。
 
-[![](/posts/2021-08-blog-post/images/2021-08-blog-post-1460040633518792401.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEja8yXi1wCNklkxmyiBmt2HM8QgirrrWTOY7Nd\_pi9nOfF27G9m7xvpQpqks6NKrjEyo8DENrcUWcvl8dHAbBexuJKL9U6k9JN7VPIHem-kA4FGr4kpBfK3nkCiSwmOF2T9u7lgjLdyuTdxjczu2DKe\_Tpu3gUatUB-BhVrTJ3xyPrs9bI8poF0SFaGDl8/s640/pexels-startup-stock-photos-7367.jpg) 綜合上述行為, 基礎的人工智慧, 不外乎就是以下這樣：
+
+
+![image](images/2021-08-blog-post-1460040633518792401.jpg)
+
+ 綜合上述行為, 基礎的人工智慧, 不外乎就是以下這樣：
 
 1. 收集資料（Gathering data ）
 2. 準備數據（Preparing that data）
@@ -55,7 +59,11 @@ draft: false
 
 那又為什麼有**DL(Deep Learning)**深度學習？因為我們希望可以減少特徵分析這個行為, 因為特徵分析是費時又費工的, 且也帶有一定的主觀成分, 故我們希望讓模型(Model), 基本上是多層的類神經網路, 來自動得到特徵, 並將特徵學習起來, 好作為預測依據, 當然深度學習又可以分為非監督式、監督式學習, 差別就在我們怎麼去提示模型取得特徵。
 
-[![](/posts/2021-08-blog-post/images/2021-08-blog-post-7714748304111882030.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPkFHmH0aCx5824M3P80p9szTpa9k5A7nB-WDvJVvh-fTHGXTD1KhlgfB7HXNadIqKbRYDxXd2UcN0K9960QeLigs1r14QrGgM9Rt6AkcVaXCRi5iRsQuZ84auZJkEkdwLagTOCp2IvwZbNsSKOUG\_CJq9x2aKzqS4hJTCPal-MEXeVcg\_yoxXzRbR6QA/s640/pexels-kureng-workx-2546437-4314674.jpg)綜合以上, 我的土炮嘗試是屬於機器學習的一環, 我利用傳統的方法把每個節點的使用歷程記錄下來, 然後設定一定的Rule來分析和萃取歷程, 在用分析萃取完的結果來預測這個節點將來要怎麼面對剩下的工作; 在進入研究所後, 我開始接觸深度學習, 並以自然語言處理作為研究主題, 往後則將開始記錄在這門研究上我需要用到的知識和技術。
+
+
+![image](images/2021-08-blog-post-7714748304111882030.jpg)
+
+綜合以上, 我的土炮嘗試是屬於機器學習的一環, 我利用傳統的方法把每個節點的使用歷程記錄下來, 然後設定一定的Rule來分析和萃取歷程, 在用分析萃取完的結果來預測這個節點將來要怎麼面對剩下的工作; 在進入研究所後, 我開始接觸深度學習, 並以自然語言處理作為研究主題, 往後則將開始記錄在這門研究上我需要用到的知識和技術。
 
 我們要過的精彩, 肯定得充滿期待。
 
