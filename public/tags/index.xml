@@ -4,630 +4,695 @@
         <link>http://localhost:1313/tags/</link>
         <description>Recent content in 所有標籤 on Liuchien&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-tw</language>
-        <lastBuildDate>Mon, 09 Mar 2026 09:32:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-tw</language><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Accuracy</title>
+            <link>http://localhost:1313/tags/accuracy/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/accuracy/</guid>
+            <description></description>
+        </item><item>
+            <title>AI</title>
+            <link>http://localhost:1313/tags/ai/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/ai/</guid>
+            <description></description>
+        </item><item>
             <title>AI Agent</title>
             <link>http://localhost:1313/tags/ai-agent/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai-agent/</guid>
             <description></description>
         </item><item>
             <title>AI Architecture</title>
             <link>http://localhost:1313/tags/ai-architecture/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai-architecture/</guid>
             <description></description>
         </item><item>
             <title>AI Framework</title>
             <link>http://localhost:1313/tags/ai-framework/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai-framework/</guid>
             <description></description>
         </item><item>
             <title>AI 自動化</title>
             <link>http://localhost:1313/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai-%E8%87%AA%E5%8B%95%E5%8C%96/</guid>
             <description></description>
         </item><item>
             <title>AI 協作</title>
             <link>http://localhost:1313/tags/ai-%E5%8D%94%E4%BD%9C/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai-%E5%8D%94%E4%BD%9C/</guid>
             <description></description>
         </item><item>
             <title>AI寫程式</title>
             <link>http://localhost:1313/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/ai%E5%AF%AB%E7%A8%8B%E5%BC%8F/</guid>
             <description></description>
         </item><item>
-            <title>Vibe Coding</title>
-            <link>http://localhost:1313/tags/vibe-coding/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/vibe-coding/</guid>
+            <title>Auto Labeling</title>
+            <link>http://localhost:1313/tags/auto-labeling/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/auto-labeling/</guid>
             <description></description>
         </item><item>
-            <title>後AI時代</title>
-            <link>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</link>
-            <pubDate>Mon, 09 Mar 2026 09:32:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</guid>
+            <title>Blockchain</title>
+            <link>http://localhost:1313/tags/blockchain/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/blockchain/</guid>
             <description></description>
         </item><item>
-            <title>AI</title>
-            <link>http://localhost:1313/tags/ai/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/ai/</guid>
+            <title>BOM</title>
+            <link>http://localhost:1313/tags/bom/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/bom/</guid>
             <description></description>
         </item><item>
-            <title>CrewAI</title>
-            <link>http://localhost:1313/tags/crewai/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/crewai/</guid>
+            <title>Boundary Extraction</title>
+            <link>http://localhost:1313/tags/boundary-extraction/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/boundary-extraction/</guid>
             <description></description>
         </item><item>
-            <title>Generative AI</title>
-            <link>http://localhost:1313/tags/generative-ai/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/generative-ai/</guid>
-            <description></description>
-        </item><item>
-            <title>LiteLLM</title>
-            <link>http://localhost:1313/tags/litellm/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/litellm/</guid>
-            <description></description>
-        </item><item>
-            <title>LLM</title>
-            <link>http://localhost:1313/tags/llm/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/llm/</guid>
-            <description></description>
-        </item><item>
-            <title>MCP</title>
-            <link>http://localhost:1313/tags/mcp/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/mcp/</guid>
-            <description></description>
-        </item><item>
-            <title>Multi-Agent</title>
-            <link>http://localhost:1313/tags/multi-agent/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/multi-agent/</guid>
-            <description></description>
-        </item><item>
-            <title>Python AI</title>
-            <link>http://localhost:1313/tags/python-ai/</link>
-            <pubDate>Sat, 01 Nov 2025 13:40:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/python-ai/</guid>
-            <description></description>
-        </item><item>
-            <title>人工智慧</title>
-            <link>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</guid>
-            <description></description>
-        </item><item>
-            <title>大語言模型</title>
-            <link>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</guid>
-            <description></description>
-        </item><item>
-            <title>自然語言研究趨勢和論文</title>
-            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</guid>
-            <description></description>
-        </item><item>
-            <title>自然語言處理</title>
-            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
-            <description></description>
-        </item><item>
-            <title>訓練語料</title>
-            <link>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</guid>
-            <description></description>
-        </item><item>
-            <title>深度學習</title>
-            <link>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
-            <description></description>
-        </item><item>
-            <title>資料集</title>
-            <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</guid>
-            <description></description>
-        </item><item>
-            <title>繁體中文</title>
-            <link>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
-            <description></description>
-        </item><item>
-            <title>簡體中文</title>
-            <link>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</link>
-            <pubDate>Thu, 10 Jul 2025 08:41:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
+            <title>ChatBot</title>
+            <link>http://localhost:1313/tags/chatbot/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/chatbot/</guid>
             <description></description>
         </item><item>
             <title>ChatGPT</title>
             <link>http://localhost:1313/tags/chatgpt/</link>
-            <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/chatgpt/</guid>
             <description></description>
         </item><item>
-            <title>Gemini</title>
-            <link>http://localhost:1313/tags/gemini/</link>
-            <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/gemini/</guid>
+            <title>CNN</title>
+            <link>http://localhost:1313/tags/cnn/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/cnn/</guid>
             <description></description>
         </item><item>
-            <title>Grok</title>
-            <link>http://localhost:1313/tags/grok/</link>
-            <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/grok/</guid>
+            <title>Colab Notebooks</title>
+            <link>http://localhost:1313/tags/colab-notebooks/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/colab-notebooks/</guid>
             <description></description>
         </item><item>
-            <title>Multimodal AI</title>
-            <link>http://localhost:1313/tags/multimodal-ai/</link>
-            <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/multimodal-ai/</guid>
+            <title>Convolutional Neural Network</title>
+            <link>http://localhost:1313/tags/convolutional-neural-network/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/convolutional-neural-network/</guid>
             <description></description>
         </item><item>
-            <title>賭神</title>
-            <link>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</link>
-            <pubDate>Wed, 11 Jun 2025 11:59:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</guid>
+            <title>CrewAI</title>
+            <link>http://localhost:1313/tags/crewai/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/crewai/</guid>
             <description></description>
         </item><item>
-            <title>Large Language Model</title>
-            <link>http://localhost:1313/tags/large-language-model/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/large-language-model/</guid>
+            <title>CrossEntropy</title>
+            <link>http://localhost:1313/tags/crossentropy/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/crossentropy/</guid>
             <description></description>
         </item><item>
-            <title>Multi-Documents Summarization</title>
-            <link>http://localhost:1313/tags/multi-documents-summarization/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/multi-documents-summarization/</guid>
+            <title>Database</title>
+            <link>http://localhost:1313/tags/database/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/database/</guid>
             <description></description>
         </item><item>
-            <title>NotebookLM</title>
-            <link>http://localhost:1313/tags/notebooklm/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/notebooklm/</guid>
+            <title>Digital Image Process</title>
+            <link>http://localhost:1313/tags/digital-image-process/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/digital-image-process/</guid>
             <description></description>
         </item><item>
-            <title>Summarization</title>
-            <link>http://localhost:1313/tags/summarization/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/summarization/</guid>
-            <description></description>
-        </item><item>
-            <title>機器學習</title>
-            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</guid>
-            <description></description>
-        </item><item>
-            <title>機器學習與自然語言處理</title>
-            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
-            <pubDate>Sat, 15 Mar 2025 14:37:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
+            <title>Dilation</title>
+            <link>http://localhost:1313/tags/dilation/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/dilation/</guid>
             <description></description>
         </item><item>
             <title>Discord</title>
             <link>http://localhost:1313/tags/discord/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/discord/</guid>
             <description></description>
         </item><item>
-            <title>Google Chat</title>
-            <link>http://localhost:1313/tags/google-chat/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/google-chat/</guid>
+            <title>Document Summarization</title>
+            <link>http://localhost:1313/tags/document-summarization/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/document-summarization/</guid>
             <description></description>
         </item><item>
-            <title>Line</title>
-            <link>http://localhost:1313/tags/line/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/line/</guid>
+            <title>Erosion</title>
+            <link>http://localhost:1313/tags/erosion/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/erosion/</guid>
             <description></description>
         </item><item>
-            <title>Line Message</title>
-            <link>http://localhost:1313/tags/line-message/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/line-message/</guid>
+            <title>Evernote</title>
+            <link>http://localhost:1313/tags/evernote/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/evernote/</guid>
             <description></description>
         </item><item>
-            <title>Line Notify</title>
-            <link>http://localhost:1313/tags/line-notify/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/line-notify/</guid>
-            <description></description>
-        </item><item>
-            <title>Telegram</title>
-            <link>http://localhost:1313/tags/telegram/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/telegram/</guid>
-            <description></description>
-        </item><item>
-            <title>Wechat</title>
-            <link>http://localhost:1313/tags/wechat/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/wechat/</guid>
-            <description></description>
-        </item><item>
-            <title>Zalo</title>
-            <link>http://localhost:1313/tags/zalo/</link>
-            <pubDate>Tue, 21 Jan 2025 09:29:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/zalo/</guid>
+            <title>F1-Score</title>
+            <link>http://localhost:1313/tags/f1-score/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/f1-score/</guid>
             <description></description>
         </item><item>
             <title>Fine-Tune</title>
             <link>http://localhost:1313/tags/fine-tune/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/fine-tune/</guid>
             <description></description>
         </item><item>
             <title>Fine-Tuning</title>
             <link>http://localhost:1313/tags/fine-tuning/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/fine-tuning/</guid>
             <description></description>
         </item><item>
-            <title>Machine Learning</title>
-            <link>http://localhost:1313/tags/machine-learning/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/machine-learning/</guid>
+            <title>Gemini</title>
+            <link>http://localhost:1313/tags/gemini/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/gemini/</guid>
             <description></description>
         </item><item>
-            <title>Model</title>
-            <link>http://localhost:1313/tags/model/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/model/</guid>
+            <title>Generative AI</title>
+            <link>http://localhost:1313/tags/generative-ai/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/generative-ai/</guid>
             <description></description>
         </item><item>
-            <title>Prompt</title>
-            <link>http://localhost:1313/tags/prompt/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/prompt/</guid>
-            <description></description>
-        </item><item>
-            <title>Training</title>
-            <link>http://localhost:1313/tags/training/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/training/</guid>
-            <description></description>
-        </item><item>
-            <title>Vietnam</title>
-            <link>http://localhost:1313/tags/vietnam/</link>
-            <pubDate>Tue, 21 Jan 2025 02:46:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/vietnam/</guid>
-            <description></description>
-        </item><item>
-            <title>ChatBot</title>
-            <link>http://localhost:1313/tags/chatbot/</link>
-            <pubDate>Fri, 10 Jan 2025 07:09:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/chatbot/</guid>
-            <description></description>
-        </item><item>
-            <title>學習紀錄</title>
-            <link>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</link>
-            <pubDate>Fri, 10 Jan 2025 07:09:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</guid>
-            <description></description>
-        </item><item>
-            <title>NLP</title>
-            <link>http://localhost:1313/tags/nlp/</link>
-            <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/nlp/</guid>
-            <description></description>
-        </item><item>
-            <title>Pre-Trained</title>
-            <link>http://localhost:1313/tags/pre-trained/</link>
-            <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/pre-trained/</guid>
-            <description></description>
-        </item><item>
-            <title>Text Summarization</title>
-            <link>http://localhost:1313/tags/text-summarization/</link>
-            <pubDate>Tue, 07 Jan 2025 02:13:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/text-summarization/</guid>
-            <description></description>
-        </item><item>
-            <title>工作管理</title>
-            <link>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</link>
-            <pubDate>Thu, 05 Dec 2024 09:03:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</guid>
-            <description></description>
-        </item><item>
-            <title>敏捷開發</title>
-            <link>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</link>
-            <pubDate>Thu, 05 Dec 2024 09:03:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</guid>
-            <description></description>
-        </item><item>
-            <title>中興大學資工所</title>
-            <link>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</link>
-            <pubDate>Fri, 25 Mar 2022 15:08:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</guid>
-            <description></description>
-        </item><item>
-            <title>Document Summarization</title>
-            <link>http://localhost:1313/tags/document-summarization/</link>
-            <pubDate>Tue, 08 Feb 2022 13:39:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/document-summarization/</guid>
-            <description></description>
-        </item><item>
-            <title>Opinion Summarization</title>
-            <link>http://localhost:1313/tags/opinion-summarization/</link>
-            <pubDate>Tue, 08 Feb 2022 13:39:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/opinion-summarization/</guid>
-            <description></description>
-        </item><item>
-            <title>Digital Image Process</title>
-            <link>http://localhost:1313/tags/digital-image-process/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/digital-image-process/</guid>
-            <description></description>
-        </item><item>
-            <title>OpenCV</title>
-            <link>http://localhost:1313/tags/opencv/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/opencv/</guid>
-            <description></description>
-        </item><item>
-            <title>Perspective Transformation</title>
-            <link>http://localhost:1313/tags/perspective-transformation/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/perspective-transformation/</guid>
-            <description></description>
-        </item><item>
-            <title>Python</title>
-            <link>http://localhost:1313/tags/python/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/python/</guid>
-            <description></description>
-        </item><item>
-            <title>上課學習心得</title>
-            <link>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</guid>
-            <description></description>
-        </item><item>
-            <title>影像處理與深度學習</title>
-            <link>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
-            <pubDate>Thu, 27 Jan 2022 08:56:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
-            <description></description>
-        </item><item>
-            <title>Image Enhancement</title>
-            <link>http://localhost:1313/tags/image-enhancement/</link>
-            <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/image-enhancement/</guid>
-            <description></description>
-        </item><item>
-            <title>Laplacioan</title>
-            <link>http://localhost:1313/tags/laplacioan/</link>
-            <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/laplacioan/</guid>
-            <description></description>
-        </item><item>
-            <title>Sobel</title>
-            <link>http://localhost:1313/tags/sobel/</link>
-            <pubDate>Thu, 27 Jan 2022 08:31:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/sobel/</guid>
-            <description></description>
-        </item><item>
-            <title>CNN</title>
-            <link>http://localhost:1313/tags/cnn/</link>
-            <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/cnn/</guid>
-            <description></description>
-        </item><item>
-            <title>Convolutional Neural Network</title>
-            <link>http://localhost:1313/tags/convolutional-neural-network/</link>
-            <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/convolutional-neural-network/</guid>
-            <description></description>
-        </item><item>
-            <title>CrossEntropy</title>
-            <link>http://localhost:1313/tags/crossentropy/</link>
-            <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/crossentropy/</guid>
-            <description></description>
-        </item><item>
-            <title>Pytorch</title>
-            <link>http://localhost:1313/tags/pytorch/</link>
-            <pubDate>Wed, 26 Jan 2022 14:54:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/pytorch/</guid>
-            <description></description>
-        </item><item>
-            <title>Blockchain</title>
-            <link>http://localhost:1313/tags/blockchain/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/blockchain/</guid>
-            <description></description>
-        </item><item>
-            <title>NFT</title>
-            <link>http://localhost:1313/tags/nft/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/nft/</guid>
-            <description></description>
-        </item><item>
-            <title>Twitter</title>
-            <link>http://localhost:1313/tags/twitter/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/twitter/</guid>
-            <description></description>
-        </item><item>
-            <title>比特幣</title>
-            <link>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</guid>
-            <description></description>
-        </item><item>
-            <title>非同質化代幣</title>
-            <link>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</guid>
-            <description></description>
-        </item><item>
-            <title>區塊鏈</title>
-            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</guid>
-            <description></description>
-        </item><item>
-            <title>區塊鏈與電子商務</title>
-            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</guid>
-            <description></description>
-        </item><item>
-            <title>霹靂NFT</title>
-            <link>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</link>
-            <pubDate>Tue, 25 Jan 2022 15:22:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</guid>
-            <description></description>
-        </item><item>
-            <title>Evernote</title>
-            <link>http://localhost:1313/tags/evernote/</link>
-            <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/evernote/</guid>
+            <title>Google Chat</title>
+            <link>http://localhost:1313/tags/google-chat/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/google-chat/</guid>
             <description></description>
         </item><item>
             <title>GPU</title>
             <link>http://localhost:1313/tags/gpu/</link>
-            <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/gpu/</guid>
             <description></description>
         </item><item>
-            <title>Liuchien</title>
-            <link>http://localhost:1313/tags/liuchien/</link>
-            <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/liuchien/</guid>
+            <title>Grok</title>
+            <link>http://localhost:1313/tags/grok/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/grok/</guid>
             <description></description>
         </item><item>
-            <title>YoloV4</title>
-            <link>http://localhost:1313/tags/yolov4/</link>
-            <pubDate>Tue, 25 Jan 2022 14:43:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/yolov4/</guid>
-            <description></description>
-        </item><item>
-            <title>Auto Labeling</title>
-            <link>http://localhost:1313/tags/auto-labeling/</link>
-            <pubDate>Tue, 11 Jan 2022 15:05:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/auto-labeling/</guid>
-            <description></description>
-        </item><item>
-            <title>Yolo Label</title>
-            <link>http://localhost:1313/tags/yolo-label/</link>
-            <pubDate>Tue, 11 Jan 2022 15:05:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/yolo-label/</guid>
-            <description></description>
-        </item><item>
-            <title>Colab Notebooks</title>
-            <link>http://localhost:1313/tags/colab-notebooks/</link>
-            <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/colab-notebooks/</guid>
+            <title>Image Enhancement</title>
+            <link>http://localhost:1313/tags/image-enhancement/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/image-enhancement/</guid>
             <description></description>
         </item><item>
             <title>Kaggle</title>
             <link>http://localhost:1313/tags/kaggle/</link>
-            <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/kaggle/</guid>
             <description></description>
         </item><item>
             <title>Kaggle Datasets</title>
             <link>http://localhost:1313/tags/kaggle-datasets/</link>
-            <pubDate>Tue, 11 Jan 2022 14:19:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/kaggle-datasets/</guid>
             <description></description>
         </item><item>
-            <title>Accuracy</title>
-            <link>http://localhost:1313/tags/accuracy/</link>
-            <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/accuracy/</guid>
+            <title>Language</title>
+            <link>http://localhost:1313/tags/language/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/language/</guid>
             <description></description>
         </item><item>
-            <title>F1-Score</title>
-            <link>http://localhost:1313/tags/f1-score/</link>
-            <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/f1-score/</guid>
+            <title>Laplacioan</title>
+            <link>http://localhost:1313/tags/laplacioan/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/laplacioan/</guid>
+            <description></description>
+        </item><item>
+            <title>Large Language Model</title>
+            <link>http://localhost:1313/tags/large-language-model/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/large-language-model/</guid>
+            <description></description>
+        </item><item>
+            <title>Line</title>
+            <link>http://localhost:1313/tags/line/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/line/</guid>
+            <description></description>
+        </item><item>
+            <title>Line Message</title>
+            <link>http://localhost:1313/tags/line-message/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/line-message/</guid>
+            <description></description>
+        </item><item>
+            <title>Line Notify</title>
+            <link>http://localhost:1313/tags/line-notify/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/line-notify/</guid>
+            <description></description>
+        </item><item>
+            <title>LiteLLM</title>
+            <link>http://localhost:1313/tags/litellm/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/litellm/</guid>
+            <description></description>
+        </item><item>
+            <title>Liuchien</title>
+            <link>http://localhost:1313/tags/liuchien/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/liuchien/</guid>
+            <description></description>
+        </item><item>
+            <title>LLM</title>
+            <link>http://localhost:1313/tags/llm/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/llm/</guid>
+            <description></description>
+        </item><item>
+            <title>Machine Learning</title>
+            <link>http://localhost:1313/tags/machine-learning/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/machine-learning/</guid>
+            <description></description>
+        </item><item>
+            <title>MCP</title>
+            <link>http://localhost:1313/tags/mcp/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/mcp/</guid>
+            <description></description>
+        </item><item>
+            <title>Model</title>
+            <link>http://localhost:1313/tags/model/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/model/</guid>
+            <description></description>
+        </item><item>
+            <title>Multi-Agent</title>
+            <link>http://localhost:1313/tags/multi-agent/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/multi-agent/</guid>
+            <description></description>
+        </item><item>
+            <title>Multi-Documents Summarization</title>
+            <link>http://localhost:1313/tags/multi-documents-summarization/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/multi-documents-summarization/</guid>
+            <description></description>
+        </item><item>
+            <title>Multimodal AI</title>
+            <link>http://localhost:1313/tags/multimodal-ai/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/multimodal-ai/</guid>
+            <description></description>
+        </item><item>
+            <title>NFT</title>
+            <link>http://localhost:1313/tags/nft/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/nft/</guid>
+            <description></description>
+        </item><item>
+            <title>NLP</title>
+            <link>http://localhost:1313/tags/nlp/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/nlp/</guid>
+            <description></description>
+        </item><item>
+            <title>NotebookLM</title>
+            <link>http://localhost:1313/tags/notebooklm/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/notebooklm/</guid>
+            <description></description>
+        </item><item>
+            <title>OpenCV</title>
+            <link>http://localhost:1313/tags/opencv/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/opencv/</guid>
+            <description></description>
+        </item><item>
+            <title>Opinion Summarization</title>
+            <link>http://localhost:1313/tags/opinion-summarization/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/opinion-summarization/</guid>
+            <description></description>
+        </item><item>
+            <title>Orac</title>
+            <link>http://localhost:1313/tags/orac/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/orac/</guid>
+            <description></description>
+        </item><item>
+            <title>Oracle</title>
+            <link>http://localhost:1313/tags/oracle/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/oracle/</guid>
+            <description></description>
+        </item><item>
+            <title>Perspective Transformation</title>
+            <link>http://localhost:1313/tags/perspective-transformation/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/perspective-transformation/</guid>
+            <description></description>
+        </item><item>
+            <title>PL/SQL</title>
+            <link>http://localhost:1313/tags/pl/sql/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pl/sql/</guid>
+            <description></description>
+        </item><item>
+            <title>Pre-Trained</title>
+            <link>http://localhost:1313/tags/pre-trained/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pre-trained/</guid>
             <description></description>
         </item><item>
             <title>Precision</title>
             <link>http://localhost:1313/tags/precision/</link>
-            <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/precision/</guid>
+            <description></description>
+        </item><item>
+            <title>Prompt</title>
+            <link>http://localhost:1313/tags/prompt/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/prompt/</guid>
+            <description></description>
+        </item><item>
+            <title>Python</title>
+            <link>http://localhost:1313/tags/python/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/python/</guid>
+            <description></description>
+        </item><item>
+            <title>Python AI</title>
+            <link>http://localhost:1313/tags/python-ai/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/python-ai/</guid>
+            <description></description>
+        </item><item>
+            <title>Pytorch</title>
+            <link>http://localhost:1313/tags/pytorch/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pytorch/</guid>
             <description></description>
         </item><item>
             <title>Recall</title>
             <link>http://localhost:1313/tags/recall/</link>
-            <pubDate>Thu, 30 Dec 2021 11:35:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/recall/</guid>
+            <description></description>
+        </item><item>
+            <title>Region Filling</title>
+            <link>http://localhost:1313/tags/region-filling/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/region-filling/</guid>
+            <description></description>
+        </item><item>
+            <title>Sobel</title>
+            <link>http://localhost:1313/tags/sobel/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/sobel/</guid>
+            <description></description>
+        </item><item>
+            <title>SQL</title>
+            <link>http://localhost:1313/tags/sql/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/sql/</guid>
+            <description></description>
+        </item><item>
+            <title>Summarization</title>
+            <link>http://localhost:1313/tags/summarization/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/summarization/</guid>
+            <description></description>
+        </item><item>
+            <title>Telegram</title>
+            <link>http://localhost:1313/tags/telegram/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/telegram/</guid>
+            <description></description>
+        </item><item>
+            <title>Text Summarization</title>
+            <link>http://localhost:1313/tags/text-summarization/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/text-summarization/</guid>
+            <description></description>
+        </item><item>
+            <title>Training</title>
+            <link>http://localhost:1313/tags/training/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/training/</guid>
+            <description></description>
+        </item><item>
+            <title>Twitter</title>
+            <link>http://localhost:1313/tags/twitter/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/twitter/</guid>
+            <description></description>
+        </item><item>
+            <title>UTF-8</title>
+            <link>http://localhost:1313/tags/utf-8/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/utf-8/</guid>
+            <description></description>
+        </item><item>
+            <title>Vibe Coding</title>
+            <link>http://localhost:1313/tags/vibe-coding/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/vibe-coding/</guid>
+            <description></description>
+        </item><item>
+            <title>Vietnam</title>
+            <link>http://localhost:1313/tags/vietnam/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/vietnam/</guid>
+            <description></description>
+        </item><item>
+            <title>Wechat</title>
+            <link>http://localhost:1313/tags/wechat/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/wechat/</guid>
+            <description></description>
+        </item><item>
+            <title>Yolo Label</title>
+            <link>http://localhost:1313/tags/yolo-label/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/yolo-label/</guid>
+            <description></description>
+        </item><item>
+            <title>YoloV4</title>
+            <link>http://localhost:1313/tags/yolov4/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/yolov4/</guid>
+            <description></description>
+        </item><item>
+            <title>Zalo</title>
+            <link>http://localhost:1313/tags/zalo/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/zalo/</guid>
+            <description></description>
+        </item><item>
+            <title>人工智慧</title>
+            <link>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7/</guid>
+            <description></description>
+        </item><item>
+            <title>上課學習心得</title>
+            <link>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E4%B8%8A%E8%AA%B2%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/</guid>
+            <description></description>
+        </item><item>
+            <title>大語言模型</title>
+            <link>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%A4%A7%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B/</guid>
+            <description></description>
+        </item><item>
+            <title>工作管理</title>
+            <link>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86/</guid>
+            <description></description>
+        </item><item>
+            <title>工程師</title>
+            <link>http://localhost:1313/tags/%E5%B7%A5%E7%A8%8B%E5%B8%AB/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%B7%A5%E7%A8%8B%E5%B8%AB/</guid>
+            <description></description>
+        </item><item>
+            <title>中興大學資工所</title>
+            <link>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</guid>
+            <description></description>
+        </item><item>
+            <title>比特幣</title>
+            <link>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</guid>
             <description></description>
         </item><item>
             <title>次級貸款</title>
             <link>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</link>
-            <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</guid>
+            <description></description>
+        </item><item>
+            <title>自然語言研究趨勢和論文</title>
+            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E7%A0%94%E7%A9%B6%E8%B6%A8%E5%8B%A2%E5%92%8C%E8%AB%96%E6%96%87/</guid>
+            <description></description>
+        </item><item>
+            <title>自然語言處理</title>
+            <link>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
             <description></description>
         </item><item>
             <title>房價泡沫化</title>
             <link>http://localhost:1313/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</link>
-            <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E6%88%BF%E5%83%B9%E6%B3%A1%E6%B2%AB%E5%8C%96/</guid>
             <description></description>
         </item><item>
             <title>金融海嘯</title>
             <link>http://localhost:1313/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</link>
-            <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E9%87%91%E8%9E%8D%E6%B5%B7%E5%98%AF/</guid>
+            <description></description>
+        </item><item>
+            <title>非同質化代幣</title>
+            <link>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E9%9D%9E%E5%90%8C%E8%B3%AA%E5%8C%96%E4%BB%A3%E5%B9%A3/</guid>
+            <description></description>
+        </item><item>
+            <title>後AI時代</title>
+            <link>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%BE%8Cai%E6%99%82%E4%BB%A3/</guid>
+            <description></description>
+        </item><item>
+            <title>訓練語料</title>
+            <link>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%A8%93%E7%B7%B4%E8%AA%9E%E6%96%99/</guid>
+            <description></description>
+        </item><item>
+            <title>區塊鏈</title>
+            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88/</guid>
+            <description></description>
+        </item><item>
+            <title>區塊鏈與電子商務</title>
+            <link>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%8D%80%E5%A1%8A%E9%8F%88%E8%88%87%E9%9B%BB%E5%AD%90%E5%95%86%E5%8B%99/</guid>
+            <description></description>
+        </item><item>
+            <title>敏捷開發</title>
+            <link>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%95%8F%E6%8D%B7%E9%96%8B%E7%99%BC/</guid>
+            <description></description>
+        </item><item>
+            <title>深度學習</title>
+            <link>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
             <description></description>
         </item><item>
             <title>貸款債券</title>
             <link>http://localhost:1313/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</link>
-            <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E8%B2%B8%E6%AC%BE%E5%82%B5%E5%88%B8/</guid>
+            <description></description>
+        </item><item>
+            <title>資料庫</title>
+            <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</guid>
+            <description></description>
+        </item><item>
+            <title>資料集</title>
+            <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</guid>
             <description></description>
         </item><item>
             <title>網際網路泡沫</title>
             <link>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</link>
-            <pubDate>Thu, 30 Sep 2021 10:00:00 +0000</pubDate>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</guid>
             <description></description>
         </item><item>
-            <title>Boundary Extraction</title>
-            <link>http://localhost:1313/tags/boundary-extraction/</link>
-            <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/boundary-extraction/</guid>
+            <title>寫網站</title>
+            <link>http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/</guid>
             <description></description>
         </item><item>
-            <title>Dilation</title>
-            <link>http://localhost:1313/tags/dilation/</link>
-            <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/dilation/</guid>
+            <title>影像處理與深度學習</title>
+            <link>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86%E8%88%87%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/</guid>
             <description></description>
         </item><item>
-            <title>Erosion</title>
-            <link>http://localhost:1313/tags/erosion/</link>
-            <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/erosion/</guid>
+            <title>賭神</title>
+            <link>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E8%B3%AD%E7%A5%9E/</guid>
             <description></description>
         </item><item>
-            <title>Region Filling</title>
-            <link>http://localhost:1313/tags/region-filling/</link>
-            <pubDate>Thu, 04 Feb 2021 18:57:00 +0000</pubDate>
-            <guid>http://localhost:1313/tags/region-filling/</guid>
+            <title>學習紀錄</title>
+            <link>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E5%AD%B8%E7%BF%92%E7%B4%80%E9%8C%84/</guid>
+            <description></description>
+        </item><item>
+            <title>機器學習</title>
+            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/</guid>
+            <description></description>
+        </item><item>
+            <title>機器學習與自然語言處理</title>
+            <link>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86/</guid>
+            <description></description>
+        </item><item>
+            <title>繁體中文</title>
+            <link>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
+            <description></description>
+        </item><item>
+            <title>簡體中文</title>
+            <link>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87/</guid>
+            <description></description>
+        </item><item>
+            <title>霹靂NFT</title>
+            <link>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E9%9C%B9%E9%9D%82nft/</guid>
             <description></description>
         </item></channel>
 </rss>
