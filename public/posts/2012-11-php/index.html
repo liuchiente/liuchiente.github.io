@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="這些日子來，對於PHP的開發依舊使用大量的樣板引擎，使用樣板引擎的原因其實也是跟工作上的切割和分派有關係，在美工和程式設計的工作內容相對分開清楚時，樣板引擎的使用就相對好用，畢竟身為一個程式設計師，雖然也是設計師，美感總是比較特殊一點，因此我們總需要依賴專業的美工人員來做版面的設計，好一點的狀況之下，樣板的設計可以包含到HTML的輸出，不得不說，太棒了！\n畢竟有些開發模式會由風格設計師輸出圖片之後，再由程式設計師做版面輸出，相對之下，我就會覺得跟我配合的風格設計師身上總是散發出偉大的光芒，使我感到溫暖這樣。\n在以下的內容，並不會特別提到子區塊和子版面的使用效率問題，在我的心中，這也是個謎，畢竟一個要走讀寫，一個要走繼承，誰好誰壞？我想這可能要另外開討論。\n">
+<title>PHP 版面的區塊規劃與繼承</title>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2012-11-php/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="PHP 版面的區塊規劃與繼承">
+<meta property='og:description' content="這些日子來，對於PHP的開發依舊使用大量的樣板引擎，使用樣板引擎的原因其實也是跟工作上的切割和分派有關係，在美工和程式設計的工作內容相對分開清楚時，樣板引擎的使用就相對好用，畢竟身為一個程式設計師，雖然也是設計師，美感總是比較特殊一點，因此我們總需要依賴專業的美工人員來做版面的設計，好一點的狀況之下，樣板的設計可以包含到HTML的輸出，不得不說，太棒了！\n畢竟有些開發模式會由風格設計師輸出圖片之後，再由程式設計師做版面輸出，相對之下，我就會覺得跟我配合的風格設計師身上總是散發出偉大的光芒，使我感到溫暖這樣。\n在以下的內容，並不會特別提到子區塊和子版面的使用效率問題，在我的心中，這也是個謎，畢竟一個要走讀寫，一個要走繼承，誰好誰壞？我想這可能要另外開討論。\n">
+<meta property='og:url' content='http://localhost:1313/posts/2012-11-php/'>
+<meta property='og:site_name' content='Liuchien的部落格'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Smarty' /><meta property='article:tag' content='Template Engine' /><meta property='article:tag' content='Twig' /><meta property='article:tag' content='PHP' /><meta property='article:published_time' content='2012-11-23T17:19:00&#43;00:00'/><meta property='article:modified_time' content='2020-03-13T15:10:11&#43;00:00'/>
+<meta name="twitter:title" content="PHP 版面的區塊規劃與繼承">
+<meta name="twitter:description" content="這些日子來，對於PHP的開發依舊使用大量的樣板引擎，使用樣板引擎的原因其實也是跟工作上的切割和分派有關係，在美工和程式設計的工作內容相對分開清楚時，樣板引擎的使用就相對好用，畢竟身為一個程式設計師，雖然也是設計師，美感總是比較特殊一點，因此我們總需要依賴專業的美工人員來做版面的設計，好一點的狀況之下，樣板的設計可以包含到HTML的輸出，不得不說，太棒了！\n畢竟有些開發模式會由風格設計師輸出圖片之後，再由程式設計師做版面輸出，相對之下，我就會覺得跟我配合的風格設計師身上總是散發出偉大的光芒，使我感到溫暖這樣。\n在以下的內容，並不會特別提到子區塊和子版面的使用效率問題，在我的心中，這也是個謎，畢竟一個要走讀寫，一個要走繼承，誰好誰壞？我想這可能要另外開討論。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien的部落格</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我 | About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分類</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/tags/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>標籤</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2012-11-php/">PHP 版面的區塊規劃與繼承</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2012-11-23T17:19:00Z'>Friday, November 23, 2012</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 3 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>這些日子來，對於PHP的開發依舊使用大量的樣板引擎，使用樣板引擎的原因其實也是跟工作上的切割和分派有關係，在美工和程式設計的工作內容相對分開清楚時，樣板引擎的使用就相對好用，畢竟身為一個程式設計師，雖然也是設計師，美感總是比較特殊一點，因此我們總需要依賴專業的美工人員來做版面的設計，好一點的狀況之下，樣板的設計可以包含到HTML的輸出，不得不說，太棒了！</p>
+<p>畢竟有些開發模式會由風格設計師輸出圖片之後，再由程式設計師做版面輸出，相對之下，我就會覺得跟我配合的風格設計師身上總是散發出偉大的光芒，使我感到溫暖這樣。</p>
+<p>在以下的內容，並不會特別提到子區塊和子版面的使用效率問題，在我的心中，這也是個謎，畢竟一個要走讀寫，一個要走繼承，誰好誰壞？我想這可能要另外開討論。</p>
+<p>在我習慣的樣板引擎使用上，我會使用到一定的繼承功能，這個繼承功能我會搭配區塊的規劃使用，而區塊的規劃使用不管是在twig或是smarty，都有提供現成的函數可以用，當然對於繼承的功能來說，兩者都算夠用，而在這些使用之中，我們必須針對版面來做一個一個的檢視。</p>
+<p>首先，針對HTML頁面整體架構來看，一個簡單的HTML頁面，會包含</p>
+<ol>
+<li>HTML描述</li>
+<li>HTML head</li>
+<li>HTML body</li>
+</ol>
+<p>最最抽象來看，會包含這三個部份，所以要的話，也可以切割這樣來用就好，哈，所以會變成以下的區塊變化。</p>
+<ol>
+<li>block HTML Description</li>
+<li>block HTML head</li>
+<li>block body</li>
+</ol>
+<p>而針對不同樣式和不同功能類型的頁面，我們需要引入不同的CSS和Javascript，因此我們可能針對HTML　head再度做切割，切割的內容可能會包含幾個。</p>
+<ol>
+<li>block HTML Head</li>
+<li>block HTML CSS Link</li>
+<li>block HTML Javascript Link</li>
+</ol>
+<p>很偷懶的用縮排來表示他們的關係，應該可以看得出來Link跟Head的關係，Link是屬於HTML Head區塊裡面的Block吧？（自我感覺）</p>
+<p>而在這之間，我們需要帶入我們已經寫好的JS Code，所以我們會怎麼做呢？</p>
+<ol>
+<li>block HTML Head</li>
+<li>block HTML CSS Link</li>
+<li>block HTML Javascript Link</li>
+<li>block HTML Javascript Code</li>
+</ol>
+<p> 一般常見的運用是如此，所以我們接下來把焦點放在block HTML body的處理上，當然對於這些處理來說，是很模糊的，有幾多模糊呢？畢竟每個頁面的取向都不一樣，有的是作為條列式的呈現，有些則是一整個詳細資料放上來，還有一些是條列很多詳細資料，所以對於body的呈現，相對的就會比較複雜，所以在這裡的規劃，可能又會依照功能取向而分別繼承下來規劃出各自方向的頁面好提供往下繼承，但是我們可以大略歸納出一個方向來做。</p>
+<ol>
+<li>block HTML body</li>
+<li>block HTML top</li>
+<li>block HTML banner</li>
+<li>block HTML menu</li>
+<li>block HTML content</li>
+<li>block HTML bottom</li>
+</ol>
+<p> 如果你今天需要一個條列式的頁面，那可能就會切割出來，另外改寫出一個不同的父頁面。</p>
+<ol>
+<li>
+<p>block HTML body</p>
+</li>
+<li>
+<p>block HTML top</p>
+</li>
+<li>
+<p>block HTML banner</p>
+</li>
+<li>
+<p>block HTML menu</p>
+</li>
+<li>
+<p>block HTML content</p>
+</li>
+<li>
+<p>block HTML List Content</p>
+</li>
+<li>
+<p>block HTML bottom</p>
+</li>
+</ol>
+<p> 綜合以上的規劃，相信我們已經可以規劃出一些堪用的父頁面了，而在往下的繼承使用，子頁面會繼承到父頁面所設定的相關內容，當然，你可以進行覆寫，或是呼叫父頁面的block後進行改寫使用，透過這樣的使用，可以讓我們更快速的進行版面切割，還有子頁面的使用，在維護上，我們可以減少管理子頁面的異動，也可以減少子頁面的數量，少了管理的複雜度，因為透過一定程度的抽象化，會提高頁面的重用性，往下再繼續實際撰寫的效果跟處理。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/smarty/">Smarty</a>
+        
+            <a href="/tags/template-engine/">Template Engine</a>
+        
+            <a href="/tags/twig/">Twig</a>
+        
+            <a href="/tags/php/">PHP</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Friday, March 13, 2020
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2012-04-twig-template-engine-php-1/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Twig template engine 新一代的PHP樣板引擎之安裝及使用</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2012-04-twig-template-engine-php/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Twig template engine 新一代的PHP樣板引擎之樣板語言</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2012-10-twig-template-engine-php/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Twig template engine 新一代的PHP樣板引擎之區塊與巨集</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2012-03-web-ui-selenium/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">簡單易用的Web UI測試工具-Selenium</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2011-11-phpoutput-buffer/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP的output buffer</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="liuchiente/liuchiente.github.io"
+    data-repo-id="R_kgDOSJqIIA"
+    data-category="General"
+    data-category-id="DIC_kwDOSJqIIM4C7raM"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien的部落格
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+
+
+    </body>
+</html>

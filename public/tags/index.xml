@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>所有標籤 on Liuchien&#39;s Blog</title>
+        <title>所有標籤 on Liuchien的部落格</title>
         <link>http://localhost:1313/tags/</link>
-        <description>Recent content in 所有標籤 on Liuchien&#39;s Blog</description>
+        <description>Recent content in 所有標籤 on Liuchien的部落格</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-tw</language><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
             <title>Accuracy</title>
@@ -77,6 +77,12 @@
             <guid>http://localhost:1313/tags/boundary-extraction/</guid>
             <description></description>
         </item><item>
+            <title>Buffer</title>
+            <link>http://localhost:1313/tags/buffer/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/buffer/</guid>
+            <description></description>
+        </item><item>
             <title>ChatBot</title>
             <link>http://localhost:1313/tags/chatbot/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -99,6 +105,12 @@
             <link>http://localhost:1313/tags/colab-notebooks/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/colab-notebooks/</guid>
+            <description></description>
+        </item><item>
+            <title>Composer</title>
+            <link>http://localhost:1313/tags/composer/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/composer/</guid>
             <description></description>
         </item><item>
             <title>Convolutional Neural Network</title>
@@ -143,6 +155,12 @@
             <guid>http://localhost:1313/tags/discord/</guid>
             <description></description>
         </item><item>
+            <title>Django</title>
+            <link>http://localhost:1313/tags/django/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/django/</guid>
+            <description></description>
+        </item><item>
             <title>Document Summarization</title>
             <link>http://localhost:1313/tags/document-summarization/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -179,6 +197,18 @@
             <guid>http://localhost:1313/tags/fine-tuning/</guid>
             <description></description>
         </item><item>
+            <title>FireFox</title>
+            <link>http://localhost:1313/tags/firefox/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/firefox/</guid>
+            <description></description>
+        </item><item>
+            <title>Flush</title>
+            <link>http://localhost:1313/tags/flush/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/flush/</guid>
+            <description></description>
+        </item><item>
             <title>Gemini</title>
             <link>http://localhost:1313/tags/gemini/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -209,10 +239,40 @@
             <guid>http://localhost:1313/tags/grok/</guid>
             <description></description>
         </item><item>
+            <title>HTML</title>
+            <link>http://localhost:1313/tags/html/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/html/</guid>
+            <description></description>
+        </item><item>
             <title>Image Enhancement</title>
             <link>http://localhost:1313/tags/image-enhancement/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/image-enhancement/</guid>
+            <description></description>
+        </item><item>
+            <title>InnoDB</title>
+            <link>http://localhost:1313/tags/innodb/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/innodb/</guid>
+            <description></description>
+        </item><item>
+            <title>ISBN</title>
+            <link>http://localhost:1313/tags/isbn/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/isbn/</guid>
+            <description></description>
+        </item><item>
+            <title>Javascript</title>
+            <link>http://localhost:1313/tags/javascript/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/javascript/</guid>
+            <description></description>
+        </item><item>
+            <title>JOB</title>
+            <link>http://localhost:1313/tags/job/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/job/</guid>
             <description></description>
         </item><item>
             <title>Kaggle</title>
@@ -243,6 +303,12 @@
             <link>http://localhost:1313/tags/large-language-model/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/large-language-model/</guid>
+            <description></description>
+        </item><item>
+            <title>Larvel</title>
+            <link>http://localhost:1313/tags/larvel/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/larvel/</guid>
             <description></description>
         </item><item>
             <title>Line</title>
@@ -281,6 +347,12 @@
             <guid>http://localhost:1313/tags/llm/</guid>
             <description></description>
         </item><item>
+            <title>Lock.Kill Session</title>
+            <link>http://localhost:1313/tags/lock.kill-session/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/lock.kill-session/</guid>
+            <description></description>
+        </item><item>
             <title>Machine Learning</title>
             <link>http://localhost:1313/tags/machine-learning/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -315,6 +387,12 @@
             <link>http://localhost:1313/tags/multimodal-ai/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/multimodal-ai/</guid>
+            <description></description>
+        </item><item>
+            <title>MySQL</title>
+            <link>http://localhost:1313/tags/mysql/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/mysql/</guid>
             <description></description>
         </item><item>
             <title>NFT</title>
@@ -359,10 +437,28 @@
             <guid>http://localhost:1313/tags/oracle/</guid>
             <description></description>
         </item><item>
+            <title>PEAR</title>
+            <link>http://localhost:1313/tags/pear/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pear/</guid>
+            <description></description>
+        </item><item>
+            <title>Pecl</title>
+            <link>http://localhost:1313/tags/pecl/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pecl/</guid>
+            <description></description>
+        </item><item>
             <title>Perspective Transformation</title>
             <link>http://localhost:1313/tags/perspective-transformation/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/perspective-transformation/</guid>
+            <description></description>
+        </item><item>
+            <title>PHP</title>
+            <link>http://localhost:1313/tags/php/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/php/</guid>
             <description></description>
         </item><item>
             <title>PL/SQL</title>
@@ -389,6 +485,12 @@
             <guid>http://localhost:1313/tags/prompt/</guid>
             <description></description>
         </item><item>
+            <title>Pyhon</title>
+            <link>http://localhost:1313/tags/pyhon/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/pyhon/</guid>
+            <description></description>
+        </item><item>
             <title>Python</title>
             <link>http://localhost:1313/tags/python/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -407,6 +509,12 @@
             <guid>http://localhost:1313/tags/pytorch/</guid>
             <description></description>
         </item><item>
+            <title>RDBMS</title>
+            <link>http://localhost:1313/tags/rdbms/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/rdbms/</guid>
+            <description></description>
+        </item><item>
             <title>Recall</title>
             <link>http://localhost:1313/tags/recall/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -417,6 +525,36 @@
             <link>http://localhost:1313/tags/region-filling/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/region-filling/</guid>
+            <description></description>
+        </item><item>
+            <title>REST</title>
+            <link>http://localhost:1313/tags/rest/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/rest/</guid>
+            <description></description>
+        </item><item>
+            <title>RESTFull</title>
+            <link>http://localhost:1313/tags/restfull/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/restfull/</guid>
+            <description></description>
+        </item><item>
+            <title>RESTLike</title>
+            <link>http://localhost:1313/tags/restlike/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/restlike/</guid>
+            <description></description>
+        </item><item>
+            <title>Selenium</title>
+            <link>http://localhost:1313/tags/selenium/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/selenium/</guid>
+            <description></description>
+        </item><item>
+            <title>Smarty</title>
+            <link>http://localhost:1313/tags/smarty/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/smarty/</guid>
             <description></description>
         </item><item>
             <title>Sobel</title>
@@ -431,16 +569,34 @@
             <guid>http://localhost:1313/tags/sql/</guid>
             <description></description>
         </item><item>
+            <title>SQLite</title>
+            <link>http://localhost:1313/tags/sqlite/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/sqlite/</guid>
+            <description></description>
+        </item><item>
             <title>Summarization</title>
             <link>http://localhost:1313/tags/summarization/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/summarization/</guid>
             <description></description>
         </item><item>
+            <title>Symfony</title>
+            <link>http://localhost:1313/tags/symfony/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/symfony/</guid>
+            <description></description>
+        </item><item>
             <title>Telegram</title>
             <link>http://localhost:1313/tags/telegram/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/telegram/</guid>
+            <description></description>
+        </item><item>
+            <title>Template Engine</title>
+            <link>http://localhost:1313/tags/template-engine/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/template-engine/</guid>
             <description></description>
         </item><item>
             <title>Text Summarization</title>
@@ -455,10 +611,22 @@
             <guid>http://localhost:1313/tags/training/</guid>
             <description></description>
         </item><item>
+            <title>Twig</title>
+            <link>http://localhost:1313/tags/twig/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/twig/</guid>
+            <description></description>
+        </item><item>
             <title>Twitter</title>
             <link>http://localhost:1313/tags/twitter/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/twitter/</guid>
+            <description></description>
+        </item><item>
+            <title>UI Test</title>
+            <link>http://localhost:1313/tags/ui-test/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/ui-test/</guid>
             <description></description>
         </item><item>
             <title>UTF-8</title>
@@ -477,6 +645,12 @@
             <link>http://localhost:1313/tags/vietnam/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/vietnam/</guid>
+            <description></description>
+        </item><item>
+            <title>Web Service</title>
+            <link>http://localhost:1313/tags/web-service/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/web-service/</guid>
             <description></description>
         </item><item>
             <title>Wechat</title>
@@ -543,6 +717,18 @@
             <link>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</guid>
+            <description></description>
+        </item><item>
+            <title>打字機</title>
+            <link>http://localhost:1313/tags/%E6%89%93%E5%AD%97%E6%A9%9F/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%89%93%E5%AD%97%E6%A9%9F/</guid>
+            <description></description>
+        </item><item>
+            <title>未分類</title>
+            <link>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/</guid>
             <description></description>
         </item><item>
             <title>次級貸款</title>
@@ -633,6 +819,12 @@
             <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
             <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</guid>
+            <description></description>
+        </item><item>
+            <title>漫遊者</title>
+            <link>http://localhost:1313/tags/%E6%BC%AB%E9%81%8A%E8%80%85/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/tags/%E6%BC%AB%E9%81%8A%E8%80%85/</guid>
             <description></description>
         </item><item>
             <title>網際網路泡沫</title>

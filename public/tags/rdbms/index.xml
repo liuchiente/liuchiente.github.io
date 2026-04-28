@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>RDBMS on Liuchien的部落格</title>
+        <link>http://localhost:1313/tags/rdbms/</link>
+        <description>Recent content in RDBMS on Liuchien的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language><atom:link href="http://localhost:1313/tags/rdbms/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Oracle SQL</title>
+            <link>http://localhost:1313/posts/2009-12-oracle-sql/</link>
+            <pubDate>Fri, 25 Dec 2009 10:00:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2009-12-oracle-sql/</guid>
+            <description>&lt;p&gt;找出schema裡面，所有的物件資訊，如函式、資料表等，也就是所謂Function、Package、View等，就像MS SQL的SYSOBJECTS一樣。&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;SELECT * FROM USER_OBJECTS&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;當然，也可以很簡單計算一下各種物件數量&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;SELECT COUNT(OBJECT_TYPE),OBJECT_TYPE FROM USER_OBJECTS GROUP BY OBJECT_TYPE&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;或是只過濾某種類型，譬如TABLE&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;SELECT * FROM USER_OBJECTS WHERE OBJECT_TYPE=&amp;lsquo;TABLE&amp;rsquo;&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;以上指令只能抓出本OWNER底下的相關訊息，如果要抓出資料庫機器上所有OWNER的所也物件，用以下語法，會傳回三個欄位，OWNER，TABLE_NAME，TABLE_TYPE。&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;Select * from ALL_CATALOG&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;取出OWNER的所有資料表。&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;Select * From User_Tables&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;取出所有資料表，但取出的資料太多了，必須考慮效能的話，就要取捨了。&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;&lt;strong&gt;Select * From All_Tables&lt;br&gt;&#xA;Select * From Dba_Tables&lt;/strong&gt;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;</description>
+        </item></channel>
+</rss>

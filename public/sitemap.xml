@@ -2,11 +2,218 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/my-first-post/</loc>
+    <lastmod>2026-04-24T16:22:40+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2026-03-ai-vibe-coding/</loc>
+    <lastmod>2026-03-09T09:32:39+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-11-ai-ai-agent-crewai-litellm/</loc>
+    <lastmod>2025-11-01T13:40:32+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/distribution/</loc>
+    <lastmod>2025-07-10T09:16:36+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-07-ai/</loc>
+    <lastmod>2025-07-10T08:41:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-06-blog-post/</loc>
+    <lastmod>2025-06-12T02:38:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-03-notebooklm/</loc>
+    <lastmod>2025-03-17T06:48:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-01-line-notify/</loc>
+    <lastmod>2025-02-08T02:07:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-01-prompt-fine-tune-va-training-ai-moi-la/</loc>
+    <lastmod>2025-01-21T02:49:25+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-01-llmprompt/</loc>
+    <lastmod>2025-01-14T06:15:57+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025-01-prompt-fine-tune-training/</loc>
+    <lastmod>2025-01-07T02:21:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2024-12-chatgpt/</loc>
+    <lastmod>2025-01-10T07:09:56+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-04-scrum/</loc>
+    <lastmod>2024-12-05T09:03:09+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-04-scrum-9/</loc>
+    <lastmod>2024-12-06T08:32:39+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-03-analyzing-political-parody-in-social/</loc>
+    <lastmod>2024-11-22T09:22:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-03-ms2-dataset-for-multi-document/</loc>
+    <lastmod>2024-11-22T09:22:49+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-02-nlp-2-text-summarization/</loc>
+    <lastmod>2024-12-06T09:22:19+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-02-nlp-1/</loc>
+    <lastmod>2024-12-06T09:10:07+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-python-perspective-transformation/</loc>
+    <lastmod>2025-01-15T02:12:32+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-pythonimage-enhancement/</loc>
+    <lastmod>2025-01-20T03:36:58+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-pytorchcnn/</loc>
+    <lastmod>2025-01-20T07:05:44+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-nft/</loc>
+    <lastmod>2024-12-12T11:50:02+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-colab-notebooksyolov4-model/</loc>
+    <lastmod>2024-11-22T09:22:50+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-open-cvimagebounding-boxyolo-label/</loc>
+    <lastmod>2025-01-22T03:06:15+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2022-01-colab-notebookskaggledataset/</loc>
+    <lastmod>2025-01-22T07:33:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-12-precision-recall-f1-score/</loc>
+    <lastmod>2024-11-22T09:22:51+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-10-blog-post/</loc>
+    <lastmod>2025-01-14T06:46:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-09-20072008/</loc>
+    <lastmod>2025-01-14T06:38:37+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-08-blog-post/</loc>
+    <lastmod>2025-01-14T06:30:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post/</loc>
+    <lastmod>2024-11-22T09:22:52+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-28/</loc>
+    <lastmod>2024-11-22T09:22:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-27/</loc>
+    <lastmod>2024-11-22T09:22:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-22/</loc>
+    <lastmod>2024-11-22T09:22:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-13/</loc>
+    <lastmod>2024-11-22T09:22:53+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-07-blog-post-12/</loc>
+    <lastmod>2024-11-22T09:22:54+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2021-02-boundary-extraction-region-filling/</loc>
+    <lastmod>2025-01-22T02:41:33+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2020-03-blog-post-12/</loc>
+    <lastmod>2020-07-25T01:42:22+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2020-03-blog-post/</loc>
+    <lastmod>2020-07-25T01:42:27+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2020-03-lock/</loc>
+    <lastmod>2020-07-25T01:42:35+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2014-12-knock-out-js/</loc>
+    <lastmod>2020-07-25T01:42:45+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/untitled/</loc>
+    <lastmod>2020-03-13T15:10:09+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2014-10-composerwampopenssl/</loc>
+    <lastmod>2020-03-13T15:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2014-09-html/</loc>
+    <lastmod>2020-03-13T15:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2013-12-mysqlrankover/</loc>
+    <lastmod>2020-03-21T00:16:27+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2013-10-django-no-module-named-base/</loc>
+    <lastmod>2020-03-13T15:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2013-06-rest-service/</loc>
+    <lastmod>2020-03-13T15:10:10+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/amazon-ses/</loc>
+    <lastmod>2020-03-13T15:10:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/owner/</loc>
+    <lastmod>2020-03-13T15:10:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2013-06-javascript/</loc>
+    <lastmod>2020-03-13T15:10:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-11-php/</loc>
+    <lastmod>2020-03-13T15:10:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-10-twig-template-engine-php/</loc>
+    <lastmod>2020-03-13T15:10:11+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-09-mysqloracle-sequence/</loc>
+    <lastmod>2020-03-13T15:10:12+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-04-twig-template-engine-php/</loc>
+    <lastmod>2020-03-13T15:10:12+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-04-twig-template-engine-php-1/</loc>
+    <lastmod>2020-03-13T15:10:12+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-03-web-ui-selenium/</loc>
+    <lastmod>2020-03-13T15:10:12+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/untitile2/</loc>
+    <lastmod>2020-03-13T15:10:13+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2012-02-oracletrigger/</loc>
+    <lastmod>2020-03-21T00:23:06+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-11-phpoutput-buffer/</loc>
+    <lastmod>2020-03-13T15:10:13+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-10-oracle-constraint/</loc>
+    <lastmod>2020-03-13T15:10:13+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-08-oracle-sql/</loc>
+    <lastmod>2020-03-13T15:20:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-08-oraclejob/</loc>
+    <lastmod>2020-03-13T15:10:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-06-oracle-plsql/</loc>
+    <lastmod>2020-03-13T15:10:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-06-bom/</loc>
+    <lastmod>2020-03-21T00:33:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-05-isbn-for-php/</loc>
+    <lastmod>2020-03-13T15:10:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-05-sqlplsql/</loc>
+    <lastmod>2020-03-13T15:10:14+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2011-04-sqlwith-asexists/</loc>
+    <lastmod>2020-07-25T01:42:54+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2010-06-sqldelete-tables-form-another-table/</loc>
+    <lastmod>2020-03-13T15:28:23+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2010-03-sqlupdate-one-table-from-another-table/</loc>
+    <lastmod>2020-03-13T15:30:06+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2009-12-oracle-sql/</loc>
+    <lastmod>2020-03-13T15:10:15+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2009-12-mysql-1607/</loc>
+    <lastmod>2020-03-13T15:10:15+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/templates/hugo-post/</loc>
   </url><url>
@@ -34,6 +241,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/boundary-extraction/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/buffer/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/chatbot/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/chatgpt/</loc>
@@ -41,6 +250,8 @@
     <loc>http://localhost:1313/tags/cnn/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/colab-notebooks/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/composer/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/convolutional-neural-network/</loc>
   </url><url>
@@ -56,6 +267,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/discord/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/django/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/document-summarization/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/erosion/</loc>
@@ -68,6 +281,10 @@
   </url><url>
     <loc>http://localhost:1313/tags/fine-tuning/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/firefox/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/flush/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/gemini/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/generative-ai/</loc>
@@ -78,7 +295,17 @@
   </url><url>
     <loc>http://localhost:1313/tags/grok/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/html/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/image-enhancement/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/innodb/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/isbn/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/job/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/kaggle/</loc>
   </url><url>
@@ -90,6 +317,8 @@
   </url><url>
     <loc>http://localhost:1313/tags/large-language-model/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/larvel/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/line/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/line-message/</loc>
@@ -100,7 +329,11 @@
   </url><url>
     <loc>http://localhost:1313/tags/liuchien/</loc>
   </url><url>
+    <loc>http://localhost:1313/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/llm/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/lock.kill-session/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/machine-learning/</loc>
   </url><url>
@@ -113,6 +346,8 @@
     <loc>http://localhost:1313/tags/multi-documents-summarization/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/multimodal-ai/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/nft/</loc>
   </url><url>
@@ -128,9 +363,17 @@
   </url><url>
     <loc>http://localhost:1313/tags/oracle/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/pear/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/pecl/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/perspective-transformation/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/php/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/pl/sql/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/pre-trained/</loc>
   </url><url>
@@ -138,23 +381,43 @@
   </url><url>
     <loc>http://localhost:1313/tags/prompt/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/pyhon/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/python-ai/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/pytorch/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/rdbms/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/recall/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/region-filling/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/rest/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/restfull/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/restlike/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/selenium/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/smarty/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/sobel/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/sqlite/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/summarization/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/symfony/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/telegram/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/template-engine/</loc>
   </url><url>
     <loc>http://localhost:1313/templates/</loc>
   </url><url>
@@ -162,13 +425,19 @@
   </url><url>
     <loc>http://localhost:1313/tags/training/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/twig/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/twitter/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/ui-test/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/utf-8/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/vibe-coding/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/vietnam/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-service/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/wechat/</loc>
   </url><url>
@@ -191,6 +460,10 @@
     <loc>http://localhost:1313/tags/%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E8%B3%87%E5%B7%A5%E6%89%80/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%89%93%E5%AD%97%E6%A9%9F/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/%E6%AC%A1%E7%B4%9A%E8%B2%B8%E6%AC%BE/</loc>
   </url><url>
@@ -225,6 +498,8 @@
     <loc>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E9%9B%86/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%BC%AB%E9%81%8A%E8%80%85/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/%E7%B6%B2%E9%9A%9B%E7%B6%B2%E8%B7%AF%E6%B3%A1%E6%B2%AB/</loc>
   </url><url>

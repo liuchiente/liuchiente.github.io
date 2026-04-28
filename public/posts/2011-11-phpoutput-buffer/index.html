@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。\n先說說為什麼要有output buffering，輸出緩衝很重要嗎，主要是來自於一些比較特殊的狀況，PHP是一種腳本式的語言，當使用者request一個檔案譬如xxx.php時候，想像成讀一個檔案，一個檔案可能會有表頭、表身、表尾，PHP程式內容存在表身，也就因此，當你要使用PHP去輸出一些表頭資料時候，有可能因為檔案本身的表頭已經出去了（jizz），而導致無法再另外送表頭資料這樣。\n">
+<title>PHP的output buffer</title>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2011-11-phpoutput-buffer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="PHP的output buffer">
+<meta property='og:description' content="在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。\n先說說為什麼要有output buffering，輸出緩衝很重要嗎，主要是來自於一些比較特殊的狀況，PHP是一種腳本式的語言，當使用者request一個檔案譬如xxx.php時候，想像成讀一個檔案，一個檔案可能會有表頭、表身、表尾，PHP程式內容存在表身，也就因此，當你要使用PHP去輸出一些表頭資料時候，有可能因為檔案本身的表頭已經出去了（jizz），而導致無法再另外送表頭資料這樣。\n">
+<meta property='og:url' content='http://localhost:1313/posts/2011-11-phpoutput-buffer/'>
+<meta property='og:site_name' content='Liuchien的部落格'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='Buffer' /><meta property='article:tag' content='BOM' /><meta property='article:tag' content='Language' /><meta property='article:tag' content='UTF-8' /><meta property='article:tag' content='Flush' /><meta property='article:tag' content='PHP' /><meta property='article:published_time' content='2011-11-02T09:20:00&#43;00:00'/><meta property='article:modified_time' content='2020-03-13T15:10:13&#43;00:00'/>
+<meta name="twitter:title" content="PHP的output buffer">
+<meta name="twitter:description" content="在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。\n先說說為什麼要有output buffering，輸出緩衝很重要嗎，主要是來自於一些比較特殊的狀況，PHP是一種腳本式的語言，當使用者request一個檔案譬如xxx.php時候，想像成讀一個檔案，一個檔案可能會有表頭、表身、表尾，PHP程式內容存在表身，也就因此，當你要使用PHP去輸出一些表頭資料時候，有可能因為檔案本身的表頭已經出去了（jizz），而導致無法再另外送表頭資料這樣。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien的部落格</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我 | About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分類</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/tags/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>標籤</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2011-11-phpoutput-buffer/">PHP的output buffer</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2011-11-02T09:20:00Z'>Wednesday, November 2, 2011</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 3 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。</p>
+<p>先說說為什麼要有output buffering，輸出緩衝很重要嗎，主要是來自於一些比較特殊的狀況，PHP是一種腳本式的語言，當使用者request一個檔案譬如xxx.php時候，想像成讀一個檔案，一個檔案可能會有表頭、表身、表尾，PHP程式內容存在表身，也就因此，當你要使用PHP去輸出一些表頭資料時候，有可能因為檔案本身的表頭已經出去了（jizz），而導致無法再另外送表頭資料這樣。</p>
+<p>不過重點也已經不在這邊，也就所以，我們為了避免檔案的表頭已經先Jizz出去，必須使用輸出緩衝區，先讓檔案的輸出來到這邊，避免頭先出去了還想加東西，也就所以啦，使用output buffering的一個好原因就是，讓標頭資訊先Hold on。</p>
+<p>所以要使用output buffering ，就要開始啦！下面是相關函數。</p>
+<p>ob_start() 開啟緩衝區</p>
+<p>bool ob_start ([ callback $output_callback [, int $chunk_size = 0 [, bool $erase = true ]]] )</p>
+<p>ob_start就是開啟緩衝區，一般來說，可以不加參數也無所謂，他會回傳一個布林值好判斷是否開啟成功，當然也可以丟入相關參數，包含callback函數，緩衝區大小和是否清空緩衝區舊有資料。</p>
+<p>ob_ flush()</p>
+<p>ob_flush不用傳入任何參數，也不回傳值，他的功用主要在於把PHP緩衝區的資料推出，但是推出不代表顯示，更正確的來說，他會把緩衝區資料推出後，然後把緩衝區資料清空，但是這邊來說，他並不會把資料丟給request做一個輸出的動作，所以要做輸出，就要另外使用函數了。</p>
+<p>flush()</p>
+<p>承上，因為PHP緩衝區的資料被推出來了，但沒有被丟給request做顯示，所以我們緊接的就要用flush()把伺服器上緩衝區的所有資料顯示出來，如此一來我們才能真正的接收到緩衝區的資料，但是需要注意的是，Flush本身是針對伺服器緩衝區做操作，假定今天伺服器平台要做移植，就要考慮是否可用了。</p>
+<p>ob_ clean()</p>
+<p>清空PHP緩衝區的資料，但是這清空只是單純把資料清空，並沒做其他動作。</p>
+<p>ob_ end_ clean</p>
+<p>清空緩衝區資料，並且把緩衝區關閉，也就是說你之後不再使用緩衝區，直接關閉了。</p>
+<p>ob_ end_ flush</p>
+<p>把緩衝區資料推出來，並把緩衝區關閉。</p>
+<p>ob_ get_ clean</p>
+<p>取得緩衝區現有的資料，並且把現有的資料從緩衝區砍掉。</p>
+<p>ob_ get_ contents</p>
+<p>取得緩衝區現有資料。</p>
+<p>ob_ get_ flush</p>
+<p>把緩衝區資料以字串形式回傳，並且關閉緩衝區。</p>
+<p>ob_implicit_flush(INT 0 or 1)</p>
+<p>打開或關閉絕對更新，也就是說當我輸出緩衝區，會直接輸出到瀏覽器，就不用再使用flush來把伺服器緩衝區上的資料推到瀏覽器。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/buffer/">Buffer</a>
+        
+            <a href="/tags/bom/">BOM</a>
+        
+            <a href="/tags/language/">Language</a>
+        
+            <a href="/tags/utf-8/">UTF-8</a>
+        
+            <a href="/tags/flush/">Flush</a>
+        
+            <a href="/tags/php/">PHP</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Friday, March 13, 2020
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside>
+    <h2 class="section-title"></h2>
+    <div class="subsection-list">
+        <div class="article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/2011-06-bom/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">什麼是BOM？</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/posts/2011-05-isbn-for-php/">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ISBN判別函式 for PHP</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="liuchiente/liuchiente.github.io"
+    data-repo-id="R_kgDOSJqIIA"
+    data-category="General"
+    data-category-id="DIC_kwDOSJqIIM4C7raM"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien的部落格
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+
+
+    </body>
+</html>

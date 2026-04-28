@@ -2,7 +2,7 @@
 # 基礎站點設定
 # ==========================================
 baseURL: "https://liuchien.inxpire.tw/"
-title: "Liuchien's Blog"
+title: "Liuchien的部落格"
 author: "Liuchien"
 theme: "hugo-theme-stack"
 
@@ -12,7 +12,7 @@ defaultContentLanguage: "zh-tw"
 hasCJKLanguage: true
 
 # 編譯設定
-summaryLength: 120
+summaryLength: 300
 publishDir: public
 build:
   useResourceCacheWhen: fallback
@@ -39,11 +39,10 @@ markup:
 params:
   mainSections:
     - posts
-    - post
   
   # 側邊欄：注意 avatar 必須是字串
   sidebar:
-    title: "Liuchien's Blog"
+    title: "Liuchien的部落格"
     subtitle: "Digital Architect | TPM | AI"
     description: "專注於研發數位系統 與 AI 知識管理。"
     emoji: "🌞"

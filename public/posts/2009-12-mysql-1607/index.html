@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它\n必須去讀取設定檔，也就是my.ini，然後從my.ini得到所要啟動的相關細\n節後，接著才啟動服務，有點像讀取相關configure。\n當發生錯誤:1067的時候，原因是因為，my.ini檔案裡面的設定值，在原先\n的MySQL，並無法達到它所要求的動作，所以，如果你記得你是更改了my.ini\n哪個設定值，就馬上去把它改回來吧。\n我曾經遇過一次經驗，罪魁禍首則是InnoDB在作祟，MySQL的InnoDB資料庫\n格式，用兩個檔案儲存，一個是logfile，一個是datafile；當時會發生1067\n錯誤，是因為在my.ini裡面，除了選擇啟動InnoDB格式的資料庫格式，但如\n果只選擇啟用，還不一定會發生這樣的情形，會造成1067錯誤是因為，我們\n選擇了InnoDB為預設儲存格式，倘若你覺得不一定要用InnoDB，你可以把my.ini\n裡的defaut-storage-engine=INNODB這一行拿掉，但是這樣一來，你的原先\n資料都會從InnoDB改成MyISAM，MyISAM目前沒提供外來鍵，關聯等的支援就\n是了。\n">
+<title>MySQL 無法啟動,錯誤:1607</title>
+
+
+<link rel="canonical" href="http://localhost:1313/posts/2009-12-mysql-1607/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="MySQL 無法啟動,錯誤:1607">
+<meta property='og:description' content="在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它\n必須去讀取設定檔，也就是my.ini，然後從my.ini得到所要啟動的相關細\n節後，接著才啟動服務，有點像讀取相關configure。\n當發生錯誤:1067的時候，原因是因為，my.ini檔案裡面的設定值，在原先\n的MySQL，並無法達到它所要求的動作，所以，如果你記得你是更改了my.ini\n哪個設定值，就馬上去把它改回來吧。\n我曾經遇過一次經驗，罪魁禍首則是InnoDB在作祟，MySQL的InnoDB資料庫\n格式，用兩個檔案儲存，一個是logfile，一個是datafile；當時會發生1067\n錯誤，是因為在my.ini裡面，除了選擇啟動InnoDB格式的資料庫格式，但如\n果只選擇啟用，還不一定會發生這樣的情形，會造成1067錯誤是因為，我們\n選擇了InnoDB為預設儲存格式，倘若你覺得不一定要用InnoDB，你可以把my.ini\n裡的defaut-storage-engine=INNODB這一行拿掉，但是這樣一來，你的原先\n資料都會從InnoDB改成MyISAM，MyISAM目前沒提供外來鍵，關聯等的支援就\n是了。\n">
+<meta property='og:url' content='http://localhost:1313/posts/2009-12-mysql-1607/'>
+<meta property='og:site_name' content='Liuchien的部落格'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='MySQL' /><meta property='article:tag' content='InnoDB' /><meta property='article:tag' content='Database' /><meta property='article:published_time' content='2009-12-17T15:48:00&#43;00:00'/><meta property='article:modified_time' content='2020-03-13T15:10:15&#43;00:00'/>
+<meta name="twitter:title" content="MySQL 無法啟動,錯誤:1607">
+<meta name="twitter:description" content="在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它\n必須去讀取設定檔，也就是my.ini，然後從my.ini得到所要啟動的相關細\n節後，接著才啟動服務，有點像讀取相關configure。\n當發生錯誤:1067的時候，原因是因為，my.ini檔案裡面的設定值，在原先\n的MySQL，並無法達到它所要求的動作，所以，如果你記得你是更改了my.ini\n哪個設定值，就馬上去把它改回來吧。\n我曾經遇過一次經驗，罪魁禍首則是InnoDB在作祟，MySQL的InnoDB資料庫\n格式，用兩個檔案儲存，一個是logfile，一個是datafile；當時會發生1067\n錯誤，是因為在my.ini裡面，除了選擇啟動InnoDB格式的資料庫格式，但如\n果只選擇啟用，還不一定會發生這樣的情形，會造成1067錯誤是因為，我們\n選擇了InnoDB為預設儲存格式，倘若你覺得不一定要用InnoDB，你可以把my.ini\n裡的defaut-storage-engine=INNODB這一行拿掉，但是這樣一來，你的原先\n資料都會從InnoDB改成MyISAM，MyISAM目前沒提供外來鍵，關聯等的支援就\n是了。\n">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP61MGQ5GV"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BP61MGQ5GV');
+        }
+      </script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="https://avatars.githubusercontent.com/u/4715649?s=400&amp;u=74eff8fa5b60312a093911f1b7fdeb529ef02bac&amp;v=4" 
+                        width="400"
+                        height="400"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🌞</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Liuchien的部落格</a></h1>
+            <h2 class="site-description">Digital Architect | TPM | AI</h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我 | About Me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分類</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/tags/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+                
+                <span>標籤</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>關於我</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>深色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/2009-12-mysql-1607/">MySQL 無法啟動,錯誤:1607</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2009-12-17T15:48:00Z'>Thursday, December 17, 2009</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        預計閱讀 3 分鐘
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+
+    <section class="article-content">
+    
+    
+    <p>在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它<br>
+必須去讀取設定檔，也就是my.ini，然後從my.ini得到所要啟動的相關細<br>
+節後，接著才啟動服務，有點像讀取相關configure。</p>
+<p>當發生錯誤:1067的時候，原因是因為，my.ini檔案裡面的設定值，在原先<br>
+的MySQL，並無法達到它所要求的動作，所以，如果你記得你是更改了my.ini<br>
+哪個設定值，就馬上去把它改回來吧。</p>
+<p>我曾經遇過一次經驗，罪魁禍首則是InnoDB在作祟，MySQL的InnoDB資料庫<br>
+格式，用兩個檔案儲存，一個是logfile，一個是datafile；當時會發生1067<br>
+錯誤，是因為在my.ini裡面，除了選擇啟動InnoDB格式的資料庫格式，但如<br>
+果只選擇啟用，還不一定會發生這樣的情形，會造成1067錯誤是因為，我們<br>
+選擇了InnoDB為預設儲存格式，倘若你覺得不一定要用InnoDB，你可以把my.ini<br>
+裡的defaut-storage-engine=INNODB這一行拿掉，但是這樣一來，你的原先<br>
+資料都會從InnoDB改成MyISAM，MyISAM目前沒提供外來鍵，關聯等的支援就<br>
+是了。</p>
+<p>網路上的流傳解決1067錯誤方法有下列幾種</p>
+<p>一、<br>
+將所有的Datafile砍掉，這個地方就是你資料庫系統要存資料的地方，<br>
+其實原先的錯誤就從這裡延伸出去，倘若你光重灌MySQL而沒砍掉這些東西，<br>
+原先的1067錯誤還是有可能存在的，不過這樣的方法，將會使你的舊有資料<br>
+完全不見了，就像痘痘一樣。</p>
+<p>二、<br>
+將原先和my.ini的鄰居，my-small.ini或是my-INNODB-heave-4G.ini這類的<br>
+檔案，改成my.ini，然後覆蓋原先的my.ini，其實my-small.ini這一類的檔<br>
+案，是屬於官方的預設檔案，你可以依照你的系統大小，來選擇這些檔案，<br>
+譬如像my-small.ini，就是給予低負載小系統，算是官方推薦的設定值，但<br>
+值得注意的是，這些預設值，並沒有啟動InnoDB，就算有選擇啟動，也沒把<br>
+它當成預設儲存引擎，就算有選擇啟動，也有可能因為啟動失敗，而你依然<br>
+只能用MyISAM作為儲存引擎，我們一開始會選擇InnoDB作為預設引擎，是因<br>
+為我們在GUI安裝介面就選擇了，所以才會在my.ini加上那行指令。</p>
+<p>那為什麼會有可能因為InnoDB的關係，而造成1067錯誤？第一種可能是因為，<br>
+我們在重灌MySQL的時候，因為logfile的關係，而造成新的系統無法正確載入<br>
+logfile，載入了舊的logfile，而這個檔案的新設定又跟以前不一樣，所以它<br>
+無法正確讀入；第二種可能是因為，我們在重新對MySQL作設定時，在舊的那<br>
+個服務，動到了以前的logfile，使它無法讀入，總言之，logfile是罪魁禍首<br>
+，倘若你建立一個新的logfile，似乎還是會有問題，因為新的logfile不一定<br>
+能讀到舊的datafile，相反地，它還會建立一個新的datafile，而你得到的，<br>
+還是新的空白，而舊的資料就像變了心的女朋友，回不來了！</p>
+<p>所以我使用了這種方法，首先，備份舊的datafile，並且把你的MySQL砍掉重練<br>
+，原先的資料夾也一並砍掉，在重新安裝系統時，MyDataFiles的存放位置，和<br>
+原先的舊系統存放位置要一樣，然後把舊的datafile覆蓋過去，覆蓋新的datafile<br>
+，這樣一來，新的logfile是屬於正常沒問題的，它也會乖乖的把你舊的datafile<br>
+當新的讀入，這樣一來，你就可以解決1067錯誤，而舊的資料依然陪伴著你<br>
+。</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/mysql/">MySQL</a>
+        
+            <a href="/tags/innodb/">InnoDB</a>
+        
+            <a href="/tags/database/">Database</a>
+        
+    </section>
+
+
+    <section class="article-lastmod inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+             Friday, March 13, 2020
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+        <script
+    src="https://giscus.app/client.js"
+    data-repo="liuchiente/liuchiente.github.io"
+    data-repo-id="R_kgDOSJqIIA"
+    data-category="General"
+    data-category-id="DIC_kwDOSJqIIM4C7raM"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="light"
+    data-lang="zh-TW"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2026 Liuchien的部落格
+    </section>
+    
+    <section class="powerby">
+        自豪地採用 <br />
+        設計者
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+
+
+    </body>
+</html>
