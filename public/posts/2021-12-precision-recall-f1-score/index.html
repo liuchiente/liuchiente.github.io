@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="機器學習常用衡量指標Precision, Recall, F1-score">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="機器學習常用衡量指標Precision, Recall, F1-score">
 <meta property='og:description' content="前面說完了一個大概, 基本上也底定了我想研究人工智慧的方向, 接著我想從基礎知識開始記錄起, 我是個怪人, 對於有興趣的東西不希望太過不求甚解, 反倒比較期望了解他的原理, 期待能擦出一些不同的火花。\n實際上我在這裡提到的指標, 會包含Accuracy、Precision、Recall 、 F1-score。\n正如前面講到, 機器學習的目標, 就是希望透過擷取到的資料特徵, 來預測目標的模樣, 那想當然我要知道模型(Model)好不好, 就會去判斷他預測的準不準, 而想知道準不準, 想當然就會像考試一樣, 每題都會有正確答案, 然後我們來看看模型預測的答案和我正確答案相差多少, 比如說, 我的正確答案是True ( O ), 而模型預測卻是False (X), 那他就錯了一題, 而 我的正確答案是True ( O ), 而模型預測也預測 True (O), 那他就對了一題。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2021-12-precision-recall-f1-score/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -321,7 +321,7 @@
 <p>在Recall裏面, 若是當FN越來越少時, 則指標也會越來越大, 也就是說, 真陽性的比例會越來越高, 指標越來越大時, 代表模型預測到的偽陽性就越來越少, 趨近於1時, 代表偽陰的個數超級少, , 也意味我們模型排除假陰性的能力強,假設今天你想要做的是改善模型的假陰性狀況時, 就會需要用這指標來衡量。</p>
 <p>譬如你要評估一個模型能否有效抓出網路惡意攻擊時， 這時你就要思考怎麼把假陰性降到最低, 當降到最低時, 能找到的惡意攻擊自然是最有效的。</p>
 <p><strong>F1-score</strong>則又是另一個更進階的衡量指標了，主要是把Recall和Precision做加權平均，這樣的好處可以調和前述兩個指標, 因為若是 Recall、 Precision 其一偏小, 就無法同時兼顧兩種指標, 故進行調和後, F1的變化依然會在0~1之間, 而越趨近1 ,代表模型越穩健, 評估能力也越好。</p>
-<p><img alt="F\\_{1}=2\\cdot \\frac{precision\\cdot recall}{precision+recall}" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></p>
+<p><img alt="F\\_{1}=2\\cdot \\frac{precision\\cdot recall}{precision+recall}" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-12-precision-recall-f1-score/images/2021-12-precision-recall-f1-score-7023299052377773433.late"></p>
 
 </section>
 
@@ -388,6 +388,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -438,6 +439,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -483,12 +485,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

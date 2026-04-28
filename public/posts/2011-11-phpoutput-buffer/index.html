@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="PHP的output buffer">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="PHP的output buffer">
 <meta property='og:description' content="在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。\n先說說為什麼要有output buffering，輸出緩衝很重要嗎，主要是來自於一些比較特殊的狀況，PHP是一種腳本式的語言，當使用者request一個檔案譬如xxx.php時候，想像成讀一個檔案，一個檔案可能會有表頭、表身、表尾，PHP程式內容存在表身，也就因此，當你要使用PHP去輸出一些表頭資料時候，有可能因為檔案本身的表頭已經出去了（jizz），而導致無法再另外送表頭資料這樣。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2011-11-phpoutput-buffer/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -361,6 +361,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -411,6 +412,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -456,12 +458,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

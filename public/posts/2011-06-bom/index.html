@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="什麼是BOM？">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="什麼是BOM？">
 <meta property='og:description' content="最近在參與開發測試的流程中，很多規格都已經處理完成，也已經調整好，結果到了最後關頭測試時，從A程式(VB.NET)傳送純文字檔案到B程式(JAVA Applet)，結果B程式一直讀取到不知道哪裡來的多餘字元，造成資料錯誤，經過確認，原先200字元的檔案，卻有203個位元大，照理說，200字元的純文字大小應該就是203位元，那問題出在哪？\n眾家專案經理面面相覷，經過確認，原來文字檔案是以UTF-8形式儲存，由A程式包裝好之後，再傳送到B程式，結果純文字檔一讀，才發現異常，經過確認後，多出的三個位元應該就是BOM沒錯，只是這也不是專案經理可以掌控的，而是系統分析時就該發現了，很多人都以為自己可以講一下程式應該怎麼做，就可以洋洋得意的說自己是系統分析師(SA)，但是單從需求面去講系統作法，那要研發也一起加入冥想嗎？\n">
 <meta property='og:url' content='http://localhost:1313/posts/2011-06-bom/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -340,6 +340,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -390,6 +391,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -435,12 +437,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

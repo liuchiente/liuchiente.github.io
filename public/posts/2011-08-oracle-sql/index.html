@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="Oracle SQL 函式">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="Oracle SQL 函式">
 <meta property='og:description' content="Oracle 相關 SQL 函式參考\nCEIL回傳最小的整數,會回傳大於或等於輸入的值 (無條件進位)\nSELECT CEIL(10), CEIL(10.5), CEIL(-10.5) FROM DUAL\nFLOOR會回傳小於或等於輸人的值 (無條件捨去)\nSELECT FLOOR(9.9), FLOOR(-9.9) FROM DUAL\nGREATEST取最大值(文字、數值、日期)\nSELECT GREATEST(-1,-2,-3), GREATEST(&lsquo;One&rsquo;,&lsquo;Two&rsquo;,&lsquo;Three&rsquo;) FROM DUAL\n文字部份取最大值，是用每一個位元的ASCII值比較，若該位元相同，再以下一位元做比較。\nLEAST 取最小值(文字、數值、日期)\nSELECT LEAST(-1,-2,-3), LEAST(&lsquo;One&rsquo;,&lsquo;Two&rsquo;,&lsquo;Three&rsquo;) FROM DUAL\nMOD(m, n) 回傳 m 除以 n 的餘數\nSELECT MOD(18,12),MOD(30,12),MOD(33,13) FROM DUAL\nPOWER(m, n) 回傳 m 的 N 次方\nSELECT POWER(2,3), POWER(2,-2), POWER(-10,3) FROM DUAL\nRound(n, m) (四捨五入到N位)\nn 將近位的值\nm 指定一個小數點位數的數字，此數字必須是一個整數。\n若m值是負數,將會導致值被進位到所指定之特定小數點左邊的地方。\nSELECT ROUND(123.45), ROUND(123.45, 1), ROUND(123.45,-1) FROM DUAL\nSIGN(n)回傳一個值,以指出n的符號。\n回傳 -1 代表 n 是負數, 0 代表 n 為 0, 1 代表 n 為正數\n">
 <meta property='og:url' content='http://localhost:1313/posts/2011-08-oracle-sql/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -590,6 +590,7 @@ YEAR FROM DUAL</p>
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -640,6 +641,7 @@ YEAR FROM DUAL</p>
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -685,12 +687,13 @@ YEAR FROM DUAL</p>
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

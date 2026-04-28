@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="在MySQL模擬Oracle Sequence">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="在MySQL模擬Oracle Sequence">
 <meta property='og:description' content="經過好幾個月沒有更新，時至今日，我終於又出現了，回想這幾個月的消失，其實原因很簡單，就只是接到了一個蠻有挑戰性的專案，而這挑戰性來自於&hellip;要獨自完成，所以在橫衝直撞的摸索中，終於這些脫韁的野牛逐漸可以被控制了，所以就來寫寫網誌吧，雖然裡面還有很多草稿沒發表&hellip;。\n這次要分享的是剛好在案子裡面遇到的小狀況，由於這次開發使用的是MySQL，MySQL有什麼不同呢，一個很大的機制不同是在於自動新增的值處理方式，在Oracle我們可以看到，對於自動新增的值，我們會去取用資料庫內所提供的Sequence，Sequence是一個不斷累加的值，我們可以自訂起始、結束甚至是最大值還有何時要重新計數的值，簡單來說，就是一個累加器。 至於MySQL的Auto\u3000INCREMENT機制，則是需要將該資料表要新增的欄位設定為PK，型態設定為INT，然後設定為auto_increment，如此一來在該table新增一筆資料時，資料庫系統就會自動把這欄位新增上去，並且自動累加1，在系統的機制作用下，這樣產生的值並不會有重複的問題，值會從1累加到上限為止，而在一個資料表內，只能有一個欄位是auto increment。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2012-09-mysqloracle-sequence/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -376,6 +376,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -426,6 +427,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -471,12 +473,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

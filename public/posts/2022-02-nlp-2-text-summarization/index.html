@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="自然語言處理 (NLP) -2 文本摘要Text Summarization">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="自然語言處理 (NLP) -2 文本摘要Text Summarization">
 <meta property='og:description' content="原本打算只寫一篇就把自然語言處理和文本摘要紀錄完，結果一不留神就寫了一堆，只好再起一篇主要敘述文本摘要(Text Summarization)，現今業界也有很多人在做這一塊，但是大家各有不同的做法和看法，所謂文本摘要(Text Summarization)，主要是讓機器可以在讀取很多文章、很多串文字後，幫人類彙整出這些文章、文字串的重點，而這些彙整出的重點，可能是比較具象的，譬如文章中很頻繁地提到哪些人事物，或是比較抽象化的，用機器自己的手法產生一段摘要敘述；在經過一些整理後，我條列出目前在文本摘要(Text Summarization)這個領域，主要有幾種常見研究議題如下；\n文本摘要 Text Summarization，主要是讓機器可以在讀入一大篇文章後，輸出這篇文章主要想表達的內容，這類作法有點像是幫文章做一份摘要，讓閱讀的人可以快速且簡單地了解接下來要發生什麼事，而一篇文章通常有起承轉合等，不同類型的文章也會有不同表現手法，譬如新聞類文章的重點多在第一段，但是評論類則會多在中後段，所以實際使用模型學習時，不容易令模型掌握到究竟哪段才是重點! 文件摘要 Document Summarization，主要是訴求讓機器讀入一份文件，裡面會有多篇文章，接著再把讀入多篇文章後的重點萃取出來，讓使用者知道這份文件裡面有哪些重點，這裡和文本摘要比較不同的是，一份文件不會只有一個重點，且也難以用一段摘要就能表現清楚，不過在一些研究中，Document Summarization通常會和Text Summarization混合在一起，若是有人發現我講錯了，再請跟我說一下，感恩！ 多文件摘要Multi-Documents Summarization，主要是讓機器讀入多份文件，這樣講好像是廢話？但是在多文件摘要時，會先進行分類和歸納，同一類型文章會被歸納成一個叢集(Cluster)，而透過機器對於這些文章的理解，進而取出這批文章想要表達的重點，或是找出文章內相異、相同論點等，譬如說，今天有一批研究茶葉種植的文章好了，在多文章摘要時，我們可以看出這一批文章裡面存在著哪些觀點，例如某些文章主張高緯度有著茶葉生長，而某些文章可能主張高緯度對茶葉生長無幫助等。 觀點摘要 Opinion Summarization，我如果硬要把觀點萃取看成一種摘要，可能有點牽強，但也並無不可，觀點摘要的需求主要來自於社群網路興起後的產物，譬如在Youtube、網路新聞甚至電商平台上等，通常可以看到許多評論Comments，而這些評論大多可以反映群眾對於Youtube或是電商商品本身的看法，通過觀點摘要，我們可以看出一段影片，一則新聞或是一個商品引起的群眾力量，只是不同於前面幾個摘要是化簡為繁，觀點摘要通常是化繁為簡，因為評論通常字數不多，且更口語化，也隱含著更多不同的看法跟理念，當然也有更多時候只是路人起鬨而已；不過在現今的觀點摘要做法，通常是用爬蟲＋統計，量化各種看法後，多加整理而成，是否能抽象化成一種概念，以目前來說都是用人工輔助解決居多，如果要讓機器自動產生一個抽象化的理念，就不是那麼容易了。 ">
 <meta property='og:url' content='http://localhost:1313/posts/2022-02-nlp-2-text-summarization/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -403,6 +403,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -453,6 +454,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -498,12 +500,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

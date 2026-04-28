@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="如何在Colab Notebooks上引用Kaggle資料集(Dataset)">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="如何在Colab Notebooks上引用Kaggle資料集(Dataset)">
 <meta property='og:description' content="Kaggle可以說是前幾名的數據建模和數據分析競賽平台，不管是企業或是個人都可以在上面發布競賽，也就所以在各競賽中往往可以找到相當易懂的程式或是其他競賽者苦心整理好的資料集。\u00a0而我個人在Colab上開發程式時，也很常參考Kaggle上的程式，或是引用Kaggle的資料集(Dataset)，如果資料集不大的話，我通常會先下載到我的電腦，然後再上傳到Colab上，這樣一來一往就耗費掉很多時間，所以更多時候我會選擇從Colab直接載入Kaggle的資料集，除了省掉時間外，也簡約封包，就是一個減少暖化救救北極熊的概念~。在開始之前，你應該先準備好一個Kaggle的帳號，並且通過認證，並且有加入這個資料集/競賽，如此一來你才能正確下載檔案。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2022-01-colab-notebookskaggledataset/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -268,7 +268,7 @@
 <p><img alt="image" class="gallery-image" data-flex-basis="1814px" data-flex-grow="755" height="84" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-5370737561314215504.png" width="635"></p>
 <p>接著我們在<strong>根目錄</strong>建立一個Kaggle資料夾，為什麼要強調是根目錄呢?因為Kaggle套件只抓此目錄底下的json檔來做認證，以Linux主機概念來看，這個目錄應該會在root目錄底下，也就是/.kaggle。</p>
 <p><img alt="image" class="gallery-image" data-flex-basis="3657px" data-flex-grow="1523" height="42" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-1626164389903094688.png" width="640"></p>
-<p>為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。<img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></p>
+<p>為了讓Kaggle套件可以正確抓到json認證檔案，我們需要把剛剛上傳到工作目錄的json檔複製到/.kaggle底下，別忘了調整一下檔案權限，讓檔案擁有者享有讀寫權限(600)。<img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-2090808322088109409.jpg"></p>
 <p>完成上述動作，若是你的認證檔案放置正確，權限也正確，就可以正確呼叫Kaggle套件，下載你需要的資料集了，譬如像我一樣，下載水果資料集，詳情可以參考此網址: <a class="link" href="https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification"  target="_blank" rel="noopener"
     >https://www.kaggle.com/sriramr/fruits-fresh-and-rotten-for-classification</a>。</p>
 <p><img alt="image" class="gallery-image" data-flex-basis="2226px" data-flex-grow="927" height="69" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2022-01-colab-notebookskaggledataset/images/2022-01-colab-notebookskaggledataset-4677374582661081784.png" width="640"></p>
@@ -389,6 +389,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -439,6 +440,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -484,12 +486,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

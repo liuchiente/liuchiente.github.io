@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="SQL:Update one table from another table">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="SQL:Update one table from another table">
 <meta property='og:description' content="還是要說update one table using another table都好吶，最近太少在專業議題上嘴砲大家了，所以放了一些自己寫的小品文來矇混，朕真是太聰明了，廢話不多說，雖然還是說了很多，今天要說的是，怎麼樣利用一個資料表，來更新另一個資料表。\n利用tableB及tableA關聯相關條件，更新tableA，Oracle適用。\nupdate tableAset tableA.cols1=nullwhere exists**(SELECT a.cols1 FROM tableA A,tableB BWHERE A.cols3=B.cols3 ANDA.cols2 IS NULL ANDcols1=to_date(&lsquo;2009/09/11&rsquo;,&lsquo;yyyy/mm/dd&rsquo;)****)**\n以下語法有相同功能，但Oracle不適用，嘖嘖。\nupdate Aset A.cols1=nullFROM tableA A,tableB BWHERE A.cols3=B.cols3 ANDA.cols2 IS NULL AND****cols1=to_date(&lsquo;2009/09/11&rsquo;,&lsquo;yyyy/mm/dd&rsquo;)\n利用tableB及tableA關聯條件，取tableB資料更新tableA，Oracle適用\nupdate tableAset tableA.cols1=(Select cols1 from tableB)where exists(SELECT a.cols1 FROM tableA A,tableB BWHERE A.cols3=B.cols3 ANDA.cols2 IS NULL ANDcols1=to_date(&lsquo;2009/09/11&rsquo;,&lsquo;yyyy/mm/dd&rsquo;))\n利用tableB及tableA關聯條件，取tableB資料更新tableA，Oracle不適用。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2010-03-sqlupdate-one-table-from-another-table/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -359,6 +359,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -409,6 +410,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -454,12 +456,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

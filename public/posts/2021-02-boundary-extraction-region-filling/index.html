@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="影像處理 | Boundary Extraction & Region Filling">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="影像處理 | Boundary Extraction & Region Filling">
 <meta property='og:description' content="這是我在中興大學資工系修習影像處理 Digital Image Processing這門課程所做的課後作業，在這個作業中，我將會使用到數學形態學(Mathematical morphology)中的一些技巧，包含侵蝕(Erosion)、膨脹(Dilation)，來實現如標題所需要的邊界抽取(Boundary Extraction)及區域填充(Region Filling)。\n本作業的原理是這樣，我們可以在二值化影像中利用形態學原理來改變影像內容，假想一下，所所謂的**二值化影像**，就是影像的像素簡單表現為0和1(嚴格來說應該是255)，就是全亮和全暗，以下我則描述為全黑和全白，這些像素將構成完整的圖片。\n想像一下，你拿著一隻立可白塗黑板，黑板上就只有白色線條和黑色版面。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2021-02-boundary-extraction-region-filling/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -282,7 +282,7 @@
 <p>這裡需要用到Dilation再搭配影像的其他運算。</p>
 <p>Dilation的概念就是將影像中白色區域增肥，運算完的結果圖比原圖的白色區域更大，這一圈的寬度是由捲積 Kernel 的大小所決定的，Kernel沿著影像滑動並計算，如果捲積 Kernel m * n 範圍內只要有一個像素值是1，那麼新的像素值就為1，否則新的像素值保持原來的像素值，這表示捲積 Kernel 掃過的所有像素都會被擴張或膨脹，整張影像的白色區域會變多。</p>
 <p>Region Filling區域填充，我先把原圖A用NOT取得相反(補數)的圖C，接著我先在原圖A要擴充的黑色部位加上白點，再來我將原圖A做Dilation後，亮度會變高得到圖B，但為了限縮白色不要超出邊緣無限增長，必須把B和C做AND運算，則得到一個結果Ａ。</p>
-<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">此時可以看到我撒上的白點以已經被放大，但是其他部位因為和補數C做過AND，所以會被限縮著，重複做50次後，可以發現我的點都被白色填滿了，是圖D。</p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/02/image-7.png?w=525&ssl=1">此時可以看到我撒上的白點以已經被放大，但是其他部位因為和補數C做過AND，所以會被限縮著，重複做50次後，可以發現我的點都被白色填滿了，是圖D。</p>
 <p>接著把填滿的圖D和原圖做OR運算，可以看到原圖中的其他部位被保留了，但是我指定的點變成白色了，就可以看到一個完整的填充效果。</p>
 <p>看一下<strong><strong>Region Filling</strong></strong>的處理步驟：特別提醒一點，這邊說的相減或其他運算，都是指向素值處理，可以想像成把圖片轉成向量後做計算。</p>
 <p> Region Filling測試原圖</p>
@@ -294,12 +294,12 @@
 <p> 最後把原圖和Dialte後的圖做OR得到填充的圖。</p>
 <p><img alt="image" class="gallery-image" data-flex-basis="249px" data-flex-grow="103" height="308" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-02-boundary-extraction-region-filling/images/2021-02-boundary-extraction-region-filling-6848413098474797101.png" width="320"></p>
 <p>預先撒上白點才能正確做到填充效果，其實也只是把白點放大再放大，然後再用原始圖去限縮他的邊界，避免失真。我曾嘗試用Erode後的圖取補數再去填充，但是會發現沒法控制邊緣一直變大，後來才改回原圖的補數去填充，就可以應付各種形狀的填充，跟小畫家的效果一樣，即便是用不規則的圖也可以被補數解決掉，還原出原本的形狀。</p>
-<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"></p>
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/02/image-10.png?w=525&ssl=1"></p>
 <p><img alt="image" class="gallery-image" data-flex-basis="244px" data-flex-grow="101" height="216" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-02-boundary-extraction-region-filling/images/2021-02-boundary-extraction-region-filling-7380478764248436247.png" width="220"></p>
 <p><img alt="image" class="gallery-image" data-flex-basis="244px" data-flex-grow="101" height="210" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-02-boundary-extraction-region-filling/images/2021-02-boundary-extraction-region-filling-3852758280438208498.png" width="214"></p>
 <p><img alt="image" class="gallery-image" data-flex-basis="244px" data-flex-grow="101" height="210" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-02-boundary-extraction-region-filling/images/2021-02-boundary-extraction-region-filling-5567504018759246916.png" width="214"></p>
 <p><img alt="image" class="gallery-image" data-flex-basis="244px" data-flex-grow="101" height="216" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/posts/2021-02-boundary-extraction-region-filling/images/2021-02-boundary-extraction-region-filling-6959416743416047278.png" width="220"></p>
-<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px"><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px">如果你需要更進一步了解Source Code的話，<a class="link" href="https://github.com/liuchiente/DigitalImageProcessAtNCHU/blob/main/Boundray%5c_Extraction%5c_%26%5c_Region%5c_Filling.ipynb"  target="_blank" rel="noopener"
+<p><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/02/image-12.png?w=525&ssl=1"><img loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="https://i0.wp.com/liuchien.ink.tw/wp-content/uploads/2021/02/image-13.png?w=525&ssl=1">如果你需要更進一步了解Source Code的話，<a class="link" href="https://github.com/liuchiente/DigitalImageProcessAtNCHU/blob/main/Boundray%5c_Extraction%5c_%26%5c_Region%5c_Filling.ipynb"  target="_blank" rel="noopener"
     >可以參考我寫的Python版本 on Colab</a>，希望對你有幫助。</p>
 
 </section>
@@ -353,6 +353,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -403,6 +404,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -448,12 +450,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

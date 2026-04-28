@@ -292,6 +292,117 @@
     });
   }
 
+  // ns-hugo-imp:/Users/liujiande/Projects/blogger/liuchien/themes/hugo-theme-stack/assets/ts/pagination.ts
+  function setupPaginationJump() {
+    const triggers = document.querySelectorAll(".pagination-jump-trigger");
+    const dialog = document.getElementById("pagination-jump-dialog");
+    if (!dialog || triggers.length === 0) return;
+    const nav = document.querySelector(".pagination");
+    const input = document.getElementById("pagination-jump-input");
+    const form = dialog.querySelector(".pagination-jump-form");
+    const supportsDialog = typeof dialog.showModal === "function" && typeof dialog.close === "function";
+    let lastFocusedElement = null;
+    if (!supportsDialog || !nav || !input || !form) return;
+    const closeDialog = () => {
+      if (dialog.classList.contains("closing")) return;
+      dialog.classList.add("closing");
+      dialog.addEventListener(
+        "animationend",
+        () => {
+          dialog.classList.remove("closing");
+          dialog.close();
+          if (lastFocusedElement?.isConnected) {
+            lastFocusedElement.focus();
+          }
+        },
+        { once: true }
+      );
+    };
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const activeElement = document.activeElement;
+        lastFocusedElement = activeElement instanceof HTMLElement ? activeElement : trigger;
+        dialog.showModal();
+        input.value = "";
+        input.focus();
+      });
+    });
+    dialog.addEventListener("cancel", (e) => {
+      e.preventDefault();
+      closeDialog();
+    });
+    dialog.addEventListener("click", (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = rect.top <= e.clientY && e.clientY <= rect.top + rect.height && rect.left <= e.clientX && e.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        closeDialog();
+      }
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (form.reportValidity()) {
+          form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+        }
+      }
+    });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const targetPage = parseInt(input.value);
+      if (isNaN(targetPage) || targetPage < 1) return;
+      const totalPages = parseInt(nav.dataset.total || "0");
+      if (targetPage > totalPages) return;
+      const firstUrl = nav.dataset.firstUrl || "";
+      const formatUrl = nav.dataset.formatUrl || "";
+      let targetUrl = "";
+      if (targetPage === 1) {
+        targetUrl = firstUrl;
+      } else {
+        targetUrl = formatUrl.replace(/2([^\d]*)$/, `${targetPage}$1`);
+      }
+      if (targetUrl) {
+        window.location.href = targetUrl;
+      }
+      closeDialog();
+    });
+  }
+
+  // ns-hugo-params:/Users/liujiande/Projects/blogger/liuchien/themes/hugo-theme-stack/assets/ts/code-copy.ts
+  var codeblock = { copied: "", copy: "" };
+
+  // ns-hugo-imp:/Users/liujiande/Projects/blogger/liuchien/themes/hugo-theme-stack/assets/ts/code-copy.ts
+  function setupCodeCopy() {
+    const highlights = document.querySelectorAll(".article-content div.highlight");
+    const copyText = codeblock.copy, copiedText = codeblock.copied;
+    if (!navigator.clipboard) {
+      console.warn("Clipboard API not supported, copy button will not work.");
+      return;
+    }
+    highlights.forEach((highlight) => {
+      const copyButton = document.createElement("button");
+      copyButton.innerHTML = copyText;
+      copyButton.classList.add("copyCodeButton");
+      highlight.appendChild(copyButton);
+      const codeBlock = highlight.querySelector("code[data-lang]");
+      if (!codeBlock) return;
+      copyButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+          copyButton.textContent = copiedText;
+          setTimeout(() => {
+            copyButton.textContent = copyText;
+          }, 1e3);
+        }).catch((err) => {
+          alert(err);
+          console.log("Something went wrong", err);
+        });
+      });
+    });
+  }
+
   // <stdin>
   var Stack = {
     init: () => {
@@ -300,28 +411,9 @@
       if (articleContent) {
         setupSmoothAnchors();
         setupScrollspy();
+        setupCodeCopy();
       }
-      const highlights = document.querySelectorAll(".article-content div.highlight");
-      const copyText = `Copy`, copiedText = `Copied!`;
-      highlights.forEach((highlight) => {
-        const copyButton = document.createElement("button");
-        copyButton.innerHTML = copyText;
-        copyButton.classList.add("copyCodeButton");
-        highlight.appendChild(copyButton);
-        const codeBlock = highlight.querySelector("code[data-lang]");
-        if (!codeBlock) return;
-        copyButton.addEventListener("click", () => {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            copyButton.textContent = copiedText;
-            setTimeout(() => {
-              copyButton.textContent = copyText;
-            }, 1e3);
-          }).catch((err) => {
-            alert(err);
-            console.log("Something went wrong", err);
-          });
-        });
-      });
+      setupPaginationJump();
       new colorScheme_default(document.getElementById("dark-mode-toggle"));
     }
   };

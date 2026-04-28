@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="MySQL 無法啟動,錯誤:1607">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="MySQL 無法啟動,錯誤:1607">
 <meta property='og:description' content="在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它\n必須去讀取設定檔，也就是my.ini，然後從my.ini得到所要啟動的相關細\n節後，接著才啟動服務，有點像讀取相關configure。\n當發生錯誤:1067的時候，原因是因為，my.ini檔案裡面的設定值，在原先\n的MySQL，並無法達到它所要求的動作，所以，如果你記得你是更改了my.ini\n哪個設定值，就馬上去把它改回來吧。\n我曾經遇過一次經驗，罪魁禍首則是InnoDB在作祟，MySQL的InnoDB資料庫\n格式，用兩個檔案儲存，一個是logfile，一個是datafile；當時會發生1067\n錯誤，是因為在my.ini裡面，除了選擇啟動InnoDB格式的資料庫格式，但如\n果只選擇啟用，還不一定會發生這樣的情形，會造成1067錯誤是因為，我們\n選擇了InnoDB為預設儲存格式，倘若你覺得不一定要用InnoDB，你可以把my.ini\n裡的defaut-storage-engine=INNODB這一行拿掉，但是這樣一來，你的原先\n資料都會從InnoDB改成MyISAM，MyISAM目前沒提供外來鍵，關聯等的支援就\n是了。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2009-12-mysql-1607/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -342,6 +342,7 @@ logfile，載入了舊的logfile，而這個檔案的新設定又跟以前不一
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -392,6 +393,7 @@ logfile，載入了舊的logfile，而這個檔案的新設定又跟以前不一
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -437,12 +439,13 @@ logfile，載入了舊的logfile，而這個檔案的新設定又跟以前不一
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="Oracle PL/SQL 指標">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="Oracle PL/SQL 指標">
 <meta property='og:description' content="要說指標還是cursor，隨便了。\n從下面一堆code裡面，可以看出這是一個基本的PL/SQL程式，且使用了PL/SQL中的cursor，所謂的cursor，就是我們先宣告了一個變數，其指向一個指定的查詢，在依照我們去異動cursor的指向，就可以對應到我們想要的查詢結果，相對於一般我們對指標的定義，是指向記憶體中的某個位置，而在這裡則是表示資料庫中資料的位置。\n[sql]SET SERVEROUTPUT ON\nDECLARE\nCURSOR TNAME IS\nSELECT * FROM SO001 WHERE CUSTID&lt;10;\nB TNAME%ROWTYPE;\nBEGIN\nOPEN TNAME;\nLOOP\nFETCH TNAME INTO B;\nDBMS_OUTPUT.PUT_LINE(&lsquo;THE KERKER IS:&rsquo;||B.CUSTID);\nDBMS_OUTPUT.PUT_LINE(&lsquo;KERKER IS:&rsquo;||TNAME%ROWCOUNT);\nEXIT WHEN TNAME%NOTFOUND;\nEND LOOP;\nCLOSE TNAME;\nEND;\n/[/sql]\n">
 <meta property='og:url' content='http://localhost:1313/posts/2011-06-oracle-plsql/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -383,6 +383,7 @@ END;</p>
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -433,6 +434,7 @@ END;</p>
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -478,12 +480,13 @@ END;</p>
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

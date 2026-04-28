@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="使用Python實作Image Enhancement">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="使用Python實作Image Enhancement">
 <meta property='og:description' content="趁著學期告一段落，工作也在過年前的休息時間，趕快把之前的作業整理出來；這篇文章依然會是先前的影像處理課程所編寫的作業，在這裡不會用到深度學習或機器學習，而是使用傳統的影像處理概念來做，目的是為了瞭解原理。\n本篇文章主要是探討如何通過二階微分，將影像邊緣強化。\n主要演算法 原圖雖然用的是彩色影像，但我在程式中有轉為灰階，所以實際增強是針對灰階影像增強。 把原影像先乘Laplacioan運算子做二階微分，可以得到影像的邊緣。 接著和原始影像相加，邊緣會被加強，但是因為原圖的雜訊也被放大，所以這裡的圖是有雜訊的加強，得到圖A。 接著原始影像用Sobel對X和Y做一階微分，可以得到影像邊緣圖B，接著對圖B做去雜訊。 再來把圖B的像素做標準化，每個像素會被做成0~1的數值，此時在平坦區(比較亮的地方)數值會較大，趨近1，邊緣(比較暗的地方)則趨近0。 我們把標準化的矩陣和圖A相乘，可以知道原圖依照比例被放大了，原先暗的像素方又變得更黑了，非邊緣的地方則會因為乘趨近1的值，故不太有大變化，結果我們會得到圖C，圖C就是加強後的結果。 程式片段 先把圖片轉成灰階影像。\u00a0">
 <meta property='og:url' content='http://localhost:1313/posts/2022-01-pythonimage-enhancement/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -465,6 +465,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -515,6 +516,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -560,12 +562,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>

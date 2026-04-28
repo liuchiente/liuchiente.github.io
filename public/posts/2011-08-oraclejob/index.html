@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
 
 
-<link rel="stylesheet" href="/scss/style.min.389e156f5e9bb13df5a924cfa99dfb9c39f3e01e68d9e146cd65bdae963be145.css"><meta property='og:title' content="Oracle處理JOB之語法">
+<link rel="stylesheet" href="/scss/style.min.b732095129242e2cc6d53ba659f476b7da40a2c70e1928579884e0cb48466352.css"><meta property='og:title' content="Oracle處理JOB之語法">
 <meta property='og:description' content="關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供\n的JOB功能，我們可以針對資料庫內之資料，進行固定性的處理，因為JOB主要就是\n做好排程後，再依照設定的時段，來進行所指定的處理，一般來說，我們可以透過套裝\n工具，可能TOAD或是其他不同的軟體來進行JOB的新增修改，當然我們也可以透過語法\n來做這樣的處理。\n在一般命令模式，我們可以透過dbms_job.submit這個函式來做job的新增。\n**delcare job\\_num number;begin dbms\\_job.submit( job\\_num\u3000該部份函式會自動給值 , &#39;內容;&#39; 預定要排程處理的內容，記得結尾加上分號 , SYSDATE + n 第一次執行該job的時間, 一分鐘為 1 / 1440，一小時為1/24 , &#39;SYSDATE + m&#39; 下一次執行時間, &#39;NULL&#39; 表示只執行一次，請特別注意該參數必須為字串 , FALSE );end;** 如果你要確認JOB是否新增完畢，可以直接去看dba_jobs這個資料表，記得過濾owner。\n">
 <meta property='og:url' content='http://localhost:1313/posts/2011-08-oraclejob/'>
 <meta property='og:site_name' content='Liuchien的部落格'>
@@ -379,6 +379,7 @@
      
     
         
+
         <script
     src="https://giscus.app/client.js"
     data-repo="liuchiente/liuchiente.github.io"
@@ -429,6 +430,7 @@
         }
     })();
 </script>
+
     
 
     <footer class="site-footer">
@@ -474,12 +476,13 @@
         lightbox.init();
     }
 </script>
+
     
 
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
+<script type="text/javascript" src="/ts/main.d749c55cb43afb5d7f37799216a3e8d3d2adfb9e65285e8f9b3e104c016f6440.js" defer></script>
 
 
     </body>
