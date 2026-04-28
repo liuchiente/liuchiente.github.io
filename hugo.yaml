@@ -25,6 +25,8 @@ markup:
     extensions:
       cjk:
         eastasianLineBreaksStyle: simple
+    renderer:
+      unsafe: true
   tableOfContents:
     startLevel: 2
     endLevel: 3
