@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Lock.Kill Session on Liuchien的部落格</title>
-        <link>http://localhost:1313/tags/lock.kill-session/</link>
-        <description>Recent content in Lock.Kill Session on Liuchien的部落格</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-tw</language><atom:link href="http://localhost:1313/tags/lock.kill-session/index.xml" rel="self" type="application/rss+xml" /><item>
-            <title>查資料庫連線Lock</title>
-            <link>http://localhost:1313/posts/2020-03-lock/</link>
-            <pubDate>Fri, 22 Nov 2019 16:13:00 +0000</pubDate>
-            <guid>http://localhost:1313/posts/2020-03-lock/</guid>
-            <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT sys.v_$session.osuser,sys.v_$session.machine,v$lock.SID,&#xA;sys.v_$session.serial#,&#xA;DECODE(v$lock.TYPE,&#xA;&amp;#39;MR&amp;#39;, &amp;#39;Media Recovery&amp;#39;,&#xA;&amp;#39;RT&amp;#39;,&amp;#39;Redo Thread&amp;#39;,&#xA;&amp;#39;UN&amp;#39;,&amp;#39;User Name&amp;#39;,&#xA;&amp;#39;TX&amp;#39;, &amp;#39;Transaction&amp;#39;,&#xA;&amp;#39;TM&amp;#39;, &amp;#39;DML&amp;#39;,&#xA;&amp;#39;UL&amp;#39;, &amp;#39;PL/SQL User Lock&amp;#39;,&#xA;&amp;#39;DX&amp;#39;, &amp;#39;Distributed Xaction&amp;#39;,&#xA;&amp;#39;CF&amp;#39;, &amp;#39;Control File&amp;#39;,&#xA;&amp;#39;IS&amp;#39;, &amp;#39;Instance State&amp;#39;,&#xA;&amp;#39;FS&amp;#39;, &amp;#39;File Set&amp;#39;,&#xA;&amp;#39;IR&amp;#39;, &amp;#39;Instance Recovery&amp;#39;,&#xA;&amp;#39;ST&amp;#39;, &amp;#39;Disk Space Transaction&amp;#39;,&#xA;&amp;#39;TS&amp;#39;, &amp;#39;Temp Segment&amp;#39;,&#xA;&amp;#39;IV&amp;#39;, &amp;#39;Library Cache Invalida-tion&amp;#39;,&#xA;&amp;#39;LS&amp;#39;, &amp;#39;Log Start or Switch&amp;#39;,&#xA;&amp;#39;RW&amp;#39;, &amp;#39;Row Wait&amp;#39;,&#xA;&amp;#39;SQ&amp;#39;, &amp;#39;Sequence Number&amp;#39;,&#xA;&amp;#39;TE&amp;#39;, &amp;#39;Extend Table&amp;#39;,&#xA;&amp;#39;TT&amp;#39;, &amp;#39;Temp Table&amp;#39;,&#xA;&amp;#39;Unknown&amp;#39;) LockType,&#xA;RTRIM(object_type) || &amp;#39; &amp;#39; || RTRIM(owner) || &amp;#39;.&amp;#39; || object_name object_name,&#xA;DECODE(lmode, 0, &amp;#39;None&amp;#39;,&#xA;1, &amp;#39;Null&amp;#39;,&#xA;2, &amp;#39;Row-S&amp;#39;,&#xA;3, &amp;#39;Row-X&amp;#39;,&#xA;4, &amp;#39;Share&amp;#39;,&#xA;5, &amp;#39;S/Row-X&amp;#39;,&#xA;6, &amp;#39;Exclusive&amp;#39;, &amp;#39;Unknown&amp;#39;) LockMode,&#xA;DECODE(request, 0, &amp;#39;None&amp;#39;,&#xA;1, &amp;#39;Null&amp;#39;,&#xA;2, &amp;#39;Row-S&amp;#39;,&#xA;3, &amp;#39;Row-X&amp;#39;,&#xA;4, &amp;#39;Share&amp;#39;,&#xA;5, &amp;#39;S/Row-X&amp;#39;,&#xA;6, &amp;#39;Exclusive&amp;#39;, &amp;#39;Unknown&amp;#39;) RequestMode,&#xA;ctime, BLOCK b&#xA;FROM v$lock, all_objects, sys.v_$session&#xA;WHERE v$Lock.SID &amp;gt; 6&#xA;AND sys.v_$session.SID = v$lock.SID&#xA;AND v$lock.id1 = all_objects.object_id;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ALTER SYSTEM KILL SESSION &amp;#39;787,8659&amp;#39; ;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
-        </item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lock.Kill Session on Liuchien的部落格</title>
+    <link>http://localhost:1313/tags/lock.kill-session/</link>
+    <description>Recent content in Lock.Kill Session on Liuchien的部落格</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 25 Jul 2020 01:42:35 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lock.kill-session/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>查資料庫連線Lock</title>
+      <link>http://localhost:1313/posts/2020-03-lock/</link>
+      <pubDate>Fri, 22 Nov 2019 16:13:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2020-03-lock/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT sys.v_$session.osuser,sys.v_$session.machine,v$lock.SID,&#xA;sys.v_$session.serial#,&#xA;DECODE(v$lock.TYPE,&#xA;&amp;#39;MR&amp;#39;, &amp;#39;Media Recovery&amp;#39;,&#xA;&amp;#39;RT&amp;#39;,&amp;#39;Redo Thread&amp;#39;,&#xA;&amp;#39;UN&amp;#39;,&amp;#39;User Name&amp;#39;,&#xA;&amp;#39;TX&amp;#39;, &amp;#39;Transaction&amp;#39;,&#xA;&amp;#39;TM&amp;#39;, &amp;#39;DML&amp;#39;,&#xA;&amp;#39;UL&amp;#39;, &amp;#39;PL/SQL User Lock&amp;#39;,&#xA;&amp;#39;DX&amp;#39;, &amp;#39;Distributed Xaction&amp;#39;,&#xA;&amp;#39;CF&amp;#39;, &amp;#39;Control File&amp;#39;,&#xA;&amp;#39;IS&amp;#39;, &amp;#39;Instance State&amp;#39;,&#xA;&amp;#39;FS&amp;#39;, &amp;#39;File Set&amp;#39;,&#xA;&amp;#39;IR&amp;#39;, &amp;#39;Instance Recovery&amp;#39;,&#xA;&amp;#39;ST&amp;#39;, &amp;#39;Disk Space Transaction&amp;#39;,&#xA;&amp;#39;TS&amp;#39;, &amp;#39;Temp Segment&amp;#39;,&#xA;&amp;#39;IV&amp;#39;, &amp;#39;Library Cache Invalida-tion&amp;#39;,&#xA;&amp;#39;LS&amp;#39;, &amp;#39;Log Start or Switch&amp;#39;,&#xA;&amp;#39;RW&amp;#39;, &amp;#39;Row Wait&amp;#39;,&#xA;&amp;#39;SQ&amp;#39;, &amp;#39;Sequence Number&amp;#39;,&#xA;&amp;#39;TE&amp;#39;, &amp;#39;Extend Table&amp;#39;,&#xA;&amp;#39;TT&amp;#39;, &amp;#39;Temp Table&amp;#39;,&#xA;&amp;#39;Unknown&amp;#39;) LockType,&#xA;RTRIM(object_type) || &amp;#39; &amp;#39; || RTRIM(owner) || &amp;#39;.&amp;#39; || object_name object_name,&#xA;DECODE(lmode, 0, &amp;#39;None&amp;#39;,&#xA;1, &amp;#39;Null&amp;#39;,&#xA;2, &amp;#39;Row-S&amp;#39;,&#xA;3, &amp;#39;Row-X&amp;#39;,&#xA;4, &amp;#39;Share&amp;#39;,&#xA;5, &amp;#39;S/Row-X&amp;#39;,&#xA;6, &amp;#39;Exclusive&amp;#39;, &amp;#39;Unknown&amp;#39;) LockMode,&#xA;DECODE(request, 0, &amp;#39;None&amp;#39;,&#xA;1, &amp;#39;Null&amp;#39;,&#xA;2, &amp;#39;Row-S&amp;#39;,&#xA;3, &amp;#39;Row-X&amp;#39;,&#xA;4, &amp;#39;Share&amp;#39;,&#xA;5, &amp;#39;S/Row-X&amp;#39;,&#xA;6, &amp;#39;Exclusive&amp;#39;, &amp;#39;Unknown&amp;#39;) RequestMode,&#xA;ctime, BLOCK b&#xA;FROM v$lock, all_objects, sys.v_$session&#xA;WHERE v$Lock.SID &amp;gt; 6&#xA;AND sys.v_$session.SID = v$lock.SID&#xA;AND v$lock.id1 = all_objects.object_id;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ALTER SYSTEM KILL SESSION &amp;#39;787,8659&amp;#39; ;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
 </rss>

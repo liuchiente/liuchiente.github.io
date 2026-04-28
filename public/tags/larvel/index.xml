@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Larvel on Liuchien的部落格</title>
-        <link>http://localhost:1313/tags/larvel/</link>
-        <description>Recent content in Larvel on Liuchien的部落格</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-tw</language><atom:link href="http://localhost:1313/tags/larvel/index.xml" rel="self" type="application/rss+xml" /><item>
-            <title>Composer安裝WAMP的OpenSSL問題</title>
-            <link>http://localhost:1313/posts/2014-10-composerwampopenssl/</link>
-            <pubDate>Sat, 04 Oct 2014 06:44:00 +0000</pubDate>
-            <guid>http://localhost:1313/posts/2014-10-composerwampopenssl/</guid>
-            <description>&lt;p&gt;composer是一套用來下載管理PHP套件或函式庫的工具，其實就像PEAR和Pecl一樣，但是前述這兩個工具 算在近期的動態是少了點，而這幾年一些如Symfony或是Larvel的Framework也都開始支援用composer來做 下載。 嚴格來講，算是單純化了吧？以下是Composer的官方網站。 &lt;a class=&#34;link&#34; href=&#34;http://getcomposer.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Composer - Dependency Manager for PHP&lt;/a&gt; 不過今天嚴格來講，我只是想紀錄一下在安裝Composer會遇到的小問題，Composer有提供了Windows和Linux 系列的安裝支援，而在安裝時會檢查Open SSL的支援與否，在前幾版都還算會警告而已，但是呢&amp;hellip;近期的版 本，在安裝時如果檢查不到Open SSL就會中斷無法繼續了，想當然，其實只要去php把openssl的extension打 開就好。 extension=php_openssl.dll 就是把上述這行的分號拿掉，不過有一點值得注意的是，因為WAMP裡面，如果你去改apache底下的php.ini， 那是不夠的，主要是因為composer他檢查的是php cli的設置環境，所以如果你使用了WAMP，改了apache底下 的php.ini，那也只是改變了Web端的支援，因此你需要做的是，去把bin\php底下的php.ini做修改，打開openssl 支援，才能真正通過composer的檢查。 大概是這樣。&lt;/p&gt;&#xA;</description>
-        </item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Larvel on Liuchien的部落格</title>
+    <link>http://localhost:1313/tags/larvel/</link>
+    <description>Recent content in Larvel on Liuchien的部落格</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 13 Mar 2020 15:10:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/larvel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Composer安裝WAMP的OpenSSL問題</title>
+      <link>http://localhost:1313/posts/2014-10-composerwampopenssl/</link>
+      <pubDate>Sat, 04 Oct 2014 06:44:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2014-10-composerwampopenssl/</guid>
+      <description>&lt;p&gt;composer是一套用來下載管理PHP套件或函式庫的工具，其實就像PEAR和Pecl一樣，但是前述這兩個工具 算在近期的動態是少了點，而這幾年一些如Symfony或是Larvel的Framework也都開始支援用composer來做 下載。 嚴格來講，算是單純化了吧？以下是Composer的官方網站。 &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer - Dependency Manager for PHP&lt;/a&gt; 不過今天嚴格來講，我只是想紀錄一下在安裝Composer會遇到的小問題，Composer有提供了Windows和Linux 系列的安裝支援，而在安裝時會檢查Open SSL的支援與否，在前幾版都還算會警告而已，但是呢&amp;hellip;近期的版 本，在安裝時如果檢查不到Open SSL就會中斷無法繼續了，想當然，其實只要去php把openssl的extension打 開就好。 extension=php_openssl.dll 就是把上述這行的分號拿掉，不過有一點值得注意的是，因為WAMP裡面，如果你去改apache底下的php.ini， 那是不夠的，主要是因為composer他檢查的是php cli的設置環境，所以如果你使用了WAMP，改了apache底下 的php.ini，那也只是改變了Web端的支援，因此你需要做的是，去把bin\php底下的php.ini做修改，打開openssl 支援，才能真正通過composer的檢查。 大概是這樣。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
