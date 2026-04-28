@@ -1,26 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>寫網站 on Liuchien的部落格</title>
-    <link>http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/</link>
-    <description>Recent content in 寫網站 on Liuchien的部落格</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sat, 25 Jul 2020 01:42:45 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Knockout JS</title>
-      <link>http://localhost:1313/posts/2014-12-knock-out-js/</link>
-      <pubDate>Thu, 11 Dec 2014 11:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2014-12-knock-out-js/</guid>
-      <description>&lt;p&gt;knock out js是一套在MVVM觀念下，用來建置View-Model的javascipt套件，但是基於jQuery做開發，所以在使用之前，也需要引入jQuery，以下就簡稱KO吧。&lt;/p&gt;&#xA;&lt;p&gt;KO的原理其實很簡單，可以分為兩大塊，一是資料布局，令一個則是資料變動的觀察和連動更新，也就所以，當你透過KO進行View-Model進行布局後，假定你在佈局上或是在程式上對View-Model進行變動，透過KO，他會即時把你的變動反應到View-Model上，其實我們可以把他想成JSP或是PHP的布局，但是又透過jQuery可以作到即時反應。&lt;/p&gt;&#xA;&lt;p&gt;所以啦，在構成KO所建置的View-Model環境下，我們可以看到有幾個要角是一定會有的。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>什麼是BOM？</title>
-      <link>http://localhost:1313/posts/2011-06-bom/</link>
-      <pubDate>Mon, 13 Jun 2011 02:03:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011-06-bom/</guid>
-      <description>&lt;p&gt;最近在參與開發測試的流程中，很多規格都已經處理完成，也已經調整好，結果到了最後關頭測試時，從A程式(VB.NET)傳送純文字檔案到B程式(JAVA Applet)，結果B程式一直讀取到不知道哪裡來的多餘字元，造成資料錯誤，經過確認，原先200字元的檔案，卻有203個位元大，照理說，200字元的純文字大小應該就是203位元，那問題出在哪？&lt;/p&gt;&#xA;&lt;p&gt;眾家專案經理面面相覷，經過確認，原來文字檔案是以UTF-8形式儲存，由A程式包裝好之後，再傳送到B程式，結果純文字檔一讀，才發現異常，經過確認後，多出的三個位元應該就是BOM沒錯，只是這也不是專案經理可以掌控的，而是系統分析時就該發現了，很多人都以為自己可以講一下程式應該怎麼做，就可以洋洋得意的說自己是系統分析師(SA)，但是單從需求面去講系統作法，那要研發也一起加入冥想嗎？&lt;/p&gt;</description>
-    </item>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>寫網站 on Liuchien的部落格</title>
+        <link>http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/</link>
+        <description>Recent content in 寫網站 on Liuchien的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Sat, 25 Jul 2020 01:42:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%AF%AB%E7%B6%B2%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Knockout JS</title>
+            <link>http://localhost:1313/posts/2014-12-knock-out-js/</link>
+            <pubDate>Thu, 11 Dec 2014 11:09:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2014-12-knock-out-js/</guid>
+            <description>&lt;p&gt;knock out js是一套在MVVM觀念下，用來建置View-Model的javascipt套件，但是基於jQuery做開發，所以在使用之前，也需要引入jQuery，以下就簡稱KO吧。&lt;/p&gt;&#xA;&lt;p&gt;KO的原理其實很簡單，可以分為兩大塊，一是資料布局，令一個則是資料變動的觀察和連動更新，也就所以，當你透過KO進行View-Model進行布局後，假定你在佈局上或是在程式上對View-Model進行變動，透過KO，他會即時把你的變動反應到View-Model上，其實我們可以把他想成JSP或是PHP的布局，但是又透過jQuery可以作到即時反應。&lt;/p&gt;&#xA;&lt;p&gt;所以啦，在構成KO所建置的View-Model環境下，我們可以看到有幾個要角是一定會有的。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Data，原始資料來源，這可以是JavaScrpit Object，或是JSON Object，廣泛點來講，只要你可以把資料來源轉成前述兩個形式，他就可以變成一個合用的Data。&lt;/li&gt;&#xA;&lt;li&gt;Knock Out JS，透過Konck Out JS把Data轉換成View-Model，讓KO的引擎可以把這些資料用來做頁面上的布局。&lt;/li&gt;&#xA;&lt;li&gt;布局，透過KO自定義的Tag來找尋DOM節點，並利用布局語法來做資料配置，在啟動後，KO引擎就會把相關數值配置到你指定的DOM上。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;以上看起來，是不是跟PHP或是JSP非常非常的像？但是唯一需要瞭解的是，KO是要爬樹的，也就是說，他必須不停不停的爬DOM節點，來完成值的配置跟輸出，但是PHP跟JSP則是透過文本本身的轉換，因此對PHP來說，網頁就是個文字檔，你可以在你喜歡的地方隨便丟值，但KO就不一樣了，你要有DOM樹才有後續的活動。&lt;/p&gt;&#xA;&lt;p&gt;所以，準備好了嗎？猴子？&lt;/p&gt;&#xA;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://knockoutjs.com/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;Knock Out JS&lt;/a&gt;官方網站&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;這封郵件來自 Evernote。Evernote 是您專屬的工作空間， 免費下載 Evernote&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;</description>
+        </item><item>
+            <title>什麼是BOM？</title>
+            <link>http://localhost:1313/posts/2011-06-bom/</link>
+            <pubDate>Mon, 13 Jun 2011 02:03:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2011-06-bom/</guid>
+            <description>&lt;p&gt;最近在參與開發測試的流程中，很多規格都已經處理完成，也已經調整好，結果到了最後關頭測試時，從A程式(VB.NET)傳送純文字檔案到B程式(JAVA Applet)，結果B程式一直讀取到不知道哪裡來的多餘字元，造成資料錯誤，經過確認，原先200字元的檔案，卻有203個位元大，照理說，200字元的純文字大小應該就是203位元，那問題出在哪？&lt;/p&gt;&#xA;&lt;p&gt;眾家專案經理面面相覷，經過確認，原來文字檔案是以UTF-8形式儲存，由A程式包裝好之後，再傳送到B程式，結果純文字檔一讀，才發現異常，經過確認後，多出的三個位元應該就是BOM沒錯，只是這也不是專案經理可以掌控的，而是系統分析時就該發現了，很多人都以為自己可以講一下程式應該怎麼做，就可以洋洋得意的說自己是系統分析師(SA)，但是單從需求面去講系統作法，那要研發也一起加入冥想嗎？&lt;/p&gt;&#xA;&lt;p&gt;BOM的全名是Byte-order Mark，以下仍以BOM作為簡稱，一般常出現在UTF格式檔案，並且造成相關問題，如同在PHP時，我們常需要在PHP程式開頭去設定SESSION，但是當網頁格式為UTF-8，瀏覽器去讀取網頁時，會先讀取到BOM，造成程式錯誤，顯示&lt;strong&gt;HEADER HAS ALREADY SEND&lt;/strong&gt;，當然這只是其中一個問題，只是我剛好曾經遇過而已。&lt;/p&gt;&#xA;&lt;p&gt;BOM一般在UTF-16及UTF-32的檔案中，被放置在檔案開頭用以識別是UTF-16或其他格式檔案，並且可以分識別為BIG-ENDIAN或LITTLE ENDIAN，但是在UTF-8格式中，沒此規範，因此也沒有位元順序的問題存在，因此是可以拿掉的，最多的用處只是用來判定其是一個UTF-8檔案，但是當用於通訊傳送，或是前面提到的網頁，並不會建議使用UTF-8的BOM，反倒建議拿掉，而對於一些沒有特殊處理UTF-8的瀏覽器，則可能顯示出異常檔案內容。&lt;/p&gt;&#xA;&lt;p&gt;因此針對這類問題，建議在儲存成UTF-8格式檔案時，建議注意一下BOM這個問題，以免又造成其他不可預期的錯誤，在程式開發的細節裡面，就該注意到這類問題是否存在，並且統一規範，需要更詳細資訊的可看以下連結。&lt;/p&gt;&#xA;&lt;h1 id=&#34;&#34;&gt;&#xA;&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://zh.wikipedia.org/wiki/%E4%BD%8D%E5%85%83%E7%B5%84%E9%A0%86%E5%BA%8F%E8%A8%98%E8%99%9F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;維基百科-位元組順序記號&lt;/a&gt;&lt;/p&gt;&#xA;</description>
+        </item></channel>
 </rss>

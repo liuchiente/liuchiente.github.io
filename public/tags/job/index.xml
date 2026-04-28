@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>JOB on Liuchien的部落格</title>
-    <link>http://localhost:1313/tags/job/</link>
-    <description>Recent content in JOB on Liuchien的部落格</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Fri, 13 Mar 2020 15:10:14 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/job/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Oracle處理JOB之語法</title>
-      <link>http://localhost:1313/posts/2011-08-oraclejob/</link>
-      <pubDate>Mon, 22 Aug 2011 13:46:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011-08-oraclejob/</guid>
-      <description>&lt;p&gt;關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供&lt;/p&gt;&#xA;&lt;p&gt;的JOB功能，我們可以針對資料庫內之資料，進行固定性的處理，因為JOB主要就是&lt;/p&gt;&#xA;&lt;p&gt;做好排程後，再依照設定的時段，來進行所指定的處理，一般來說，我們可以透過套裝&lt;/p&gt;&#xA;&lt;p&gt;工具，可能TOAD或是其他不同的軟體來進行JOB的新增修改，當然我們也可以透過語法&lt;/p&gt;&#xA;&lt;p&gt;來做這樣的處理。&lt;/p&gt;&#xA;&lt;p&gt;在一般命令模式，我們可以透過dbms_job.submit這個函式來做job的新增。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**delcare job\_num number;begin dbms\_job.submit( job\_num　該部份函式會自動給值 , &amp;#39;內容;&amp;#39; 預定要排程處理的內容，記得結尾加上分號 , SYSDATE + n 第一次執行該job的時間, 一分鐘為 1 / 1440，一小時為1/24 , &amp;#39;SYSDATE + m&amp;#39; 下一次執行時間, &amp;#39;NULL&amp;#39; 表示只執行一次，請特別注意該參數必須為字串 , FALSE );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果你要確認JOB是否新增完畢，可以直接去看dba_jobs這個資料表，記得過濾owner。&lt;/p&gt;</description>
-    </item>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>JOB on Liuchien的部落格</title>
+        <link>http://localhost:1313/tags/job/</link>
+        <description>Recent content in JOB on Liuchien的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Fri, 13 Mar 2020 15:10:14 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/job/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Oracle處理JOB之語法</title>
+            <link>http://localhost:1313/posts/2011-08-oraclejob/</link>
+            <pubDate>Mon, 22 Aug 2011 13:46:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2011-08-oraclejob/</guid>
+            <description>&lt;p&gt;關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供&lt;/p&gt;&#xA;&lt;p&gt;的JOB功能，我們可以針對資料庫內之資料，進行固定性的處理，因為JOB主要就是&lt;/p&gt;&#xA;&lt;p&gt;做好排程後，再依照設定的時段，來進行所指定的處理，一般來說，我們可以透過套裝&lt;/p&gt;&#xA;&lt;p&gt;工具，可能TOAD或是其他不同的軟體來進行JOB的新增修改，當然我們也可以透過語法&lt;/p&gt;&#xA;&lt;p&gt;來做這樣的處理。&lt;/p&gt;&#xA;&lt;p&gt;在一般命令模式，我們可以透過dbms_job.submit這個函式來做job的新增。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**delcare job\_num number;begin dbms\_job.submit( job\_num　該部份函式會自動給值 , &amp;#39;內容;&amp;#39; 預定要排程處理的內容，記得結尾加上分號 , SYSDATE + n 第一次執行該job的時間, 一分鐘為 1 / 1440，一小時為1/24 , &amp;#39;SYSDATE + m&amp;#39; 下一次執行時間, &amp;#39;NULL&amp;#39; 表示只執行一次，請特別注意該參數必須為字串 , FALSE );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果你要確認JOB是否新增完畢，可以直接去看dba_jobs這個資料表，記得過濾owner。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;select * from dba_jobs;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果要移除JOB，請先找出該JOB的編號，並且引用函式來進行處理。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**begin dbms\_job.remove(job\_num );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;雖然10G已經有了新玩意，但其實這些函式還是很實用的。&lt;/p&gt;&#xA;</description>
+        </item></channel>
 </rss>

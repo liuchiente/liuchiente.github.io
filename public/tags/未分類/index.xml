@@ -1,26 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>未分類 on Liuchien的部落格</title>
-    <link>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/</link>
-    <description>Recent content in 未分類 on Liuchien的部落格</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Fri, 13 Mar 2020 15:10:13 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>owner管理</title>
-      <link>http://localhost:1313/posts/owner/</link>
-      <pubDate>Thu, 13 Jun 2013 16:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/owner/</guid>
-      <description>&lt;p&gt;drop user BESTTEST cascade;&lt;/p&gt;&#xA;&lt;p&gt;CREATE USER BESTTEST IDENTIFIED BY BESTTEST&lt;br&gt;&#xA;DEFAULT TABLESPACE TBCBEST TEMPORARY TABLESPACE TEMP&lt;br&gt;&#xA;PROFILE DEFAULT ACCOUNT UNLOCK;&lt;/p&gt;&#xA;&lt;p&gt;GRANT CONNECT TO BESTTEST;&lt;br&gt;&#xA;GRANT DBA TO BESTTEST;&lt;br&gt;&#xA;GRANT RESOURCE TO BESTTEST;&lt;br&gt;&#xA;GRANT UNLIMITED TABLESPACE TO BESTTEST;&lt;br&gt;&#xA;ALTER USER BESTTEST DEFAULT ROLE ALL;&lt;/p&gt;&#xA;&lt;p&gt;grant create table to BESTTEST;&lt;br&gt;&#xA;grant create view to BESTTEST;&lt;br&gt;&#xA;grant create sequence to BESTTEST;&lt;br&gt;&#xA;grant create table to BESTTEST;&lt;br&gt;&#xA;grant create view to BESTTEST;&lt;br&gt;&#xA;grant create sequence to BESTTEST;&lt;br&gt;&#xA;Grant Select Any Table to BESTTEST;&lt;br&gt;&#xA;grant Insert Any Table to BESTTEST;&lt;br&gt;&#xA;grant Update Any Table to BESTTEST;&lt;br&gt;&#xA;grant Delete Any Table to BESTTEST;&lt;br&gt;&#xA;grant Select Any Sequence to BESTTEST;&lt;br&gt;&#xA;grant Create Any View to BESTTEST;&lt;br&gt;&#xA;grant Create Any Table to BESTTEST;&lt;br&gt;&#xA;grant Drop Any Table to BESTTEST;&lt;br&gt;&#xA;grant Create Any Index to BESTTEST;&lt;br&gt;&#xA;exit;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>好文整理</title>
-      <link>http://localhost:1313/posts/untitile2/</link>
-      <pubDate>Thu, 16 Feb 2012 08:56:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/untitile2/</guid>
-      <description>&lt;p&gt;Javascript Namespace&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.codeproject.com/Articles/19030/Namespaces-in-JavaScript&#34;&gt;http://www.codeproject.com/Articles/19030/Namespaces-in-JavaScript&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>未分類 on Liuchien的部落格</title>
+        <link>http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/</link>
+        <description>Recent content in 未分類 on Liuchien的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Fri, 13 Mar 2020 15:10:13 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>owner管理</title>
+            <link>http://localhost:1313/posts/owner/</link>
+            <pubDate>Thu, 13 Jun 2013 16:09:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/owner/</guid>
+            <description>&lt;p&gt;drop user BESTTEST cascade;&lt;/p&gt;&#xA;&lt;p&gt;CREATE USER BESTTEST IDENTIFIED BY BESTTEST&lt;br&gt;&#xA;DEFAULT TABLESPACE TBCBEST TEMPORARY TABLESPACE TEMP&lt;br&gt;&#xA;PROFILE DEFAULT ACCOUNT UNLOCK;&lt;/p&gt;&#xA;&lt;p&gt;GRANT CONNECT TO BESTTEST;&lt;br&gt;&#xA;GRANT DBA TO BESTTEST;&lt;br&gt;&#xA;GRANT RESOURCE TO BESTTEST;&lt;br&gt;&#xA;GRANT UNLIMITED TABLESPACE TO BESTTEST;&lt;br&gt;&#xA;ALTER USER BESTTEST DEFAULT ROLE ALL;&lt;/p&gt;&#xA;&lt;p&gt;grant create table to BESTTEST;&lt;br&gt;&#xA;grant create view to BESTTEST;&lt;br&gt;&#xA;grant create sequence to BESTTEST;&lt;br&gt;&#xA;grant create table to BESTTEST;&lt;br&gt;&#xA;grant create view to BESTTEST;&lt;br&gt;&#xA;grant create sequence to BESTTEST;&lt;br&gt;&#xA;Grant Select Any Table to BESTTEST;&lt;br&gt;&#xA;grant Insert Any Table to BESTTEST;&lt;br&gt;&#xA;grant Update Any Table to BESTTEST;&lt;br&gt;&#xA;grant Delete Any Table to BESTTEST;&lt;br&gt;&#xA;grant Select Any Sequence to BESTTEST;&lt;br&gt;&#xA;grant Create Any View to BESTTEST;&lt;br&gt;&#xA;grant Create Any Table to BESTTEST;&lt;br&gt;&#xA;grant Drop Any Table to BESTTEST;&lt;br&gt;&#xA;grant Create Any Index to BESTTEST;&lt;br&gt;&#xA;exit;&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>好文整理</title>
+            <link>http://localhost:1313/posts/untitile2/</link>
+            <pubDate>Thu, 16 Feb 2012 08:56:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/untitile2/</guid>
+            <description>&lt;p&gt;Javascript Namespace&lt;/p&gt;&#xA;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://www.codeproject.com/Articles/19030/Namespaces-in-JavaScript&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;&#xA;    &gt;http://www.codeproject.com/Articles/19030/Namespaces-in-JavaScript&lt;/a&gt;&lt;/p&gt;&#xA;</description>
+        </item></channel>
 </rss>

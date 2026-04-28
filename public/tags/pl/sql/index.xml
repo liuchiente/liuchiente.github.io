@@ -1,40 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>PL/SQL on Liuchien的部落格</title>
-    <link>http://localhost:1313/tags/pl/sql/</link>
-    <description>Recent content in PL/SQL on Liuchien的部落格</description>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Sat, 21 Mar 2020 00:23:06 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pl/sql/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Oracle資料庫之觸發器Trigger的使用</title>
-      <link>http://localhost:1313/posts/2012-02-oracletrigger/</link>
-      <pubDate>Thu, 02 Feb 2012 06:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2012-02-oracletrigger/</guid>
-      <description>&lt;p&gt;ORACLE的TRIGGER也是屬於PL/SQL的一種，中文也可以翻譯作觸發器，就字面上意思來說，可以解釋為觸發動作，而這觸發動作在於某個事件或是某種行為產生時，如果有因應的觸發動作，則會針對前述的狀況，進行指定的行為，這行為可能包含新增紀錄或連動呼叫程式、修正資料或是稽核資料。&lt;/p&gt;&#xA;&lt;p&gt;因此可以顯而易見的，TRIGGER的作用範圍很廣，包含如下；&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;DML觸發程式，任何由DML敘述所產生的事件，並在事件成立後呼叫對應程式或是檢核資訊。&lt;/li&gt;&#xA;&lt;li&gt;INSTEAD-OF觸發程式，當需要進行VIEW的資料調整時，對應調整VIEW的來源資料表。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;系統觸發程式，針對DDL事件或是系統事件進行對應呼叫。&lt;/p&gt;&#xA;&lt;p&gt;其實就我以前常用的狀況，所以會導致我的認知裡面，TRIGGER大多用在DML的敘述觸發，因此以下先針對DML敘述進行介紹，如果針對DML的定義不清楚，可以先參考資料庫SQL概念介紹。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Oracle處理JOB之語法</title>
-      <link>http://localhost:1313/posts/2011-08-oraclejob/</link>
-      <pubDate>Mon, 22 Aug 2011 13:46:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011-08-oraclejob/</guid>
-      <description>&lt;p&gt;關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供&lt;/p&gt;&#xA;&lt;p&gt;的JOB功能，我們可以針對資料庫內之資料，進行固定性的處理，因為JOB主要就是&lt;/p&gt;&#xA;&lt;p&gt;做好排程後，再依照設定的時段，來進行所指定的處理，一般來說，我們可以透過套裝&lt;/p&gt;&#xA;&lt;p&gt;工具，可能TOAD或是其他不同的軟體來進行JOB的新增修改，當然我們也可以透過語法&lt;/p&gt;&#xA;&lt;p&gt;來做這樣的處理。&lt;/p&gt;&#xA;&lt;p&gt;在一般命令模式，我們可以透過dbms_job.submit這個函式來做job的新增。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**delcare job\_num number;begin dbms\_job.submit( job\_num　該部份函式會自動給值 , &amp;#39;內容;&amp;#39; 預定要排程處理的內容，記得結尾加上分號 , SYSDATE + n 第一次執行該job的時間, 一分鐘為 1 / 1440，一小時為1/24 , &amp;#39;SYSDATE + m&amp;#39; 下一次執行時間, &amp;#39;NULL&amp;#39; 表示只執行一次，請特別注意該參數必須為字串 , FALSE );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果你要確認JOB是否新增完畢，可以直接去看dba_jobs這個資料表，記得過濾owner。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Oracle PL/SQL 指標</title>
-      <link>http://localhost:1313/posts/2011-06-oracle-plsql/</link>
-      <pubDate>Wed, 15 Jun 2011 08:01:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011-06-oracle-plsql/</guid>
-      <description>&lt;p&gt;要說指標還是cursor，隨便了。&lt;/p&gt;&#xA;&lt;p&gt;從下面一堆code裡面，可以看出這是一個基本的PL/SQL程式，且使用了PL/SQL中的cursor，所謂的cursor，就是我們先宣告了一個變數，其指向一個指定的查詢，在依照我們去異動cursor的指向，就可以對應到我們想要的查詢結果，相對於一般我們對指標的定義，是指向記憶體中的某個位置，而在這裡則是表示資料庫中資料的位置。&lt;/p&gt;&#xA;&lt;p&gt;[sql]SET SERVEROUTPUT ON&lt;br&gt;&#xA;DECLARE&lt;br&gt;&#xA;CURSOR TNAME IS&lt;br&gt;&#xA;SELECT * FROM SO001 WHERE CUSTID&amp;lt;10;&lt;br&gt;&#xA;B TNAME%ROWTYPE;&lt;br&gt;&#xA;BEGIN&lt;br&gt;&#xA;OPEN TNAME;&lt;br&gt;&#xA;LOOP&lt;br&gt;&#xA;FETCH TNAME INTO B;&lt;br&gt;&#xA;DBMS_OUTPUT.PUT_LINE(&amp;lsquo;THE KERKER IS:&amp;rsquo;||B.CUSTID);&lt;br&gt;&#xA;DBMS_OUTPUT.PUT_LINE(&amp;lsquo;KERKER IS:&amp;rsquo;||TNAME%ROWCOUNT);&lt;br&gt;&#xA;EXIT WHEN TNAME%NOTFOUND;&lt;br&gt;&#xA;END LOOP;&lt;br&gt;&#xA;CLOSE TNAME;&lt;br&gt;&#xA;END;&lt;/p&gt;&#xA;&lt;p&gt;/[/sql]&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SQL:PL/SQL基礎</title>
-      <link>http://localhost:1313/posts/2011-05-sqlplsql/</link>
-      <pubDate>Sat, 21 May 2011 05:38:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2011-05-sqlplsql/</guid>
-      <description>&lt;p&gt;對於SQL來說，我們所做的動作很簡單，就是一進一出，換句話說，就是下一個&lt;/p&gt;&#xA;&lt;p&gt;指令出去，然後出來給我們一個結果，不管是insert、update、delete，因此&lt;/p&gt;&#xA;&lt;p&gt;當需要針對進入的指令多做複雜的判斷，或是對產出的結果多做處理，相較之下&lt;/p&gt;&#xA;&lt;p&gt;，有些SQL語法並不能完美達到我們要的結果，這時候就需要PL/SQL這一類的&lt;/p&gt;&#xA;&lt;p&gt;程式出現了，而SQL Server用戶有所謂的Store Procedure，也是類似的道理&lt;/p&gt;&#xA;&lt;p&gt;。&lt;/p&gt;&#xA;&lt;p&gt;PL/SQL程式的架構；&lt;/p&gt;&#xA;&lt;p&gt;Set Serveroutput on;   //其實這行跟一般在寫這程式沒太大關聯，只是當你需要看輸出結果，就必須把這輸出參數打開。&lt;/p&gt;&#xA;&lt;p&gt;Declare&lt;br&gt;&#xA;v_number    number(3); //宣告你要使用的變數、物件、紀錄、表格，這地方是可以自己決定是否宣告的。&lt;br&gt;&#xA;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;exception&lt;br&gt;&#xA;//任何你預期的變化,必須所作的例外處理，當然也可以自己決定是否處理這塊。&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;/&lt;/p&gt;</description>
-    </item>
-  </channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PL/SQL on Liuchien的部落格</title>
+        <link>http://localhost:1313/tags/pl/sql/</link>
+        <description>Recent content in PL/SQL on Liuchien的部落格</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Sat, 21 Mar 2020 00:23:06 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pl/sql/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>Oracle資料庫之觸發器Trigger的使用</title>
+            <link>http://localhost:1313/posts/2012-02-oracletrigger/</link>
+            <pubDate>Thu, 02 Feb 2012 06:43:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2012-02-oracletrigger/</guid>
+            <description>&lt;p&gt;ORACLE的TRIGGER也是屬於PL/SQL的一種，中文也可以翻譯作觸發器，就字面上意思來說，可以解釋為觸發動作，而這觸發動作在於某個事件或是某種行為產生時，如果有因應的觸發動作，則會針對前述的狀況，進行指定的行為，這行為可能包含新增紀錄或連動呼叫程式、修正資料或是稽核資料。&lt;/p&gt;&#xA;&lt;p&gt;因此可以顯而易見的，TRIGGER的作用範圍很廣，包含如下；&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;DML觸發程式，任何由DML敘述所產生的事件，並在事件成立後呼叫對應程式或是檢核資訊。&lt;/li&gt;&#xA;&lt;li&gt;INSTEAD-OF觸發程式，當需要進行VIEW的資料調整時，對應調整VIEW的來源資料表。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;系統觸發程式，針對DDL事件或是系統事件進行對應呼叫。&lt;/p&gt;&#xA;&lt;p&gt;其實就我以前常用的狀況，所以會導致我的認知裡面，TRIGGER大多用在DML的敘述觸發，因此以下先針對DML敘述進行介紹，如果針對DML的定義不清楚，可以先參考資料庫SQL概念介紹。&lt;/p&gt;&#xA;&lt;p&gt;身為一個TRIGGER，最基礎的架構如下；&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;CREATE TRIGGER TRIGGER_NAME {BEFORE|AFTER|INSTEAD OF} TRIGGER_EVENT&lt;/p&gt;&#xA;&lt;p&gt;TRIGGER_BODY;&lt;br&gt;&#xA;[INSERT|DELETE|UPDATE] ON SCHEMA.TABLE [FOR EACH ROW]&lt;br&gt;&#xA;TRIGGER_BODY;&lt;br&gt;&#xA;AFTER UPDATE&lt;br&gt;&#xA;ON MYSCHEMA.TR_USERNAME&lt;br&gt;&#xA;FOR EACH ROW&lt;br&gt;&#xA;BEGIN&lt;br&gt;&#xA;&amp;hellip;.DO SOMETHING&lt;br&gt;&#xA;END TR_USERNAME_LOG;&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;由以上語法就可以大概瞭解TRIGGER宣告語法，並作些許介紹；&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CREATE&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;CREATE就是建立，我們可以常見在建立資料表、函式甚至是視觀表(VIEW)，都會使用到這個關鍵字，假定說今天所要建立的對象已經存在了，而且是我們所預知的，那麼這時我們會考慮逕行覆蓋，引此CREATE我們會修改為CREATE OR REPLACE。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TRIGGER_NAME&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;取一個你喜歡的名字，如果你面對的是多人使用的資料庫，建議使用一個好辨識的名字，而不是MYLOVE或是HA123。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;BEFORE&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這個地方將決定了你的觸發器如何運作，換句話說，這邊將決定你的觸發器的運作時機點，分別可以選擇為BEFORE代表你想要在指定動作執行之前觸發，AFTER則是在執行之後觸發，INSTEAD OF則是用於VIEW，後續會再進行說明。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TIRGGER_EVENT&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這部份的話，則是指定了啟動觸發器的事件，就DML來說，觸發器在這裡可以監控的事件則包含INSERT、DELETE、UPDATE，因此我們可以寫作INSERT ON TABLE_NAME；另外在這部份可以選擇是否加入FOR EACH ROW。&lt;/p&gt;&#xA;&lt;p&gt;EACH ROW代表是ROW觸發層次，所謂ROW觸發將在指定敘述時，針對每個一個動作影響到的ROW都觸發執行一次，因此如果沒指定為ROW層次，則只會執行一次。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TRIGGER_BODY&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;這部份則是指定你將對應執行的程式本體，假定你的TRIGGER_BODY非常多程式法的話，依照官方建議以不超過23K為準，&lt;/p&gt;&#xA;&lt;p&gt;如果非常大的話，建議採用函式呼叫。&lt;/p&gt;&#xA;&lt;p&gt;因此綜合以上，可以見到的觸發器程式可能為以下；&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;CREATE TRIGGER TRIGGER_NAME {BEFORE|AFTER|INSTEAD OF}&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;所以我們就來看一個實際的程式碼吧；&lt;/p&gt;&#xA;&#xA;    &lt;blockquote&gt;&#xA;        &lt;p&gt;CREATE OR REPLACE MYSCHEMA.TR_USERNAME_LOG&lt;/p&gt;&#xA;&#xA;    &lt;/blockquote&gt;&#xA;&lt;p&gt;建議規劃TRGGER前跟使用後，都要做好考量跟紀錄，否則很容易因為一時不察，導致程式出錯，將會很難進行追查，之後將再針對TRIGGER進行更多紀錄。&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>Oracle處理JOB之語法</title>
+            <link>http://localhost:1313/posts/2011-08-oraclejob/</link>
+            <pubDate>Mon, 22 Aug 2011 13:46:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2011-08-oraclejob/</guid>
+            <description>&lt;p&gt;關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供&lt;/p&gt;&#xA;&lt;p&gt;的JOB功能，我們可以針對資料庫內之資料，進行固定性的處理，因為JOB主要就是&lt;/p&gt;&#xA;&lt;p&gt;做好排程後，再依照設定的時段，來進行所指定的處理，一般來說，我們可以透過套裝&lt;/p&gt;&#xA;&lt;p&gt;工具，可能TOAD或是其他不同的軟體來進行JOB的新增修改，當然我們也可以透過語法&lt;/p&gt;&#xA;&lt;p&gt;來做這樣的處理。&lt;/p&gt;&#xA;&lt;p&gt;在一般命令模式，我們可以透過dbms_job.submit這個函式來做job的新增。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**delcare job\_num number;begin dbms\_job.submit( job\_num　該部份函式會自動給值 , &amp;#39;內容;&amp;#39; 預定要排程處理的內容，記得結尾加上分號 , SYSDATE + n 第一次執行該job的時間, 一分鐘為 1 / 1440，一小時為1/24 , &amp;#39;SYSDATE + m&amp;#39; 下一次執行時間, &amp;#39;NULL&amp;#39; 表示只執行一次，請特別注意該參數必須為字串 , FALSE );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果你要確認JOB是否新增完畢，可以直接去看dba_jobs這個資料表，記得過濾owner。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;select * from dba_jobs;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果要移除JOB，請先找出該JOB的編號，並且引用函式來進行處理。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;**begin dbms\_job.remove(job\_num );end;**&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;雖然10G已經有了新玩意，但其實這些函式還是很實用的。&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>Oracle PL/SQL 指標</title>
+            <link>http://localhost:1313/posts/2011-06-oracle-plsql/</link>
+            <pubDate>Wed, 15 Jun 2011 08:01:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2011-06-oracle-plsql/</guid>
+            <description>&lt;p&gt;要說指標還是cursor，隨便了。&lt;/p&gt;&#xA;&lt;p&gt;從下面一堆code裡面，可以看出這是一個基本的PL/SQL程式，且使用了PL/SQL中的cursor，所謂的cursor，就是我們先宣告了一個變數，其指向一個指定的查詢，在依照我們去異動cursor的指向，就可以對應到我們想要的查詢結果，相對於一般我們對指標的定義，是指向記憶體中的某個位置，而在這裡則是表示資料庫中資料的位置。&lt;/p&gt;&#xA;&lt;p&gt;[sql]SET SERVEROUTPUT ON&lt;br&gt;&#xA;DECLARE&lt;br&gt;&#xA;CURSOR TNAME IS&lt;br&gt;&#xA;SELECT * FROM SO001 WHERE CUSTID&amp;lt;10;&lt;br&gt;&#xA;B TNAME%ROWTYPE;&lt;br&gt;&#xA;BEGIN&lt;br&gt;&#xA;OPEN TNAME;&lt;br&gt;&#xA;LOOP&lt;br&gt;&#xA;FETCH TNAME INTO B;&lt;br&gt;&#xA;DBMS_OUTPUT.PUT_LINE(&amp;lsquo;THE KERKER IS:&amp;rsquo;||B.CUSTID);&lt;br&gt;&#xA;DBMS_OUTPUT.PUT_LINE(&amp;lsquo;KERKER IS:&amp;rsquo;||TNAME%ROWCOUNT);&lt;br&gt;&#xA;EXIT WHEN TNAME%NOTFOUND;&lt;br&gt;&#xA;END LOOP;&lt;br&gt;&#xA;CLOSE TNAME;&lt;br&gt;&#xA;END;&lt;/p&gt;&#xA;&lt;p&gt;/[/sql]&lt;/p&gt;&#xA;</description>
+        </item><item>
+            <title>SQL:PL/SQL基礎</title>
+            <link>http://localhost:1313/posts/2011-05-sqlplsql/</link>
+            <pubDate>Sat, 21 May 2011 05:38:00 +0000</pubDate>
+            <guid>http://localhost:1313/posts/2011-05-sqlplsql/</guid>
+            <description>&lt;p&gt;對於SQL來說，我們所做的動作很簡單，就是一進一出，換句話說，就是下一個&lt;/p&gt;&#xA;&lt;p&gt;指令出去，然後出來給我們一個結果，不管是insert、update、delete，因此&lt;/p&gt;&#xA;&lt;p&gt;當需要針對進入的指令多做複雜的判斷，或是對產出的結果多做處理，相較之下&lt;/p&gt;&#xA;&lt;p&gt;，有些SQL語法並不能完美達到我們要的結果，這時候就需要PL/SQL這一類的&lt;/p&gt;&#xA;&lt;p&gt;程式出現了，而SQL Server用戶有所謂的Store Procedure，也是類似的道理&lt;/p&gt;&#xA;&lt;p&gt;。&lt;/p&gt;&#xA;&lt;p&gt;PL/SQL程式的架構；&lt;/p&gt;&#xA;&lt;p&gt;Set Serveroutput on;   //其實這行跟一般在寫這程式沒太大關聯，只是當你需要看輸出結果，就必須把這輸出參數打開。&lt;/p&gt;&#xA;&lt;p&gt;Declare&lt;br&gt;&#xA;v_number    number(3); //宣告你要使用的變數、物件、紀錄、表格，這地方是可以自己決定是否宣告的。&lt;br&gt;&#xA;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;exception&lt;br&gt;&#xA;//任何你預期的變化,必須所作的例外處理，當然也可以自己決定是否處理這塊。&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;/&lt;/p&gt;&#xA;&lt;p&gt;雖說宣告跟例外處理是可以自己決定是不是所以嚴格來講，但實際上來說，例外&lt;/p&gt;&#xA;&lt;p&gt;處理還是建議要做好，不然老是等系統彈一個錯誤給使用者看，實在有失嚴謹性&lt;/p&gt;&#xA;&lt;p&gt;，扣除掉自選是否處理的，程式就剩下如下所示；&lt;/p&gt;&#xA;&lt;p&gt;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;/&lt;/p&gt;&#xA;&lt;p&gt;就只有開始跟結束，不過可以稍稍解釋一下巢狀架構。&lt;/p&gt;&#xA;&lt;p&gt;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;/&lt;/p&gt;&#xA;&lt;p&gt;當然也可以宣告變數。&lt;/p&gt;&#xA;&lt;p&gt;Declare&lt;br&gt;&#xA;v_number_outside    number(3);&lt;br&gt;&#xA;Begin&lt;br&gt;&#xA;Declare&lt;br&gt;&#xA;v_number_inside    number(3);&lt;br&gt;&#xA;Begin&lt;br&gt;&#xA;//do somethimg&amp;hellip;.就是你的程式主體。&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;End;&lt;br&gt;&#xA;/&lt;/p&gt;&#xA;&lt;p&gt;相信這樣的結構應該很好明白，最外層已經宣告了v_number_outside&lt;/p&gt;&#xA;&lt;p&gt;，當你內部巢狀還需要額外的變數時，就可再宣告內部巢狀區塊變數，但是需要注意到&lt;/p&gt;&#xA;&lt;p&gt;，當宣告內部變數v_number_inside，外部是用不到的，這應該是很好理解的概念。&lt;/p&gt;&#xA;</description>
+        </item></channel>
 </rss>
