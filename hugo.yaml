@@ -12,7 +12,7 @@ defaultContentLanguage: "zh-tw"
 hasCJKLanguage: true
 
 # 編譯設定
-summaryLength: 150
+summaryLength: 100
 publishDir: public
 build:
   useResourceCacheWhen: fallback
