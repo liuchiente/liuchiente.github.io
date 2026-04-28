@@ -270,11 +270,11 @@
 <p>$template-&gt;render(array(&lsquo;Banana&rsquo;=&gt;$Banana,&lsquo;Kiwi&rsquo;=&gt;$Kiwi));`</p>
 <p>在樣版我們的取用將會如下；</p>
 <p>`#View.html</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<ul>  
+<li>{{Banana}}</li>  
+<li>{{Kiwi}}</li>  
+<li></li>  
+</ul>`  
 <p>好的，以上我們已經理解，如何傳遞變數到樣板上，一切是這麼直覺，雖然從Smarty慣用者的角度來看，似乎多了一道工序，但是換個方向來看，其實作法也是大同小異，當然今天我們不會單單只是一個一個變數慢慢傳到樣板，更多時候，我們會因為便於管理，或是其他原因，而選擇傳達一個陣列到樣板。</p>
 <p>`/*</p>
 <p>MC.php</p>
@@ -289,12 +289,12 @@
 <p>$template-&gt;render(array(&lsquo;pack&rsquo;=&gt;$pack,&lsquo;girlfriend&rsquo;=&gt;$girlfriend));`</p>
 <p>在樣版我們的取用將會如下；</p>
 <p>`#View.html</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<ul>  
+<li>{{pack.Banana}}</li>  
+<li>{{pack.Kiwi}}</li>  
+<li>{{girlfriend['Miffy']}</li>  
+<li>{{girlfriend['Angel']}</li>  
+</ul>`  
 <p>從以上範例我們就可以清楚發現，我們取用陣列的資料，只要使用「.」來取用就好，是不是很實用？當然也可以用[]來取用，但是盡量不要將「.」完全認定是物件取用屬性，因為這樣一來你容易把陣列跟物件搞混了，當然假定你今天傳過來的是物件，也可以用「.」來取用。</p>
 <p>`/*</p>
 <p>MC.php</p>
@@ -303,10 +303,10 @@
 <p>$template-&gt;render(array(&lsquo;pack&rsquo;=&gt;$pack));`</p>
 <p>在樣版我們的取用將會如下；</p>
 <p>`#View.html</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<ul>  
+<li>{{pack.method}}</li>  
+<li>{{pack.property}}</li>  
+</ul>`  
 <p>這樣比較下來[]和. 似乎是沒有差異的，對於陣列上的應用，的確是如此，但是往內探究就有差異了，以pack.lemon和pack[&rsquo;lemon&rsquo;]，會有以下差異。</p>
 <p>pack[&rsquo;lemon&rsquo;]</p>
 <p>樣板將會檢查pack這變數在來源的php是不是合法的陣列，而lemon是不是該陣列合法的索引。</p>
@@ -575,7 +575,7 @@
             </main>
         </div>
         
-<script type="text/javascript" src="/ts/main.fa92627dc046d761dab3aea66058f299e162f039c826a5818311adb9305dcf75.js" defer></script>
+<script type="text/javascript" src="/ts/main.bdfb5d07364e537860bb3c862f273f9dd80f56d636eefec191228f9d1ae78ced.js" defer></script>
 
 
     </body>
