@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:10.273Z
 tags: ['HTML']
 aliases:
   - /2014/09/html.html
-draft: true
+draft: false
 ---
 
 # HTML(英文：HyperText Markup Language)是從IETF的SGML簡化而來的，目前由全球資訊網協會(W3C)所維護。整個HTML的基本組成是由標頭、段落或列表等等。

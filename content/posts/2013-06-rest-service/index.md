@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:10.895Z
 tags: ['RESTFull', 'REST', 'PHP', 'Web Service', 'RESTLike']
 aliases:
   - /2013/06/rest-service.html
-draft: true
+draft: false
 ---
 
 在實現資料交換的過程中，我們常會需要去制定一些交換規則，一切的一切都是為了實現異質系 統的資料交換，畢竟今天一個系統PHP，另一個系統JSP，系統就是不同，總不會要用彼此的陣列 丟來丟去吧？  

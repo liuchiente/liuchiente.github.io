@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:14.082Z
 tags: ['PL/SQL', 'Database', 'JOB', 'Oracle', 'SQL']
 aliases:
   - /2011/08/oraclejob.html
-draft: true
+draft: false
 ---
 
 關於JOB相信大家都對他有相當的認知，所謂的JOB呢，就是工作，透過Oracle提供  

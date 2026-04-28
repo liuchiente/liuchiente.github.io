@@ -5,7 +5,7 @@ lastmod: 2020-07-25T01:42:35.821Z
 tags: ['Lock.Kill Session', '資料庫', '工程師', 'Oracle', 'SQL']
 aliases:
   - /2020/03/lock.html
-draft: true
+draft: false
 ---
 
   

@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:15.742Z
 tags: ['RDBMS', 'Database', 'Oracle', 'SQL']
 aliases:
   - /2009/12/oracle-sql.html
-draft: true
+draft: false
 ---
 
 找出schema裡面，所有的物件資訊，如函式、資料表等，也就是所謂Function、Package、View等，就像MS SQL的SYSOBJECTS一樣。  

@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:12.398Z
 tags: ['Language', 'Template Engine', 'Twig', 'PHP', 'HTML']
 aliases:
   - /2012/04/twig-template-engine-php.html
-draft: true
+draft: false
 ---
 
   

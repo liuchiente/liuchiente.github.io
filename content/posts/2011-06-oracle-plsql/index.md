@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:14.282Z
 tags: ['PL/SQL', 'Database', 'Oracle', 'SQL']
 aliases:
   - /2011/06/oracle-plsql.html
-draft: true
+draft: false
 ---
 
 要說指標還是cursor，隨便了。  

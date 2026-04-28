@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:13.482Z
 tags: ['Buffer', 'BOM', 'Language', 'UTF-8', 'Flush', 'PHP']
 aliases:
   - /2011/11/phpoutput-buffer.html
-draft: true
+draft: false
 ---
 
 在下有一點注意力不集中的問題，本來只是想要找個資料，結果不小心看到PHP的Comet問題，又不小心看到一點小demo可能要用到flush的問題，結果就很不小心，開始看PHP的output buffering問題，媽呀，真是不小心。  

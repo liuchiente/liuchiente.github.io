@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:14.877Z
 tags: ['PL/SQL', 'Database', 'Oracle', 'SQL']
 aliases:
   - /2011/05/sqlplsql.html
-draft: true
+draft: false
 ---
 
 對於SQL來說，我們所做的動作很簡單，就是一進一出，換句話說，就是下一個  

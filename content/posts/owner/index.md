@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:11.234Z
 tags: ['未分類']
 aliases:
   - /owner.html
-draft: true
+draft: false
 ---
 
 drop user BESTTEST cascade;  

@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:13.679Z
 tags: ['Database', 'Oracle', 'SQL']
 aliases:
   - /2011/10/oracle-constraint.html
-draft: true
+draft: false
 ---
 
 所謂Constraint不外乎PK、FK和UK，或是在規劃時期提到的CK，以下簡略敘述；  

@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:15.972Z
 tags: ['MySQL', 'InnoDB', 'Database']
 aliases:
   - /2009/12/mysql-1607.html
-draft: true
+draft: false
 ---
 
 在使用MySQL的過程中，有時候會遇到這個錯誤，當MySQL啟動的時候，它  

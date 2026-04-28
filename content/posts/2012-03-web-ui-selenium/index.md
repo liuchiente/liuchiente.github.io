@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:12.803Z
 tags: ['UI Test', 'Language', 'PHP', 'HTML', 'Selenium', 'FireFox']
 aliases:
   - /2012/03/web-ui-selenium.html
-draft: true
+draft: false
 ---
 
 當我們開發一個網站時，總是要因為一個問題的修正，而重複的進行畫面操作和確認，尤其是當一個  

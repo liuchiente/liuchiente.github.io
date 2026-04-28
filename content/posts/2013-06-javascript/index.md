@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:11.589Z
 tags: ['Javascript', 'HTML']
 aliases:
   - /2013/06/javascript.html
-draft: true
+draft: false
 ---
 
 

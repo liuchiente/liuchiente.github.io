@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:12.603Z
 tags: ['Smarty', 'Language', 'Template Engine', 'Twig', 'PHP']
 aliases:
   - /2012/04/twig-template-engine-php_1.html
-draft: true
+draft: false
 ---
 
 綜觀PHP的樣板引擎概念推出以來，也可以說是百家齊放，一時之間，網路上也充斥著一堆樣板引擎，只是時間一久，終歸還是回到PHP官方推出的Smarty身上，幾乎可以說，許多人入門時使用的，不外乎PHP+MySQL+Apache+Smarty，當然PHP是否應該使用樣板引擎，這也是一個頗受爭議的問題，畢竟總是會有人說，PHP本身就是一個樣板引擎，又何必疊床架屋？  

@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:13.006Z
 tags: ['未分類']
 aliases:
   - /.html
-draft: true
+draft: false
 ---
 
 Javascript Namespace  

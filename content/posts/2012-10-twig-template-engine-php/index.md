@@ -5,7 +5,7 @@ lastmod: 2020-03-13T15:10:11.992Z
 tags: ['Twig', 'PHP']
 aliases:
   - /2012/10/twig-template-engine-php.html
-draft: true
+draft: false
 ---
 
 繼之前的樣板描述語言解釋完畢之後，這裡要介紹一下一般使用上會比較少用到的樣板相關技術，當然這些技術，並不是專指Twig獨有的，但是仍有些許概念，在Twig上的使用較為方便，不過實際上還是看使用者在運用上的習慣度。  
