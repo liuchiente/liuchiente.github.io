@@ -1,0 +1,1 @@
+[{{ range $i, $p := where .Site.RegularPages "Section" "posts" }}{{ if $i }},{{ end }}{"p":{{ $p.RelPermalink | jsonify }},"s":{{ $p.Summary | plainify | jsonify }}}{{ end }}]

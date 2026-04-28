@@ -12,10 +12,16 @@ defaultContentLanguage: "zh-tw"
 hasCJKLanguage: true
 
 # 編譯設定
-summaryLength: 300
+summaryLength: 150
 publishDir: public
 build:
   useResourceCacheWhen: fallback
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
 
 # ==========================================
 # 渲染優化 (Goldmark)

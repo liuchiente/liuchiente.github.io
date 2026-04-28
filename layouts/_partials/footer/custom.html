@@ -1,0 +1,96 @@
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="site-stats">
+    <span class="site-stats-item" title="全站瀏覽次數">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span id="busuanzi_value_site_pv">--</span> 次瀏覽
+    </span>
+    <span class="site-stats-separator">·</span>
+    <span class="site-stats-item" title="全站訪客數">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 1 0 7.75"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span id="busuanzi_value_site_uv">--</span> 位訪客
+    </span>
+</div>
+
+<script>
+(function () {
+    var EYE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+
+    function injectPageViews() {
+        var meta = document.querySelector('.article-details .article-meta .inline-meta');
+        if (!meta || document.getElementById('busuanzi_value_page_pv')) return;
+        var span = document.createElement('span');
+        span.className = 'article-pageviews';
+        span.innerHTML = EYE_SVG + ' <span id="busuanzi_value_page_pv">--</span> 次閱讀';
+        meta.appendChild(span);
+    }
+
+    async function injectSummaries() {
+        var articles = document.querySelectorAll('.article-list article');
+        if (!articles.length) return;
+        try {
+            var data = await fetch('/index.json').then(function (r) { return r.json(); });
+            var map = {};
+            data.forEach(function (item) { map[item.p] = item.s; });
+            articles.forEach(function (article) {
+                var link = article.querySelector('.article-title a');
+                if (!link) return;
+                var path = new URL(link.href).pathname;
+                var summary = map[path];
+                if (!summary) return;
+                var wrapper = article.querySelector('.article-title-wrapper');
+                if (!wrapper || wrapper.querySelector('.article-subtitle')) return;
+                var h3 = document.createElement('h3');
+                h3.className = 'article-subtitle';
+                h3.textContent = summary;
+                wrapper.appendChild(h3);
+            });
+        } catch (e) {}
+    }
+
+    function run() {
+        injectPageViews();
+        injectSummaries();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+    } else {
+        run();
+    }
+})();
+</script>
+
+<style>
+.site-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--card-text-color-tertiary, #999);
+}
+.site-stats-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.site-stats-item svg { opacity: 0.7; }
+.site-stats-separator { opacity: 0.5; }
+.article-pageviews {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+</style>
