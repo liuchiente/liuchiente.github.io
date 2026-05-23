@@ -1,8 +1,16 @@
 ---
-title: "untitled"
+title: 什麼是 AI Vibe Coding
 date: 2026-03-09T09:32:00Z
 lastmod: 2026-03-09T09:32:39.959Z
-tags: ['後AI時代', 'AI 自動化', 'AI Agent', 'AI 協作', 'AI Framework', 'AI Architecture', 'Vibe Coding', 'AI寫程式']
+tags:
+  - 後AI時代
+  - AI 自動化
+  - AI Agent
+  - AI 協作
+  - AI Framework
+  - AI Architecture
+  - Vibe Coding
+  - AI寫程式
 aliases:
   - /2026/03/ai-vibe-coding.html
 draft: false
